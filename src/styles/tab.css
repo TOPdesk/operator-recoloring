@@ -1,0 +1,51 @@
+/*
+ * Tab
+ */
+
+/* Default */
+[guielement="window_tab"] {
+  background: var(--surface);
+  border-color: var(--on-surface);
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+}
+[guielement="window_tab"] [guielement="icon"],
+[guielement="window_tab"] [guielement="icon-button"]{
+  filter: var(--filter);
+}
+/* Status icon (dual color, can't be recolored) */
+[guielement="window_tab"] [guielement="icon"]:nth-of-type(2) {
+  filter: none;
+}
+
+ 
+/* Current */
+[guielement="window_tab"][mstyles~="active"] {
+  background: var(--background);
+  border-bottom-color: var(--background);
+  border-top: 3px solid var(--primary);
+  --text-color: var(--on-background);
+  --filter: var(--on-background-filter);
+}
+
+/*
+* Card tab
+*/
+
+/* Current */
+[role="tablist"] [role="tab"][aria-selected="true"],
+[role="tablist"] [role="tab"][aria-selected="true"] * {
+  border-bottom-color: var(--primary);
+  color: var(--primary);
+}
+
+/* HTML style tabs */
+.subtabscontainer .subtabcaptions .tabcaption {
+  border-color: var(--text-color) !important;
+}
+.subtabscontainer .subtabcaptions .tabcaption a {
+  color: var(--text-color);
+}
+.subtabscontainer .subtabcaptions .tabcaption.active {
+  --text-color: var(--primary);
+}

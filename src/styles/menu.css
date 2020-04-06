@@ -1,0 +1,84 @@
+/* 
+ * Menu
+ */
+[guielement="topdesk-menu"],
+[guielement="topdesk-submenu"],
+[guielement="toolbar_menu"] {
+  background: var(--surface);
+}
+[guielement="topdesk-submenu"] {
+  border-left-color: var(--on-surface);
+}
+
+/* Default */
+[guielement="topdesk-menu-item"],
+[guielement="toolbar_menu_button"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+}
+[guielement="topdesk-menu-item"] *,
+[guielement="toolbar_menu_button"] * {
+  background: transparent;
+}
+[guielement="topdesk-menu-item"] [guielement="topdesk-menu-icon"],
+[guielement="toolbar_menu_button"] [mtype="imagebutton"] {
+  filter: var(--filter);
+}
+
+/* Hover */
+[guielement="topdesk-menu-item"]:hover,
+[guielement="toolbar_menu_button"]:hover {
+  background: var(--on-surface);
+  --text-color: var(--surface);
+  --filter: var(--surface-filter);
+}
+
+/* Focus */
+[guielement="topdesk-menu-item"]:focus,
+[guielement="toolbar_menu_button"]:focus {
+  outline: none !important;
+  background: var(--on-surface);
+  --text-color: var(--surface);
+  --filter: var(--surface-filter);
+}
+
+/* Disabled */
+[guielement="topdesk-menu-item"][disabled="true"],
+[guielement="toolbar_menu_button"][disabled="true"] {
+  background: var(--disabled);
+  --text-color: var(--on-disabled);
+  --filter: var(--on-disabled-filter);
+}
+
+/* Separators */
+[guielement="topdesk-menu-separator"],
+[guielement="toolbar_menu_group"] {
+  border-color: var(--on-surface);
+}
+
+/* Selected item */
+[guielement="topdesk-menu-item"][mstyles~="topdesk-menu-item-active"] {
+  border-left-color: var(--primary);
+}
+
+/* Suppressing focus style on menu after click on Menu button */
+[guielement="toolbar_menu"] > [mtype="group"]:focus {
+  outline: none !important;
+}
+
+
+/* Grid menu */
+body[cardtype="grid"] .more-menu {
+  background: var(--surface);
+}
+body[cardtype="grid"] .more-menu .menu-item {
+  color: var(--on-surface);
+}
+
+body[cardtype="grid"] .more-menu .menu-item:hover,
+body[cardtype="grid"] .more-menu .menu-item:focus {
+  outline: none !important;
+  background: var(--on-surface);
+  color: var(--surface);
+}

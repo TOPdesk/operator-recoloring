@@ -1,0 +1,164 @@
+/* 
+ * Action / Request
+ */
+
+
+/*
+ * Request
+ */
+[guielement="pt-request-container"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+
+[guielement="pt-request-container"] [guielement="pt-memo"] {
+  background: transparent;
+  border-top-color: var(--on-surface);
+}
+/* Collapsed entry fade-out */
+[guielement="pt-request-container"] [handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, var(--surface)) !important;
+}
+
+/* Flagged request entries */
+[guielement="pt-request-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
+  background: var(--primary);
+  --text-color: var(--on-primary);
+}
+[guielement="pt-request-container"] [mstyles~="pt-flagged"] a {
+  color: var(--on-primary);
+}
+/* Collapsed flagged entry fade-out */
+[guielement="pt-request-container"] [mstyles~="pt-flagged"][handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, var(--primary)) !important;
+}
+
+
+/* Links */
+[guielement="pt-request-container"] a {
+  color: var(--primary);
+}
+
+/* Speech bubble tail */
+[guielement="pt-request-pointer"] {
+  border-right-color: var(--surface);
+}
+
+/* Expand/Collapse buttons */
+[guielement="pt-request-container"] [guielement="crt-button-expand"],
+[guielement="pt-request-container"] [guielement="crt-button-collapse"] {
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+
+
+
+/*
+* Action
+*/
+[guielement="pt-trail-container"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+
+[guielement="pt-trail"],
+[guielement="pt-trail-container"] [guielement="pt-mail"],
+[guielement="pt-trail-container"] [guielement="pt-attachment"],
+[guielement="pt-trail-container"] [guielement="pt-memo"] {
+  background: transparent;
+  border-top-color: var(--on-surface);
+}
+/* Collapsed entry fade-out */
+[guielement="pt-trail-container"] [handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, var(--surface)) !important;
+}
+
+
+/* Flagged action entries */
+[guielement="pt-trail-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
+  background: var(--primary);
+  --text-color: var(--on-primary);
+}
+[guielement="pt-trail-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] a {
+  color: var(--on-primary);
+}
+[guielement="pt-trail-container"] a,
+[guielement="pt-trail-container"] [guielement="pt-linkbutton"] {
+  color: var(--primary);
+}
+
+/* Collapsed flagged entry fade-out */
+[guielement="pt-trail-container"] [mstyles~="pt-flagged"][handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, #eda911) !important;
+}
+
+/* Action entry filter button */
+[mtype="button"][guielement="pt-channel-button"] {
+  color: var(--primary);
+  background: transparent;
+}
+[mtype="button"][guielement="pt-channel-button"]:hover {
+  color: var(--primary-muted);
+  background: transparent;
+}
+[mtype="button"][guielement="pt-channel-button"]:active {
+  color: var(--background);
+  background: var(--primary);
+}
+
+/* Expand/Collapse buttons */
+[guielement="pt-trail-container"] [guielement="crt-button-expand"],
+[guielement="pt-trail-container"] [guielement="crt-button-collapse"] {
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+
+/* Mail and attachment entry icons (only present in Action) */
+[guielement="pt-mail"] img[guielement="icon"],
+[guielement="pt-attachment"] img[guielement="icon"] {
+  filter: var(--on-surface-filter);
+}
+
+
+/*
+* Rich text
+*/
+
+/* edit area */
+[guielement="pt-richtextarea"] {
+  background: var(--background);
+  border-color: var(--on-background);
+}
+body[contenteditable="true"] {
+  color: var(--on-background) !important;
+}
+[guielement="pt-memo-editable"] {
+  background: transparent;
+}
+
+
+/* toolbar buttons, the image gets washed out in toggled state :-( */
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"],
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"] {
+  filter: var(--on-surface-filter);
+}
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"]:hover,
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"]:hover {
+  filter: var(--primary-filter);
+}
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"]:active,
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"]:active {
+  filter: var(--primary-muted-filter);
+}
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"][disabled="true"],
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"][disabled="true"] {
+  filter: var(--on-disabled-filter);
+}
+
+/* stamp popup */
+[guielement="memo"] {
+  background: var(--background);
+  --text-color: var(--on-background);
+}

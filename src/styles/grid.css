@@ -1,0 +1,106 @@
+/*
+ * Grids
+ */
+
+/*
+ * The checkboxes are a dual colored image on top of a native checkbox.
+ * Unfortunately neither one can be recolored or styled effectively.
+ */
+
+body[cardtype="grid"] {
+  background: var(--background);
+  color: var(--on-background);
+}
+body[cardtype="grid"] .header {
+  border-color: var(--on-surface);
+}
+
+/* grid container */
+body[cardtype="grid"] .stretchdiv {
+  background: var(--background);
+}
+
+/* column headers */
+#headers .column {
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+
+  background: var(--surface);
+  color: var(--text-color);
+}
+#headers .column .ordericon {
+  filter: var(--filter);
+}
+/* column header separator */
+#headers .column .sizer #border {
+  background: var(--on-surface);
+}
+#headers .column.highlight {
+  --text-color: var(--on-primary);
+  --filter: var(--on-primary-filter);
+
+  background: var(--primary);
+}
+/* bottom bar */
+body[cardtype="grid"] .bottombar {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+body[cardtype="grid"] .bottombar .currentpage {
+  color: var(--primary);
+}
+body[cardtype="grid"] .bottombar a {
+  color: var(--on-surface);
+}
+
+/* data cells */
+div#columnsscroll {
+  background: var(--background);
+}
+div#columnsscroll .column span {
+  color: var(--text-color);
+}
+div#columnsscroll .column#_status span > .gridicon {
+  filter: var(--filter);
+}
+div#columnsscroll .column .normal {
+  --text-color: var(--on-background);
+  --filter: var(--on-background-filter);
+}
+div#columnsscroll .column .overduealert {
+  /* Due today */
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+  --filter: var(--on-primary-filter);
+}
+div#columnsscroll .column .overduealarm {
+  /* Overdue */
+  --text-color: var(--error);
+  --filter: var(--error-filter);
+}
+div#columnsscroll .column .archived {
+  --text-color: var(--primary);
+  --filter: var(--primary-filter);
+}
+/* highlight bar */
+div#columnsscroll div#selected.focus {
+  background: none;
+  border: 1px solid var(--primary);
+}
+div#columnsscroll div#selected.nofocus {
+  background: none;
+  border: 1px solid var(--on-background);
+}
+/* column separator */
+div#columnsscroll .column {
+  border-color: var(--on-background);
+}
+
+/* details */
+#detailframediv .ui-resizable-handle {
+  filter: var(--on-background-filter);
+}
+#detailsbody .memocontainer {
+  color: var(--on-background);
+  border-color: var(--on-background);
+}

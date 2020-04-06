@@ -1,0 +1,24 @@
+{
+  "name": "topdesk-operator-recoloring",
+  "version": "0.9.0",
+  "description": "Override the colors of TOPdesk operator section, for accessibility purposes.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TOPdesk/operator-recoloring.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "accessibility",
+    "topdesk"
+  ],
+  "author": "Joppe Kroon",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "rollup": "^2.3.2"
+  }
+}

@@ -1,0 +1,360 @@
+
+/*
+ * Home, Module, and Dashboard pages
+ */
+
+/* Can't recolor the background of the banner, so need to force the color of the text to make sure it remains visible */
+[handle="ie11campaign.banner.application_manager.description"],
+[handle="ie11campaign.banner.application_manager.description"] + [mtype="group"] a {
+    color: black;
+    
+}
+
+[guielement="widget"] {
+    border-color: transparent;
+}
+[guielement="widget_header"],
+[guielement="widget_content_area"] {
+    background: var(--surface);
+    --text-color: var(--on-surface);
+}
+[guielement="widget_content_area"] {
+    border-color: var(--on-surface);
+}
+[guielement="widget_content_area"] [guielement="icon"] {
+    filter: var(--on-surface-filter);
+}
+
+
+
+/* Main pages widget / Tile widgets */
+[guielement^="widget_page_image_button"] {
+    background: var(--primary);
+    --filter: var(--on-primary-filter);
+}
+[guielement^="widget_page_image_button"]:hover {
+    background: var(--primary-muted);
+}
+[guielement^="widget_page_image_button"]:active {
+    background: var(--background);
+    border: 1px solid var(--primary);
+    --filter: var(--on-background-filter);
+}
+[guielement^="widget_page_image_button"] > [guielement="icon"] {
+    filter: var(--filter);
+}
+
+/* My tasks widget / Tasks per group widget */
+[guielement="widget_content_area"] [mstyles~="todo_header_group"] {
+    border-color: var(--on-surface);
+}
+
+/* Selections, Reports, and Shortcuts widget */
+[guielement="selections_reports_content_area"] {
+    background: var(--surface);
+}
+[guielement="selections_reports_item"] {
+    background: var(--surface);
+    border-color: transparent;
+    --text-color: var(--on-surface);
+    --filter: var(--on-surface-filter);
+}
+[guielement="selections_reports_item"]:hover {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+    --filter: var(--surface-filter);
+}
+[guielement="selections_reports_item"] [guielement="icon"] {
+    filter: var(--filter);
+}
+
+/* Current major calls widget */
+[handle="major_incident_widget_main"] [guielement="block_header"] {
+    background: var(--surface);
+}
+[handle="major_incident_widget_main"] [guielement="major_incidents_button"] {
+    background: transparent;
+    filter: var(--on-surface-filter);
+}
+[handle="major_incident_widget_main"] [guielement="major_incidents_button"]:hover {
+    filter: var(--primary-filter);
+}
+[handle="major_incident_widget_main"] [guielement="major_incidents_button"]:active {
+    filter: var(--primary-muted-filter);
+}
+
+/* KPI widget */
+[guielement="widget_content_area"] [mstyles~="italic_text"] {
+    color: var(--text-color) !important;
+}
+
+/* Report widget */
+[guielement="widget_content_area"] [guielement="image"]:not([role="presentation"]) {
+    /* 
+     * The report legend is included in the image itself, 
+     * forcing the background to make sure the legend is visible.
+     *
+     * Setting a simple filter, e.g. filter: invert(1), may have 
+     * a more desirable effect depending on the chosen background 
+     * of the widget
+     *
+     * NOTE: this also affects KPI's as they can't be distinguished
+     */
+    background: #fcfcfc;
+}
+
+/* Conversations widget */
+[guielement="conversation-reply"] {
+    background: transparent;
+}
+
+[guielement="conversation-text"] a {
+    color: var(--primary);
+}
+[guielement="conversation-text"] a:hover  {
+    color: var(--primary-muted);
+}
+[guielement="conversation-link"] {
+    background: transparent;
+    color: var(--primary);
+}
+[guielement="conversation-link"]:hover {
+    background: transparent;
+    color: var(--primary-muted);
+}
+[guielement="conversation-number"] + [guielement="icon-button"] {
+    filter: var(--primary-filter);
+}
+[guielement="conversation-number"] + [guielement="icon-button"]:hover {
+    filter: var(--primary-muted-filter)
+}
+
+/* Navigation pane */
+[guielement="navigator_container"] {
+    background: var(--surface);
+    border-color: transparent;
+    --text-color: var(--on-surface);
+    --filter: var(--on-surface-filter);
+}
+[guielement="navigator_item"] [guielement="icon"] {
+    filter: var(--filter);
+}
+[guielement="navigator_item"][mstyles~="selected"] {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+    --filter: var(--surface-filter);
+}
+
+/* Selections widget / Reports widget / Shortcuts widget */
+[guielement="widget"] [guielement="link_button"] {
+    background: transparent;
+    color: var(--primary) !important;
+}
+[guielement="widget"] [guielement="link_button"]:hover {
+    color: var(--primary-muted) !important;
+}
+
+
+
+
+/* Get started widget */
+div#app {
+    background-image: none;
+}
+/* close button */
+.widget-container .widget-button {
+    background: transparent;
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.widget-container .widget-button:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+.widget-container .widget-button:active {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+/* about us button */
+.welcome-widget #button {
+    background: transparent;
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.welcome-widget #button:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+.welcome-widget #button:active {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* Subwidgets */
+.service-excellence-widget-frame,
+.service-excellence-widget-frame:hover,
+.getting-started-widget-frame,
+.getting-started-widget-frame:hover,
+.task-board-widget-frame,
+.task-board-widget-frame:hover {
+    background: var(--surface);
+}
+/* header */
+.service-excellence-widget-frame h1,
+.getting-started-widget-frame h1,
+.task-board-widget-frame h1 {
+    color: var(--on-surface);
+}
+
+/* Service excellence subwidget */
+/* view more blogs link */
+.service-excellence-widget-frame a {
+    color: var(--primary);
+}
+.service-excellence-widget-frame a:hover {
+    color: var(--primary-muted);
+}
+/* blog item */
+.service-excellence-widget-frame .accordion.is-active,
+.service-excellence-widget-frame .accordion.is-active .accordion-body {
+    background: var(--surface);
+}
+.service-excellence-widget-frame .accordion .accordion-header .rss-title-text,
+.service-excellence-widget-frame .accordion .accordion-header .display-date,
+.service-excellence-widget-frame .accordion.is-active .accordion-header .display-date,
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > span {
+    color: var(--on-surface);
+}
+/* blog item more link */
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > span::after {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 70%, var(--surface) 80%);
+}
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > a {
+    color: var(--primary);
+}
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > a:hover {
+    color: var(--primary-muted);
+}
+
+/* Getting started subwidget */
+.getting-started-widget-frame .getting-started-widget .playlist li,
+.getting-started-widget-frame .getting-started-widget .playlist li .video-title {
+    color: var(--on-surface);
+}
+.getting-started-widget-frame .getting-started-widget .playlist li.playing,
+.getting-started-widget-frame .getting-started-widget .playlist li.playing .video-title{
+    background: var(--primary);
+    color: var(--on-primary);
+}
+.getting-started-widget-frame .getting-started-widget .playlist li a:hover,
+.getting-started-widget-frame .getting-started-widget .playlist li a:hover .video-title,
+.getting-started-widget-frame .getting-started-widget .playlist li a:focus,
+.getting-started-widget-frame .getting-started-widget .playlist li a:focus .video-title {
+    background: var(--on-surface);
+    color: var(--surface);
+}
+
+
+/* My calls subwidget */
+.task-board-widget-frame .task-board-widget a {
+    --text-color: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget a .td-icon,
+.task-board-widget-frame .task-board-widget a .content .title,
+.task-board-widget-frame .task-board-widget a .content .request,
+.task-board-widget-frame .task-board-widget a .content .request span,
+.task-board-widget-frame .task-board-widget a .display-date,
+.task-board-widget-frame .task-board-widget a .display-date .td-icon {  
+    color: var(--text-color);
+}
+.task-board-widget-frame .task-board-widget a:hover,
+.task-board-widget-frame .task-board-widget a:focus {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+}
+.task-board-widget-frame .task-board-widget .overview-link {
+    color: var(--primary);
+}
+.task-board-widget-frame .task-board-widget .overview-link:hover {
+    color: var(--primary-muted);
+}
+.task-board-widget-frame .task-board-widget .update-area {
+    color: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget .update-area button svg {
+    color: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget .update-area button:hover {
+    background: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget .update-area button:hover svg {
+    color: var(--surface);
+}
+
+/* Flow chart */
+[mstyles~="flowchart_block_simple"],
+[mstyles~="flowchart_block_multi"],
+[mstyles~="flowchart_block_dashed"],
+[mstyles~="flowchart_icon_container"] {
+    background: var(--background);
+    border-color: var(--on-background);
+}
+[mstyles~="flowchart_block_empty"] {
+    border-color: var(--on-surface);
+}
+[mstyles~="flowchart_block_multi"] {
+    box-shadow: 
+        1px -1px var(--background), 
+        2px -2px var(--on-background), 
+        3px -3px var(--background), 
+        4px -4px var(--on-background);
+}
+[mstyles~="flowchart_icon_container"] [guielement="icon"]:last-child,
+[mstyles~="flowchart_icon_container"] [guielement="icon-button"]:last-child {
+    /* status icons are multicolored and thus can't be recolored */ 
+    filter: none;
+}
+[mstyles~="flowchart_icon_container"] [guielement="icon"]:first-child,
+[mstyles~="flowchart_icon_container"] [guielement="icon-button"]:first-child {
+    filter: var(--on-background-filter);
+}
+[guielement="flowchart_label"] {
+    color: var(--on-background);
+}
+[mtype="rectangle"] {
+    border-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_right"] {
+    border-left-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_left"] {
+    border-right-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_up"] {
+    border-bottom-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_down"] {
+    border-top-color: var(--on-surface) !important;
+}
+
+/* Marketplace widget */
+[guielement="no_padding_webpage_content_area"] {
+    background: var(--surface);
+}
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"] {
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:hover {
+    background-color: var(--primary-muted);
+}
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:active {
+    background-color: var(--background);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
