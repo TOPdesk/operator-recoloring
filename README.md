@@ -2,7 +2,7 @@
 
 Override the colors of TOPdesk operator section, for accessibility purposes. 
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/TOPdesk/operator-recoloring/master/topdesk-operator-recoloring.user.css)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/TOPdesk/operator-recoloring/master/public/topdesk-operator-recoloring.user.css)
 
 # Purpose
 This project provides styles to be injected into TOPdesk by a user css browser plugins like [stylus](https://add0n.com/stylus.html). With this you can change the colors of the TOPdesk operator section to aid with dyslexia, color blindness, contrast sensitivity, etc.
@@ -16,7 +16,7 @@ Neither is this project maintained together with TOPdesk. Depending on the versi
 
 # How to install
 * Install [Stylus for Chrome)](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), or [Stylus for Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/).
-* Go to the [raw version of the topdesk-operator-recoloring.user.css file](https://raw.githubusercontent.com/TOPdesk/operator-recoloring/master/topdesk-operator-recoloring.user.css), or click the "Install directly with Stylus" badge above.
+* Click the "Install directly with Stylus" badge above.
 * The browser plugin will open in a new tab, click the install button there.
 * The style now becomes available whenever you visit a TOPdesk operator section.
 

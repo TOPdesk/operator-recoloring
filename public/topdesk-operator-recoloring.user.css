@@ -1,0 +1,1734 @@
+/* ==UserStyle==
+@name           Recoloring TOPdesk operator section
+@namespace      github.com/topdesk/topdesk-operator-recoloring
+@version        0.9.0
+@description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
+@homepageURL    https://github.com/TOPdesk/operator-recoloring
+@supportURL     https://github.com/TOPdesk/operator-recoloring/issues
+@license        MIT
+@preprocessor   default
+@var color background "Background" #0c0c0c
+@var text background-filter "Background filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
+@var color on-background "On background" #fcfcfc
+@var text on-background-filter "On background filter" brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)
+@var color selection "Selection" rgba(252, 252, 252, 0.99)
+@var color on-selection "On selection" #0c0c0c
+@var color surface "Surface" #404040
+@var text surface-filter "Surface filter" brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%)
+@var color on-surface "On surface" #fcfcfc
+@var text on-surface-filter "On surface filter" brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)
+@var color disabled "Disabled" #404040
+@var text disabled-filter "Disabled filter" brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%)
+@var color on-disabled "On disabled" #8c8c8c 
+@var text on-disabled-filter "On disabled filter" brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(407%) hue-rotate(172deg) brightness(89%) contrast(89%)
+@var color primary "Primary" #eda911
+@var text primary-filter "Primary filter" brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(1479%) hue-rotate(354deg) brightness(97%) contrast(92%)
+@var color primary-muted "Primary muted" #d5970e
+@var text primary-muted-filter "Primary muted filter" brightness(0) saturate(100%) invert(66%) sepia(52%) saturate(3051%) hue-rotate(7deg) brightness(95%) contrast(89%)
+@var color on-primary "On primary" #0c0c0c
+@var text on-primary-filter "On primary filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
+@var color error "Error" #FF0070
+@var text error-filter "Error filter" brightness(0) saturate(100%) invert(16%) sepia(54%) saturate(7483%) hue-rotate(326deg) brightness(100%) contrast(109%)
+@var color on-error "On error" #0c0c0c
+@var text on-error-filter "On error filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
+==/UserStyle== */
+
+      
+@-moz-document regexp("http(s)?://.*/tas/secure/.*") {
+  /*
+ * Button
+ */
+
+/* Default button */
+[mtype="button"]:not([guielement="hyperlink"]),
+[guielement="toolbar_button"],
+body[cardtype="grid"] #actionbar .button,
+body.popup .divpopupcontainer .divpopupclientarea button,
+.suggestionsWidget .suggestionsWidget-toggleButton,
+.suggestionsWidget .suggestionsWidget-newKIButton,
+.suggestionsWidget .help-button,
+.suggestionsWidget .suggestionsWidget-intro .intro-button {
+    --text-color: var(--on-background);
+    --filter: var(--on-background-filter);
+    
+    background: var(--background);
+    border-color: var(--on-background);
+    color: var(--text-color);
+
+}
+[guielement="toolbar_button"] > [guielement="toolbar_button_label"] {
+    color: var(--text-color);
+}
+[guielement="toolbar_button"] > [guielement="icon"],
+body[cardtype="grid"] #actionbar .menu-button > .chevron {
+    filter: var(--filter);
+}
+
+[mtype="button"]:not([guielement="hyperlink"]):hover,
+[guielement="toolbar_button"]:hover,
+[guielement="toolbar_button"][mstyles~="toolbar_menu_opened"],
+body[cardtype="grid"] #actionbar .button:hover,
+body[cardtype="grid"] #actionbar .button.menu-button.toggled,
+body.popup .divpopupcontainer .divpopupclientarea button:hover,
+.suggestionsWidget .suggestionsWidget-toggleButton:hover,
+.suggestionsWidget .suggestionsWidget-newKIButton:hover,
+.suggestionsWidget .help-button:hover,
+.suggestionsWidget .suggestionsWidget-intro .intro-button:hover {
+    background: var(--on-background);
+    border-color: var(--on-background);
+    
+    --text-color: var(--background);
+    --filter: var(--background-filter);
+}
+
+[mtype="button"]:not([guielement="hyperlink"]):active,
+[guielement="toolbar_button"]:active
+body[cardtype="grid"] #actionbar .button:active,
+body.popup .divpopupcontainer .divpopupclientarea button:active,
+.suggestionsWidget .suggestionsWidget-toggleButton:active,
+.suggestionsWidget .suggestionsWidget-newKIButton:active,
+.suggestionsWidget .help-button:active,
+.suggestionsWidget .suggestionsWidget-intro .intro-button:active {
+    background: var(--surface);
+    border-color: var(--on-surface);
+    
+    --text-color: var(--on-surface);
+    --filter: var(--on-surface-filter);
+}
+
+
+/* Preferred button / Blue (toolbar) button / Bookmark button*/
+[mtype="button"][guielement="preferred_button"],
+[mtype="button"][mstyles~="default-button"],
+[guielement="toolbar_button"][mstyles~="blue"],
+[guielement="toolbar_button"][mstyles~="orange"],
+body[cardtype="grid"] #actionbar .button.preferred,
+body.popup .divpopupcontainer .divpopupclientarea button.primary,
+.suggestionsWidget .suggestionsWidget-searchButton {
+    background: var(--primary);
+    border-color: var(--primary);
+    
+    --text-color: var(--on-primary);
+    --filter: var(--on-primary-filter);
+}
+
+[mtype="button"][guielement="preferred_button"]:hover,
+[mtype="button"][mstyles~="default-button"]:hover,
+[guielement="toolbar_button"][mstyles~="blue"]:hover,
+[guielement="toolbar_button"][mstyles~="orange"]:hover,
+body[cardtype="grid"] #actionbar .button.preferred:hover,
+body.popup .divpopupcontainer .divpopupclientarea button.primary:hover,
+.suggestionsWidget .suggestionsWidget-searchButton:hover {
+    background: var(--primary-muted);
+    border-color: var(--primary-muted);
+    
+    --text-color: var(--on-primary);
+    --filter: var(--on-primary-filter);
+}
+
+[mtype="button"][guielement="preferred_button"]:active,
+[mtype="button"][mstyles~="default-button"]:active,
+[guielement="toolbar_button"][mstyles~="blue"]:active,
+[guielement="toolbar_button"][mstyles~="orange"]:active,
+body[cardtype="grid"] #actionbar .button.preferred:active,
+body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
+.suggestionsWidget .suggestionsWidget-searchButton:active {
+    background: var(--on-primary);
+    border-color: var(--primary);
+    
+    --text-color: var(--primary);
+    --filter: var(--primary-filter);
+}
+
+/* Disabled button */
+[mtype="button"][disabled="true"],
+[mtype="button"][disabled="true"]:hover,
+[guielement="toolbar_button"][disabled="true"],
+[guielement="toolbar_button"][disabled="true"]:hover {
+    background: var(--disabled);
+    border-color: var(--on-disabled);
+    
+    --text-color: var(--on-disabled);
+    --filter: var(--on-disabled-filter);
+    
+    pointer-events: none;
+}
+
+
+/* topdesk menu button */
+[handle="topdesk_menu"] {
+  background: var(--primary);
+  --filter: var(--on-primary-filter);
+}
+[handle="topdesk_menu"]:hover {
+  background: var(--primary-muted);
+}
+[handle="topdesk_menu"]:active {
+  background: var(--background);
+  --filter: var(--primary-filter);
+}
+[handle="topdesk_menu"]>[mtype="label"],
+[handle="topdesk_menu"]>[guielement="icon-button"] {
+  background: transparent;
+  filter: var(--filter);
+}
+
+/* Tab bar, and Quicklaunch buttons */
+[mstyles~="header_bar"] [guielement="icon-button"],
+button#notifications-icon,
+[handle="tas.reference.search"],
+[handle="cti_menu"],
+[handle="bookmark.overview.title"],
+[handle="quicklaunch_bar_buttons_area"] [mtype="group"]>[mtype="group"]>[mtype="group"][role="button"] {
+    filter: var(--on-surface-filter);
+}
+[mstyles~="header_bar"] [guielement="icon-button"]:hover,
+button#notifications-icon:hover,
+[handle="tas.reference.search"]:hover,
+[handle="cti_menu"]:hover,
+[handle="bookmark.overview.title"]:hover,
+[handle="quicklaunch_bar_buttons_area"] [mtype="group"]>[mtype="group"]>[mtype="group"][role="button"]:hover {
+    filter: var(--primary-filter);
+}
+
+/* Buttons with a background image */
+body[cardtype="grid"] #actionbar #reload-grid-button,
+body[cardtype="grid"] #actionbar .button.setup_button,
+.suggestionsWidget .suggestionsWidget-searchButton,
+.suggestionsWidget .suggestionsWidget-toggleButton,
+.suggestionsWidget .suggestionsWidget-newKIButton,
+.suggestionsWidget .help-button {
+    position: relative;
+}
+body[cardtype="grid"] #actionbar #reload-grid-button::before,
+body[cardtype="grid"] #actionbar .button.setup_button::before,
+.suggestionsWidget .suggestionsWidget-searchButton:before,
+.suggestionsWidget .suggestionsWidget-toggleButton:before,
+.suggestionsWidget .suggestionsWidget-newKIButton:before,
+.suggestionsWidget .help-button:before {
+    content: '';
+    position: absolute;
+    filter: var(--filter);
+    top: 7px;
+    height: 16px;
+    width: 16px; 
+    pointer-events: none;
+}
+/* grid reload button */
+body[cardtype="grid"] #actionbar #reload-grid-button::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath fill='%23757576' d='M14.9 6V0L13 1.9C9.8-.6 5.3-.4 2.4 2.5c-3.1 3.1-3.1 8.1 0 11.2 3.1 3.1 8.1 3.1 11.2 0 1.4-1.4 2.1-3.1 2.3-4.9h-2.7c-.1 1.1-.6 2.2-1.5 3-2.1 2.1-5.4 2.1-7.5 0-2.1-2.1-2.1-5.4 0-7.5 1.8-1.8 4.7-2 6.8-.6L8.9 6h6z'/%3E%3C/svg%3E");
+    left: 8px;
+}
+/* grid setup button */
+body[cardtype="grid"] #actionbar .button.setup_button::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M13.9 7.2l1.8-.7-1.1-2.8-1.8.7c-.3-.5-.7-.8-1.2-1.2l.7-1.8L9.6.3l-.8 1.8c-.5-.1-1.1-.1-1.6 0L6.4.3 3.6 1.4l.7 1.8c-.4.4-.8.8-1.1 1.2l-1.8-.8L.3 6.4l1.8.7c-.1.6-.1 1.2 0 1.7l-1.8.8 1.1 2.8 1.8-.7c.3.5.7.8 1.2 1.2l-.7 1.8 2.8 1.1.7-1.8c.5.1 1.1.1 1.7 0l.7 1.8 2.8-1.1-.7-1.8c.5-.3.8-.7 1.2-1.2l1.8.7 1.1-2.8-1.8-.7c0-.6 0-1.2-.1-1.7zm-4.7 3.6c-1.5.6-3.3-.1-3.9-1.6s.1-3.3 1.6-3.9c1.5-.6 3.3.1 3.9 1.6.6 1.5-.1 3.2-1.6 3.9z'/%3E%3C/svg%3E");
+    left: 7px;
+}
+/* Knowledge base popup search button */
+.suggestionsWidget .suggestionsWidget-searchButton:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M15.9 14.2L12 10.3c.6-.9 1-2.1 1-3.3 0-3.3-2.7-6-6-6S1 3.7 1 7s2.7 6 6 6c1.2 0 2.3-.4 3.2-.9l3.9 3.9 1.8-1.8zM3 7c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3C/svg%3E");
+  left: 7px;
+}
+
+/* Knowledge base popup toggle button */
+.suggestionsWidget .suggestionsWidget-toggleButton:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M10.5 11.5L6.9 8l3.6-3.5 1 1L9.1 8l2.4 2.5z'/%3E%3Cpath d='M6.5 11.5L2.9 8l3.6-3.5 1 1L5.1 8l2.4 2.5z'/%3E%3C/svg%3E");
+  left: -1px;
+  top: -1px;
+}
+
+/* Knowledge base popup create item button */
+.suggestionsWidget .suggestionsWidget-newKIButton:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M2.5 13H13v1H2.5z'/%3E%3Cpath d='M15 4h-2V1c0-.6-.4-1-1-1H3C1.3 0 0 1.3 0 3v10c0 1.7 1.3 3 3 3h10v-1H2.5c-.8 0-1.5-.7-1.5-1.5S1.7 12 2.5 12H12c.6 0 1-.4 1-1V8h2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1zm0 3h-3v3h-2V7H7V5h3V2h2v3h3v2z'/%3E%3C/svg%3E");
+  left: 8px;
+}
+
+/* Knowledge base popup help button */
+.suggestionsWidget .help-button:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M4.8 5.5c0-.4.1-.8.4-1.2.3-.4.6-.8 1.1-1 .5-.3 1.1-.4 1.8-.4.6 0 1.2.1 1.6.3.5.2.8.5 1.1.9.2.4.4.9.4 1.3s-.1.7-.2.9c-.1.3-.3.5-.5.7s-.6.5-1.1 1l-.4.4c-.1.1-.1.2-.2.3 0 .1-.1.2-.1.2 0 .1-.1.2-.1.4-.1.5-.3.7-.7.7-.2 0-.4-.1-.6-.2-.1-.2-.2-.4-.2-.7 0-.4.1-.7.2-.9.1-.2.2-.5.4-.7l.7-.7c.3-.2.5-.4.6-.5s.2-.3.3-.4.1-.3.1-.5c0-.3-.1-.6-.4-.9-.3-.2-.6-.3-1-.3-.5 0-.8.1-1 .4-.2.2-.4.6-.6 1 0 .5-.3.7-.7.7-.2 0-.4-.1-.6-.2-.2-.2-.3-.4-.3-.6zM8 12.9c-.3 0-.5-.1-.7-.2-.2-.2-.3-.4-.3-.7s.1-.5.3-.7c.2-.2.4-.3.7-.3s.5.1.7.3.3.4.3.7-.1.5-.3.7-.4.2-.7.2z'/%3E%3C/svg%3E");
+  left: -1px;
+  top: -1px;
+}
+  /*
+ * General styles
+ */
+html, body {
+  background: transparent;
+}
+ 
+ 
+/* Generic focus style */
+*:focus {
+  z-index: 1000 !important;
+  outline: 2px solid var(--on-background) !important;
+  outline-offset: 2px !important;
+}
+
+/* focus fix for combobox dropdown */
+input[type="text"][mtype="combobox"]:focus {
+  z-index: 0 !important;
+}
+
+/* Tab bar and Quicklaunch */
+[mstyles~="header_bar"],
+[handle="quicklaunch_bar_settings_area"],
+[handle="quicklaunch_bar_buttons_area"] {
+    background: var(--surface);
+    --text-color: var(--on-surface);
+}
+
+
+/* Page */
+[guielement="toplevelwindow"] {
+  background: var(--background);
+  --text-color: var(--on-background);
+}
+
+/* Text */
+[mtype="label"],
+[mtype="rtlabel"] {
+  /* 
+   * --text-color should be adjusted whenever the background changes, 
+   * to ensure the contained labels receive the correct color.
+   */ 
+  color: var(--text-color); 
+}
+[mtype="label"][mstyles~="error"],
+[mtype="rtlabel"][mstyles~="error"] {
+  /* 
+   * --text-color should be adjusted whenever the background changes, 
+   * to ensure the contained labels receive the correct color.
+   */ 
+  color: var(--error); 
+}
+
+
+::selection {
+  background: var(--selection);
+  color: var(--on-selection);
+}
+
+
+/* Link */
+a,
+[guielement="hyperlink"] {
+  color: var(--primary);
+}
+a:hover,
+[guielement="hyperlink"]:hover {
+  color: var(--primary-muted);
+}
+
+
+/* Tooltip */
+#infoboxdiv {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+/* Bubble tooltips */
+[guielement="infobubble-bubble"] {
+  background: var(--surface);
+}
+[guielement="infobubble-tail"][mstyles~="south"] {
+  border-top-color: var(--surface);
+}
+[guielement="infobubble-tail"][mstyles~="east"] {
+  border-left-color: var(--surface);
+}
+[guielement="infobubble-tail"][mstyles~="west"] {
+  border-right-color: var(--surface);
+}
+[guielement="infobubble-tail"][mstyles~="north"] {
+  border-bottom-color: var(--surface);
+}
+[guielement="infobubble-bubble"] [mstyles~="infobubble-message"] {
+  color: var(--on-surface);
+}
+
+/* Popup */
+[guielement="popup"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+[guielement="popup-header"] {
+  border-color: var(--on-surface);
+}
+[guielement="popup-footer"] {
+  background: var(--surface);
+  border-color: var(--on-surface);
+}
+/* HTML style popup */
+body.popup .divpopupcontainer {
+  background: var(--surface);
+  color: var(--on-surface);
+  --text-color: var(--on-surface);
+}
+body.popup .divpopupcontainer .divpopupheader {
+  border-color: var(--on-surface);
+}
+body.popup .divpopupcontainer .divpopupheader .divpopuptitle {
+  color: var(--on-surface);
+}
+body.popup .divpopupcontainer .divpopupclientarea {
+  background: transparent;
+}
+body.popup .divpopupcontainer .divpopupclientarea .buttons,
+body.popup .divpopupcontainer .divpopupclientarea .grid-settings-popup-buttons {
+  background: transparent;
+  border-color: var(--on-surface);
+}
+
+/* stamp popup */
+body.popup .divpopupcontainer .fields .button[onclick^="MacroPopup"] {
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+body.popup .divpopupcontainer .fields .button[onclick^="MacroPopup"]:hover {
+  background: var(--on-background);
+  color: var(--background);
+  border-color: var(--on-background);
+}
+body.popup .divpopupcontainer .fields .button.disabledButton {
+  background: var(--disabled);
+  color: var(--on-disabled);
+}
+
+/*
+ * Datepicker
+ */
+ [guielement="calendar-grid"] {
+  /* background color creates the cell borders */
+  background: var(--on-background);
+}
+/* day cell */
+[guielement="calendar-grid"] [guielement="calendar-cell"] {
+  background: var(--background);
+  --text-color: var(--on-background);
+}
+[guielement="calendar-grid"] [guielement="calendar-cell"] [guielement="calendar-cell-label"] {
+  color: var(--text-color);
+}
+/* non-working day cell */
+[guielement="calendar-grid"] [guielement="calendar-cell"][mstyles~="cal-non-working-day"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+/* Special style for 'today' to aid orientation */
+[guielement="calendar-grid"] [guielement="calendar-cell"][mstyles~="cal-today"] {
+  --text-color: var(--primary);
+  border-color: transparent;
+}
+/* currently selected cell */
+[guielement="calendar-grid"] [guielement="calendar-cell"][mstyles~="cal-selected"] {
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+}
+/* 'focused' cell */
+[guielement="calendar-grid"] [guielement="calendar-cell"][mstyles~="cal-highlighted"] {
+  border-color: var(--primary);
+}
+[guielement="calendar-grid"] [guielement="calendar-cell"][mstyles~="cal-selected"][mstyles~="cal-highlighted"] {
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+  border-color: var(--on-primary);
+}
+/* 'go to today' button */
+[guielement="datepicker-today"] {
+  background: transparent;
+  color: var(--primary);
+}
+[guielement="datepicker-today"]:hover {
+  background: var(--on-surface);
+  color: var(--surface);
+}
+  /*
+ * Tab
+ */
+
+/* Default */
+[guielement="window_tab"] {
+  background: var(--surface);
+  border-color: var(--on-surface);
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+}
+[guielement="window_tab"] [guielement="icon"],
+[guielement="window_tab"] [guielement="icon-button"]{
+  filter: var(--filter);
+}
+/* Status icon (dual color, can't be recolored) */
+[guielement="window_tab"] [guielement="icon"]:nth-of-type(2) {
+  filter: none;
+}
+
+ 
+/* Current */
+[guielement="window_tab"][mstyles~="active"] {
+  background: var(--background);
+  border-bottom-color: var(--background);
+  border-top: 3px solid var(--primary);
+  --text-color: var(--on-background);
+  --filter: var(--on-background-filter);
+}
+
+/*
+* Card tab
+*/
+
+/* Current */
+[role="tablist"] [role="tab"][aria-selected="true"],
+[role="tablist"] [role="tab"][aria-selected="true"] * {
+  border-bottom-color: var(--primary);
+  color: var(--primary);
+}
+
+/* HTML style tabs */
+.subtabscontainer .subtabcaptions .tabcaption {
+  border-color: var(--text-color) !important;
+}
+.subtabscontainer .subtabcaptions .tabcaption a {
+  color: var(--text-color);
+}
+.subtabscontainer .subtabcaptions .tabcaption.active {
+  --text-color: var(--primary);
+}
+  /* 
+ * Menu
+ */
+[guielement="topdesk-menu"],
+[guielement="topdesk-submenu"],
+[guielement="toolbar_menu"] {
+  background: var(--surface);
+}
+[guielement="topdesk-submenu"] {
+  border-left-color: var(--on-surface);
+}
+
+/* Default */
+[guielement="topdesk-menu-item"],
+[guielement="toolbar_menu_button"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+}
+[guielement="topdesk-menu-item"] *,
+[guielement="toolbar_menu_button"] * {
+  background: transparent;
+}
+[guielement="topdesk-menu-item"] [guielement="topdesk-menu-icon"],
+[guielement="toolbar_menu_button"] [mtype="imagebutton"] {
+  filter: var(--filter);
+}
+
+/* Hover */
+[guielement="topdesk-menu-item"]:hover,
+[guielement="toolbar_menu_button"]:hover {
+  background: var(--on-surface);
+  --text-color: var(--surface);
+  --filter: var(--surface-filter);
+}
+
+/* Focus */
+[guielement="topdesk-menu-item"]:focus,
+[guielement="toolbar_menu_button"]:focus {
+  outline: none !important;
+  background: var(--on-surface);
+  --text-color: var(--surface);
+  --filter: var(--surface-filter);
+}
+
+/* Disabled */
+[guielement="topdesk-menu-item"][disabled="true"],
+[guielement="toolbar_menu_button"][disabled="true"] {
+  background: var(--disabled);
+  --text-color: var(--on-disabled);
+  --filter: var(--on-disabled-filter);
+}
+
+/* Separators */
+[guielement="topdesk-menu-separator"],
+[guielement="toolbar_menu_group"] {
+  border-color: var(--on-surface);
+}
+
+/* Selected item */
+[guielement="topdesk-menu-item"][mstyles~="topdesk-menu-item-active"] {
+  border-left-color: var(--primary);
+}
+
+/* Suppressing focus style on menu after click on Menu button */
+[guielement="toolbar_menu"] > [mtype="group"]:focus {
+  outline: none !important;
+}
+
+
+/* Grid menu */
+body[cardtype="grid"] .more-menu {
+  background: var(--surface);
+}
+body[cardtype="grid"] .more-menu .menu-item {
+  color: var(--on-surface);
+}
+
+body[cardtype="grid"] .more-menu .menu-item:hover,
+body[cardtype="grid"] .more-menu .menu-item:focus {
+  outline: none !important;
+  background: var(--on-surface);
+  color: var(--surface);
+}
+  /* 
+ * Action / Request
+ */
+
+
+/*
+ * Request
+ */
+[guielement="pt-request-container"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+
+[guielement="pt-request-container"] [guielement="pt-memo"] {
+  background: transparent;
+  border-top-color: var(--on-surface);
+}
+/* Collapsed entry fade-out */
+[guielement="pt-request-container"] [handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, var(--surface)) !important;
+}
+
+/* Flagged request entries */
+[guielement="pt-request-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
+  background: var(--primary);
+  --text-color: var(--on-primary);
+}
+[guielement="pt-request-container"] [mstyles~="pt-flagged"] a {
+  color: var(--on-primary);
+}
+/* Collapsed flagged entry fade-out */
+[guielement="pt-request-container"] [mstyles~="pt-flagged"][handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, var(--primary)) !important;
+}
+
+
+/* Links */
+[guielement="pt-request-container"] a {
+  color: var(--primary);
+}
+
+/* Speech bubble tail */
+[guielement="pt-request-pointer"] {
+  border-right-color: var(--surface);
+}
+
+/* Expand/Collapse buttons */
+[guielement="pt-request-container"] [guielement="crt-button-expand"],
+[guielement="pt-request-container"] [guielement="crt-button-collapse"] {
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+
+
+
+/*
+* Action
+*/
+[guielement="pt-trail-container"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+
+[guielement="pt-trail"],
+[guielement="pt-trail-container"] [guielement="pt-mail"],
+[guielement="pt-trail-container"] [guielement="pt-attachment"],
+[guielement="pt-trail-container"] [guielement="pt-memo"] {
+  background: transparent;
+  border-top-color: var(--on-surface);
+}
+/* Collapsed entry fade-out */
+[guielement="pt-trail-container"] [handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, var(--surface)) !important;
+}
+
+
+/* Flagged action entries */
+[guielement="pt-trail-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
+  background: var(--primary);
+  --text-color: var(--on-primary);
+}
+[guielement="pt-trail-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] a {
+  color: var(--on-primary);
+}
+[guielement="pt-trail-container"] a,
+[guielement="pt-trail-container"] [guielement="pt-linkbutton"] {
+  color: var(--primary);
+}
+
+/* Collapsed flagged entry fade-out */
+[guielement="pt-trail-container"] [mstyles~="pt-flagged"][handle="crt-gradient"] {
+  background-image: linear-gradient(transparent, #eda911) !important;
+}
+
+/* Action entry filter button */
+[mtype="button"][guielement="pt-channel-button"] {
+  color: var(--primary);
+  background: transparent;
+}
+[mtype="button"][guielement="pt-channel-button"]:hover {
+  color: var(--primary-muted);
+  background: transparent;
+}
+[mtype="button"][guielement="pt-channel-button"]:active {
+  color: var(--background);
+  background: var(--primary);
+}
+
+/* Expand/Collapse buttons */
+[guielement="pt-trail-container"] [guielement="crt-button-expand"],
+[guielement="pt-trail-container"] [guielement="crt-button-collapse"] {
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+
+/* Mail and attachment entry icons (only present in Action) */
+[guielement="pt-mail"] img[guielement="icon"],
+[guielement="pt-attachment"] img[guielement="icon"] {
+  filter: var(--on-surface-filter);
+}
+
+
+/*
+* Rich text
+*/
+
+/* edit area */
+[guielement="pt-richtextarea"] {
+  background: var(--background);
+  border-color: var(--on-background);
+}
+body[contenteditable="true"] {
+  color: var(--on-background) !important;
+}
+[guielement="pt-memo-editable"] {
+  background: transparent;
+}
+
+
+/* toolbar buttons, the image gets washed out in toggled state :-( */
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"],
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"] {
+  filter: var(--on-surface-filter);
+}
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"]:hover,
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"]:hover {
+  filter: var(--primary-filter);
+}
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"]:active,
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"]:active {
+  filter: var(--primary-muted-filter);
+}
+[guielement="pt-richtextbuttonbar"] [guielement="imagebutton"][disabled="true"],
+[guielement="pt-richtextbuttonbar"] [guielement="icon-button"][disabled="true"] {
+  filter: var(--on-disabled-filter);
+}
+
+/* stamp popup */
+[guielement="memo"] {
+  background: var(--background);
+  --text-color: var(--on-background);
+}
+  
+/*
+ * Home, Module, and Dashboard pages
+ */
+
+/* Can't recolor the background of the banner, so need to force the color of the text to make sure it remains visible */
+[handle="ie11campaign.banner.application_manager.description"],
+[handle="ie11campaign.banner.application_manager.description"] + [mtype="group"] a {
+    color: black;
+    
+}
+
+[guielement="widget"] {
+    border-color: transparent;
+}
+[guielement="widget_header"],
+[guielement="widget_content_area"] {
+    background: var(--surface);
+    --text-color: var(--on-surface);
+}
+[guielement="widget_content_area"] {
+    border-color: var(--on-surface);
+}
+[guielement="widget_content_area"] [guielement="icon"] {
+    filter: var(--on-surface-filter);
+}
+
+
+
+/* Main pages widget / Tile widgets */
+[guielement^="widget_page_image_button"] {
+    background: var(--primary);
+    --filter: var(--on-primary-filter);
+}
+[guielement^="widget_page_image_button"]:hover {
+    background: var(--primary-muted);
+}
+[guielement^="widget_page_image_button"]:active {
+    background: var(--background);
+    border: 1px solid var(--primary);
+    --filter: var(--on-background-filter);
+}
+[guielement^="widget_page_image_button"] > [guielement="icon"] {
+    filter: var(--filter);
+}
+
+/* My tasks widget / Tasks per group widget */
+[guielement="widget_content_area"] [mstyles~="todo_header_group"] {
+    border-color: var(--on-surface);
+}
+
+/* Selections, Reports, and Shortcuts widget */
+[guielement="selections_reports_content_area"] {
+    background: var(--surface);
+}
+[guielement="selections_reports_item"] {
+    background: var(--surface);
+    border-color: transparent;
+    --text-color: var(--on-surface);
+    --filter: var(--on-surface-filter);
+}
+[guielement="selections_reports_item"]:hover {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+    --filter: var(--surface-filter);
+}
+[guielement="selections_reports_item"] [guielement="icon"] {
+    filter: var(--filter);
+}
+
+/* Current major calls widget */
+[handle="major_incident_widget_main"] [guielement="block_header"] {
+    background: var(--surface);
+}
+[handle="major_incident_widget_main"] [guielement="major_incidents_button"] {
+    background: transparent;
+    filter: var(--on-surface-filter);
+}
+[handle="major_incident_widget_main"] [guielement="major_incidents_button"]:hover {
+    filter: var(--primary-filter);
+}
+[handle="major_incident_widget_main"] [guielement="major_incidents_button"]:active {
+    filter: var(--primary-muted-filter);
+}
+
+/* KPI widget */
+[guielement="widget_content_area"] [mstyles~="italic_text"] {
+    color: var(--text-color) !important;
+}
+
+/* Report widget */
+[guielement="widget_content_area"] [guielement="image"]:not([role="presentation"]) {
+    /* 
+     * The report legend is included in the image itself, 
+     * forcing the background to make sure the legend is visible.
+     *
+     * Setting a simple filter, e.g. filter: invert(1), may have 
+     * a more desirable effect depending on the chosen background 
+     * of the widget
+     *
+     * NOTE: this also affects KPI's as they can't be distinguished
+     */
+    background: #fcfcfc;
+}
+
+/* Conversations widget */
+[guielement="conversation-reply"] {
+    background: transparent;
+}
+
+[guielement="conversation-text"] a {
+    color: var(--primary);
+}
+[guielement="conversation-text"] a:hover  {
+    color: var(--primary-muted);
+}
+[guielement="conversation-link"] {
+    background: transparent;
+    color: var(--primary);
+}
+[guielement="conversation-link"]:hover {
+    background: transparent;
+    color: var(--primary-muted);
+}
+[guielement="conversation-number"] + [guielement="icon-button"] {
+    filter: var(--primary-filter);
+}
+[guielement="conversation-number"] + [guielement="icon-button"]:hover {
+    filter: var(--primary-muted-filter)
+}
+
+/* Navigation pane */
+[guielement="navigator_container"] {
+    background: var(--surface);
+    border-color: transparent;
+    --text-color: var(--on-surface);
+    --filter: var(--on-surface-filter);
+}
+[guielement="navigator_item"] [guielement="icon"] {
+    filter: var(--filter);
+}
+[guielement="navigator_item"][mstyles~="selected"] {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+    --filter: var(--surface-filter);
+}
+
+/* Selections widget / Reports widget / Shortcuts widget */
+[guielement="widget"] [guielement="link_button"] {
+    background: transparent;
+    color: var(--primary) !important;
+}
+[guielement="widget"] [guielement="link_button"]:hover {
+    color: var(--primary-muted) !important;
+}
+
+
+
+
+/* Get started widget */
+div#app {
+    background-image: none;
+}
+/* close button */
+.widget-container .widget-button {
+    background: transparent;
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.widget-container .widget-button:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+.widget-container .widget-button:active {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+/* about us button */
+.welcome-widget #button {
+    background: transparent;
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.welcome-widget #button:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+.welcome-widget #button:active {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* Subwidgets */
+.service-excellence-widget-frame,
+.service-excellence-widget-frame:hover,
+.getting-started-widget-frame,
+.getting-started-widget-frame:hover,
+.task-board-widget-frame,
+.task-board-widget-frame:hover {
+    background: var(--surface);
+}
+/* header */
+.service-excellence-widget-frame h1,
+.getting-started-widget-frame h1,
+.task-board-widget-frame h1 {
+    color: var(--on-surface);
+}
+
+/* Service excellence subwidget */
+/* view more blogs link */
+.service-excellence-widget-frame a {
+    color: var(--primary);
+}
+.service-excellence-widget-frame a:hover {
+    color: var(--primary-muted);
+}
+/* blog item */
+.service-excellence-widget-frame .accordion.is-active,
+.service-excellence-widget-frame .accordion.is-active .accordion-body {
+    background: var(--surface);
+}
+.service-excellence-widget-frame .accordion .accordion-header .rss-title-text,
+.service-excellence-widget-frame .accordion .accordion-header .display-date,
+.service-excellence-widget-frame .accordion.is-active .accordion-header .display-date,
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > span {
+    color: var(--on-surface);
+}
+/* blog item more link */
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > span::after {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 70%, var(--surface) 80%);
+}
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > a {
+    color: var(--primary);
+}
+.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > a:hover {
+    color: var(--primary-muted);
+}
+
+/* Getting started subwidget */
+.getting-started-widget-frame .getting-started-widget .playlist li,
+.getting-started-widget-frame .getting-started-widget .playlist li .video-title {
+    color: var(--on-surface);
+}
+.getting-started-widget-frame .getting-started-widget .playlist li.playing,
+.getting-started-widget-frame .getting-started-widget .playlist li.playing .video-title{
+    background: var(--primary);
+    color: var(--on-primary);
+}
+.getting-started-widget-frame .getting-started-widget .playlist li a:hover,
+.getting-started-widget-frame .getting-started-widget .playlist li a:hover .video-title,
+.getting-started-widget-frame .getting-started-widget .playlist li a:focus,
+.getting-started-widget-frame .getting-started-widget .playlist li a:focus .video-title {
+    background: var(--on-surface);
+    color: var(--surface);
+}
+
+
+/* My calls subwidget */
+.task-board-widget-frame .task-board-widget a {
+    --text-color: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget a .td-icon,
+.task-board-widget-frame .task-board-widget a .content .title,
+.task-board-widget-frame .task-board-widget a .content .request,
+.task-board-widget-frame .task-board-widget a .content .request span,
+.task-board-widget-frame .task-board-widget a .display-date,
+.task-board-widget-frame .task-board-widget a .display-date .td-icon {  
+    color: var(--text-color);
+}
+.task-board-widget-frame .task-board-widget a:hover,
+.task-board-widget-frame .task-board-widget a:focus {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+}
+.task-board-widget-frame .task-board-widget .overview-link {
+    color: var(--primary);
+}
+.task-board-widget-frame .task-board-widget .overview-link:hover {
+    color: var(--primary-muted);
+}
+.task-board-widget-frame .task-board-widget .update-area {
+    color: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget .update-area button svg {
+    color: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget .update-area button:hover {
+    background: var(--on-surface);
+}
+.task-board-widget-frame .task-board-widget .update-area button:hover svg {
+    color: var(--surface);
+}
+
+/* Flow chart */
+[mstyles~="flowchart_block_simple"],
+[mstyles~="flowchart_block_multi"],
+[mstyles~="flowchart_block_dashed"],
+[mstyles~="flowchart_icon_container"] {
+    background: var(--background);
+    border-color: var(--on-background);
+}
+[mstyles~="flowchart_block_empty"] {
+    border-color: var(--on-surface);
+}
+[mstyles~="flowchart_block_multi"] {
+    box-shadow: 
+        1px -1px var(--background), 
+        2px -2px var(--on-background), 
+        3px -3px var(--background), 
+        4px -4px var(--on-background);
+}
+[mstyles~="flowchart_icon_container"] [guielement="icon"]:last-child,
+[mstyles~="flowchart_icon_container"] [guielement="icon-button"]:last-child {
+    /* status icons are multicolored and thus can't be recolored */ 
+    filter: none;
+}
+[mstyles~="flowchart_icon_container"] [guielement="icon"]:first-child,
+[mstyles~="flowchart_icon_container"] [guielement="icon-button"]:first-child {
+    filter: var(--on-background-filter);
+}
+[guielement="flowchart_label"] {
+    color: var(--on-background);
+}
+[mtype="rectangle"] {
+    border-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_right"] {
+    border-left-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_left"] {
+    border-right-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_up"] {
+    border-bottom-color: var(--on-surface) !important;
+}
+[mstyles~="arrowhead_down"] {
+    border-top-color: var(--on-surface) !important;
+}
+
+/* Marketplace widget */
+[guielement="no_padding_webpage_content_area"] {
+    background: var(--surface);
+}
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"] {
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:hover {
+    background-color: var(--primary-muted);
+}
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:active {
+    background-color: var(--background);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+  /*
+ * Grids
+ */
+
+/*
+ * The checkboxes are a dual colored image on top of a native checkbox.
+ * Unfortunately neither one can be recolored or styled effectively.
+ */
+
+body[cardtype="grid"] {
+  background: var(--background);
+  color: var(--on-background);
+}
+body[cardtype="grid"] .header {
+  border-color: var(--on-surface);
+}
+
+/* grid container */
+body[cardtype="grid"] .stretchdiv {
+  background: var(--background);
+}
+
+/* column headers */
+#headers .column {
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+
+  background: var(--surface);
+  color: var(--text-color);
+}
+#headers .column .ordericon {
+  filter: var(--filter);
+}
+/* column header separator */
+#headers .column .sizer #border {
+  background: var(--on-surface);
+}
+#headers .column.highlight {
+  --text-color: var(--on-primary);
+  --filter: var(--on-primary-filter);
+
+  background: var(--primary);
+}
+/* bottom bar */
+body[cardtype="grid"] .bottombar {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+body[cardtype="grid"] .bottombar .currentpage {
+  color: var(--primary);
+}
+body[cardtype="grid"] .bottombar a {
+  color: var(--on-surface);
+}
+
+/* data cells */
+div#columnsscroll {
+  background: var(--background);
+}
+div#columnsscroll .column span {
+  color: var(--text-color);
+}
+div#columnsscroll .column#_status span > .gridicon {
+  filter: var(--filter);
+}
+div#columnsscroll .column .normal {
+  --text-color: var(--on-background);
+  --filter: var(--on-background-filter);
+}
+div#columnsscroll .column .overduealert {
+  /* Due today */
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+  --filter: var(--on-primary-filter);
+}
+div#columnsscroll .column .overduealarm {
+  /* Overdue */
+  --text-color: var(--error);
+  --filter: var(--error-filter);
+}
+div#columnsscroll .column .archived {
+  --text-color: var(--primary);
+  --filter: var(--primary-filter);
+}
+/* highlight bar */
+div#columnsscroll div#selected.focus {
+  background: none;
+  border: 1px solid var(--primary);
+}
+div#columnsscroll div#selected.nofocus {
+  background: none;
+  border: 1px solid var(--on-background);
+}
+/* column separator */
+div#columnsscroll .column {
+  border-color: var(--on-background);
+}
+
+/* details */
+#detailframediv .ui-resizable-handle {
+  filter: var(--on-background-filter);
+}
+#detailsbody .memocontainer {
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+
+  /* 
+ * Knowledge base suggestions widget (as seen on call card)
+ * Buttons are (mostly) styled in buttons.css
+ */
+
+.suggestionsWidget {
+  background: var(--background);
+  border-color: var(--primary);
+}
+
+.suggestionsWidget .suggestionsWidget-header {
+  background: transparent;
+  border-color: var(--on-background);
+}
+.suggestionsWidget .suggestionsWidget-body {
+  color: var(--on-background);
+}
+.suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters {
+  border-color: var(--on-background);
+}
+.suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language > img {
+  filter: var(--on-background-filter);
+}
+.suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language > select {
+  background: transparent;
+  color: var(--on-background);
+  border-color: var(--on-background);
+  -webkit-appearance: listbox;
+  -moz-appearance: listbox;
+  appearance: listbox;
+}
+.suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language > select:focus {
+  border-color: var(--on-background);
+}
+.suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language option {
+  background: var(--background);
+  color: var(--on-background);
+}
+.suggestionsWidget .help-button {
+  border-radius: 50%;
+  border: 1px solid currentColor;
+}
+
+.suggestionsWidget .suggestionsWidget-list {
+  background: transparent;
+}
+.suggestionsWidget .suggestionsWidget-suggestion,
+.suggestionsWidget .suggestionsWidget-suggestion.suggestionsWidget-suggestion-with-standard-solution {
+  background: transparent;
+  --text-color: var(--on-background);
+  --filter: var(--on-background-filter);
+}
+.suggestionsWidget .suggestionsWidget-suggestion > a {
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid transparent;
+}
+.suggestionsWidget .suggestionsWidget-suggestion > button {
+  background-color: transparent;
+  filter: var(--filter);
+  opacity: 1;
+  border: 2px solid transparent;
+}
+.suggestionsWidget .suggestionsWidget-suggestion > a:hover,
+.suggestionsWidget .suggestionsWidget-suggestion > a:focus {
+  --text-color: var(--primary);
+  outline: none !important;
+  border-color: currentColor;
+}
+
+.suggestionsWidget .suggestionsWidget-suggestion > button:hover,
+.suggestionsWidget .suggestionsWidget-suggestion > button:focus {
+  --filter: var(--primary-filter);
+  outline: none !important;
+  border-color: currentColor;
+}
+
+.suggestionsWidget .suggestionsWidget-noSuggestionsFound {
+  filter: var(--on-background-filter);
+}
+
+.suggestionsWidget .suggestionsWidget-intro .footer {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+.suggestionsWidget .suggestionsWidget-intro .footer > a:hover {
+  color: var(--primary-muted);
+}
+
+/* disabling blue focus styling */
+.suggestionsWidget .suggestionsWidget-intro .intro-button:focus {
+  border-color: var(--on-background);
+  box-shadow: none;
+}
+  
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="dialog"] {
+  background: var(--surface);
+}
+/* header */
+[data-handle="shareandsubscribe_sharee_picker"] header {
+  border-bottom-color: var(--on-surface);
+}
+[data-handle="shareandsubscribe_sharee_picker"] header > strong,
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="sharees"] > strong {
+  color: var(--on-surface);
+}
+[data-handle="shareandsubscribe_sharee_picker"] header > button {
+  filter: var(--on-surface-filter);
+}
+
+/* Search field */
+[data-handle="shareandsubscribe_sharee_picker"] input[type="search"] {
+  background: var(--background);
+  border-color: var(--on-background);
+  color: var(--on-background);
+}
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button {
+  --bg: var(--primary);
+  --filter: var(--on-primary-filter);
+  --border: var(--primary);
+  
+  position: relative;
+  background: var(--bg) !important;
+  border-color: var(--border) !important;
+}
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button:hover {
+  --bg: var(--primary-muted);
+  --filter: var(--on-primary-filter);
+  --border: var(--primary-muted);
+}
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button:active {
+  --bg: var(--background);
+  --filter: var(--primary-filter);
+  --border: var(--primary);
+}
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button:before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M10 10l5 5'/%3E%3Ccircle cx='5.9' cy='6' r='5' fill='none' stroke='currentColor' stroke-miterlimit='10' stroke-width='2'/%3E%3C/svg%3E");    
+  
+  filter: var(--filter);
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+
+/* non-result status messages */
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="searching"],
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="help-text"] {
+  color: var(--on-background);
+}
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="no-search-results"] {
+  filter: var(--on-background-filter);
+}
+
+/* Search results section*/
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search-results"] {
+  background: var(--background);
+  color: var(--on-background);
+  
+  --filter: var(--on-background-filter);
+  --hover-fg: var(--background);
+  --hover-filter: var(--background-filter);
+}
+
+/* Sharees section */
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="sharees"] {
+  color: var(--on-surface);
+  
+  --filter: var(--on-surface-filter);
+  --hover-fg: var(--surface);
+  --hover-filter: var(--surface-filter);
+}
+
+/* Items */
+[data-handle="shareandsubscribe_sharee_picker"] li:hover {
+  background: currentColor;
+  --filter: var(--hover-filter);
+  --text-color: var(--hover-fg);
+}
+
+[data-handle="shareandsubscribe_sharee_picker"] li > div,
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search-results"] li button,
+[data-handle="shareandsubscribe_sharee_picker"] [data-handle="sharees"] li button,
+[data-handle="shareandsubscribe_sharee_picker"] li strong {
+  color: var(--text-color);
+}
+[data-handle="shareandsubscribe_sharee_picker"] li img[src^="data:image/svg+xml"] {
+  background: transparent;
+  border: 1px solid currentColor;
+  filter: var(--filter);
+}
+/* separator */
+[data-handle="shareandsubscribe_sharee_picker"] li:not(:last-child) {
+  border-bottom-color: currentColor;
+}
+
+/* Footer */
+[data-handle="shareandsubscribe_sharee_picker"] footer {
+  background: var(--surface);
+  border-top: 1px solid var(--on-surface);
+}
+[data-handle="shareandsubscribe_sharee_picker"] footer > button {
+  background: var(--bg) !important;
+  border-color: var(--border) !important;
+  color: var(--text-color) !important;
+}
+
+/* Cancel button */
+[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="cancel"] {
+  --bg: var(--background);
+  --border: var(--on-background);
+  --text-color: var(--on-background);
+}
+[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="cancel"]:hover {
+  --bg: var(--on-background);
+  --border: var(--on-background);
+  --text-color: var(--background);
+}
+[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="cancel"]:active {
+  --bg: var(--surface);
+  --border: var(--on-surface);
+  --text-color: var(--on-surface);
+}
+
+
+/* Share button */
+[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="submit"] {
+  --bg: var(--primary);
+  --border: var(--primary);
+  --text-color: var(--on-primary);
+}
+[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="submit"]:hover {
+  --bg: var(--primary-muted);
+  --border-color: var(--primary-muted);
+  --text-color: var(--on-primary);
+}
+[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="submit"]:active {
+  --bg: var(--on-primary);
+  --border: var(--primary);
+  --text-color: var(--primary);
+}
+
+  /* Icons in minimized groups */
+[guielement="mg-minimized-content"] [guielement="icon"] {
+  filter: var(--on-background-filter);
+}
+
+/* Header buttons */
+[guielement="mg-header"] input[aria-haspopup="false"] {
+  filter: var(--primary-filter);
+}
+[guielement="mg-header"] input[aria-haspopup="false"][disabled="true"] {
+  filter: var(--disabled-filter);
+}
+
+/* 
+* Form 
+*/
+
+/* Default */
+input[type="text"],
+div[guielement="datetimecontrol"],
+div[guielement="unittextbox"],
+button[role="checkbox"],
+button[role="radio"],
+textarea[mtype="textarea"],
+textarea.textarea {
+  --border: var(--on-background);
+  --static-filter: var(--on-background-filter);
+  --button-filter: var(--on-background-filter);
+  
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--border);
+}
+textarea[mtype="textarea"] {
+  border-color: var(--border) !important
+}
+
+/* Readonly */
+input[type="text"][readonly="true"],
+div[guielement="datetimecontrol"][readonly="true"],
+div[guielement="unittextbox"][readonly="true"],
+button[role="checkbox"][readonly="true"],
+button[role="radio"][readonly="true"],
+textarea[mtype="textarea"][readonly="true"]{
+  --border: var(--disabled);
+  --static-filter: var(--on-background-filter);
+  --button-filter: var(--disabled-filter);
+  
+  background: var(--background);
+  color: var(--on-background);
+}
+
+/* Disabled */
+input[type="text"][disabled="true"],
+div[guielement="datetimecontrol"][disabled="true"],
+div[guielement="unittextbox"][disabled="true"],
+button[role="checkbox"][disabled="true"],
+button[role="radio"][disabled="true"],
+textarea[mtype="textarea"][disabled="true"],
+textarea.textarea:disabled {
+  --border: var(--on-disabled);
+  --static-filter: var(--on-disabled-filter);
+  --button-filter: var(--on-disabled-filter);
+  
+  background: var(--disabled);
+  color: var(--on-disabled);
+}
+
+/* Error */
+input[type="text"][mstyles~="error"],
+div[guielement="datetimecontrol"][mstyles~="error"],
+div[guielement="unittextbox"][mstyles~="error"],
+textarea[mtype="textarea"][mstyles~="error"],
+textarea.textarea:invalid {
+  --border: var(--error);
+  --static-filter: var(--error-filter);
+  --button-filter: var(--on-background-filter);
+  
+  background: var(--background);
+  color: var(--error);
+}
+
+
+/* Combobox dropdown icon */
+input[type="text"][mtype="combobox"] + div > img  {
+  filter: var(--on-background-filter);
+}
+input[type="text"][mtype="combobox"][readonly="true"] + div > img,
+input[type="text"][mtype="combobox"][disabled="true"] + div > img  {
+  filter: var(--on-disabled-filter);
+}
+input[type="text"][mtype="combobox"][mstyles~="error"] + div > img {
+  filter: var(--error-filter);
+}
+
+/* Combobox options */
+[mango_combobox="true"][role="option"] {
+  background: var(--background) !important;
+  color: var(--on-background) !important;
+}
+[mango_combobox="true"][role="option"][style*="highlight"] {
+  background: var(--on-background) !important;
+  color: var(--background) !important;
+}
+
+
+/* Datepicker button */
+div[guielement="datetimecontrol"] > input[guielement="icon-button"] {
+  filter: var(--button-filter);
+}
+
+
+/* Unit text box */
+div[guielement="unittextbox"] > img, 
+div[guielement="unittextbox"] > [guielement="unittextbox_prefix"], 
+div[guielement="unittextbox"] > [guielement="unittextbox_suffix"] {
+  background: transparent;
+}
+div[guielement="unittextbox"] > img {
+  filter: var(--static-filter); 
+}
+
+
+/* Checkbox */
+button[role="checkbox"] {
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+}
+button[role="checkbox"] > img {
+  display: none !important;
+}
+/* checkmark */
+button[role="checkbox"][aria-checked="true"]::before {
+  content: '';
+  position: absolute;
+  border-bottom: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  top: 2px;
+  left: 2px;
+  width: 9px;
+  height: 5px;
+  transform: rotate(-45deg)
+}
+
+
+/* Radio button */
+button[role="radio"] > img {
+  display: none !important;
+}
+button[role="radio"] {
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+/* dot */
+button[role="radio"][aria-checked="true"]::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+}
+
+/* Search */
+[guielement="sp-search-main-group"],
+[mstyles~="quicklaunch_search_background"] {
+  background: transparent;
+  border: 1px solid var(--primary-muted);
+}
+[guielement="sp-search-main-group"] [guielement="button"],
+[guielement="quicklaunch_search_button"] {
+  background: var(--primary);
+  border-color: var(--primary);
+  --filter: var(--on-primary-filter);
+}
+[guielement="sp-search-main-group"] [guielement="button"]:hover,
+[guielement="quicklaunch_search_button"]:hover {
+  background: var(--primary-muted);
+  border-color: var(--primary-muted);
+}
+[guielement="sp-search-main-group"] [guielement="button"]:active,
+[guielement="quicklaunch_search_button"]:active {
+  background: var(--background);
+  border-color: var(--primary);
+  --filter: var(--primary-filter);
+}
+[guielement="sp-search-main-group"] [guielement="button"] [guielement="icon"],
+[guielement="quicklaunch_search_button"] [guielement="icon"] {
+  filter: var(--filter);
+}
+
+/* List control */
+[guielement="list_control"],
+[guielement="list_control"] [guielement="list_item"] {
+  background: var(--background);
+  --text-color: var(--on-background);
+  --filter: var(--on-background-filter);
+}
+[guielement="list_control"] [guielement="list_item"]:hover {
+  background: var(--on-background);
+  --text-color: var(--background);
+  --filter: var(--background-filter);
+}
+[guielement="list_control"] [guielement="list_item"][mstyles~="selected"],
+[guielement="list_control"] [guielement="list_item"] [mstyles~="selected_suggestion"] {
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+  --filter: var(--on-primary-filter);
+}
+
+[guielement="list_control"] [guielement="list_item"] [mtype="label"] {
+  color: var(--text-color) !important;
+}
+[guielement="list_control"] [guielement="list_item"] [guielement="icon"] {
+  filter: var(--filter);
+}
+
+/* memofield buttons */
+.memowithheader .images img {
+  filter: var(--on-surface-filter);
+}
+.memowithheader .images img:hover {
+  filter: var(--primary-filter);
+}
+.memowithheader .images img:active {
+  filter: var(--primary-muted-filter);
+}
+.memowithheader .images img[disabled="true"] {
+  filter: var(--on-disabled-filter);
+}
+
+/*
+ * HTML style form elements
+ */
+table.fields .label {
+  color: var(--text-color);
+}
+/* select */
+table.fields .arrowdown {
+  filter: var(--on-background-filter);
+}
+#dropdownlayer .dropdownselect {
+  background: var(--background);
+  color: var(--on-background);
+}
+.optionvalue {
+  color: var(--text-color);
+}
+
+/* list control */
+div.fields .selectlist {
+  background: var(--background);
+}
+div.fields .selectlist .selected {
+  background: var(--on-background);
+  color: var(--background);
+}
+
+/* search with autocomplete */
+table.textinput {
+  background: var(--background);
+}
+table.textinput #queryfield {
+  color: var(--on-background);
+}
+table.textinput + #suggestionbox {
+  background: var(--background);
+}
+table.textinput + #suggestionbox .dropdown {
+  color: var(--on-background);
+}
+table.textinput + #suggestionbox .dropdown[style*="background"] {
+  background: var(--on-background) !important;
+  color: var(--background);
+}
+
+}
