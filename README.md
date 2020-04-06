@@ -15,7 +15,7 @@ Neither is this project maintained together with TOPdesk. Depending on the versi
 
 
 # How to install
-* Install [Stylus for Chrome)](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), or [Stylus for Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/).
+* Install [Stylus for Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), or [Stylus for Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/).
 * Click the "Install directly with Stylus" badge above.
 * The browser plugin will open in a new tab, click the install button there.
 * The style now becomes available whenever you visit a TOPdesk operator section.
@@ -23,4 +23,4 @@ Neither is this project maintained together with TOPdesk. Depending on the versi
 # How to use
 * Every time you log in to TOPdesk, navigate to [your topdesk domain]/tas/secure/mango/arsenictestmodeswitchon first to make sure these styles work at their full potential.
 * You can configure the colors by clicking the plugin icon, and clicking the gear icon on the "Recoloring TOPdesk operator section" entry.
-* The filter values are used to recolor icons, calculate them with https://codepen.io/sosuke/pen/Pjoqqp and prefix the outcome with `brightness(0) saturate(100%)`
+* The filter values are used to recolor icons, calculate them with the [filter calculation codepen](https://codepen.io/sosuke/pen/Pjoqqp) by Barett Sonntag and prefix the outcome with `brightness(0) saturate(100%)`.
