@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOPdesk operator recoloring</title>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <a href="https://raw.githubusercontent.com/TOPdesk/operator-recoloring/master/public/topdesk-operator-recoloring.user.css">
+    <img alt="Install directly with Stylus" src="https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg">
+  </a>
+  
+  <h1>TOPdesk operator recoloring</h1>
+  <p>
+    Override the colors of TOPdesk operator section, for accessibility purposes. 
+  </p>
+
+  <h2>Purpose</h2>
+  <p>
+    This project provides styles to be injected into TOPdesk by a user css browser plugins like <a href="https://add0n.com/stylus.html">stylus</a>. With this you can change the colors of the TOPdesk operator section to aid with dyslexia, color blindness, contrast sensitivity, etc.
+  </p>
+  <p>
+    There is no intent to achieve completeness, let alone prettyness, the goal is to help users with visual impairments that may be alleviated by color adjustments.
+  </p>
+  <p>
+    For example, some buttons use circular icons with a white background. When recoloring, these icons would just turn into a solid circle. As such these icons are left as is.
+  </p>
+  <p>
+    Neither is this project maintained together with TOPdesk. Depending on the version or functionalities of TOPdesk used, your mileage may vary. Feel free to <a href="https://github.com/TOPdesk/operator-recoloring/issues">create an issue</a>, or even a merge request, and we will see if it can be addressed.
+  </p>
+
+  <h2>How to install</h2>
+  <ol>
+    <li>
+      Install <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne">Stylus for Chrome</a>, or <a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/">Stylus for Firefox</a>.
+    </li>
+    <li>Click the "Install directly with Stylus" link badge above.</li>
+    <li>The browser plugin will open in a new tab, click the install button there.</li>
+    <li>The style now becomes available whenever you visit a TOPdesk operator section.</li>
+  </ol>
+
+  <h2>How to use</h2>
+  <ul>
+    <li>Every time you log in to TOPdesk, navigate to [your topdesk domain]/tas/secure/mango/arsenictestmodeswitchon first to make sure these styles work at their full potential.</li>
+    <li>You can configure the colors by clicking the plugin icon, and clicking the gear icon on the "Recoloring TOPdesk operator section" entry.</li>
+    <li>The filter values are used to recolor icons, use the fields below to calculate them.</li>
+  </ul>
+    
+  <h2 id="palette-header">Choose your palette</h2>
+  <p>
+    Choose your colors in the form, using <a href="https://en.wikipedia.org/wiki/Web_colors">hex triplets</a> (e.g #0cf or #00ccff, the '#' is optional).
+    The associated filter value will appear under the input for copy-pasting into the Stylus configuration.
+  </p>
+  <p>
+    The algorithm for calculating the filter values is copied and adapted from the <a href="https://codepen.io/sosuke/pen/Pjoqqp">filter calculation codepen</a> by Barett Sonntag.
+  </p>
+
+  <form aria-label="Palette form">
+    <span id="status" role="status" aria-live="polite"></span>
+    
+    <label for="background">Background color</label>
+    <input id="background" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="background-msg" maxlength=7 minlength=3 size=7>
+    <span id="background-msg" class="message"></span>
+    
+    <label for="on-background">On background text color</label>
+    <input id="on-background" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="on-background-msg" maxlength=7 minlength=3 size=7>
+    <span id="on-background-msg" class="message"></span>
+
+    <label for="surface">Surface color</label>
+    <input id="surface" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="surface-msg" maxlength=7 minlength=3 size=7>
+    <span id="surface-msg" class="message"></span>
+    
+    <label for="on-surface">On surface text color</label>
+    <input id="on-surface" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="on-surface-msg" maxlength=7 minlength=3 size=7>
+    <span id="on-surface-msg" class="message"></span>
+
+    <label for="primary">Primary color</label>
+    <input id="primary" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="primary-msg" maxlength=7 minlength=3 size=7>
+    <span id="primary-msg" class="message"></span>
+    
+    <label for="primary-muted">Primary alternative color</label>
+    <input id="primary-muted" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="primary-muted-msg" maxlength=7 minlength=3 size=7>
+    <span id="primary-muted-msg" class="message"></span>
+    
+    <label for="on-primary">On primary text color</label>
+    <input id="on-primary" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="on-primary-msg" maxlength=7 minlength=3 size=7>
+    <span id="on-primary-msg" class="message"></span>
+
+    <label for="error">Error color</label>
+    <input id="error" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="error-msg" maxlength=7 minlength=3 size=7>
+    <span id="error-msg" class="message"></span>
+    
+    <label for="on-error">On error text color</label>
+    <input id="on-error" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="on-error-msg" maxlength=7 minlength=3 size=7>
+    <span id="on-error-msg" class="message"></span>
+
+    <label for="disabled">Disabled color</label>
+    <input id="disabled" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="disabled-msg" maxlength=7 minlength=3 size=7>
+    <span id="disabled-msg" class="message"></span>
+    
+    <label for="on-disabled">On disabled text color</label>
+    <input id="on-disabled" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="on-disabled-msg" maxlength=7 minlength=3 size=7>
+    <span id="on-disabled-msg" class="message" aria-live="polite"></span>
+
+    <label for="selection">Selection color</label>
+    <input id="selection" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="selection-msg" maxlength=7 minlength=3 size=7>
+    <span id="selection-msg" class="message" aria-live="polite"></span>
+    
+    <label for="on-selection">On selection text color</label>
+    <input id="on-selection" pattern="#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})" aria-describedby="on-selection-msg" maxlength=7 minlength=3 size=7>
+    <span id="on-selection-msg" class="message" aria-live="polite"></span>
+  </form>
+  
+  <div id="palette-sample" role="presentation">
+    <div id="background-sample">Background</div>
+    <div id="surface-sample">Surface</div>
+    <div id="primary-sample">Primary</div>
+    <div id="error-sample">Error</div>
+    <div id="disabled-sample">Disabled</div>
+    <div id="selection-sample">Selection</div>
+  </div>
+</body>
+</html>
