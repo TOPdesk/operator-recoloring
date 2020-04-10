@@ -1732,4 +1732,104 @@ table.textinput + #suggestionbox .dropdown[style*="background"] {
   color: var(--background);
 }
 
+  /* KI explorer panel */
+[guielement="explorer_header"],
+[guielement="explorer_body"] {
+    background: var(--surface);
+    --text-color: var(--on-surface);
+}
+[guielement="explorer_body"] [guielement="tree_node_line"][mstyles~="selected"] {
+    background: var(--on-surface);
+    --text-color: var(--surface);
+}
+[guielement="explorer_body"] [guielement="tree_node_line"] [mtype="group"][mstyles~="tree_top_level"] {
+    background: transparent;
+}
+
+/* KI Rich Text fields, and keyword block */
+
+
+[guielement="block_body"],
+[guielement="block_header"] { 
+  background: transparent;
+}
+[guielement="memo_rich_text_area"] {
+  background: var(--background);
+  border-color: var(--on-background);
+}
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="imagebutton"],
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="icon-button"] {
+  filter: var(--on-background-filter);
+}
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="imagebutton"]:hover,
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="icon-button"]:hover {
+  filter: var(--primary-filter);
+}
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="imagebutton"]:active,
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="icon-button"]:active {
+  filter: var(--primary-muted-filter);
+}
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="imagebutton"][disabled="true"],
+[guielement="rich_text_memo_group"] > [guielement="block_header"] [guielement="icon-button"][disabled="true"] {
+  filter: var(--on-disabled-filter);
+}
+
+/* KI tags */
+.tagList > .tag {
+    background: var(--background);
+    border-color: var(--on-background);
+}
+.tagList > .tag > .tagName {
+    color: var(--on-background);
+}
+.tagList > .tag > button {
+    filter: var(--on-background-filter);
+}
+.tagList > .tag > button:hover {
+    filter: var(--primary-filter);
+}
+.addTagOptions .optionsSeparator {
+    color: var(--on-background);
+}
+
+.addTagOptions .td-field {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.addTagOptions .td-field::placeholder {
+    color: var(--on-background);
+}
+.addTagOptions .td-button {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.addTagOptions .td-button:hover {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+.addTagOptions .td-field option {
+    color: var(--on-background);
+}
+.addTagOptions .td-field option:disabled {
+    font-style: italic;
+}
+
+/* KI Read version styles */
+[guielement="kb-search-main-group"] {
+  background: transparent;
+  border: 1px solid var(--primary);
+}
+[guielement="kb-comment-group"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+[guielement="kb-content"] a {
+  color: var(--primary);
+}
+[guielement="kb-content"] a:hover {
+  color: var(--primary-muted);
+}
 }
