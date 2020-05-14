@@ -1,5 +1,0 @@
-TODO
-- style notification menu (+ menu button badge)
-- create HTML for github pages
-- create filter calculator based on https://codepen.io/sosuke/pen/Pjoqqp
-- provide built in palettes based on dyslexia and color-blindness best practices.
