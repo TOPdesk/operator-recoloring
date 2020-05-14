@@ -2,6 +2,42 @@ body {
   margin: 3rem;
 }
 
+img.example,
+img.use-step {
+  display: block;
+  margin: 1rem 0;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 800px){
+  img.example {
+    width: 70%;
+  }
+  img.use-step {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px){
+  img.example {
+    width: 50%;
+  }
+  img.use-step {
+    width: 30%;
+  }
+}
+
+aside {
+  border: 1px solid darkgrey;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+aside > h3 {
+  margin-block-start: 0;
+}
+
 #status {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);

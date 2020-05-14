@@ -21,6 +21,7 @@ Neither is this project maintained together with TOPdesk. Depending on the versi
 * The style now becomes available whenever you visit a TOPdesk operator section.
 
 # How to use
-* Every time you log in to TOPdesk, navigate to [your topdesk domain]/tas/secure/mango/arsenictestmodeswitchon first to make sure these styles work at their full potential.
+* In the Accessibility group of the TOPdesk user settings you can enable the "Support custom colors" setting. 
+  This will cause TOPdesk to provide additional hooks necessary for many of the styles to work.
 * You can configure the colors by clicking the plugin icon, and clicking the gear icon on the "Recoloring TOPdesk operator section" entry.
 * The filter values are used to recolor icons, [the homepage of this project](https://topdesk.github.io/operator-recoloring/) has a form to calculate them for you.

@@ -17,6 +17,15 @@
     Override the colors of the TOPdesk operator section, for accessibility purposes. 
   </p>
 
+  <img
+    class="example" 
+    src="static/recoloring example.png"
+    alt="TOPdesk recolored with the default settings"
+    width="1300"
+    height="1080"
+    loading="lazy"
+  >
+  
   <h2>Purpose</h2>
   <p>
     This project provides styles to be injected into TOPdesk by <a href="https://add0n.com/stylus.html">the stylus browser extension</a>. With this you can change the colors of the TOPdesk operator section to aid with dyslexia, color blindness, contrast sensitivity, etc.
@@ -43,9 +52,47 @@
 
   <h2>How to use</h2>
   <ul>
-    <li>Every time you log in to TOPdesk, navigate to [your topdesk domain]/tas/secure/mango/arsenictestmodeswitchon first to make sure these styles work at their full potential.</li>
-    <li>You can configure the colors by clicking the plugin icon, and clicking the gear icon on the "Recoloring TOPdesk operator section" entry.</li>
-    <li>The filter values are used to recolor icons, use the fields below to calculate them.</li>
+    <li>
+      In the Accessibility group of the TOPdesk user settings you can enable the "Support custom colors" setting. 
+      This will cause TOPdesk to provide additional hooks necessary for many of the styles to work.
+      <aside aria-labelledby="arsenic-aside">
+        <h3 id="arsenic-aside">TOPdesk before 10.05.004</h3>
+        
+        If you are using a TOPdesk version lower than 10.05.004, this setting is not available.
+        In stead, you can navigate to [your topdesk domain]/tas/secure/mango/arsenictestmodeswitchon for the same effect.
+        This will have to be done <strong>once per session</strong>.   
+      </aside>
+      <img
+        class="use-step"
+        src="static/topdesk accessibility settings.png" 
+        alt="The Accessibility group in the TOPdesk user settings" 
+        width="501"
+        height="129"
+        loading="lazy"
+      >
+    </li>
+    <li>
+      You can configure the colors by clicking the plugin icon, and clicking the gear icon on the "Recoloring TOPdesk operator section" entry.
+      <img
+      class="use-step"
+        src="static/stylus popup.png"
+        alt="The stylus popup with 'Recoloring TOPdesk operator section' enabled"
+        width="421"
+        height="281"
+        loading="lazy"
+      >
+    </li>
+    <li>
+      The filter values are used to recolor icons, use the fields below to calculate them.
+      <img
+        class="use-step"
+        src="static/recoloring configuration.png"
+        alt="The stylus configuration popup to set the colors for TOPdesk" 
+        width="460"
+        height="730"
+        loading="lazy"
+      >
+    </li>
   </ul>
     
   <h2 id="palette-header">Choose your palette</h2>
