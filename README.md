@@ -4,24 +4,29 @@ Override the colors of TOPdesk operator section, for accessibility purposes.
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/TOPdesk/operator-recoloring/master/public/topdesk-operator-recoloring.user.css)
 
-# Purpose
+## Purpose
 This project provides styles to be injected into TOPdesk by [the stylus browser extension](https://add0n.com/stylus.html). With this you can change the colors of the TOPdesk operator section to aid with dyslexia, color blindness, contrast sensitivity, etc.
 
 There is no intent to achieve completeness, let alone prettyness, the goal is to help users with visual impairments that may be alleviated by color adjustments.
 
-For example, some buttons use circular icons with a white background. When recoloring, these icons would just turn into a solid circle. As such these icons are left as is.
+For full explanation, plus instructions on how to install and use, see [the homepage of this project](https://topdesk.github.io/operator-recoloring/).
 
-Neither is this project maintained together with TOPdesk. Depending on the version or functionalities of TOPdesk used, your mileage may vary. Feel free to create an issue, or even a merge request, and we will see if it can be addressed.
+## Developing
+
+### Releasing a user style update
+The user style is created by the `create-userstyle.js` rollup plugin. Here the user style metadata and css files are concatenated.
+
+There is no build infrastructure set up at github, so an update for the user style is simply built locally and pushed.
+
+To create an update, change the version number in the `package.json`, and execute `npm run build`. This will create a new version of `topdesk-operator-recoloring.user.css` in the `public` folder.
+
+Stylus should then detect the new version in its periodic check of all installed user styles and update the style for the user automatically.
+Alternatively, the user can direct Stylus to check for updates manually.
 
 
-# How to install
-* Install [Stylus for Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), or [Stylus for Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/).
-* Click the "Install directly with Stylus" badge above.
-* The browser plugin will open in a new tab, click the install button there.
-* The style now becomes available whenever you visit a TOPdesk operator section.
+### Homepage
+The homepage is a static page hosted by github pages, all the files for the homepage are located in the root of the project.
 
-# How to use
-* In the Accessibility group of the TOPdesk user settings you can enable the "Support custom colors" setting. 
-  This will cause TOPdesk to provide additional hooks necessary for many of the styles to work.
-* You can configure the colors by clicking the plugin icon, and clicking the gear icon on the "Recoloring TOPdesk operator section" entry.
-* The filter values are used to recolor icons, [the homepage of this project](https://topdesk.github.io/operator-recoloring/) has a form to calculate them for you.
+Note that the homepage, besides the standard `index.html`, `index.css` and `index.js` also comes with `worker.js`, which calculates  a filter value for a given rgb value.
+
+This calculation is moved off the main thread as it can take a while for the calculation to arrive at a suitable answer.
