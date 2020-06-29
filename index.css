@@ -10,8 +10,43 @@
 }
 
 body {
-  margin: 3rem;
+  margin: 48px;
+  font-family: 'Open Sans', sans-serif;
+  font-display: swap;
+  color: #3A3A3A;
 }
+
+h1 {
+  font-family: 'Bree Serif', serif;
+  font-weight: normal;
+  font-size: 3rem;
+  color: #0A7DA0;
+}
+
+h2 {
+  font-family: 'Bree Serif', serif;
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: 'Bree Serif', serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+a {
+  color: #0A7DA0;
+  font-weight: bold;
+}
+
+
+* + section,
+form {
+  margin-top: 96px;
+}
+
+
 
 .example,
 .use-step {
@@ -25,7 +60,10 @@ body {
   box-shadow: 1.85px 1.85px 5.7px 0px rgba(0,0,0,0.6);
 }
 
-@media (min-width: 800px){
+@media (min-width: 800px) {
+  body {
+    margin: 96px;
+  }
   .example {
     width: 70%;
   }

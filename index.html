@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="description" content="Adjust the colours of the TOPdesk operator’s section with the Stylus extension">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>TOPdesk operator recoloring</title>
   <link rel="stylesheet" href="index.css">
   <script src="index.js" defer></script>
@@ -78,15 +80,15 @@
           <li>In the browser menu bar, click the plugin icon.</li>
           <li>
             Click the gear icon in the "Recoloring TOPdesk operator section" entry. The style configuration opens.
+            <img
+              class="use-step"
+              src="static/stylus popup.png"
+              alt="The stylus popup with the plugin icon and gear icon positions highlighted"
+              width="421"
+              height="163"
+              loading="lazy"
+            >
           </li>
-          <img
-            class="use-step"
-            src="static/stylus popup.png"
-            alt="The stylus popup with the plugin icon and gear icon positions highlighted"
-            width="421"
-            height="163"
-            loading="lazy"
-          >
           <li>Choose your palette. The overview at the bottom of this page shows you where each colour type is used.</li>
           <li>Click <strong>Save</strong>. With the option <strong>On Change</strong> ticked, your changes are saved and applied straight away.</li>
           <li>
@@ -201,7 +203,7 @@
         <div id="surface-sample">Surface</div>
         <div id="primary-sample">Primary</div>
         <div id="error-sample">Error</div>
-        <div id="disabled-sample">Disabled</div>
+        <div id="disabled-sample" aria-disabled="true">Disabled</div>
         <div id="selection-sample">Selection</div>
       </div>
     </section>
