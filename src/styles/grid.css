@@ -64,7 +64,8 @@ div#columnsscroll .column#_status span > .gridicon {
   filter: var(--filter);
 }
 div#columnsscroll .column .normal,
-div#columnsscroll .column .overduechanged {
+div#columnsscroll .column .overduechanged,
+div#columnsscroll .column .overduenew {
   --text-color: var(--on-background);
   --filter: var(--on-background-filter);
 }

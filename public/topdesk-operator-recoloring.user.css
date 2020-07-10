@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        0.9.1
+@version        0.9.2
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -1167,7 +1167,8 @@ div#columnsscroll .column#_status span > .gridicon {
   filter: var(--filter);
 }
 div#columnsscroll .column .normal,
-div#columnsscroll .column .overduechanged {
+div#columnsscroll .column .overduechanged,
+div#columnsscroll .column .overduenew {
   --text-color: var(--on-background);
   --filter: var(--on-background-filter);
 }
