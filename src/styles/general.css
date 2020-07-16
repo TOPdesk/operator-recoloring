@@ -28,7 +28,8 @@ input[type="text"][mtype="combobox"]:focus {
 
 
 /* Page */
-[guielement="toplevelwindow"] {
+[guielement="toplevelwindow"],
+[mstyles="left_side"] {
   background: var(--background);
   --text-color: var(--on-background);
 }
