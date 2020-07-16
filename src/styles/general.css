@@ -34,6 +34,11 @@ input[type="text"][mtype="combobox"]:focus {
   --text-color: var(--on-background);
 }
 
+body > div[guielement="toplevelwindow"] > div[style*="background-color"] {
+  /* Sent emails set background in their style attribute */
+  background: transparent !important;
+}
+
 /* Text */
 [mtype="label"],
 [mtype="rtlabel"] {
