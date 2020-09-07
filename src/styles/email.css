@@ -1,0 +1,75 @@
+/*
+ * Email editor in email actions
+ */
+
+ /* Toolbar */
+div#cke_emailEditor .cke_top {
+  background: var(--surface);
+}
+div#cke_emailEditor .cke_top a.cke_button,
+div#cke_emailEditor .cke_top a.cke_combo_button {
+  filter: var(--on-surface-filter);
+}
+div#cke_emailEditor .cke_top a.cke_button:focus,
+div#cke_emailEditor .cke_top a.cke_button:hover,
+div#cke_emailEditor .cke_top a.cke_combo_button:focus,
+div#cke_emailEditor .cke_top a.cke_combo_button:hover,
+div#cke_emailEditor .cke_top span.cke_combo_on a.cke_combo_button {
+  background: transparent;
+  filter: var(--primary-filter);
+}
+div#cke_emailEditor .cke_top a.cke_button.cke_button_disabled {
+  filter: var(--on-disabled-filter);
+}
+div#cke_emailEditor .cke_top a.cke_button.cke_button_disabled .cke_button_icon,
+div#cke_emailEditor .cke_top a.cke_button.cke_button_disabled .cke_button_arrow {
+  opacity: 1;
+}
+
+html.cke_panel_container .cke_panel_grouptitle {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+
+html.cke_panel_container .cke_panel_list {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+
+html.cke_panel_container .cke_panel_listItem a > * {
+  color: var(--text-color);
+}
+
+html.cke_panel_container .cke_panel_listItem a:hover,
+html.cke_panel_container .cke_panel_listItem a:focus {
+  background: transparent;
+  --text-color: var(--primary);
+}
+
+html.cke_panel_container .cke_panel_listItem.cke_selected a,
+html.cke_panel_container .cke_panel_listItem a:active {
+  background: var(--primary);
+  --text-color: var(--on-primary);
+}
+
+/* Contents */
+div#cke_emailEditor .cke_contents {
+  background: var(--background);
+}
+
+/* 
+ * These rules will cause any color styling in the email to be lost,
+ * But will give an increased chance for the user to be able to read 
+ * it.
+ *
+ * Checking the original style can be done by turning off the style 
+ * in Stylus.
+ */
+body.cke_editable,
+body.cke_editable * {
+  background: var(--background) !important;
+  color: var(--on-background) !important;
+}
+body.cke_editable a {
+  color: var(--primary) !important;
+}

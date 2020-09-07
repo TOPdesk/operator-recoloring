@@ -33,6 +33,7 @@ For full explanation, plus instructions on how to install and use, see [the home
 @import url("http://localhost:5500/src/styles/suggestions.css");
 @import url("http://localhost:5500/src/styles/share.css");
 @import url("http://localhost:5500/src/styles/knowledge-item.css");
+@import url("http://localhost:5500/src/styles/email.css");
 
 :root {
   --background: #0c0c0c;
