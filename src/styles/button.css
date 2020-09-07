@@ -117,39 +117,64 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
     pointer-events: none;
 }
 
+/* Tab bar */
+[mstyles~="header_bar"] [guielement="icon-button"] {
+    filter: var(--on-surface-filter);
+}
+[mstyles~="header_bar"] [guielement="icon-button"]:hover {
+    filter: var(--primary-filter);
+}
 
-/* topdesk menu button */
-[handle="topdesk_menu"] {
-  background: var(--primary);
-  --filter: var(--on-primary-filter);
+/* Quicklaunch buttons */
+div[mtype="group"][mstyles~="ql-button"] {
+  background: transparent;
+  --filter: var(--on-surface-filter);
+  outline-offset: -2px !important;
 }
-[handle="topdesk_menu"]:hover {
-  background: var(--primary-muted);
+div[mtype="group"][mstyles~="ql-button"] > input,
+div[mtype="group"][mstyles~="ql-button"] > input + div[mtype="label"] {
+  filter: var(--filter);
+  background: transparent !important;
 }
-[handle="topdesk_menu"]:active {
+
+div[mtype="group"][mstyles~="ql-button"]:hover,
+div[mtype="group"][mstyles~="ql-button"]:focus {
+  --filter: var(--primary-filter);
+}
+
+div[mtype="group"][mstyles~="ql-button"]:active {
   background: var(--background);
   --filter: var(--primary-filter);
 }
-[handle="topdesk_menu"]>[mtype="label"],
-[handle="topdesk_menu"]>[guielement="icon-button"] {
-  background: transparent;
-  filter: var(--filter);
+
+
+/* topdesk menu button */
+div[handle="topdesk_menu"][mtype="group"][mstyles~="ql-button"] {
+  background: var(--primary);
+  --filter: var(--on-primary-filter);
 }
 
-/* Tab bar, and Quicklaunch buttons */
-[mstyles~="header_bar"] [guielement="icon-button"],
-[handle="tas.reference.search"],
-[handle="cti_menu"],
-[handle="bookmark.overview.title"],
-[handle="quicklaunch_bar_buttons_area"] [mtype="group"]>[mtype="group"]>[mtype="group"][role="button"] {
-    filter: var(--on-surface-filter);
+div[handle="topdesk_menu"][mtype="group"][mstyles~="ql-button"]:hover,
+div[handle="topdesk_menu"][mstyles~="ql-button"]:focus {
+  background: var(--primary-muted);
 }
-[mstyles~="header_bar"] [guielement="icon-button"]:hover,
-[handle="tas.reference.search"]:hover,
-[handle="cti_menu"]:hover,
-[handle="bookmark.overview.title"]:hover,
-[handle="quicklaunch_bar_buttons_area"] [mtype="group"]>[mtype="group"]>[mtype="group"][role="button"]:hover {
-    filter: var(--primary-filter);
+
+div[handle="topdesk_menu"][mtype="group"][mstyles~="ql-button"]:active {
+  background: var(--background);
+  --filter: var(--primary-filter);
+}
+
+div[handle="windowmanagement.quicklaunch.expand"][mtype="group"][mstyles~="ql-button"] > input,
+div[handle="windowmanagement.quicklaunch.expand"][mtype="group"][mstyles~="ql-button"]:hover > input,
+div[handle="windowmanagement.quicklaunch.expand"][mtype="group"][mstyles~="ql-button"]:focus > input,
+div[handle="windowmanagement.quicklaunch.collapse"][mtype="group"][mstyles~="ql-button"] > input,
+div[handle="windowmanagement.quicklaunch.collapse"][mtype="group"][mstyles~="ql-button"]:hover > input,
+div[handle="windowmanagement.quicklaunch.collapse"][mtype="group"][mstyles~="ql-button"]:focus > input,
+div[handle="menu_action_edit"][mtype="group"][mstyles~="ql-button"] > input,
+div[handle="menu_action_edit"][mtype="group"][mstyles~="ql-button"]:hover > input,
+div[handle="menu_action_edit"][mtype="group"][mstyles~="ql-button"]:focus > input {
+  /* These are non-transparent action buttons */
+  filter: none;
 }
 
 button#notifications-icon {
