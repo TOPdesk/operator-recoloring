@@ -10,7 +10,8 @@ body.popup .divpopupcontainer .divpopupclientarea button,
 .suggestionsWidget .suggestionsWidget-toggleButton,
 .suggestionsWidget .suggestionsWidget-newKIButton,
 .suggestionsWidget .help-button,
-.suggestionsWidget .suggestionsWidget-intro .intro-button {
+.suggestionsWidget .suggestionsWidget-intro .intro-button,
+body[cardType="naturalselection"] .button {
     --text-color: var(--on-background);
     --filter: var(--on-background-filter);
     
@@ -36,7 +37,8 @@ body.popup .divpopupcontainer .divpopupclientarea button:hover,
 .suggestionsWidget .suggestionsWidget-toggleButton:hover,
 .suggestionsWidget .suggestionsWidget-newKIButton:hover,
 .suggestionsWidget .help-button:hover,
-.suggestionsWidget .suggestionsWidget-intro .intro-button:hover {
+.suggestionsWidget .suggestionsWidget-intro .intro-button:hover,
+body[cardType="naturalselection"] .button:hover {
     background: var(--on-background);
     border-color: var(--on-background);
     
@@ -51,7 +53,8 @@ body.popup .divpopupcontainer .divpopupclientarea button:active,
 .suggestionsWidget .suggestionsWidget-toggleButton:active,
 .suggestionsWidget .suggestionsWidget-newKIButton:active,
 .suggestionsWidget .help-button:active,
-.suggestionsWidget .suggestionsWidget-intro .intro-button:active {
+.suggestionsWidget .suggestionsWidget-intro .intro-button:active,
+body[cardType="naturalselection"] .button:active {
     background: var(--surface);
     border-color: var(--on-surface);
     

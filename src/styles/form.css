@@ -22,7 +22,9 @@ div[guielement="unittextbox"],
 button[role="checkbox"],
 button[role="radio"],
 textarea[mtype="textarea"],
-textarea.textarea {
+textarea.textarea,
+body[cardType="naturalselection"] input,
+body[cardType="naturalselection"] select {
   --border: var(--on-background);
   --static-filter: var(--on-background-filter);
   --button-filter: var(--on-background-filter);
@@ -82,6 +84,7 @@ textarea.textarea:invalid {
 
 
 /* Combobox dropdown icon */
+body[cardType="naturalselection"] span.arrowdown,
 input[type="text"][mtype="combobox"] + div > img  {
   filter: var(--on-background-filter);
 }
@@ -94,6 +97,7 @@ input[type="text"][mtype="combobox"][mstyles~="error"] + div > img {
 }
 
 /* Combobox options */
+body[cardType="naturalselection"] option,
 [mango_combobox="true"][role="option"] {
   background: var(--background) !important;
   color: var(--on-background) !important;
@@ -129,6 +133,7 @@ button[role="checkbox"] {
 button[role="checkbox"] > img {
   display: none !important;
 }
+
 /* checkmark */
 button[role="checkbox"][aria-checked="true"]::before {
   content: '';
