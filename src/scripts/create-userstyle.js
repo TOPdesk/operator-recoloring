@@ -58,6 +58,7 @@ export default function createUserstyle(version) {
   ${readFileSync(__dirname + '/src/styles/knowledge-item.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/email.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/selection.css', {encoding: 'utf8'})}
+  ${readFileSync(__dirname + '/src/styles/card.css', {encoding: 'utf8'})}
 }
 `
       this.emitFile({

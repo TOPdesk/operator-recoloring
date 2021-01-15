@@ -1,0 +1,23 @@
+/**
+ * Various random things specific to certain cards
+ */
+ 
+/* Partial card info block (Partail Incident, Change Activity)*/
+[guielement="mg-infoblock-content"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+
+[guielement="mg-infoblock-content"] img[guielement="icon"]:first-of-type {
+  filter: var(--on-surface-filter);
+}
+
+/* Change breadcrumb */
+[guielement="change_phase_breadcrumb"] {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+
+[guielement="change_phase_breadcrumb"] > [mtype="label"] {
+  color: var(--text-color) !important;
+}
