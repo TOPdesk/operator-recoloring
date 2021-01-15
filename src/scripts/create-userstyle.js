@@ -44,7 +44,7 @@ export default function createUserstyle(version) {
       const userCss = 
 `${userstyleMetadata(version)}
       
-@-moz-document regexp("http(s)?://.*/tas/secure/.*") {
+@-moz-document regexp("http(s)?://.*/(tas/secure/|services/workflows-v2).*|/services/workflows-v2/.*") {
   ${readFileSync(__dirname + '/src/styles/button.css', { encoding: 'utf8' })}
   ${readFileSync(__dirname + '/src/styles/general.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/tab.css', {encoding: 'utf8'})}

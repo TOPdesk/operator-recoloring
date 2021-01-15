@@ -11,7 +11,8 @@ body.popup .divpopupcontainer .divpopupclientarea button,
 .suggestionsWidget .suggestionsWidget-newKIButton,
 .suggestionsWidget .help-button,
 .suggestionsWidget .suggestionsWidget-intro .intro-button,
-body[cardType="naturalselection"] .button {
+body[cardType="naturalselection"] .button,
+div#checklist .button {
     --text-color: var(--on-background);
     --filter: var(--on-background-filter);
     
@@ -38,7 +39,8 @@ body.popup .divpopupcontainer .divpopupclientarea button:hover,
 .suggestionsWidget .suggestionsWidget-newKIButton:hover,
 .suggestionsWidget .help-button:hover,
 .suggestionsWidget .suggestionsWidget-intro .intro-button:hover,
-body[cardType="naturalselection"] .button:hover {
+body[cardType="naturalselection"] .button:hover,
+div#checklist .button:hover {
     background: var(--on-background);
     border-color: var(--on-background);
     
@@ -54,7 +56,8 @@ body.popup .divpopupcontainer .divpopupclientarea button:active,
 .suggestionsWidget .suggestionsWidget-newKIButton:active,
 .suggestionsWidget .help-button:active,
 .suggestionsWidget .suggestionsWidget-intro .intro-button:active,
-body[cardType="naturalselection"] .button:active {
+body[cardType="naturalselection"] .button:active,
+div#checklist .button:active {
     background: var(--surface);
     border-color: var(--on-surface);
     
@@ -70,7 +73,8 @@ body[cardType="naturalselection"] .button:active {
 [guielement="toolbar_button"][mstyles~="orange"],
 body[cardtype="grid"] #actionbar .button.preferred,
 body.popup .divpopupcontainer .divpopupclientarea button.primary,
-.suggestionsWidget .suggestionsWidget-searchButton {
+.suggestionsWidget .suggestionsWidget-searchButton,
+div#checklist .button.is-primary {
     background: var(--primary);
     border-color: var(--primary);
     
@@ -84,7 +88,8 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary,
 [guielement="toolbar_button"][mstyles~="orange"]:hover,
 body[cardtype="grid"] #actionbar .button.preferred:hover,
 body.popup .divpopupcontainer .divpopupclientarea button.primary:hover,
-.suggestionsWidget .suggestionsWidget-searchButton:hover {
+.suggestionsWidget .suggestionsWidget-searchButton:hover,
+div#checklist .button.is-primary:hover {
     background: var(--primary-muted);
     border-color: var(--primary-muted);
     
@@ -98,7 +103,8 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary:hover,
 [guielement="toolbar_button"][mstyles~="orange"]:active,
 body[cardtype="grid"] #actionbar .button.preferred:active,
 body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
-.suggestionsWidget .suggestionsWidget-searchButton:active {
+.suggestionsWidget .suggestionsWidget-searchButton:active,
+div#checklist .button.is-primary:active {
     background: var(--on-primary);
     border-color: var(--primary);
     
@@ -110,7 +116,9 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
 [mtype="button"][disabled="true"],
 [mtype="button"][disabled="true"]:hover,
 [guielement="toolbar_button"][disabled="true"],
-[guielement="toolbar_button"][disabled="true"]:hover {
+[guielement="toolbar_button"][disabled="true"]:hover,
+div#checklist .button[disabled],
+div#checklist .button[disabled]:hover {
     background: var(--disabled);
     border-color: var(--on-disabled);
     
