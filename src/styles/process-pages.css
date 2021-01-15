@@ -196,103 +196,100 @@ div#app {
 
 
 /* Subwidgets */
-.service-excellence-widget-frame,
-.service-excellence-widget-frame:hover,
-.getting-started-widget-frame,
-.getting-started-widget-frame:hover,
-.task-board-widget-frame,
-.task-board-widget-frame:hover {
+.widget-container .service-excellence-widget-frame,
+.widget-container .service-excellence-widget-frame:hover,
+.widget-container .getting-started-widget-frame,
+.widget-container .getting-started-widget-frame:hover,
+.widget-container .task-board-widget-frame,
+.widget-container .task-board-widget-frame:hover {
     background: var(--surface);
 }
 /* header */
-.service-excellence-widget-frame h1,
-.getting-started-widget-frame h1,
-.task-board-widget-frame h1 {
+.widget-container .service-excellence-widget-frame h1,
+.widget-container .getting-started-widget-frame h1,
+.widget-container .task-board-widget-frame h1 {
     color: var(--on-surface);
 }
 
 /* Service excellence subwidget */
 /* view more blogs link */
-.service-excellence-widget-frame a {
+.widget-container .service-excellence-widget-frame a {
     color: var(--primary);
 }
-.service-excellence-widget-frame a:hover {
+.widget-container .service-excellence-widget-frame a:hover {
     color: var(--primary-muted);
 }
 /* blog item */
-.service-excellence-widget-frame .accordion.is-active,
-.service-excellence-widget-frame .accordion.is-active .accordion-body {
-    background: var(--surface);
+.widget-container .service-excellence-widget-frame .rss-item a {
+  background: var(--surface);
+  --text-color: var(--on-surface);
 }
-.service-excellence-widget-frame .accordion .accordion-header .rss-title-text,
-.service-excellence-widget-frame .accordion .accordion-header .display-date,
-.service-excellence-widget-frame .accordion.is-active .accordion-header .display-date,
-.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > span {
-    color: var(--on-surface);
+
+.widget-container .service-excellence-widget-frame .rss-item a:focus,
+.widget-container .service-excellence-widget-frame .rss-item a:hover {
+  background: var(--on-surface);
+  --text-color: var(--surface);
 }
-/* blog item more link */
-.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > span::after {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 70%, var(--surface) 80%);
-}
-.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > a {
-    color: var(--primary);
-}
-.service-excellence-widget-frame .accordion .accordion-body.rss-item-description .accordion-content > div > a:hover {
-    color: var(--primary-muted);
+
+.widget-container .service-excellence-widget-frame .rss-item .rss-item-body .rss-item-content > div .fade-out-text,
+.widget-container .service-excellence-widget-frame .rss-item .rss-item-header .rss-title-text,
+.widget-container .service-excellence-widget-frame .rss-item .rss-item-header .display-date {
+    color: var(--text-color);
 }
 
 /* Getting started subwidget */
-.getting-started-widget-frame .getting-started-widget .playlist li,
-.getting-started-widget-frame .getting-started-widget .playlist li .video-title {
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li,
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li .video-title {
     color: var(--on-surface);
 }
-.getting-started-widget-frame .getting-started-widget .playlist li.playing,
-.getting-started-widget-frame .getting-started-widget .playlist li.playing .video-title{
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li.playing,
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li.playing .video-title{
     background: var(--primary);
     color: var(--on-primary);
 }
-.getting-started-widget-frame .getting-started-widget .playlist li a:hover,
-.getting-started-widget-frame .getting-started-widget .playlist li a:hover .video-title,
-.getting-started-widget-frame .getting-started-widget .playlist li a:focus,
-.getting-started-widget-frame .getting-started-widget .playlist li a:focus .video-title {
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:hover,
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:hover .video-title,
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:focus,
+.widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:focus .video-title {
     background: var(--on-surface);
     color: var(--surface);
 }
 
 
 /* My calls subwidget */
-.task-board-widget-frame .task-board-widget a {
+.widget-container .task-board-widget-frame .task-board-widget a {
     --text-color: var(--on-surface);
 }
-.task-board-widget-frame .task-board-widget a .td-icon,
-.task-board-widget-frame .task-board-widget a .content .title,
-.task-board-widget-frame .task-board-widget a .content .request,
-.task-board-widget-frame .task-board-widget a .content .request span,
-.task-board-widget-frame .task-board-widget a .display-date,
-.task-board-widget-frame .task-board-widget a .display-date .td-icon {  
+.widget-container .task-board-widget-frame .task-board-widget a .td-icon,
+.widget-container .task-board-widget-frame .task-board-widget a .content .title,
+.widget-container .task-board-widget-frame .task-board-widget a .content .request,
+.widget-container .task-board-widget-frame .task-board-widget a .content .request span,
+.widget-container .task-board-widget-frame .task-board-widget a .display-date,
+.widget-container .task-board-widget-frame .task-board-widget a .display-date .td-icon {  
     color: var(--text-color);
 }
-.task-board-widget-frame .task-board-widget a:hover,
-.task-board-widget-frame .task-board-widget a:focus {
+.widget-container .task-board-widget-frame .task-board-widget a:hover,
+.widget-container .task-board-widget-frame .task-board-widget a:focus {
     background: var(--on-surface);
     --text-color: var(--surface);
 }
-.task-board-widget-frame .task-board-widget .overview-link {
+.widget-container .task-board-widget-frame .task-board-widget .overview-link a {
     color: var(--primary);
 }
-.task-board-widget-frame .task-board-widget .overview-link:hover {
+.widget-container .task-board-widget-frame .task-board-widget .overview-link a:hover {
+    background: none;
     color: var(--primary-muted);
 }
-.task-board-widget-frame .task-board-widget .update-area {
+.widget-container .task-board-widget-frame .task-board-widget .update-area {
     color: var(--on-surface);
 }
-.task-board-widget-frame .task-board-widget .update-area button svg {
+.widget-container .task-board-widget-frame .task-board-widget .update-area button svg {
     color: var(--on-surface);
 }
-.task-board-widget-frame .task-board-widget .update-area button:hover {
+.widget-container .task-board-widget-frame .task-board-widget .update-area button:hover {
     background: var(--on-surface);
 }
-.task-board-widget-frame .task-board-widget .update-area button:hover svg {
+.widget-container .task-board-widget-frame .task-board-widget .update-area button:hover svg {
     color: var(--surface);
 }
 
