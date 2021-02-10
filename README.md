@@ -15,7 +15,9 @@ For full explanation, plus instructions on how to install and use, see [the home
 
 ### Running locally
 1. Use any static fileserver, e.g. the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for VS Code, to serve the css files in the `styles` folder.
-1. Create a new style in Stylus, and set the **Applies to** field to `http(s)?://.*/tas/secure/.*`, to prevent browser slowdown when the fileserver is down and you left the style on. 
+1. Create a new style in Stylus, and set the **Applies to** field to `http(s)?://.*/(tas/secure/|services/workflows-v2).*|about:blank|/services/workflows-v2/.*`.
+    * To simulate the production environment.
+    * And, if the style is applied to all webpages, you'll notice significant browser slowdown when the fileserver is down and you accidentally left the style on.
 1. Copy the following code into the style, and adjust the import url's if necessary.
 1. Enable the new style when in your TOPdesk environment (and make sure other styles are off).
 1. Make sure to enable the **Support custom colors** settings for your test user.
