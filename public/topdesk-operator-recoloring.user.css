@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        1.1.0
+@version        1.2.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -34,7 +34,7 @@
 ==/UserStyle== */
 
       
-@-moz-document regexp("http(s)?://.*/tas/secure/.*") {
+@-moz-document regexp("http(s)?://.*/(tas/secure/|services/workflows-v2).*|/services/workflows-v2/.*|about:blank") {
   /*
  * Button
  */
@@ -48,14 +48,14 @@ body.popup .divpopupcontainer .divpopupclientarea button,
 .suggestionsWidget .suggestionsWidget-newKIButton,
 .suggestionsWidget .help-button,
 .suggestionsWidget .suggestionsWidget-intro .intro-button,
-body[cardType="naturalselection"] .button {
+body[cardType="naturalselection"] .button,
+div#checklist .button {
     --text-color: var(--on-background);
     --filter: var(--on-background-filter);
     
     background: var(--background);
     border-color: var(--on-background);
     color: var(--text-color);
-
 }
 [guielement="toolbar_button"] > [guielement="toolbar_button_label"] {
     color: var(--text-color);
@@ -75,7 +75,8 @@ body.popup .divpopupcontainer .divpopupclientarea button:hover,
 .suggestionsWidget .suggestionsWidget-newKIButton:hover,
 .suggestionsWidget .help-button:hover,
 .suggestionsWidget .suggestionsWidget-intro .intro-button:hover,
-body[cardType="naturalselection"] .button:hover {
+body[cardType="naturalselection"] .button:hover,
+div#checklist .button:hover {
     background: var(--on-background);
     border-color: var(--on-background);
     
@@ -91,7 +92,8 @@ body.popup .divpopupcontainer .divpopupclientarea button:active,
 .suggestionsWidget .suggestionsWidget-newKIButton:active,
 .suggestionsWidget .help-button:active,
 .suggestionsWidget .suggestionsWidget-intro .intro-button:active,
-body[cardType="naturalselection"] .button:active {
+body[cardType="naturalselection"] .button:active,
+div#checklist .button:active {
     background: var(--surface);
     border-color: var(--on-surface);
     
@@ -107,7 +109,8 @@ body[cardType="naturalselection"] .button:active {
 [guielement="toolbar_button"][mstyles~="orange"],
 body[cardtype="grid"] #actionbar .button.preferred,
 body.popup .divpopupcontainer .divpopupclientarea button.primary,
-.suggestionsWidget .suggestionsWidget-searchButton {
+.suggestionsWidget .suggestionsWidget-searchButton,
+div#checklist .button.is-primary {
     background: var(--primary);
     border-color: var(--primary);
     
@@ -121,7 +124,8 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary,
 [guielement="toolbar_button"][mstyles~="orange"]:hover,
 body[cardtype="grid"] #actionbar .button.preferred:hover,
 body.popup .divpopupcontainer .divpopupclientarea button.primary:hover,
-.suggestionsWidget .suggestionsWidget-searchButton:hover {
+.suggestionsWidget .suggestionsWidget-searchButton:hover,
+div#checklist .button.is-primary:hover {
     background: var(--primary-muted);
     border-color: var(--primary-muted);
     
@@ -135,7 +139,8 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary:hover,
 [guielement="toolbar_button"][mstyles~="orange"]:active,
 body[cardtype="grid"] #actionbar .button.preferred:active,
 body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
-.suggestionsWidget .suggestionsWidget-searchButton:active {
+.suggestionsWidget .suggestionsWidget-searchButton:active,
+div#checklist .button.is-primary:active {
     background: var(--on-primary);
     border-color: var(--primary);
     
@@ -147,7 +152,9 @@ body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
 [mtype="button"][disabled="true"],
 [mtype="button"][disabled="true"]:hover,
 [guielement="toolbar_button"][disabled="true"],
-[guielement="toolbar_button"][disabled="true"]:hover {
+[guielement="toolbar_button"][disabled="true"]:hover,
+div#checklist .button[disabled],
+div#checklist .button[disabled]:hover {
     background: var(--disabled);
     border-color: var(--on-disabled);
     
@@ -555,7 +562,8 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
  */
 [guielement="topdesk-menu"],
 [guielement="topdesk-submenu"],
-[guielement="toolbar_menu"] {
+[guielement="toolbar_menu"],
+div#checklist div.menu {
   background: var(--surface);
 }
 [guielement="topdesk-submenu"] {
@@ -564,7 +572,8 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 
 /* Default */
 [guielement="topdesk-menu-item"],
-[guielement="toolbar_menu_button"] {
+[guielement="toolbar_menu_button"],
+div#checklist div.menu [role="button"] {
   background: var(--surface);
   --text-color: var(--on-surface);
   --filter: var(--on-surface-filter);
@@ -578,9 +587,14 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
   filter: var(--filter);
 }
 
+div#checklist div.menu [role="button"] {
+  color: var(--text-color);
+}
+
 /* Hover */
 [guielement="topdesk-menu-item"]:hover,
-[guielement="toolbar_menu_button"]:hover {
+[guielement="toolbar_menu_button"]:hover,
+div#checklist div.menu [role="button"]:hover {
   background: var(--on-surface);
   --text-color: var(--surface);
   --filter: var(--surface-filter);
@@ -588,7 +602,8 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 
 /* Focus */
 [guielement="topdesk-menu-item"]:focus,
-[guielement="toolbar_menu_button"]:focus {
+[guielement="toolbar_menu_button"]:focus,
+div#checklist div.menu [role="button"]:focus {
   outline: none !important;
   background: var(--on-surface);
   --text-color: var(--surface);
@@ -597,7 +612,8 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 
 /* Disabled */
 [guielement="topdesk-menu-item"][disabled="true"],
-[guielement="toolbar_menu_button"][disabled="true"] {
+[guielement="toolbar_menu_button"][disabled="true"],
+div#checklist div.menu [role="button"][aria-disabled="true"] {
   background: var(--disabled);
   --text-color: var(--on-disabled);
   --filter: var(--on-disabled-filter);
@@ -605,7 +621,8 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 
 /* Separators */
 [guielement="topdesk-menu-separator"],
-[guielement="toolbar_menu_group"] {
+[guielement="toolbar_menu_group"],
+div#checklist div.menu li .separator {
   border-color: var(--on-surface);
 }
 
@@ -2028,7 +2045,9 @@ body[cardType="naturalselection"] .checkboxlayouter:not(#ie8) input.checkbox:che
  * Various random things specific to certain cards
  */
  
-/* Partial card info block (Partail Incident, Change Activity)*/
+/* 
+ * Partial card info block (Partail Incident, Change Activity)
+ */
 [guielement="mg-infoblock-content"] {
   background: var(--surface);
   --text-color: var(--on-surface);
@@ -2038,7 +2057,9 @@ body[cardType="naturalselection"] .checkboxlayouter:not(#ie8) input.checkbox:che
   filter: var(--on-surface-filter);
 }
 
-/* Change breadcrumb */
+/* 
+ * Change breadcrumb
+ */
 [guielement="change_phase_breadcrumb"] {
   background: var(--surface);
   --text-color: var(--on-surface);
@@ -2046,5 +2067,213 @@ body[cardType="naturalselection"] .checkboxlayouter:not(#ie8) input.checkbox:che
 
 [guielement="change_phase_breadcrumb"] > [mtype="label"] {
   color: var(--text-color) !important;
+}
+
+/*
+ * Checklist
+ */
+div#checklist {
+  background: var(--background);
+  
+  --text-color: var(--on-background);
+  
+  color: var(--text-color);
+}
+
+div#checklist .explanation-text,
+div#checklist .checked-amount,
+div#checklist .the-text {
+  color: var(--text-color);
+}
+
+div#checklist .subtask-header .actions [role="button"] .icon.details,
+div#checklist .subtask-header .actions button.date-button,
+div#checklist .subtask-header .actions button.menu-button,
+div#checklist .subtask-header .operator-and-date button {
+  color: var(--text-color);
+}
+
+div#checklist .subtask-header .actions [role="button"]:hover .icon.details,
+div#checklist .subtask-header .actions [role="button"]:focus .icon.details,
+div#checklist .subtask-header .actions [role="button"] .icon.details.currently-edited,
+div#checklist .subtask-header .actions button.date-button:hover,
+div#checklist .subtask-header .actions button.menu-button:hover,
+div#checklist .subtask-header .actions button.menu-button:focus,
+div#checklist .subtask-header .actions button.date-button:focus,
+div#checklist .subtask-header .actions button.date-button.currently-edited,
+div#checklist .subtask-header .operator-and-date button:hover,
+div#checklist .subtask-header .operator-and-date button:focus {
+  color: var(--primary) !important;
+}
+
+div#checklist .subtask-header.hover,
+div#checklist .subtask-header.hover .actions.hover {
+  background: var(--on-background) !important;
+  --text-color: var(--background);
+} 
+
+/* Context menu, Confirm, and Cancel buttons*/
+div#checklist [role="button"] .icon.circle,
+div#checklist button.menu-button .border,
+div#checklist .modal-card.popup .close {
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+div#checklist [role="button"][aria-disabled="true"] .icon.circle {
+  --text-color: var(--disabled);
+  background: none;
+}
+
+div#checklist [role="button"]:hover .icon.circle,
+div#checklist [role="button"]:focus .icon.circle,
+div#checklist button.menu-button:hover .border,
+div#checklist button.menu-button:focus .border,
+div#checklist .modal-card.popup .close:hover,
+div#checklist .modal-card.popup .close:focus {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+/* Checkboxes */
+div#checklist .check-container .check {
+  background: var(--background);
+  color: var(--on-background);
+}
+
+/* Template select */
+div#checklist ul#templateList li.template-entry.selected {
+  background: var(--selection);
+  color: var(--on-selection);
+}
+
+div#checklist ul#templateList li.template-entry:hover {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+/* Modal popup */
+div#checklist .modal-card.popup .modal-card-head,
+div#checklist .modal-card.popup .modal-card-body,
+div#checklist .modal-card.popup .modal-card-foot {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+} 
+div#checklist .modal-card.popup .modal-card-title {
+  color: var(--on-surface);
+}
+
+/* Assign operator dialog & Date picker dialog*/
+div#checklist [role="dialog"],
+div#checklist .date-picker-popup,
+div#checklist .date-picker-popup .date-picker-footer {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+  color: var(--text-color);
+}
+
+div#checklist [role="dialog"] li {
+  color: var(--on-surface);
+}
+
+div#checklist [role="dialog"] li[role="option"]:hover {
+  background: var(--on-surface);
+  color: var(--surface);
+}
+
+div#checklist [role="dialog"] button.change-assignee-popover-action-button,
+div#checklist .date-picker-popup .td-reset-date button,
+div#checklist .date-picker-popup button.td-date-time-input-go-to-today {
+  background: none;
+  color: var(--primary);
+}
+div#checklist [role="dialog"] button.change-assignee-popover-action-button:hover,
+div#checklist [role="dialog"] button.change-assignee-popover-action-button:focus,
+div#checklist .date-picker-popup .td-reset-date button:hover,
+div#checklist .date-picker-popup .td-reset-date button:focus,
+div#checklist .date-picker-popup button.td-date-time-input-go-to-today:hover,
+div#checklist .date-picker-popup button.td-date-time-input-go-to-today:focus {
+  color: var(--primary-muted) !important;
+}
+div#checklist [role="dialog"] button.change-assignee-popover-action-button:active,
+div#checklist .date-picker-popup .td-reset-date button:active,
+div#checklist .date-picker-popup button.td-date-time-input-go-to-today:active {
+  background: var(--primary);
+  color: var(--on-primary) !important;
+}
+
+div#checklist .td-date-picker-container {
+  background: var(--background);
+}
+
+div#checklist .help.is-danger {
+  color: var(--error);
+}
+
+div#checklist .td-date-picker {
+  color: var(--on-background);
+}
+
+div#checklist .td-date-picker-controls-container .td-date-picker-controls-current-date {
+  color: var(--on-background);
+}
+
+div#checklist .td-date-picker .td-date-picker-header-cell {
+  background: var(--background);
+  color: var(--on-background);
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content.selectable {
+  color: var(--on-background);
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content.weekend {
+  background-color: var(--disabled);
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content:not(.currentMonth) {
+  color: var(--on-disabled);
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content.today {
+  border: 1px solid var(--primary-muted) !important;
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content.focused {
+  border: 2px solid var(--primary) !important;
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content.selected {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+
+div#checklist .td-date-picker .td-date-picker-cell .td-date-picker-cell-content:hover.selectable {
+  background-color: var(--primary-muted) ;
+  color: var(--on-primary);
+}
+
+div#checklist .date-and-time .control input + .icon {
+  color: var(--on-background);
+}
+
+div#checklist .date-and-time .control input:focus {
+  border-color: var(--on-background);
+  box-shadow: none;
+}
+
+div#checklist .date-and-time .control input:focus + .icon {
+  z-index: 1000; 
+}
+
+div#checklist .date-and-time .control input[aria-invalid="true"] {
+  background: var(--background);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+div#checklist .date-and-time .control input[aria-invalid="true"] + .icon {
+  color: var(--error);
 }
 }
