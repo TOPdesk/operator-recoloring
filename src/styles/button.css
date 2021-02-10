@@ -19,7 +19,6 @@ div#checklist .button {
     background: var(--background);
     border-color: var(--on-background);
     color: var(--text-color);
-
 }
 [guielement="toolbar_button"] > [guielement="toolbar_button_label"] {
     color: var(--text-color);
