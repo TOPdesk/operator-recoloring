@@ -35,7 +35,8 @@
 
 
 /* Links */
-[guielement="pt-request-container"] a {
+[guielement="pt-request-container"] div[rt] a,
+[guielement="pt-request-container"] a /* Support for versions before october 2020 */ {
   color: var(--primary);
 }
 
@@ -83,7 +84,8 @@
 [guielement="pt-trail-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] a {
   color: var(--on-primary);
 }
-[guielement="pt-trail-container"] a,
+[guielement="pt-trail-container"] div[rt] a,
+[guielement="pt-trail-container"] a, /* Support for versions before october 2020 */
 [guielement="pt-trail-container"] [guielement="pt-linkbutton"] {
   color: var(--primary);
 }

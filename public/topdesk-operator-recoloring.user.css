@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        1.2.0
+@version        1.2.1
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -85,7 +85,7 @@ div#checklist .button:hover {
 }
 
 [mtype="button"]:not([guielement="hyperlink"]):active,
-[guielement="toolbar_button"]:active
+[guielement="toolbar_button"]:active,
 body[cardtype="grid"] #actionbar .button:active,
 body.popup .divpopupcontainer .divpopupclientarea button:active,
 .suggestionsWidget .suggestionsWidget-toggleButton:active,
@@ -688,7 +688,8 @@ body[cardtype="grid"] .more-menu .menu-item:focus {
 
 
 /* Links */
-[guielement="pt-request-container"] a {
+[guielement="pt-request-container"] div[rt] a,
+[guielement="pt-request-container"] a /* Support for versions before october 2020 */ {
   color: var(--primary);
 }
 
@@ -736,7 +737,8 @@ body[cardtype="grid"] .more-menu .menu-item:focus {
 [guielement="pt-trail-container"] [guielement="pt-memo"][mstyles~="pt-flagged"] a {
   color: var(--on-primary);
 }
-[guielement="pt-trail-container"] a,
+[guielement="pt-trail-container"] div[rt] a,
+[guielement="pt-trail-container"] a, /* Support for versions before october 2020 */
 [guielement="pt-trail-container"] [guielement="pt-linkbutton"] {
   color: var(--primary);
 }

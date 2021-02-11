@@ -1,6 +1,6 @@
 {
   "name": "topdesk-operator-recoloring",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Override the colors of TOPdesk operator section, for accessibility purposes.",
   "repository": {
     "type": "git",
