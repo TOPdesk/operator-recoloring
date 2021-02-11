@@ -48,7 +48,7 @@ div#checklist .button:hover {
 }
 
 [mtype="button"]:not([guielement="hyperlink"]):active,
-[guielement="toolbar_button"]:active
+[guielement="toolbar_button"]:active,
 body[cardtype="grid"] #actionbar .button:active,
 body.popup .divpopupcontainer .divpopupclientarea button:active,
 .suggestionsWidget .suggestionsWidget-toggleButton:active,
