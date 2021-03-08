@@ -108,6 +108,18 @@ a:hover,
 [guielement="popup-header"] {
   border-color: var(--on-surface);
 }
+[guielement="popup-body"] [mstyles~="memo_readonly_area"][mstyles~="popup-body-content"] {
+  background: transparent;
+  color: var(--text-color);
+}
+[guielement="popup-body"] [mstyles~="memo_readonly_area"][mstyles~="popup-body-content"] [mtype="label"]:hover {
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+}
+[guielement="popup-body"] [mstyles~="memo_readonly_area"][mstyles~="popup-body-content"] [mtype="label"][mstyles~="selected"] {
+  background: var(--primary);
+  --text-color: var(--on-primary);
+}
 [guielement="popup-footer"] {
   background: var(--surface);
   border-color: var(--on-surface);

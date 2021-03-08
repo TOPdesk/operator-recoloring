@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        1.2.1
+@version        1.3.1
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -416,6 +416,18 @@ a:hover,
 }
 [guielement="popup-header"] {
   border-color: var(--on-surface);
+}
+[guielement="popup-body"] [mstyles~="memo_readonly_area"][mstyles~="popup-body-content"] {
+  background: transparent;
+  color: var(--text-color);
+}
+[guielement="popup-body"] [mstyles~="memo_readonly_area"][mstyles~="popup-body-content"] [mtype="label"]:hover {
+  background: var(--primary-muted);
+  --text-color: var(--on-primary);
+}
+[guielement="popup-body"] [mstyles~="memo_readonly_area"][mstyles~="popup-body-content"] [mtype="label"][mstyles~="selected"] {
+  background: var(--primary);
+  --text-color: var(--on-primary);
 }
 [guielement="popup-footer"] {
   background: var(--surface);
