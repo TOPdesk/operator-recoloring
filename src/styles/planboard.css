@@ -210,10 +210,6 @@
 }
 
 /* Popups */
-[handle="planboard_popup"] + [guielement="subwindow"] > img {
-  filter: var(--surface-filter);
-}
-
 [handle="planboard_popup"] [guielement="planner_popup_window"],
 [handle="planboard_popup"] [guielement="planboard_popup_header"],
 [handle="planboard_popup"] [guielement="planboard_popup_footer"] {

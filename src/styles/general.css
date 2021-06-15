@@ -66,11 +66,13 @@ body > div[guielement="toplevelwindow"] > div[style*="background-color"] {
 
 /* Link */
 a,
-[guielement="hyperlink"] {
+[guielement="hyperlink"],
+[mtype="label"][mstyles~="link_label"] {
   color: var(--primary);
 }
 a:hover,
-[guielement="hyperlink"]:hover {
+[guielement="hyperlink"]:hover,
+[mtype="label"][mstyles~="link_label"]:hover {
   color: var(--primary-muted);
 }
 
@@ -101,6 +103,11 @@ a:hover,
 }
 
 /* Popup */
+[guielement="subwindow"] > img:only-child {
+  /* The pointer triangle used in some popups */
+  filter: var(--on-background-filter);
+}
+
 [guielement="popup"] {
   background: var(--surface);
   --text-color: var(--on-surface);
