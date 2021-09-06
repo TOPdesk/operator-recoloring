@@ -15,54 +15,44 @@ For full explanation, plus instructions on how to install and use, see [the home
 
 ### Running locally
 1. Use any static fileserver, e.g. the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for VS Code, to serve the css files in the `styles` folder.
-1. Create a new style in Stylus, and set the **Applies to** field to `http(s)?://.*/(tas/secure/|services/workflows-v2).*|about:blank|/services/workflows-v2/.*`.
-    * To simulate the production environment.
-    * And, if the style is applied to all webpages, you'll notice significant browser slowdown when the fileserver is down and you accidentally left the style on.
-1. Copy the following code into the style, and adjust the import url's if necessary.
+1. Click the stylus extension button, and choose **Manage**.
+1. Under "Actions" click **Write new style**. Make sure the **as Usercss** checkbox is disabled.
+1. Give the new style a name, e.g. Local test recoloring.
+1. Click the **Import** button, a popup will appear with the title "Paste the Mozilla-format code".
+1. Copy the code below into the popup, adjust import url's if necessary.
+1. Click **Overwrite style**, the popup will close and a section will be created for each "@-moz-document" rule.
+1. Click **Save**.
 1. Enable the new style when in your TOPdesk environment (and make sure other styles are off).
 1. Make sure to enable the **Support custom colors** settings for your test user.
 
-
 ```css
-@import url("http://localhost:5500/src/styles/general.css");
-@import url("http://localhost:5500/src/styles/tab.css");
-@import url("http://localhost:5500/src/styles/button.css");
-@import url("http://localhost:5500/src/styles/menu.css");
-@import url("http://localhost:5500/src/styles/form.css");
-@import url("http://localhost:5500/src/styles/feed.css");
-@import url("http://localhost:5500/src/styles/process-pages.css");
-@import url("http://localhost:5500/src/styles/grid.css");
-@import url("http://localhost:5500/src/styles/suggestions.css");
-@import url("http://localhost:5500/src/styles/share.css");
-@import url("http://localhost:5500/src/styles/knowledge-item.css");
-@import url("http://localhost:5500/src/styles/email.css");
-@import url("http://localhost:5500/src/styles/selection.css");
-
-:root {
-  --background: #0c0c0c;
-  --background-filter: brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%);
-  --on-background: #fcfcfc;
-  --on-background-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%);
-  --selection: rgba(252, 252, 252, 0.99);
-  --on-selection: #0c0c0c;
-  --surface: #404040;
-  --surface-filter: brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%);
-  --on-surface: #fcfcfc;
-  --on-surface-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%);
-  --disabled: #404040;
-  --disabled-filter: brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%);
-  --on-disabled: #8c8c8c ;
-  --on-disabled-filter: brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(407%) hue-rotate(172deg) brightness(89%) contrast(89%);
-  --primary: #eda911;
-  --primary-filter: brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(1479%) hue-rotate(354deg) brightness(97%) contrast(92%);
-  --primary-muted: #d5970e;
-  --primary-muted-filter: brightness(0) saturate(100%) invert(66%) sepia(52%) saturate(3051%) hue-rotate(7deg) brightness(95%) contrast(89%);
-  --on-primary: #0c0c0c;
-  --on-primary-filter:  brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%);
-  --error: #FF0070;
-  --error-filter: brightness(0) saturate(100%) invert(16%) sepia(54%) saturate(7483%) hue-rotate(326deg) brightness(100%) contrast(109%);
-  --on-error: #0c0c0c;
-  --on-error-filter: brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%);
+@-moz-document 
+    regexp("http(s)?://.*/tas/secure/mango/.*"),
+    regexp("http(s)?://.*/services/workflows-v2.*"),
+    regexp("http(s)?://.*/tas/secure/grid.*"),
+    regexp("http(s)?://.*/tas/secure/.*?action=.*"),
+    regexp("http(s)?://.*/tas/secure/suggestions/.*"),
+    regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
+    regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
+    regexp("http(s)?://.*/tas/secure/assetmgmt/.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+  
+  @import url("http://localhost:5500/src/styles/button.css");
+  @import url("http://localhost:5500/src/styles/general.css");
+  @import url("http://localhost:5500/src/styles/tab.css");
+  @import url("http://localhost:5500/src/styles/menu.css");
+  @import url("http://localhost:5500/src/styles/feed.css");
+  @import url("http://localhost:5500/src/styles/process-pages.css");
+  @import url("http://localhost:5500/src/styles/grid.css");
+  @import url("http://localhost:5500/src/styles/suggestions.css");
+  @import url("http://localhost:5500/src/styles/share.css");
+  @import url("http://localhost:5500/src/styles/form.css");
+  @import url("http://localhost:5500/src/styles/knowledge-item.css");
+  @import url("http://localhost:5500/src/styles/email.css");
+  @import url("http://localhost:5500/src/styles/selection.css");
+  @import url("http://localhost:5500/src/styles/card.css");
+  @import url("http://localhost:5500/src/styles/planboard.css");
+  @import url("http://localhost:5500/src/styles/reservations.css");
 }
 ```
 

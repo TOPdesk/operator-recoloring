@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        1.5.0
+@version        2.0.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -33,8 +33,14 @@
 @var text on-error-filter "On error filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
 ==/UserStyle== */
 
-      
-@-moz-document regexp("http(s)?://.*/(tas/secure/|services/workflows-v2).*|/services/workflows-v2/.*|about:blank") {
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
+               regexp("http(s)?://.*/services/workflows-v2.*"),
+               regexp("http(s)?://.*/tas/secure/grid.*"),
+               regexp("http(s)?://.*/tas/secure/.*?action=.*"),
+               regexp("http(s)?://.*/tas/secure/suggestions/.*"),
+               regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
+               regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
+               regexp("http(s)?://.*/tas/secure/assetmgmt/.*") {
   /*
  * Button
  */

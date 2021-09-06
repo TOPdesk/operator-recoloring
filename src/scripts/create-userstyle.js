@@ -43,8 +43,14 @@ export default function createUserstyle(version) {
     async generateBundle(_options, bundle) {
       const userCss = 
 `${userstyleMetadata(version)}
-      
-@-moz-document regexp("http(s)?://.*/(tas/secure/|services/workflows-v2).*|/services/workflows-v2/.*|about:blank") {
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
+               regexp("http(s)?://.*/services/workflows-v2.*"),
+               regexp("http(s)?://.*/tas/secure/grid.*"),
+               regexp("http(s)?://.*/tas/secure/.*?action=.*"),
+               regexp("http(s)?://.*/tas/secure/suggestions/.*"),
+               regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
+               regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
+               regexp("http(s)?://.*/tas/secure/assetmgmt/.*") {
   ${readFileSync(__dirname + '/src/styles/button.css', { encoding: 'utf8' })}
   ${readFileSync(__dirname + '/src/styles/general.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/tab.css', {encoding: 'utf8'})}
