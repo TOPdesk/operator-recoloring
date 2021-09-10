@@ -54,6 +54,12 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/planboard.css");
   @import url("http://localhost:5500/src/styles/reservations.css");
 }
+
+@-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+  
+  @import url("http://localhost:5500/src/styles/agileboard.css");
+}
 ```
 
 

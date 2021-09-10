@@ -1,0 +1,674 @@
+body {
+  background: var(--background) !important;
+  
+  --outline-color: var(--on-background);
+  --text-color: var(--on-background);
+}
+
+:is(h1, h2, h3, h4, h5, h6).title {
+  color: var(--text-color) !important;
+}
+div.title.is-5 {
+  /* Assign to "heading" in the 'Create note' popup */
+  color: var(--text-color);
+}
+
+p.label {
+  color: var(--text-color);
+}
+.choose-board label.filterlabel {
+  /* choose board select label */
+  color: var(--text-color);
+}
+
+a.has-text-link {
+  color: var(--primary) !important;
+}
+a.has-text-link:hover {
+  background: var(--on-background);
+  color: var(--background) !important;
+}
+a.has-text-link:focus {
+  outline: 2px solid var(--outline-color);
+  color: var(--primary) !important;
+}
+
+#board-data-with-side-panel .resizable-container .resizer {
+  /* resize handle between board and sidebar */
+  border-color: var(--on-background);
+}
+
+/*
+ * Top row link buttons
+ */
+.filter-button > i.icon,
+.filter-button > a,
+.all-boards-button > i.icon,
+.all-boards-button > a {
+  color: var(--text-color) !important;
+}
+.filter-button > a,
+.all-boards-button > a {
+  outline: none;
+}
+.filter-button:hover,
+.all-boards-button:hover {
+  --text-color: var(--primary);
+}
+.all-boards-button:focus-within {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 2px;
+}
+.filter-button:focus-within {
+  outline: 2px solid var(--outline-color);
+  outline-offset: -2px;
+}
+
+.filter-header.active .filter-button {
+  background: var(--surface);
+  --text-color: var(--on-surface);
+}
+.filter-header.active .filter-button:hover {
+  --text-color: var(--primary);
+}
+
+/*
+ * Filter bar
+ */
+.header .filter-bar {
+  background: var(--surface);
+}
+.header .filter-bar label {
+  color: var(--on-surface);
+}
+.toggle-button-group input[type="radio"] + .button {
+  background: var(--background);
+  color: var(--on-background);
+  border-color: var(--on-background);
+}
+.toggle-button-group input[type="radio"]:hover + .button {
+  background: var(--on-background);
+  color: var(--background);
+}
+.toggle-button-group input[type="radio"]:active + .button {
+  background: var(--background);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.toggle-button-group input[type="radio"]:checked + .button {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+.toggle-button-group input[type="radio"]:checked:hover + .button {
+  background: var(--primary-muted);
+  border-color: var(--primary-muted);
+}
+.toggle-button-group input[type="radio"]:focus + .button {
+  outline: 2px solid var(--on-surface);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+/*
+ * Button
+ */
+button.button,
+button.calendar-button {
+  --bg-color: var(--background);
+  --text-color: var(--on-background);
+  --border-color: var(--on-background);
+  
+  background: var(--bg-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+  
+  isolation: isolate;
+  
+  transition: none !important;
+}
+button.button:hover,
+button.calendar-button:hover {
+  --bg-color: var(--on-background);
+  --text-color: var(--background);
+}
+button.button:active,
+button.calendar-button:active {
+  --bg-color: var(--surface);
+  --text-color: var(--on-surface);
+  --border-color: var(--on-surface);
+}
+button.button:focus,
+button.calendar-button:focus {
+  outline: 2px solid var(--outline-color) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+button.button .icon {
+  color: var(--text-color);
+}
+
+button.button.is-primary {
+  --bg-color: var(--primary);
+  --text-color: var(--on-primary);
+  --border-color: var(--primary);
+}
+button.button.is-primary:hover {
+  --bg-color: var(--primary-muted);
+  --border-color: var(--primary-muted);
+}
+button.button.is-primary:active {
+  --bg-color: var(--on-primary);
+  --text-color: var(--primary);
+}
+
+button.button.is-primary[disabled],
+button.button[disabled] {
+  --bg-color: var(--disabled);
+  --text-color: var(--on-disabled);
+  --border-color: var(--on-disabled);
+  
+  pointer-events: none;
+}
+
+button.is-primary.is-selected {
+  --bg-color: var(--on-background);
+  --text-color: var(--background);
+  --border-color: var(--on-background);
+}
+
+/* assign to me button in Çreate note' popup */
+button.button.circle[disabled] {
+  background: var(--bg-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/*
+ * Menu
+ */
+ul.button-submenu {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+ul.button-submenu li {
+  --bg-color: var(--surface);
+  --color: var(--on-surface);
+  
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+ul.button-submenu li:focus,
+ul.button-submenu li:hover {
+  --bg-color: var(--on-surface);
+  --text-color: var(--surface);
+}
+ul.button-submenu li:focus {
+  outline: none;
+}
+ul.button-submenu li.item.divided {
+  border-top-color: var(--on-surface);
+}
+
+/*
+ * Popup
+ */
+header.modal-card-head {
+  background: var(--surface);
+  border-color: var(--on-surface);
+  
+  --outline-color: var(--on-surface);
+  --text-color: var(--on-surface);
+}
+header.modal-card-head > .modal-card-title {
+  color: var(--text-color);
+}
+header.modal-card-head > button.delete {
+  background: var(--background);
+  border-color: var(--on-background);
+  
+  --color: var(--on-background);
+}
+header.modal-card-head > button.delete:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  
+  --color: var(--on-primary);
+}
+header.modal-card-head > button.delete:active {
+  background: var(--on-primary);
+  border-color: var(--primary);
+  
+  --color: var(--primary);
+}
+header.modal-card-head > button.delete:focus {
+  box-shadow: none;
+  outline: 2px solid var(--outline-color);
+  outline-offset: 2px;
+}
+header.modal-card-head > button.delete::before,
+header.modal-card-head > button.delete::after,
+header.modal-card-head > button.delete:active::before,
+header.modal-card-head > button.delete:active::after,
+header.modal-card-head > button.delete:hover::before,
+header.modal-card-head > button.delete:hover::after {
+  background: var(--color);
+}
+section.modal-card-body {
+  background: var(--surface);
+  
+  --text-color: var(--on-surface);
+}
+footer.modal-card-foot {
+  background: var(--surface);
+  border-color: var(--on-surface);
+  
+  --text-color: var(--on-surface);
+}
+
+/* Help popup shortcuts */
+div.item.label {
+  color: var(--text-color);
+}
+div.item.label > span {
+  border-color: var(--on-background);
+  background: var(--background);
+  color: var(--on-background);
+}
+
+/*
+ * Field
+ */
+.field .field-label label.label {
+  color: var(--text-color);
+}
+
+.field.is-danger label.label {
+  color: var(--error);
+}
+
+input.input,
+textarea.textarea,
+.select select {
+  --bg-color: var(--background);
+  --border-color: var(--on-background);
+  --text-color: var(--on-background);
+  
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+input.input:invalid,
+.select select:invalid,
+.field.is-danger input.input {
+  --text-color: var(--error);
+  --border-color: var(--error);
+}
+
+input.input:focus,
+textarea.textarea:focus,
+.select select:focus {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+input.input[disabled],
+textarea.textarea[disabled],
+.select select[disabled] {
+  --bg-color: var(--disabled);
+  --text-color: var(--on-disabled);
+  --border-color: var(--on-disabled);
+}
+
+.select select {
+  appearance: auto;
+}
+
+
+input.is-checkradio + label {
+  --check-bg-color: var(--background);
+  --check-color: var(--on-background);
+  --check-border-color: var(--on-background);
+  
+  color: var(--text-color);
+  margin-left: 4px !important; /* making space for the outline */
+}
+input.is-checkradio + label::before,
+input.is-checkradio:checked + label::before {
+  background: var(--check-bg-color) !important;
+  border-color: var(--check-border-color) !important;
+  box-shadow: none !important;
+}
+input.is-checkradio + label::after {
+  border-color: var(--check-color) !important;
+}
+input.is-checkradio:focus + label::before {
+  outline: 2px solid var(--outline-color) !important;
+  outline-offset: 2px;
+}
+input.is-checkradio[type="checkbox"]:hover:not([disabled]) + label::before,
+input.is-checkradio[type="checkbox"]:focus:not([disabled]) + label::before {
+  border-color: var(--check-border-color) !important;
+}
+
+#provide-title {
+  /* making space for the outline of the provide title field in the create board popup */
+  margin-top: 4px;
+}
+
+/*
+ * Date picker
+ */
+#due-date-input .date-picker {
+  background: var(--surface);
+}
+#due-date-input .td-date-picker-container {
+  background: var(--surface);
+}
+#due-date-input .td-date-picker-controls-container .td-date-picker-controls-current-date {
+  color: var(--on-surface);
+}
+#due-date-input .td-date-picker-controls-container button {
+  --bg-color: var(--background);
+  --text-color: var(--on-background);
+  --border-color: var(--on-background);
+  
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+#due-date-input .td-date-picker-controls-container button:hover {
+  --bg-color: var(--primary);
+  --text-color: var(--on-primary);
+  --border-color: var(--primary);
+}
+#due-date-input .td-date-picker-controls-container button:active {
+  --bg-color: var(--on-primary);
+  --text-color: var(--primary);
+  --border-color: var(--primary);
+}
+#due-date-input .td-date-picker-controls-container button:focus {
+  outline: 2px solid var(--on-surface);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+#due-date-input button.td-date-time-input-go-to-today {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+#due-date-input button.td-date-time-input-go-to-today:hover {
+  text-decoration: underline;
+}
+#due-date-input button.td-date-time-input-go-to-today:focus {
+  color: var(--primary);
+  text-decoration: underline;
+  outline: none;
+}
+#due-date-input table:focus-visible {
+  outline: 2px solid var(--on-surface);
+  outline-offset: 2px;
+}
+#due-date-input th.td-date-picker-header-cell {
+  color: var(--on-surface);
+  background-color: var(--surface);
+}
+#due-date-input td.td-date-picker-cell {
+  border-color: var(--on-background);
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.label {
+  background: var(--background);
+  color: var(--on-background);
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.label.selectable:hover {
+  background-color: var(--primary-muted);
+  color: var(--on-primary);
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.weekend {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.today {
+  color: var(--primary);
+  border-color: transparent !important;
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.selected {
+  background: var(--primary) !important;
+  color: var(--on-primary);
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.focused {
+  border-color: var(--primary) !important;
+}
+#due-date-input td.td-date-picker-cell > div.td-date-picker-cell-content.selected.focused {
+  border-color: var(--on-primary) !important;
+}
+
+
+/*
+ * Notification
+ */
+div.notification.is-primary {
+  background: var(--background);
+  color: var(--on-background);
+  border: 1px solid var(--on-background);
+}
+div.notification.is-primary .icon {
+  color: var(--on-background);
+}
+div.notification.is-warning {
+  background: var(--background);
+  color: var(--on-background);
+  border: 2px solid var(--primary);
+}
+div.notification.is-warning .icon {
+  color: var(--primary);
+}
+div.notification.is-warning a.close {
+  color: var(--primary);
+}
+div.notification.is-warning a.close:focus {
+  outline: 2px solid var(--on-background);
+  outline-offset: 2px;
+}
+div.notification.is-warning a.close:hover {
+  background: var(--on-background);
+  color: var(--background);
+}
+
+
+/*
+ * Board
+ */
+
+.board .header {
+  background: transparent;
+}
+.board #lanes-headers {
+  background: transparent;
+}
+.board .lane-header {
+  background: var(--surface);
+}
+.board .lane-header .label {
+  color: var(--on-surface);
+}
+.board .lane-header .lane-task-count {
+  background: var(--background);
+  color: var(--on-background);
+  border: 1px solid var(--on-background);
+}
+.board .lane {
+  background: var(--surface);
+}
+
+:is(.gu-unselectable, .board) .task-container {
+  --text-color: var(--on-background);
+  
+  background: var(--background);
+  border: 1px solid var(--on-background);
+  color: var(--text-color);
+}
+:is(.gu-unselectable, .board) .task-container div[handle="assignee-avatar-initials"] > .vue-avatar--wrapper {
+  background-color: var(--background) !important;
+  border: 1px solid var(--on-background);
+  color: var(--on-background) !important; 
+}
+:is(.gu-unselectable, .board) .task-container [handle="assignee-avatar"]:focus {
+  outline: 1px solid var(--primary);
+}
+
+:is(.gu-unselectable, .board) .task-container .is-black-link {
+  color: var(--text-color);
+}
+:is(.gu-unselectable, .board) .task-container .is-black-link:focus {
+  outline: none;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+:is(.gu-unselectable, .board) .task-container .formatted-text {
+  color: var(--text-color);
+}
+
+:is(.gu-unselectable, .board) .task-container .icon {
+  color: var(--text-color) !important;
+}
+:is(.gu-unselectable, .board) .task-container .overdue {
+  color: var(--error);
+}
+
+:is(.gu-unselectable, .board) .task-container:focus,
+:is(.gu-unselectable, .board) .task-container:focus-within {
+  background: var(--background);
+  border-color: var(--primary);
+  outline: none;
+  border-left-width: 8px;
+  
+  --text-color: var(--on-background);
+}
+
+.board .task-container.closed:not(:focus):not(:focus-within):not(:hover) {
+  background: var(--disabled);
+  --text-color: var(--on-disabled);
+}
+
+.board .task-container.closed:not(:focus):not(:focus-within):hover,
+.gu-unselectable .task-container.closed {
+  background: var(--background);
+  --text-color: var(--on-background);
+}
+
+:is(.gu-unselectable, .board) .task-container .task-content.has-folded-corner::after {
+  border-color: var(--on-background) var(--surface);
+}
+:is(.gu-unselectable, .board) .task-container:focus .task-content.has-folded-corner::after,
+:is(.gu-unselectable, .board) .task-container:focus-within .task-content.has-folded-corner::after {
+  border-color: var(--primary) var(--surface);
+}
+
+.board .task-container.gu-transit {
+  background: var(--on-primary);
+  border-color: var(--primary);
+  --text-color: var(--primary);
+}
+
+/*
+ * Sidebar
+ */
+
+#side-panel {
+  background: var(--background);
+  --outline-color: var(--on-background);
+  --text-color: var(--on-background);
+}
+
+#side-panel #side-panel-header span.card-header {
+  color: var(--text-color);
+}
+#side-panel #side-panel-header a.is-black-link {
+  color: var(--text-color);
+}
+#side-panel #side-panel-header a.is-black-link:hover {
+  text-decoration: underline;
+}
+#side-panel #side-panel-header a.is-black-link:focus {
+  outline: none;
+  --text-color: var(--primary);
+  text-decoration: underline;
+}
+#side-panel #side-panel-header .icon {
+  color: var(--text-color) !important;
+}
+#side-panel #side-panel-header button.close-button {
+  --bg-color: var(--background);
+  --text-color: var(--on-background);
+  --border-color: var(--on-background);
+}
+#side-panel #side-panel-header button.close-button:hover {
+  --bg-color: var(--primary);
+  --text-color: var(--on-primary);
+  --border-color: var(--primary);
+}
+#side-panel #side-panel-header button.close-button:active {
+  --bg-color: var(--on-primary);
+  --text-color: var(--primary);
+  --border-color: var(--primary);
+}
+#side-panel .parent-block {
+  --text-color: var(--on-surface);
+  background: var(--surface);
+  color: var(--text-color);
+}
+#side-panel .parent-block .icon {
+  color: var(--text-color) !important;
+}
+
+#side-panel .task-details .caller-name,
+#side-panel .task-details .branch-name,
+#side-panel .task-details .label,
+#side-panel .content .label {
+  color: var(--text-color);
+}
+#side-panel .content .description-container {
+  --text-color: var(--on-background);
+  background: var(--background);
+  border: 1px solid var(--primary);
+}
+#side-panel .content .description-container::after {
+  border-color: var(--primary) var(--background);
+  bottom: -1px;
+  right: -1px;
+}
+#side-panel .content .description-container .creation-date,
+#side-panel .content .description-container .description {
+  color: var(--text-color);
+}
+
+
+#side-panel .progresstrail .pt-entry {
+  --text-color: var(--on-surface);
+  background: var(--surface);
+  color: var(--text-color);
+  border-color: var(--on-surface);
+}
+#side-panel .progresstrail .pt-entry .pt-header,
+#side-panel .progresstrail .pt-entry .pt-header .pt-date,
+#side-panel .progresstrail .pt-entry a,
+#side-panel .progresstrail .pt-entry .icon,
+#side-panel .progresstrail .pt-entry figcaption {
+  color: var(--text-color) !important;
+}
+#side-panel .progresstrail .pt-entry a:active {
+  --text-color: var(--primary);
+}
+#side-panel .progresstrail .pt-entry a:focus {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 2px;
+}
+#side-panel .progresstrail .pt-entry.flagged {
+  --text-color: var(--on-primary);
+  background: var(--primary);
+}
+#side-panel .progresstrail .pt-entry.invisible {
+  border-left-color: var(--primary);
+}

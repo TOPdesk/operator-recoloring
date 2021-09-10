@@ -68,6 +68,9 @@ export default function createUserstyle(version) {
   ${readFileSync(__dirname + '/src/styles/planboard.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/reservations.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
+  ${readFileSync(__dirname + '/src/styles/agileboard.css', {encoding: 'utf8'})}
+}
 `
       this.emitFile({
         type: 'asset',
