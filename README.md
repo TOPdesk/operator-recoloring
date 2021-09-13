@@ -34,7 +34,8 @@ For full explanation, plus instructions on how to install and use, see [the home
     regexp("http(s)?://.*/tas/secure/suggestions/.*"),
     regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
     regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
-    regexp("http(s)?://.*/tas/secure/assetmgmt/.*") {
+    regexp("http(s)?://.*/tas/secure/assetmgmt/.*"),
+    regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
   
   @import url("http://localhost:5500/src/styles/button.css");
