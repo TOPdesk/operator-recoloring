@@ -133,13 +133,9 @@
   background: var(--background);
   border-color: var(--on-background);
 }
-body[contenteditable="true"] {
-  color: var(--on-background) !important;
-}
 [guielement="pt-memo-editable"] {
   background: transparent;
 }
-
 
 /* toolbar buttons, the image gets washed out in toggled state :-( */
 [guielement="pt-richtextbuttonbar"] [guielement="imagebutton"],

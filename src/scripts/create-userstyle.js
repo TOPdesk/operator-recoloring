@@ -72,6 +72,9 @@ export default function createUserstyle(version) {
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
   ${readFileSync(__dirname + '/src/styles/agileboard.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp(".*") {
+  ${readFileSync(__dirname + '/src/styles/richtext.css', {encoding: 'utf8'})}
+}
 `
       this.emitFile({
         type: 'asset',

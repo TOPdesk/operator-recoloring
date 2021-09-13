@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.0.2
+@version        2.1.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -812,13 +812,9 @@ body[cardtype="grid"] .more-menu .menu-item:focus {
   background: var(--background);
   border-color: var(--on-background);
 }
-body[contenteditable="true"] {
-  color: var(--on-background) !important;
-}
 [guielement="pt-memo-editable"] {
   background: transparent;
 }
-
 
 /* toolbar buttons, the image gets washed out in toggled state :-( */
 [guielement="pt-richtextbuttonbar"] [guielement="imagebutton"],
@@ -1994,23 +1990,6 @@ html.cke_panel_container .cke_panel_listItem a:active {
 /* Contents */
 div#cke_emailEditor .cke_contents {
   background: var(--background);
-}
-
-/* 
- * These rules will cause any color styling in the email to be lost,
- * But will give an increased chance for the user to be able to read 
- * it.
- *
- * Checking the original style can be done by turning off the style 
- * in Stylus.
- */
-body.cke_editable,
-body.cke_editable * {
-  background: var(--background) !important;
-  color: var(--on-background) !important;
-}
-body.cke_editable a {
-  color: var(--primary) !important;
 }
   body[cardType="naturalselection"] {
   background: var(--background);
@@ -3471,5 +3450,20 @@ div.notification.is-warning a.close:hover {
 }
 #side-panel .progresstrail .pt-entry.invisible {
   border-left-color: var(--primary);
+}
+}
+@-moz-document regexp(".*") {
+  body.cke_editable,
+body.cke_editable * {
+  background: var(--background) !important;
+  color: var(--on-background) !important;
+}
+body.cke_editable a {
+  color: var(--primary) !important;
+}
+body.cke_editable::selection,
+body.cke_editable *::selection {
+  background: var(--selection);
+  color: var(--on-selection);
 }
 }
