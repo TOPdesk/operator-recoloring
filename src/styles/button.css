@@ -5,7 +5,6 @@
 /* Default button */
 [mtype="button"]:not([guielement="hyperlink"]),
 [guielement="toolbar_button"],
-body[cardtype="grid"] #actionbar .button,
 body.popup .divpopupcontainer .divpopupclientarea button,
 .suggestionsWidget .suggestionsWidget-toggleButton,
 .suggestionsWidget .suggestionsWidget-newKIButton,
@@ -23,16 +22,13 @@ div#checklist .button {
 [guielement="toolbar_button"] > [guielement="toolbar_button_label"] {
     color: var(--text-color);
 }
-[guielement="toolbar_button"] > [guielement="icon"],
-body[cardtype="grid"] #actionbar .menu-button > .chevron {
+[guielement="toolbar_button"] > [guielement="icon"] {
     filter: var(--filter);
 }
 
 [mtype="button"]:not([guielement="hyperlink"]):hover,
 [guielement="toolbar_button"]:hover,
 [guielement="toolbar_button"][mstyles~="toolbar_menu_opened"],
-body[cardtype="grid"] #actionbar .button:hover,
-body[cardtype="grid"] #actionbar .button.menu-button.toggled,
 body.popup .divpopupcontainer .divpopupclientarea button:hover,
 .suggestionsWidget .suggestionsWidget-toggleButton:hover,
 .suggestionsWidget .suggestionsWidget-newKIButton:hover,
@@ -49,7 +45,6 @@ div#checklist .button:hover {
 
 [mtype="button"]:not([guielement="hyperlink"]):active,
 [guielement="toolbar_button"]:active,
-body[cardtype="grid"] #actionbar .button:active,
 body.popup .divpopupcontainer .divpopupclientarea button:active,
 .suggestionsWidget .suggestionsWidget-toggleButton:active,
 .suggestionsWidget .suggestionsWidget-newKIButton:active,
@@ -70,7 +65,6 @@ div#checklist .button:active {
 [mtype="button"][mstyles~="default-button"],
 [guielement="toolbar_button"][mstyles~="blue"],
 [guielement="toolbar_button"][mstyles~="orange"],
-body[cardtype="grid"] #actionbar .button.preferred,
 body.popup .divpopupcontainer .divpopupclientarea button.primary,
 .suggestionsWidget .suggestionsWidget-searchButton,
 div#checklist .button.is-primary {
@@ -85,7 +79,6 @@ div#checklist .button.is-primary {
 [mtype="button"][mstyles~="default-button"]:hover,
 [guielement="toolbar_button"][mstyles~="blue"]:hover,
 [guielement="toolbar_button"][mstyles~="orange"]:hover,
-body[cardtype="grid"] #actionbar .button.preferred:hover,
 body.popup .divpopupcontainer .divpopupclientarea button.primary:hover,
 .suggestionsWidget .suggestionsWidget-searchButton:hover,
 div#checklist .button.is-primary:hover {
@@ -100,7 +93,6 @@ div#checklist .button.is-primary:hover {
 [mtype="button"][mstyles~="default-button"]:active,
 [guielement="toolbar_button"][mstyles~="blue"]:active,
 [guielement="toolbar_button"][mstyles~="orange"]:active,
-body[cardtype="grid"] #actionbar .button.preferred:active,
 body.popup .divpopupcontainer .divpopupclientarea button.primary:active,
 .suggestionsWidget .suggestionsWidget-searchButton:active,
 div#checklist .button.is-primary:active {
@@ -213,16 +205,12 @@ span#unread-notification-count {
 }
 
 /* Buttons with a background image */
-body[cardtype="grid"] #actionbar #reload-grid-button,
-body[cardtype="grid"] #actionbar .button.setup_button,
 .suggestionsWidget .suggestionsWidget-searchButton,
 .suggestionsWidget .suggestionsWidget-toggleButton,
 .suggestionsWidget .suggestionsWidget-newKIButton,
 .suggestionsWidget .help-button {
     position: relative;
 }
-body[cardtype="grid"] #actionbar #reload-grid-button::before,
-body[cardtype="grid"] #actionbar .button.setup_button::before,
 .suggestionsWidget .suggestionsWidget-searchButton:before,
 .suggestionsWidget .suggestionsWidget-toggleButton:before,
 .suggestionsWidget .suggestionsWidget-newKIButton:before,
@@ -235,16 +223,7 @@ body[cardtype="grid"] #actionbar .button.setup_button::before,
     width: 16px; 
     pointer-events: none;
 }
-/* grid reload button */
-body[cardtype="grid"] #actionbar #reload-grid-button::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath fill='%23757576' d='M14.9 6V0L13 1.9C9.8-.6 5.3-.4 2.4 2.5c-3.1 3.1-3.1 8.1 0 11.2 3.1 3.1 8.1 3.1 11.2 0 1.4-1.4 2.1-3.1 2.3-4.9h-2.7c-.1 1.1-.6 2.2-1.5 3-2.1 2.1-5.4 2.1-7.5 0-2.1-2.1-2.1-5.4 0-7.5 1.8-1.8 4.7-2 6.8-.6L8.9 6h6z'/%3E%3C/svg%3E");
-    left: 8px;
-}
-/* grid setup button */
-body[cardtype="grid"] #actionbar .button.setup_button::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M13.9 7.2l1.8-.7-1.1-2.8-1.8.7c-.3-.5-.7-.8-1.2-1.2l.7-1.8L9.6.3l-.8 1.8c-.5-.1-1.1-.1-1.6 0L6.4.3 3.6 1.4l.7 1.8c-.4.4-.8.8-1.1 1.2l-1.8-.8L.3 6.4l1.8.7c-.1.6-.1 1.2 0 1.7l-1.8.8 1.1 2.8 1.8-.7c.3.5.7.8 1.2 1.2l-.7 1.8 2.8 1.1.7-1.8c.5.1 1.1.1 1.7 0l.7 1.8 2.8-1.1-.7-1.8c.5-.3.8-.7 1.2-1.2l1.8.7 1.1-2.8-1.8-.7c0-.6 0-1.2-.1-1.7zm-4.7 3.6c-1.5.6-3.3-.1-3.9-1.6s.1-3.3 1.6-3.9c1.5-.6 3.3.1 3.9 1.6.6 1.5-.1 3.2-1.6 3.9z'/%3E%3C/svg%3E");
-    left: 7px;
-}
+
 /* Knowledge base popup search button */
 .suggestionsWidget .suggestionsWidget-searchButton:before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M15.9 14.2L12 10.3c.6-.9 1-2.1 1-3.3 0-3.3-2.7-6-6-6S1 3.7 1 7s2.7 6 6 6c1.2 0 2.3-.4 3.2-.9l3.9 3.9 1.8-1.8zM3 7c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3C/svg%3E");

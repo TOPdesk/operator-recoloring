@@ -76,19 +76,3 @@ div#checklist div.menu li .separator {
 [guielement="toolbar_menu"] > [mtype="group"]:focus {
   outline: none !important;
 }
-
-
-/* Grid menu */
-body[cardtype="grid"] .more-menu {
-  background: var(--surface);
-}
-body[cardtype="grid"] .more-menu .menu-item {
-  color: var(--on-surface);
-}
-
-body[cardtype="grid"] .more-menu .menu-item:hover,
-body[cardtype="grid"] .more-menu .menu-item:focus {
-  outline: none !important;
-  background: var(--on-surface);
-  color: var(--surface);
-}

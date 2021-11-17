@@ -29,7 +29,6 @@ For full explanation, plus instructions on how to install and use, see [the home
 @-moz-document 
     regexp("http(s)?://.*/tas/secure/mango/.*"),
     regexp("http(s)?://.*/services/workflows-v2.*"),
-    regexp("http(s)?://.*/tas/secure/grid.*"),
     regexp("http(s)?://.*/tas/secure/.*?action=.*"),
     regexp("http(s)?://.*/tas/secure/suggestions/.*"),
     regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
@@ -44,7 +43,6 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/menu.css");
   @import url("http://localhost:5500/src/styles/feed.css");
   @import url("http://localhost:5500/src/styles/process-pages.css");
-  @import url("http://localhost:5500/src/styles/grid.css");
   @import url("http://localhost:5500/src/styles/suggestions.css");
   @import url("http://localhost:5500/src/styles/share.css");
   @import url("http://localhost:5500/src/styles/form.css");
@@ -54,6 +52,13 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/card.css");
   @import url("http://localhost:5500/src/styles/planboard.css");
   @import url("http://localhost:5500/src/styles/reservations.css");
+}
+
+@-moz-document 
+    regexp("http(s)?://.*/tas/secure/grid.*"), 
+    regexp("http(s)?://.*/tas/secure/.*?action=.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+  @import url("http://localhost:5500/src/styles/grid.css");
 }
 
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {

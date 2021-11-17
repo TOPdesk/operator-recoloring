@@ -45,7 +45,6 @@ export default function createUserstyle(version) {
 `${userstyleMetadata(version)}
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
                regexp("http(s)?://.*/services/workflows-v2.*"),
-               regexp("http(s)?://.*/tas/secure/grid.*"),
                regexp("http(s)?://.*/tas/secure/.*?action=.*"),
                regexp("http(s)?://.*/tas/secure/suggestions/.*"),
                regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
@@ -58,7 +57,6 @@ export default function createUserstyle(version) {
   ${readFileSync(__dirname + '/src/styles/menu.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/feed.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/process-pages.css', {encoding: 'utf8'})}
-  ${readFileSync(__dirname + '/src/styles/grid.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/suggestions.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/share.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/form.css', {encoding: 'utf8'})}
@@ -69,6 +67,10 @@ export default function createUserstyle(version) {
   ${readFileSync(__dirname + '/src/styles/planboard.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/reservations.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/grid.*")
+               regexp("http(s)?://.*/tas/secure/.*?action=.*") {
+  ${readFileSync(__dirname + '/src/styles/grid.css', {encoding: 'utf8'})}
+} 
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
   ${readFileSync(__dirname + '/src/styles/agileboard.css', {encoding: 'utf8'})}
 }
