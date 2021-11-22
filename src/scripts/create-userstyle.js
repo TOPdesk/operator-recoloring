@@ -66,6 +66,7 @@ export default function createUserstyle(version) {
   ${readFileSync(__dirname + '/src/styles/card.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/planboard.css', {encoding: 'utf8'})}
   ${readFileSync(__dirname + '/src/styles/reservations.css', {encoding: 'utf8'})}
+  ${readFileSync(__dirname + '/src/styles/taskboard.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/grid.*"),
                regexp("http(s)?://.*/tas/secure/.*?action=.*") {

@@ -52,6 +52,7 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/card.css");
   @import url("http://localhost:5500/src/styles/planboard.css");
   @import url("http://localhost:5500/src/styles/reservations.css");
+  @import url("http://localhost:5500/src/styles/taskboard.css");
 }
 
 @-moz-document 
