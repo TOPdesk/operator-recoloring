@@ -125,7 +125,7 @@
 
 
 /* Invisible for caller */
-[guielement="pt-trail-container"] [guielement="pt-entry-sidebar"][mstyles="pt-invisible"] {
+[guielement="pt-trail-container"] [guielement="pt-entry-sidebar"][mstyles~="pt-invisible"] {
   background: repeating-linear-gradient(-45deg, var(--surface) 0px, var(--surface) 8px, var(--background) 8px, var(--background) 16px);
 }
 
