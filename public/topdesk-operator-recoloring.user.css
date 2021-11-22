@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.3.1
+@version        2.3.2
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -2712,9 +2712,15 @@ div#checklist .date-and-time .control input[aria-invalid="true"] + .icon {
     background: var(--primary);
     --text-color: var(--on-primary);
 }
-
 [guielement="taskboard_item_body"] [guielement="pt-memo"] [guielement="pt-entry-sidebar"][mstyles~="pt-invisible"] {
     background: repeating-linear-gradient(-45deg, var(--surface) 0px, var(--surface) 8px, var(--background) 8px, var(--background) 16px);
+}
+
+[guielement="taskboard_item_body"] [guielement="pt-memo"] a {
+    color: var(--primary);
+}
+[guielement="taskboard_item_body"] [guielement="pt-memo"][mstyles~="pt-flagged"] a {
+    color: var(--on-primary);
 }
 
 [guielement="taskboard_item"]:hover [guielement="taskboard_item_header"],
