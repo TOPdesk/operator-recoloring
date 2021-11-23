@@ -1,0 +1,62 @@
+/*
+ * Module Page Buttons
+ */
+
+html, body {
+    background: var(--surface);
+}
+
+.richbutton {
+    border-color: var(--on-surface);
+    background: var(--background);
+
+    overflow: auto; /* richbutton-image clips through the rounded corners of the border */
+}
+.richbutton .richbutton-title,
+.richbutton .richbutton-description {
+    color: var(--on-background);
+}
+.richbutton .richbutton-image {
+    background: var(--background);
+    color: var(--on-background);
+}
+
+.richbutton:focus-visible {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+.richbutton:hover,
+.richbutton:active {
+    border-color: var(--primary);
+}
+.richbutton:is(:hover, :active) .richbutton-title {
+    color: var(--primary);
+}
+.richbutton:is(:hover, :focus-visible) .richbutton-image {
+    background: var(--background);
+    color: var(--primary);
+}
+
+.richbutton:active .richbutton-image {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+.richbutton .richbutton-new {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .richbutton .richbutton-image {
+        transition: transform;
+        transform-origin: center bottom;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
+    }
+    .richbutton:hover .richbutton-image {
+        transform: scale(1.1);
+        transition-duration: 0.15s;
+        transition-timing-function: ease-out;
+    }
+}

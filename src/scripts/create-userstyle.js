@@ -49,7 +49,6 @@ export default function createUserstyle(version) {
                regexp("http(s)?://.*/tas/secure/suggestions/.*"),
                regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
                regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
-               regexp("http(s)?://.*/tas/secure/assetmgmt/.*"),
                regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
   ${readFileSync(__dirname + '/src/styles/button.css', { encoding: 'utf8' })}
   ${readFileSync(__dirname + '/src/styles/general.css', {encoding: 'utf8'})}
@@ -74,6 +73,12 @@ export default function createUserstyle(version) {
 } 
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
   ${readFileSync(__dirname + '/src/styles/agileboard.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-buttons.*") {
+  ${readFileSync(__dirname + '/src/styles/assetmgmt/module-page-buttons.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-migration-information.*") {
+  ${readFileSync(__dirname + '/src/styles/assetmgmt/module-page-migration.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp(".*") {
   ${readFileSync(__dirname + '/src/styles/richtext.css', {encoding: 'utf8'})}

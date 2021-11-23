@@ -1,0 +1,45 @@
+/*
+ * Module Page Migration
+ */
+
+html, body {
+    background: var(--surface);
+    color: var(--on-surface);
+}
+
+a {
+    color: var(--primary);
+}
+a:hover {
+    color: var(--primary-muted);
+}
+a:focus-visible {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+
+button.button.is-primary {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+
+button.button.is-primary:hover {
+    background: var(--primary-muted);
+    color: var(--on-primary);
+    border-color: var(--primary-muted);
+}
+
+button.button.is-primary:focus {
+    color: var(--on-primary);
+}
+button.button.is-primary:focus-visible{
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+
+button.button.is-primary:active {
+    background: var(--on-primary);
+    color: var(--primary);
+    border-color: var(--primary);
+}

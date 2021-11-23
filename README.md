@@ -1,6 +1,6 @@
 # TOPdesk operator recoloring
 
-Override the colors of TOPdesk operator section, for accessibility purposes. 
+Override the colors of TOPdesk operator section, for accessibility purposes.
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/TOPdesk/operator-recoloring/master/public/topdesk-operator-recoloring.user.css)
 
@@ -26,17 +26,16 @@ For full explanation, plus instructions on how to install and use, see [the home
 1. Make sure to enable the **Support custom colors** settings for your test user.
 
 ```css
-@-moz-document 
+@-moz-document
     regexp("http(s)?://.*/tas/secure/mango/.*"),
     regexp("http(s)?://.*/services/workflows-v2.*"),
     regexp("http(s)?://.*/tas/secure/.*?action=.*"),
     regexp("http(s)?://.*/tas/secure/suggestions/.*"),
     regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
     regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
-    regexp("http(s)?://.*/tas/secure/assetmgmt/.*"),
     regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
-  
+
   @import url("http://localhost:5500/src/styles/button.css");
   @import url("http://localhost:5500/src/styles/general.css");
   @import url("http://localhost:5500/src/styles/tab.css");
@@ -55,8 +54,8 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/taskboard.css");
 }
 
-@-moz-document 
-    regexp("http(s)?://.*/tas/secure/grid.*"), 
+@-moz-document
+    regexp("http(s)?://.*/tas/secure/grid.*"),
     regexp("http(s)?://.*/tas/secure/.*?action=.*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
   @import url("http://localhost:5500/src/styles/grid.css");
@@ -64,13 +63,31 @@ For full explanation, plus instructions on how to install and use, see [the home
 
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
-  
+
   @import url("http://localhost:5500/src/styles/agileboard.css");
+}
+
+@-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+
+  @import url("http://localhost:5500/src/styles/agileboard.css");
+}
+
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-buttons.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+
+  @import url("http://localhost:5500/src/styles/assetmgmt/module-page-buttons.css");
+}
+
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-migration-information.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+
+  @import url("http://localhost:5500/src/styles/assetmgmt/module-page-migration.css");
 }
 
 @-moz-document regexp(".*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
-  
+
   @import url("http://localhost:5500/src/styles/richtext.css");
 }
 ```
