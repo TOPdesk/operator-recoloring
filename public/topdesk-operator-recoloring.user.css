@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.3.2
+@version        2.3.3
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -2768,7 +2768,7 @@ body[cardtype="grid"] .topbar .filter > a:focus {
 body[cardtype="grid"] #actionbar .button {
   --text-color: var(--on-background);
   --filter: var(--on-background-filter);
-  
+
   background: var(--background);
   border-color: var(--on-background);
   color: var(--text-color);
@@ -2786,7 +2786,7 @@ body[cardtype="grid"] #actionbar .button:hover,
 body[cardtype="grid"] #actionbar .button.menu-button.toggled {
   background: var(--on-background);
   border-color: var(--on-background);
-  
+
   --text-color: var(--background);
   --filter: var(--background-filter);
 }
@@ -2800,7 +2800,7 @@ body[cardtype="grid"] #actionbar .button:focus {
 body[cardtype="grid"] #actionbar .button:active {
   background: var(--surface);
   border-color: var(--on-surface);
-  
+
   --text-color: var(--on-surface);
   --filter: var(--on-surface-filter);
 }
@@ -2808,7 +2808,7 @@ body[cardtype="grid"] #actionbar .button:active {
 body[cardtype="grid"] #actionbar .button.preferred {
   background: var(--primary);
   border-color: var(--primary);
-  
+
   --text-color: var(--on-primary);
   --filter: var(--on-primary-filter);
 }
@@ -2816,7 +2816,7 @@ body[cardtype="grid"] #actionbar .button.preferred {
 body[cardtype="grid"] #actionbar .button.preferred:hover {
   background: var(--primary-muted);
   border-color: var(--primary-muted);
-  
+
   --text-color: var(--on-primary);
   --filter: var(--on-primary-filter);
 }
@@ -2824,7 +2824,7 @@ body[cardtype="grid"] #actionbar .button.preferred:hover {
 body[cardtype="grid"] #actionbar .button.preferred:active {
   background: var(--on-primary);
   border-color: var(--primary);
-  
+
   --text-color: var(--primary);
   --filter: var(--primary-filter);
 }
@@ -2841,7 +2841,7 @@ body[cardtype="grid"] #actionbar .button.setup_button::before {
   filter: var(--filter);
   top: 4px;
   height: 16px;
-  width: 16px; 
+  width: 16px;
   pointer-events: none;
 }
 
@@ -2855,6 +2855,39 @@ body[cardtype="grid"] #actionbar .button.setup_button::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M13.9 7.2l1.8-.7-1.1-2.8-1.8.7c-.3-.5-.7-.8-1.2-1.2l.7-1.8L9.6.3l-.8 1.8c-.5-.1-1.1-.1-1.6 0L6.4.3 3.6 1.4l.7 1.8c-.4.4-.8.8-1.1 1.2l-1.8-.8L.3 6.4l1.8.7c-.1.6-.1 1.2 0 1.7l-1.8.8 1.1 2.8 1.8-.7c.3.5.7.8 1.2 1.2l-.7 1.8 2.8 1.1.7-1.8c.5.1 1.1.1 1.7 0l.7 1.8 2.8-1.1-.7-1.8c.5-.3.8-.7 1.2-1.2l1.8.7 1.1-2.8-1.8-.7c0-.6 0-1.2-.1-1.7zm-4.7 3.6c-1.5.6-3.3-.1-3.9-1.6s.1-3.3 1.6-3.9c1.5-.6 3.3.1 3.9 1.6.6 1.5-.1 3.2-1.6 3.9z'/%3E%3C/svg%3E");
   left: 7px;
 }
+
+/* auto-refresh button enabled */
+/* Should have been a proper toggle button with aria-pressed="true" */
+body[cardtype="grid"] #actionbar .button.autorefresh-toggled {
+  background: var(--on-background);
+  border-color: var(--on-background);
+
+  --text-color: var(--background);
+  --filter: var(--background-filter);
+}
+
+body[cardtype="grid"] #actionbar .button.autorefresh-toggled:active {
+  background: var(--surface);
+  border-color: var(--on-surface);
+
+  --text-color: var(--on-surface);
+  --filter: var(--on-surface-filter);
+}
+
+body[cardtype="grid"] #actionbar .button.autorefresh-toggled::before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16px' width='16px' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath fill='currentColor' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z'/%3E%3C/svg%3E");
+
+  margin-right: 8px;
+  margin-bottom: -3px;
+
+  width: 16px;
+  height: 16px;
+  filter: var(--filter);
+
+  display: inline-block;
+}
+
 
 /* Grid menu */
 body[cardtype="grid"] .more-menu {
