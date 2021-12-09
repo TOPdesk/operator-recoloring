@@ -5,7 +5,7 @@ const userstyleMetadata = (version) =>
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
 @version        ${version}
-@description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
+@description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
 @license        MIT
@@ -22,7 +22,7 @@ const userstyleMetadata = (version) =>
 @var text on-surface-filter "On surface filter" brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)
 @var color disabled "Disabled" #404040
 @var text disabled-filter "Disabled filter" brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%)
-@var color on-disabled "On disabled" #8c8c8c 
+@var color on-disabled "On disabled" #8c8c8c
 @var text on-disabled-filter "On disabled filter" brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(407%) hue-rotate(172deg) brightness(89%) contrast(89%)
 @var color primary "Primary" #eda911
 @var text primary-filter "Primary filter" brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(1479%) hue-rotate(354deg) brightness(97%) contrast(92%)
@@ -41,7 +41,7 @@ export default function createUserstyle(version) {
   return {
     name: "create-userstyle-plugin",
     async generateBundle(_options, bundle) {
-      const userCss = 
+      const userCss =
 `${userstyleMetadata(version)}
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
                regexp("http(s)?://.*/services/workflows-v2.*"),
@@ -70,7 +70,7 @@ export default function createUserstyle(version) {
 @-moz-document regexp("http(s)?://.*/tas/secure/grid.*"),
                regexp("http(s)?://.*/tas/secure/.*?action=.*") {
   ${readFileSync(__dirname + '/src/styles/grid.css', {encoding: 'utf8'})}
-} 
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
   ${readFileSync(__dirname + '/src/styles/agileboard.css', {encoding: 'utf8'})}
 }
@@ -79,6 +79,9 @@ export default function createUserstyle(version) {
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-migration-information.*") {
   ${readFileSync(__dirname + '/src/styles/assetmgmt/module-page-migration.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
+  ${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp(".*") {
   ${readFileSync(__dirname + '/src/styles/richtext.css', {encoding: 'utf8'})}

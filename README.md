@@ -85,6 +85,12 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/assetmgmt/module-page-migration.css");
 }
 
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+
+  @import url("http://localhost:5500/src/styles/assetmgmt/overview.css");
+}
+
 @-moz-document regexp(".*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
 

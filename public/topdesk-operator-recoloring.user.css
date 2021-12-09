@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.3.3
-@description    Override the colors of the TOPdesk operator section, for accessibility purposes. 
+@version        2.4.0
+@description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
 @license        MIT
@@ -19,7 +19,7 @@
 @var text on-surface-filter "On surface filter" brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)
 @var color disabled "Disabled" #404040
 @var text disabled-filter "Disabled filter" brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%)
-@var color on-disabled "On disabled" #8c8c8c 
+@var color on-disabled "On disabled" #8c8c8c
 @var text on-disabled-filter "On disabled filter" brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(407%) hue-rotate(172deg) brightness(89%) contrast(89%)
 @var color primary "Primary" #eda911
 @var text primary-filter "Primary filter" brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(1479%) hue-rotate(354deg) brightness(97%) contrast(92%)
@@ -39,7 +39,6 @@
                regexp("http(s)?://.*/tas/secure/suggestions/.*"),
                regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
                regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
-               regexp("http(s)?://.*/tas/secure/assetmgmt/.*"),
                regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
   /*
  * Button
@@ -2996,7 +2995,7 @@ div#columnsscroll .column {
   border-color: var(--on-background);
 }
 
-} 
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
   body {
   background: var(--background) !important;
@@ -3672,6 +3671,1196 @@ div.notification.is-warning a.close:hover {
 #side-panel .progresstrail .pt-entry.invisible {
   border-left-color: var(--primary);
 }
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-buttons.*") {
+  /*
+ * Module Page Buttons
+ */
+
+html, body {
+    background: var(--surface);
+}
+
+.richbutton {
+    border-color: var(--on-surface);
+    background: var(--background);
+
+    overflow: auto; /* richbutton-image clips through the rounded corners of the border */
+}
+.richbutton .richbutton-title,
+.richbutton .richbutton-description {
+    color: var(--on-background);
+}
+.richbutton .richbutton-image {
+    background: var(--background);
+    color: var(--on-background);
+}
+
+.richbutton:focus-visible {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+.richbutton:hover,
+.richbutton:active {
+    border-color: var(--primary);
+}
+.richbutton:is(:hover, :active) .richbutton-title {
+    color: var(--primary);
+}
+.richbutton:is(:hover, :focus-visible) .richbutton-image {
+    background: var(--background);
+    color: var(--primary);
+}
+
+.richbutton:active .richbutton-image {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+.richbutton .richbutton-new {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .richbutton .richbutton-image {
+        transition: transform;
+        transform-origin: center bottom;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
+    }
+    .richbutton:hover .richbutton-image {
+        transform: scale(1.1);
+        transition-duration: 0.15s;
+        transition-timing-function: ease-out;
+    }
+}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-migration-information.*") {
+  /*
+ * Module Page Migration
+ */
+
+html, body {
+    background: var(--surface);
+    color: var(--on-surface);
+}
+
+a {
+    color: var(--primary);
+}
+a:hover {
+    color: var(--primary-muted);
+}
+a:focus-visible {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+
+button.button.is-primary {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+
+button.button.is-primary:hover {
+    background: var(--primary-muted);
+    color: var(--on-primary);
+    border-color: var(--primary-muted);
+}
+
+button.button.is-primary:focus {
+    color: var(--on-primary);
+}
+button.button.is-primary:focus-visible{
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+
+button.button.is-primary:active {
+    background: var(--on-primary);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
+  /*
+ * Asset overview
+ */
+
+/*
+ * !! Ignoring keyboard focus, as the page is completely unworkable by keyboard.
+ */
+
+*,
+*::after {
+    box-shadow: none !important;
+}
+body {
+    background: var(--background);
+    color: var(--on-background);
+}
+::selection {
+    background: var(--selection) !important;
+    color: var(--on-selection) !important;
+}
+input[type="text"] {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+input[type="text"]:disabled {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--disabled);
+}
+label.checkboxButton {
+    --color: var(--on-background);
+    --bg: var(--background);
+    --border-color: var(--on-background);
+
+    background: var(--bg) !important;
+    border-color: var(--border-color) !important;
+    transition: none !important;
+}
+label.checkboxButton > .icon.check {
+    color: var(--color) !important;
+}
+label.checkboxButton > span.label {
+    /* 'Range' checkbox label for a count filter */
+    color: var(--color);
+}
+label.checkboxButton:hover {
+    --color: var(--primary);
+    --border-color: var(--primary);
+}
+.overview card-header > .title > .details {
+    color: var(--on-background);
+}
+
+/* Share link */
+.share-link .shareLink span {
+    color: var(--on-background);
+    text-decoration: underline;
+}
+.share-link .shareLink i.tiny.icon:first-child {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.share-link .shareLink:hover span {
+    color: var(--primary);
+}
+.share-link .shareLink:hover i.tiny.icon:first-child {
+    background: var(--background);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.share-link .popover .popover-popup {
+    border-color: var(--surface);
+}
+.share-link .popover .popover-popup::after {
+    border-color: var(--surface);
+}
+.share-link .popover .popover-popup .head,
+.share-link .popover .popover-popup .content,
+.share-link .popover .popover-popup .foot {
+    background: var(--surface);
+    border-color: var(--on-surface);
+    color: var(--on-surface);
+}
+.share-link .popover .popover-popup .head .icon {
+    color: var(--on-surface);
+}
+.share-link .popover .popover-popup .foot .button {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+.share-link .popover .popover-popup .foot .button:hover {
+    background: var(--primary-muted);
+    color: var(--on-primary);
+    border-color: var(--primary-muted);
+}
+.share-link .popover .popover-popup .foot .button:active {
+    background: var(--on-primary);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* New button */
+.ui.button.tdButton.primary {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+.ui.button.tdButton.primary:hover {
+    background: var(--primary-muted);
+    color: var(--on-primary);
+    border-color: var(--primary-muted);
+}
+.ui.button.tdButton.primary:active {
+    background: var(--on-primary);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.ui.button.tdButton.primary.active { /* menu open */
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+
+.ui.button.tdButton.dropdown .menu.white {
+    border: none;
+    background: var(--surface);
+}
+.ui.button.tdButton.dropdown .menu.white .ui.search.input {
+    padding: 8px;
+    border-color: var(--on-surface);
+}
+.ui.button.tdButton.dropdown .menu.white .ui.search.input input {
+    border: 1px solid transparent;
+}
+.ui.button.tdButton.dropdown .menu.white .ui.search.input input:focus {
+    border-color: var(--on-surface);
+}
+
+.ui.button.tdButton.dropdown .menu.white .item {
+    color: var(--on-surface);
+    border-bottom: none;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    width: 150px;
+}
+.ui.button.tdButton.dropdown .menu.white .item.selected {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+.ui.button.tdButton.dropdown .menu.white .item:hover {
+    background: var(--on-surface);
+    color: var(--surface);
+}
+
+/* Toolbar */
+card-header .toolbars .toolbar .split.buttons {
+    border-color: var(--on-background);
+}
+card-header .toolbars .toolbar .split.buttons :where(.tdButton, .tdActionButton, [role="button"]) {
+    --bg: var(--background);
+    --color: var(--on-background);
+    --border-color: var(--on-background);
+
+    background: var(--bg) !important;
+    color: var(--color) !important;
+    border-color: var(--border-color) !important;
+}
+card-header .toolbars .toolbar .split.buttons .refresh:before {
+    color: var(--color);
+}
+card-header .toolbars .toolbar .split.buttons :where(.tdButton, .tdActionButton, [role="button"]):hover {
+    --bg: var(--on-background);
+    --color: var(--background);
+    --border-color: var(--on-background);
+}
+card-header .toolbars .toolbar .split.buttons :where(.tdButton, .tdActionButton, [role="button"]):active {
+    --bg: var(--surface);
+    --color: var(--on-surface);
+    --border-color: var(--on-surface);
+}
+card-header .toolbars .toolbar .split.buttons :where(.tdButton, .tdActionButton, [role="button"]).active {
+    --bg: var(--on-background);
+    --color: var(--background);
+    --border-color: var(--on-background);
+}
+card-header .toolbars .toolbar .split.buttons .dropdown[data-handle="more"] .menu {
+    border: none !important;
+}
+card-header .toolbars .toolbar .split.buttons .dropdown[data-handle="more"] .menu a.tdButton {
+    --bg: var(--surface);
+    --color: var(--on-surface);
+
+    padding: 8px 16px;
+}
+card-header .toolbars .toolbar .split.buttons .dropdown[data-handle="more"] .menu a.tdButton[aria-disabled="true"] {
+    --bg: var(--disabled);
+    --color: var(--on-disabled);
+}
+card-header .toolbars .toolbar .split.buttons .dropdown[data-handle="more"] .menu a.tdButton:hover:not([aria-disabled="true"]) {
+    --bg: var(--on-surface);
+    --color: var(--surface);
+}
+
+/* Toolbar 'columns' menu, filter panel 'add filter' menu, and filter panel 'context' menus */
+.dropdown-content.menu {
+    background: var(--surface);
+    color: var(--on-surface);
+    border: none;
+}
+.dropdown-content.menu::after {
+    /* Setting this to important so it also works for the add filter menu */
+    border-top-color: var(--surface) !important;
+}
+.dropdown-content.menu .search {
+    border-color: var(--on-surface);
+}
+.dropdown-content.menu .search .icon {
+    color: var(--on-background);
+    right: 16px;
+}
+.dropdown-content.menu .search input {
+    height: initial;
+    padding: 8px;
+    border: 1px solid transparent;
+}
+.dropdown-content.menu .search input:focus {
+    border-color: var(--on-surface);
+}
+.dropdown-content.menu .header {
+    background: var(--background);
+    color: var(--on-background);
+    border-top: 4px solid var(--surface);
+}
+.dropdown-content.menu .footer {
+    border-color: var(--on-surface);
+}
+.dropdown-content.menu .item {
+    --filter: var(--on-surface-filter);
+    --bg: var(--surface);
+    --color: var(--on-surface);
+
+    background: var(--bg) !important;
+    color: var(--color) !important;
+}
+.dropdown-content.menu .item .icon.small {
+    filter: var(--filter) !important;
+}
+.dropdown-content.menu .item label,
+.dropdown-content.menu .item.is-active label,
+.dropdown-content.menu .item .filter-header label {
+    /* Item label in add filter menu and filter context menu*/
+    color: var(--color);
+}
+.dropdown-content.menu .item.selected,
+.dropdown-content.menu .item.is-active {
+    --filter: var(--on-primary-filter);
+    --bg: var(--primary);
+    --color: var(--on-primary);
+}
+.dropdown-content.menu .item:hover {
+    --filter: var(--surface-filter);
+    --bg: var(--on-surface);
+    --color: var(--surface);
+}
+.dropdown-content.menu .item.disabled {
+    opacity: initial;
+    --bg: var(--disabled);
+    --color: var(--on-disabled);
+    --filter: var(--on-disabled-filter);
+}
+.dropdown-content.menu .item [role="checkbox"] {
+    background: var(--background);
+    border-color: var(--on-background);
+}
+.dropdown-content.menu .item [role="checkbox"] > .check {
+    color: var(--on-background);
+}
+.dropdown-content.menu .footer .tdActionButton.reset {
+    --bg: var(--surface);
+    --color: var(--primary);
+    padding: 8px;
+    text-decoration: underline;
+}
+
+/*
+ * Filter panel
+ */
+asset-filter.panel {
+    background: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel > .header {
+    border-color: var(--on-background);
+}
+asset-filter.panel > .header span {
+    color: var(--on-background);
+}
+asset-filter.panel .bordered {
+    border-color: var(--on-background);
+}
+asset-filter.panel .subheader {
+    color: var(--on-background);
+}
+asset-filter.panel .subheader .icon {
+    color: var(--on-background);
+}
+asset-filter.panel .filter-message {
+    color: var(--on-background);
+}
+/* Collapse/expand button */
+asset-filter.panel > .header .tdActionButton > .icon {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel > .header .tdActionButton:hover .icon {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel > .header .tdActionButton:active .icon {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+
+/* Search */
+asset-filter.panel > .content .highlighted {
+    background: var(--primary);
+    border-bottom: 1px solid var(--on-background);
+}
+asset-filter.panel > .content .highlighted .asset-filter-quicksearch input {
+    height: 2rem;
+    border-color: transparent;
+}
+asset-filter.panel > .content .highlighted .asset-filter-quicksearch input:focus {
+    outline: 2px solid var(--on-primary);
+    outline-offset: 2px;
+}
+asset-filter.panel > .content .highlighted .asset-filter-quicksearch .icon {
+    color: var(--on-background);
+    display: flex;
+    align-items: center;
+}
+
+/* Saved filters actions */
+asset-filter.panel .filter-overviews .subheader .icon-buttons button.icon-button {
+    background: var(--background);
+    color: var(--on-background);
+    transition: none !important;
+    text-shadow: none !important;
+}
+asset-filter.panel .filter-overviews .subheader .icon-buttons button.icon-button:not(:disabled):hover {
+    background: var(--on-background);
+    color: var(--background);
+}
+asset-filter.panel .filter-overviews .subheader .icon-buttons button.icon-button:active {
+    background: var(--surface);
+    color: var(--on-surface);
+    border: 1px solid var(--on-surface);
+}
+asset-filter.panel .filter-overviews .subheader .icon-buttons button.icon-button:disabled {
+    color: var(--disabled);
+}
+/* Saved filters action popups */
+asset-filter.panel .filter-overviews :is(.save-view-component, .delete-view-component) .popover .popover-popup {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--surface);
+}
+asset-filter.panel .filter-overviews :is(.save-view-component, .delete-view-component) .popover .popover-popup::after {
+    border-top-color: var(--surface);
+}
+asset-filter.panel .filter-overviews :is(.save-view-component, .delete-view-component) .popover .popover-popup .foot {
+    background: var(--surface);
+    border-color: var(--on-surface);
+}
+/* Saved filters save action popup */
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup input:focus {
+    border-color: var(--on-background);
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .content .view-modifier {
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .content .view-modifier a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .content .view-modifier a:hover {
+    color: var(--primary-muted);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .foot .feedback .icon {
+    color: var(--on-surface);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .foot .feedback span {
+    color: var(--on-surface);
+}
+/* Saved filters save action save button */
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .foot button.primary {
+    color: var(--on-primary);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .foot button.primary:hover {
+    color: var(--on-primary);
+    background: var(--primary-muted);
+    border-color: var(--primary-muted);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .foot button.primary:active {
+    color: var(--primary);
+    background: var(--background);
+    border-color: var(--primary);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .foot button:disabled {
+    color: var(--on-disabled);
+    background: var(--disabled);
+    border-color: var(--on-disabled);
+}
+/* Saved filters delete popup delete button */
+asset-filter.panel .filter-overviews .delete-view-component .popover .popover-popup .foot button.destructive {
+    color: var(--on-error);
+    background: var(--error);
+    border-color: var(--error);
+}
+asset-filter.panel .filter-overviews .delete-view-component .popover .popover-popup .foot button.destructive:hover {
+    color: var(--background);
+    background: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .filter-overviews .delete-view-component .popover .popover-popup .foot button.destructive:active {
+    color: var(--error);
+    background: var(--on-error);
+    border-color: var(--error);
+}
+/* Saved filters delete popup cancel button */
+asset-filter.panel .filter-overviews .delete-view-component .popover .popover-popup .foot button {
+    color: var(--on-background);
+    background: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .filter-overviews .delete-view-component .popover .popover-popup .foot button:hover {
+    color: var(--background);
+    background: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .filter-overviews .delete-view-component .popover .popover-popup .foot button:active {
+    color: var(--on-surface);
+    background: var(--surface);
+    border-color: var(--on-surface);
+}
+/* Saved filters list */
+asset-filter.panel .filter-overviews li {
+    --color: var(--on-background);
+    color: var(--color);
+}
+asset-filter.panel .filter-overviews li .icon.edited {
+    color: var(--color);
+}
+asset-filter.panel .filter-overviews li:hover {
+    --color: var(--background);
+    background: var(--on-background);
+}
+asset-filter.panel .filter-overviews li.selected {
+    --color: var(--on-primary);
+    background: var(--primary);
+}
+
+/* Filter */
+asset-filter.panel .asset-filter-item .filter-header > :is(.icon, label, .filter-title) {
+    color: var(--on-background);
+}
+/* delete button/context menu button */
+asset-filter.panel .asset-filter-item .filter-header .tdActionButton > .icon {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .filter-header .tdActionButton:hover > .icon {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .filter-header .tdActionButton:active > .icon {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+/* add filter button */
+asset-filter.panel .actions .create.tdActionButton > .icon.add {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .actions .create.tdActionButton:hover > .icon.add {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .actions .create.tdActionButton:active > .icon.add {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+asset-filter.panel .actions .create.tdActionButton > .icon.chevron {
+    color: var(--on-background);
+}
+/* filter with buttons */
+asset-filter.panel .asset-filter-item .tdButton {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+
+    transition: none !important;
+}
+asset-filter.panel .asset-filter-item .tdButton:hover {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .tdButton:active {
+    background: var(--background);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+asset-filter.panel .asset-filter-item .tdButton.active {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+/* filter with select */
+asset-filter.panel .asset-filter-item [role="combobox"] {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item [role="combobox"] > a.text {
+    color: var(--on-background);
+    opacity: initial;
+}
+asset-filter.panel .asset-filter-item [role="combobox"] > a.text.clickable:hover {
+    color: var(--primary);
+}
+asset-filter.panel .asset-filter-item [role="combobox"] > a.text.opened::after {
+    color: var(--on-surface);
+    border-color: var(--surface);
+    background: var(--surface);
+    opacity: initial;
+}
+/* filter with select menu */
+asset-filter.panel .asset-filter-item [role="combobox"] .menu {
+    background: var(--surface);
+    border-color: var(--surface);
+    --color: var(--on-surface);
+}
+asset-filter.panel .asset-filter-item [role="combobox"] .menu .item {
+    color: var(--color);
+    padding: 4px 2px;
+    border-color: transparent;
+}
+asset-filter.panel .asset-filter-item [role="combobox"] .menu .item .icon {
+    color: var(--color);
+}
+asset-filter.panel .asset-filter-item [role="combobox"] .menu .item.selected {
+    background: var(--primary);
+    --color: var(--on-primary);
+}
+asset-filter.panel .asset-filter-item [role="combobox"] .menu .item:hover {
+    background: var(--on-surface);
+    --color: var(--surface);
+}
+/* filter on date */
+asset-filter.panel .asset-filter-item .dateField > input {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background) !important;
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu {
+    border-color: var(--surface);
+}
+/* filter on date ranges */
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges {
+    background: var(--surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges li {
+    color: var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges li.active {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges li:hover {
+    background: var(--on-surface);
+    color: var(--surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs {
+    background: var(--surface);
+    border-color: var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs button.primary {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs button.primary:hover {
+    background: var(--primary-muted);
+    color: var(--on-primary);
+    border-color: var(--primary-muted);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs button.primary:active {
+    background: var(--on-primary);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs button {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs button:hover {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu .ranges .range_inputs button:active {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+/* Filter on date custom range calendar */
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar {
+    background: var(--surface);
+    border-left-color: var(--on-surface);
+    border-bottom-color: var(--surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .daterangepicker_input input {
+    border-color: var(--on-background) !important;
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .daterangepicker_input::after {
+    color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .tdActionButton .icon {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .tdActionButton:hover .icon {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .tdActionButton:active .icon {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar select {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar select:focus {
+    border-color: var(--on-background);
+    outline: 2px solid var(--on-background);
+    outline-offset: 2px;
+}
+/* Filter on date custom range calendar table */
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table th,
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.week {
+    color: var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.available {
+    background: var(--background);
+    color: var(--on-background);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table tr:first-of-type td.available {
+    border-top: 1px solid var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table tr:last-of-type td.available {
+    border-bottom: 1px solid var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td:nth-of-type(2) {
+    border-left: 1px solid var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td:last-of-type {
+    border-right: 1px solid var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.weekend {
+    background: var(--surface);
+    color: var(--on-surface);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td:not(.off) {
+    font-weight: bold;
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.today::before {
+    border-color: currentColor;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    inset: 2px;
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.in-range {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.start-date,
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.end-date {
+    background: var(--primary-muted);
+    color: var(--on-primary);
+}
+asset-filter.panel .asset-filter-item .dateField .daterangepicker.dropdown-menu.show-calendar .calendar .calendar-table td.available:hover {
+    background: var(--on-background);
+    color: var(--background);
+}
+/* filter field focus */
+asset-filter.panel .asset-filter-item .filter-content > input[type="text"]:focus,
+asset-filter.panel .asset-filter-item [role="combobox"]:focus-within,
+asset-filter.panel .asset-filter-item input[type="text"].numberField:focus,
+asset-filter.panel .asset-filter-item .dateField > input:focus {
+    border-color: var(--on-background);
+    outline: 2px solid var(--on-background);
+    outline-offset: 2px;
+}
+
+/* Types */
+asset-filter.panel .typeFilters li {
+    --color: var(--on-background);
+}
+asset-filter.panel .typeFilters li > span {
+    color: var(--color);
+}
+asset-filter.panel .typeFilters li:hover {
+    background: var(--on-background);
+    --color: var(--background);
+}
+
+/* Grid */
+grid .overviewFooter {
+    margin-top: 1rem;
+    background: transparent;
+    border: none;
+}
+grid .overviewFooter p {
+    color: var(--on-background);
+}
+grid .pagination {
+    color: var(--on-background);
+    margin-bottom: 1rem;
+}
+grid .pagination .loadMore {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+grid .pagination .loadMore:hover {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+grid .pagination .loadMore:active {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+grid .pagination p {
+    color: var(--on-background);
+}
+/*Grid table*/
+grid table.tdGrid {
+    border: none;
+}
+grid table.tdGrid thead {
+    --bg: var(--surface);
+    --color: var(--on-surface);
+    --border-color: transparent;
+
+    border-bottom: 1px solid var(--on-surface);
+}
+grid table.tdGrid tbody {
+    --bg: var(--background);
+    --color: var(--on-background);
+    --border-color: var(--on-background);
+}
+grid table.tdGrid :is(th, td) {
+    background: var(--bg) !important;
+    color: var(--color) !important;
+
+    border-left: none !important;
+}
+grid table.tdGrid tbody tr.selected {
+    --bg: var(--primary-muted);
+    --color: var(--on-primary);
+}
+grid table.tdGrid tbody tr:hover {
+    --bg: var(--on-background);
+    --color: var(--background);
+}
+grid table.tdGrid th.check,
+grid table.tdGrid tbody tr td.check {
+    vertical-align: top;
+    padding-top: 10px;
+}
+grid table.tdGrid tbody tr td {
+    vertical-align: top;
+    padding: 8px;
+}
+grid table.tdGrid tbody tr td .row-element {
+    align-items: flex-start;
+}
+grid table.tdGrid tbody tr td .row-element .icon {
+    color: var(--color);
+}
+grid table.tdGrid tbody tr td .row-element .icon.interruption {
+    color: var(--error) !important;
+}
+grid table.tdGrid tbody tr td .row-element p {
+    margin: 0;
+}
+grid table.tdGrid tbody tr td .row-element .details {
+    color: var(--color);
+}
+grid table.tdGrid [data-tooltip]::after {
+    /* tooltip */
+    background: var(--surface);
+    color: var(--on-surface);
+}
+
+/* Feedback button */
+button.feedback {
+    background: var(--background);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+button.feedback:hover {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--background);
+}
+button.feedback:focus {
+    background: var(--background);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+button.feedback:active {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+button.feedback:focus-visible {
+    outline: 2px solid var(--on-background);
+    outline-offset: 2px;
+}
+button.feedback::before,
+button.feedback::after {
+    display: none;
+}
+/* Feedback popup / Bulk action popups */
+.tdOverlay {
+    background: var(--surface);
+}
+.tdOverlay .header {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+.tdOverlay .header .close .icon{
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.tdOverlay .header .close:hover .icon{
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+.tdOverlay .header .close:active .icon{
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+.tdOverlay .footer {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+.tdOverlay .footer > span {
+    color: var(--on-surface) !important;
+}
+.tdOverlay .footer .conflict.icon {
+    color: var(--error) !important;
+}
+.tdOverlay .footer .tdButton {
+    --bg: var(--background);
+    --color: var(--on-background);
+    --border-color: var(--on-background);
+
+    background: var(--bg) !important;
+    color: var(--color) !important;
+    border-color: var(--border-color) !important;
+
+    transition: none;
+}
+.tdOverlay .footer .tdButton:hover {
+    --bg: var(--on-background);
+    --color: var(--background);
+    --border-color: var(--on-background);
+}
+.tdOverlay .footer .tdButton:active {
+    --bg: var(--surface);
+    --color: var(--on-surface);
+    --border-color: var(--on-surface);
+}
+.tdOverlay .footer .tdButton.primary {
+    --bg: var(--primary);
+    --color: var(--on-primary);
+    --border-color: var(--primary);
+}
+.tdOverlay .footer .tdButton.primary:hover {
+    --bg: var(--primary-muted);
+    --color: var(--on-primary);
+    --border-color: var(--primary-muted);
+}
+.tdOverlay .footer .tdButton.primary:active {
+    --bg: var(--on-primary);
+    --color: var(--primary);
+    --border-color: var(--primary);
+}
+.tdOverlay .footer .tdButton.destructive {
+    --bg: var(--error);
+    --color: var(--on-error);
+    --border-color: var(--error);
+}
+.tdOverlay .footer .tdButton.destructive:hover {
+    --bg: var(--on-background);
+    --color: var(--background);
+    --border-color: var(--on-background);
+}
+.tdOverlay .footer .tdButton.destructive:active {
+    --bg: var(--on-error);
+    --color: var(--error);
+    --border-color: var(--error);
+}
+.tdOverlay .footer .tdButton[disabled] {
+    --bg: var(--disabled);
+    --color: var(--on-disabled);
+    --border-color: var(--on-disabled);
+}
+/* delete popup and confirmation popup */
+.tdOverlay .body .instruction p,
+.tdOverlay .body .instruction .icon {
+    color: var(--on-surface) !important;
+}
+/* archive popup */
+.tdOverlay.confirmArchive .dropdown {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.tdOverlay.confirmArchive .dropdown:focus {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+.tdOverlay.confirmArchive .dropdown .text {
+    color: var(--on-background);
+    opacity: 1;
+}
+.tdOverlay.confirmArchive .dropdown .menu {
+    background: var(--surface);
+    border-color: var(--on-surface);
+}
+.tdOverlay.confirmArchive .dropdown .menu .item {
+    padding: 4px;
+    color: var(--on-surface);
+    border: none;
+}
+.tdOverlay.confirmArchive .dropdown .menu .item.selected {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+.tdOverlay.confirmArchive .dropdown .menu .item:hover {
+    background: var(--on-surface);
+    color: var(--surface);
+}
+/* import popup */
+.tdOverlay.importAsset .body.upload > .accordion > .title > .tdActionButton > .icon.expanded {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.tdOverlay.importAsset .body.upload > .accordion > .title > .tdActionButton:hover > .icon.expanded {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+.tdOverlay.importAsset .body.upload > .accordion > .title > .tdActionButton:active > .icon.expanded {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+.tdOverlay.importAsset .body.upload > .accordion > .title > span {
+    color: var(--on-surface);
+}
+.tdOverlay.importAsset .body.upload > .accordion > .content ul li {
+    color: var(--on-surface) !important;
+}
+.tdOverlay.importAsset .body.upload > .fileDropArea {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.tdOverlay.importAsset .body.upload > .fileDropArea.drag-over {
+    border-color: var(--primary);
+}
+.tdOverlay.importAsset .body.upload > .fileDropArea .tdButton {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+.tdOverlay.importAsset .body.upload > .fileDropArea .tdButton:hover {
+    background: var(--on-background);
+    color: var(--background);
+    border-color: var(--on-background);
+}
+.tdOverlay.importAsset .body.upload > .fileDropArea .tdButton:active {
+    background: var(--surface);
+    color: var(--on-surface);
+    border-color: var(--on-surface);
+}
+/* export popup */
+.tdOverlay.exportAsset > .body > .info > .icon.spreadsheet {
+    color: var(--on-surface);
+}
+.tdOverlay.exportAsset > .body > .info > p {
+    color: var(--on-surface);
+}
+.tdOverlay.exportAsset > .body .field + .field{
+    margin-top: 4px;
+}
+
+.tdOverlay.exportAsset > .body .radio.checkbox {
+    display: flex;
+    align-items: center;
+
+    --pip: var(--background);
+    --border-color: var(--on-background);
+}
+.tdOverlay.exportAsset > .body .radio.checkbox.checked {
+    --pip: var(--on-background);
+}
+.tdOverlay.exportAsset > .body .radio.checkbox:hover {
+    --pip: var(--primary);
+    --border-color: var(--primary);
+}
+.tdOverlay.exportAsset > .body input[type="radio"] {
+    appearance: none;
+    border: 1px solid var(--on-background);
+    border-radius: 50%;
+    height: 14px;
+    aspect-ratio: 1;
+    background: var(--background);
+
+    box-shadow:
+        inset 0 0 0 2px var(--background),
+        inset 0 0 0 3px var(--pip) !important;
+    border-color: var(--border-color);
+}
+.tdOverlay.exportAsset > .body input[type="radio"]:checked {
+    box-shadow:
+        inset 0 0 0 2px var(--background),
+        inset 0 0 0 7px var(--pip) !important;
+}
+
 }
 @-moz-document regexp(".*") {
   body.cke_editable,
