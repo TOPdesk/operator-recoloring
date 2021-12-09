@@ -117,3 +117,19 @@ The homepage is a static page hosted by github pages, all the files for the home
 Note that the homepage, besides the standard `index.html`, `index.css` and `index.js` also comes with `worker.js`, which calculates  a filter value for a given rgb value.
 
 This calculation is moved off the main thread as it can take a while for the calculation to arrive at a suitable answer.
+
+### Forcing an update of the user style
+
+When a new version becomes available Stylus will automatically update it after a while.
+
+If you do not want to wait for the automated check to run, you can force an update:
+
+- Click on the Stylus extension icon in the browser bar, and click the **Manage** button in the popup.
+  - This will open a new tab with the overview of all the installed styles.
+- Click the **Check all styles for updates** button under **Actions**.
+  - When it has found updates, an **Apply all updates** button will appear underneath, and the overview will change to show only the styles for which it has found
+  - If the update is __very__ recent, Stylus may not yet be able to find it.
+  - If Stylus can't find it after 5 minutes, it is likely that a syntax error is present in the user.css.
+updates.
+- Click the **Apply all updates** button that appeared underneath the **Check all styles** button,
+  - Alternatively, use the **Install update** down arrow icon in a style row to update only that style.
