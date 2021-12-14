@@ -1,4 +1,4 @@
-/* 
+/*
  * Action / Request
  */
 
@@ -138,9 +138,14 @@
   background: var(--background);
   border-color: var(--on-background);
 }
-[guielement="pt-memo-editable"] {
+[guielement="pt-memo-editable"],
+[guielement="pt-attachment-editable"] {
   background: transparent;
 }
+[guielement="pt-attachment-editable"] > [guielement="icon"] {
+  filter: var(--on-surface-filter);
+}
+
 
 /* toolbar buttons, the image gets washed out in toggled state :-( */
 [guielement="pt-richtextbuttonbar"] [guielement="imagebutton"],
