@@ -54,6 +54,12 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/styles/taskboard.css");
 }
 
+@-moz-dcoument
+    regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+
+  @import url("http://localhost:5500/src/styles/concurrent-users.css");
+}
 @-moz-document
     regexp("http(s)?://.*/tas/secure/grid.*"),
     regexp("http(s)?://.*/tas/secure/.*?action=.*") {

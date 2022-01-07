@@ -1,6 +1,18 @@
 /*
  * TASK BOARD and BOOKMARKS
  */
+/* notification */
+[guielement="notification-box"][mstyles="notification-alert"] {
+    background: var(--background);
+    border: 1px solid var(--primary);
+}
+[guielement="notification-box"][mstyles="notification-alert"] > [guielement="notification-message"] {
+    color: var(--primary);
+}
+[guielement="notification-box"][mstyles="notification-alert"] > [guielement="icon"] {
+    filter: var(--primary-filter);
+}
+
 
 /* filter panel */
 [guielement="taskboard_filter_panel"] {
@@ -71,7 +83,7 @@
     background: var(--surface);
     border-color: var(--on-surface);
     --text-color: var(--on-surface);
-    
+
 }
 [guielement="taskboard_item_body"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
     background: var(--primary);

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.4.1
+@version        2.5.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -2640,6 +2640,18 @@ div#checklist .date-and-time .control input[aria-invalid="true"] + .icon {
   /*
  * TASK BOARD and BOOKMARKS
  */
+/* notification */
+[guielement="notification-box"][mstyles="notification-alert"] {
+    background: var(--background);
+    border: 1px solid var(--primary);
+}
+[guielement="notification-box"][mstyles="notification-alert"] > [guielement="notification-message"] {
+    color: var(--primary);
+}
+[guielement="notification-box"][mstyles="notification-alert"] > [guielement="icon"] {
+    filter: var(--primary-filter);
+}
+
 
 /* filter panel */
 [guielement="taskboard_filter_panel"] {
@@ -2710,7 +2722,7 @@ div#checklist .date-and-time .control input[aria-invalid="true"] + .icon {
     background: var(--surface);
     border-color: var(--on-surface);
     --text-color: var(--on-surface);
-    
+
 }
 [guielement="taskboard_item_body"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
     background: var(--primary);
@@ -2732,6 +2744,22 @@ div#checklist .date-and-time .control input[aria-invalid="true"] + .icon {
 [guielement="taskboard_item"]:hover [guielement="taskboard_item_body"],
 [guielement="taskboard_item"]:focus-within [guielement="taskboard_item_body"] {
     border-color: var(--primary-muted);
+}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
+  body {
+    background: var(--background);
+}
+
+.notification.is-warning {
+    background: var(--background);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.notification.is-warning .icon {
+    color: var(--primary);
 }
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/grid.*"),
