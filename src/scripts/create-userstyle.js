@@ -45,7 +45,7 @@ export default function createUserstyle(version) {
 `${userstyleMetadata(version)}
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
                regexp("http(s)?://.*/services/workflows-v2.*"),
-               regexp("http(s)?://.*/tas/secure/.*?action=.*"),
+               regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"),
                regexp("http(s)?://.*/tas/secure/suggestions/.*"),
                regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
                regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
@@ -71,7 +71,7 @@ export default function createUserstyle(version) {
   ${readFileSync(__dirname + '/src/styles/concurrent-users.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/grid.*"),
-               regexp("http(s)?://.*/tas/secure/.*?action=.*") {
+               regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
   ${readFileSync(__dirname + '/src/styles/grid.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
@@ -85,6 +85,9 @@ export default function createUserstyle(version) {
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
   ${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*") {
+  ${readFileSync(__dirname + '/src/styles/assetmgmt/card.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp(".*") {
   ${readFileSync(__dirname + '/src/styles/richtext.css', {encoding: 'utf8'})}

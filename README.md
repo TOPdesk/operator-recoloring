@@ -29,7 +29,7 @@ For full explanation, plus instructions on how to install and use, see [the home
 @-moz-document
     regexp("http(s)?://.*/tas/secure/mango/.*"),
     regexp("http(s)?://.*/services/workflows-v2.*"),
-    regexp("http(s)?://.*/tas/secure/.*?action=.*"),
+    regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"),
     regexp("http(s)?://.*/tas/secure/suggestions/.*"),
     regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
     regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
@@ -62,8 +62,9 @@ For full explanation, plus instructions on how to install and use, see [the home
 }
 @-moz-document
     regexp("http(s)?://.*/tas/secure/grid.*"),
-    regexp("http(s)?://.*/tas/secure/.*?action=.*") {
+    regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
   @import url("http://localhost:5500/src/test-styles/variables.css");
+
   @import url("http://localhost:5500/src/styles/grid.css");
 }
 
@@ -95,6 +96,12 @@ For full explanation, plus instructions on how to install and use, see [the home
   @import url("http://localhost:5500/src/test-styles/variables.css");
 
   @import url("http://localhost:5500/src/styles/assetmgmt/overview.css");
+}
+
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*") {
+  @import url("http://localhost:5500/src/test-styles/variables.css");
+
+  @import url("http://localhost:5500/src/styles/assetmgmt/card.css");
 }
 
 @-moz-document regexp(".*") {
