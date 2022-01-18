@@ -15,8 +15,8 @@ h1 {
     color: var(--on-background);
 }
 .tdTab {
-    /* Aligning content with header, and other cards in topdesk */
-    padding: 0 16px;
+    padding: 0 16px; /* Aligning content with header, and other cards in topdesk */
+    z-index: 0;
 }
 i.loading::before {
     border-color: var(--on-primary) !important;
@@ -29,15 +29,15 @@ i.loading::after {
  * Card toolbar
  */
 /* Warning message */
-card-header .toolbar .warning.message {
+card-header .toolbars .toolbar .warning.message {
     background: var(--background);
     color: var(--primary);
     border: 1px solid var(--primary);
 }
-card-header .toolbar .warning.message a {
+card-header .toolbars .toolbar .warning.message a {
     color: var(--primary);
 }
-card-header .toolbar .warning.message a:hover {
+card-header .toolbars .toolbar .warning.message a:hover {
     background: var(--primary);
     color: var(--on-primary);
 }
@@ -58,7 +58,8 @@ card-header .toolbars  {
      */
     z-index: 1;
 }
-card-header .toolbars .toolbar .tdButton {
+card-header .toolbars .toolbar .tdButton,
+card-header .toolbars .toolbar .dropdown[data-handle="more"] { /* More button in template designer */
     --bg: var(--background);
     --color: var(--on-background);
     --border-color: var(--on-background);
@@ -71,12 +72,15 @@ card-header .toolbars .toolbar .split.buttons .tdButton:not(:first-child) {
     margin-left: -1px; /* Move adjacent button borders on top of eachother */
 }
 card-header .toolbars .toolbar .tdButton:hover,
-card-header .toolbars .toolbar .tdButton.dropdown.active {
+card-header .toolbars .toolbar .tdButton.dropdown.active,
+card-header .toolbars .toolbar .dropdown[data-handle="more"]:hover,
+card-header .toolbars .toolbar .dropdown[data-handle="more"].active {
     --bg: var(--on-background);
     --color: var(--background);
     --border-color: var(--on-background);
 }
-card-header .toolbars .toolbar .tdButton:active {
+card-header .toolbars .toolbar .tdButton:active,
+card-header .toolbars .toolbar .dropdown[data-handle="more"]:active {
     --bg: var(--surface);
     --color: var(--on-surface);
     --border-color: var(--on-surface);
@@ -106,17 +110,20 @@ card-header .toolbars .toolbar .tdButton.enabled.active /* View toggle */ {
 card-header .toolbars .toolbar .tdButton.iconed::before {
     color: var(--color);
 }
-card-header .toolbars .toolbar .tdButton:focus-visible {
+card-header .toolbars .toolbar .tdButton:focus-visible,
+card-header .toolbars .toolbar .dropdown[data-handle="more"]:focus-visible {
     outline: 2px solid var(--on-background);
     outline-offset: 2px;
     z-index: 1; /* The outline should be on top of adjacent buttons */
 }
 /* Dropdown menu */
-card-header .toolbars .toolbar .tdButton.dropdown .menu {
+card-header .toolbars .toolbar .tdButton.dropdown .menu,
+card-header .toolbars .toolbar .dropdown[data-handle="more"] .menu {
     border: none !important;
     border-radius: unset;
 }
-card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item {
+card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item,
+card-header .toolbars .toolbar .dropdown[data-handle="more"] .menu .tdButton.item{
     border: none !important;
     margin-left: unset;
     padding: 8px 16px;
@@ -125,11 +132,14 @@ card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item {
     --color: var(--on-surface);
 }
 card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item:hover,
-card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item.selected {
+card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item.selected,
+card-header .toolbars .toolbar .dropdown[data-handle="more"] .menu .tdButton.item:hover,
+card-header .toolbars .toolbar .dropdown[data-handle="more"] .menu .tdButton.item.selected {
     --bg: var(--on-surface);
     --color: var(--surface);
 }
-card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item[disabled="true"] {
+card-header .toolbars .toolbar .tdButton.dropdown .menu .tdButton.item[disabled="true"],
+card-header .toolbars .toolbar .dropdown[data-handle="more"] .menu .tdButton.item[disabled="true"] {
     --bg: var(--disabled);
     --color: var(--on-disabled);
 }
@@ -1340,8 +1350,7 @@ button.feedback::after {
     --border-color: var(--on-disabled);
 }
 /* delete popup and confirmation popup */
-.tdOverlay .body .instruction p,
-.tdOverlay .body .instruction .icon {
+.tdOverlay .body .instruction :is(p, .icon, h4) {
     color: var(--on-surface) !important;
 }
 /* archive popup */
@@ -1864,4 +1873,178 @@ add-widget-dropdown .tdActionButton.inlineDropdown .menu .items .item:hover {
 add-widget-dropdown .tdActionButton.inlineDropdown .menu .items .item.selected {
     background: var(--primary);
     color: var(--on-primary);
+}
+
+
+/*********************
+ * Template designer *
+ *********************/
+/*
+ * Sidebar
+ */
+settings-sidebar.panel {
+    background: var(--surface);
+    border-right: none;
+    border-left: 1px solid var(--on-surface);
+    padding: 0px 16px;
+}
+/* Header */
+settings-sidebar.panel .header span {
+    color: var(--on-surface);
+}
+settings-sidebar.panel .header .tdActionButton {
+    --bg: var(--background);
+    --color: var(--on-background);
+    --border-color: var(--on-background);
+}
+settings-sidebar.panel .header .tdActionButton:hover {
+    --bg: var(--on-background);
+    --color: var(--background);
+    --border-color: var(--on-background);
+}
+settings-sidebar.panel .header .tdActionButton:active {
+    --bg: var(--surface);
+    --color: var(--on-surface);
+    --border-color: var(--on-surface);
+}
+settings-sidebar.panel .header .tdActionButton .icon {
+    background: var(--bg) !important;
+    color: var(--color) !important;
+    border-color: var(--border-color) !important;
+}
+/* Tabs */
+settings-sidebar.panel .tabs ul {
+    border-color: var(--on-surface) !important;
+}
+settings-sidebar.panel .tabs li {
+    --clr: var(--on-surface);
+
+    border-color: var(--clr) !important;
+}
+settings-sidebar.panel .tabs a {
+    color: var(--clr) !important;
+}
+settings-sidebar.panel .tabs li.is-active {
+    --clr: var(--primary);
+}
+/* Actions footer */
+settings-sidebar.panel .actions.bordered {
+    border-color: var(--on-surface);
+}
+settings-sidebar.panel .actions.bordered .tdActionButton {
+    color: var(--on-surface);
+}
+settings-sidebar.panel .actions.bordered .tdActionButton:hover {
+    color: var(--primary);
+}
+/* Template list/ Field list / Link type list*/
+settings-sidebar.panel :is(template-selector, .field-overview, capability-selector) ul.selectable li {
+    --bg: var(--surface);
+    --color: var(--on-surface);
+
+    background: var(--bg) !important;
+    color: var(--color) !important;
+
+    padding: 8px 16px;
+}
+settings-sidebar.panel .field-overview ul.selectable li .icon {
+    color: var(--color);
+}
+settings-sidebar.panel :is(template-selector, .field-overview, capability-selector) ul.selectable li.selected {
+    --bg: var(--primary);
+    --color: var(--on-primary);
+}
+settings-sidebar.panel :is(template-selector, .field-overview, capability-selector) ul.selectable li:hover {
+    --bg: var(--on-surface);
+    --color: var(--surface);
+}
+settings-sidebar.panel :is(template-selector, .field-overview, capability-selector) ul.selectable li:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -4px;
+}
+settings-sidebar.panel .field-overview ul.selectable li .field-item.being-dragged {
+    background: var(--background);
+    color: var(--on-background);
+    outline-color: var(--primary);
+
+    --color: var(--on-background);
+}
+/* Field search */
+settings-sidebar.panel .field-overview .search-bar input {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+
+    padding: 16px 8px;
+}
+settings-sidebar.panel .field-overview .search-bar .icon {
+    color: var(--on-background);
+}
+settings-sidebar.panel .field-overview .search-bar input::placeholder {
+    color: var(--on-background);
+}
+settings-sidebar.panel .field-overview .search-bar input:focus {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+settings-sidebar.panel .field-overview p.no-results {
+    color: var(--on-surface);
+}
+/* Create new template/ new link type */
+settings-sidebar.panel .tab-content .entityCreator + .tdActionButton,
+settings-sidebar.panel .tab-content .entityCreator {
+    background: var(--surface);
+    border-color: var(--on-surface);
+}
+
+settings-sidebar.panel .tab-content .entityCreator + .tdActionButton {
+    --icon-bg: var(--background);
+    --icon-color: var(--on-background);
+    --icon-border: var(--on-background);
+
+    color: var(--on-surface);
+}
+settings-sidebar.panel .tab-content .entityCreator + .tdActionButton:hover {
+    --icon-bg: var(--on-background);
+    --icon-color: var(--background);
+    --icon-border: var(--on-background);
+}
+settings-sidebar.panel .tab-content .entityCreator + .tdActionButton:active {
+    --icon-bg: var(--surface);
+    --icon-color: var(--on-surface);
+    --icon-border: var(--on-surface);
+
+    color: var(--primary);
+}
+settings-sidebar.panel .tab-content .entityCreator + .tdActionButton > .icon {
+    background: var(--icon-bg);
+    color: var(--icon-color);
+    border-color: var(--icon-border);
+}
+settings-sidebar.panel .tab-content .entityCreator {
+    background: var(--surface);
+    border-color: var(--on-surface);
+}
+settings-sidebar.panel .tab-content .entityCreator input {
+    background: var(--background);
+    color: var(--on-background);
+    border-color: var(--on-background);
+}
+settings-sidebar.panel .tab-content .entityCreator input::placeholder {
+    color: var(--on-background);
+}
+settings-sidebar.panel .tab-content .entityCreator input:focus {
+    outline: 2px solid var(--on-surface);
+    outline-offset: 2px;
+}
+
+/*
+ * Template designer placeholder
+ */
+.placeholderGfx .placeholder-stage {
+    background: none;
+}
+.placeholderGfx p {
+    color: var(--on-background);
+    font-style: normal;
 }

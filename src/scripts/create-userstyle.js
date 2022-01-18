@@ -86,7 +86,8 @@ export default function createUserstyle(version) {
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
   ${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf8'})}
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"),
+               regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
   ${readFileSync(__dirname + '/src/styles/assetmgmt/card.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp(".*") {
