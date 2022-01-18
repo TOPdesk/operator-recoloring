@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Recoloring TOPdesk operator section
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.6.1
+@version        2.6.2
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -4197,6 +4197,38 @@ asset-filter.panel .filter-overviews :is(.save-view-component, .delete-view-comp
 asset-filter.panel .filter-overviews :is(.save-view-component, .delete-view-component) .popover .popover-popup .foot {
     background: var(--surface);
     border-color: var(--on-surface);
+}
+/* Filter visibility dropdown */
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown {
+    --color: var(--on-surface);
+
+    color: var(--color);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .icon {
+    color: var(--color);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown:hover {
+    --color: var(--primary);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu {
+    border: 1px solid var(--on-surface);
+    border-radius: 0;
+
+    width: fit-content;
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu .item {
+    background: var(--surface);
+    color: var(--on-surface);
+
+    padding: 8px 16px;
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu .item.selected {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu .item:hover {
+    background: var(--on-surface);
+    color: var(--surface);
 }
 /* Saved filters save action popup */
 asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup input:focus {

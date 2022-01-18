@@ -379,6 +379,38 @@ asset-filter.panel .filter-overviews :is(.save-view-component, .delete-view-comp
     background: var(--surface);
     border-color: var(--on-surface);
 }
+/* Filter visibility dropdown */
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown {
+    --color: var(--on-surface);
+
+    color: var(--color);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .icon {
+    color: var(--color);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown:hover {
+    --color: var(--primary);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu {
+    border: 1px solid var(--on-surface);
+    border-radius: 0;
+
+    width: fit-content;
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu .item {
+    background: var(--surface);
+    color: var(--on-surface);
+
+    padding: 8px 16px;
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu .item.selected {
+    background: var(--primary);
+    color: var(--on-primary);
+}
+asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup .visibility-selector .inline-dropdown .menu .item:hover {
+    background: var(--on-surface);
+    color: var(--surface);
+}
 /* Saved filters save action popup */
 asset-filter.panel .filter-overviews .save-view-component .popover .popover-popup input:focus {
     border-color: var(--on-background);
