@@ -1,6 +1,6 @@
 
 /* ==UserStyle==
-@name           Default Dark (TOPdesk Operator Recoloring)
+@name           Cobalt Blue (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
 @version        2.7.1
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
@@ -9,30 +9,30 @@
 @license        MIT
 @preprocessor   default
 
-@var color background "Background" #0c0c0c
-@var text background-filter "Background filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
-@var color on-background "On background" #fcfcfc
-@var text on-background-filter "On background filter" brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)
-@var color selection "Selection" rgba(252, 252, 252, 0.99)
-@var color on-selection "On selection" #0c0c0c
-@var color surface "Surface" #404040
-@var text surface-filter "Surface filter" brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%)
-@var color on-surface "On surface" #fcfcfc
-@var text on-surface-filter "On surface filter" brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)
-@var color disabled "Disabled" #404040
-@var text disabled-filter "Disabled filter" brightness(0) saturate(100%) invert(19%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(102%) contrast(82%)
-@var color on-disabled "On disabled" #8c8c8c
-@var text on-disabled-filter "On disabled filter" brightness(0) saturate(100%) invert(62%) sepia(0%) saturate(407%) hue-rotate(172deg) brightness(89%) contrast(89%)
-@var color primary "Primary" #eda911
-@var text primary-filter "Primary filter" brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(1479%) hue-rotate(354deg) brightness(97%) contrast(92%)
-@var color primary-muted "Primary muted" #d5970e
-@var text primary-muted-filter "Primary muted filter" brightness(0) saturate(100%) invert(66%) sepia(52%) saturate(3051%) hue-rotate(7deg) brightness(95%) contrast(89%)
-@var color on-primary "On primary" #0c0c0c
-@var text on-primary-filter "On primary filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
-@var color error "Error" #FF0070
-@var text error-filter "Error filter" brightness(0) saturate(100%) invert(16%) sepia(54%) saturate(7483%) hue-rotate(326deg) brightness(100%) contrast(109%)
-@var color on-error "On error" #0c0c0c
-@var text on-error-filter "On error filter" brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)
+@var color background "Background" #122738
+@var text background-filter "Background filter" brightness(0) saturate(100%) invert(11%) sepia(7%) saturate(7110%) hue-rotate(170deg) brightness(89%) contrast(90%)
+@var color on-background "On background" #ffffff
+@var text on-background-filter "On background filter" brightness(0) saturate(100%) invert(100%) sepia(27%) saturate(170%) hue-rotate(248deg) brightness(107%) contrast(101%)
+@var color selection "Selection" rgba(58, 217, 0, 0.99)
+@var color on-selection "On selection" #000000
+@var color surface "Surface" #193549
+@var text surface-filter "Surface filter" brightness(0) saturate(100%) invert(12%) sepia(84%) saturate(551%) hue-rotate(164deg) brightness(93%) contrast(86%)
+@var color on-surface "On surface" #ffffff
+@var text on-surface-filter "On surface filter" brightness(0) saturate(100%) invert(100%) sepia(27%) saturate(170%) hue-rotate(248deg) brightness(107%) contrast(101%)
+@var color disabled "Disabled" #193549
+@var text disabled-filter "Disabled filter" brightness(0) saturate(100%) invert(14%) sepia(9%) saturate(5296%) hue-rotate(168deg) brightness(92%) contrast(85%)
+@var color on-disabled "On disabled" #234e6d
+@var text on-disabled-filter "On disabled filter" brightness(0) saturate(100%) invert(27%) sepia(17%) saturate(1661%) hue-rotate(162deg) brightness(95%) contrast(93%)
+@var color primary "Primary" #ffc600
+@var text primary-filter "Primary filter" brightness(0) saturate(100%) invert(73%) sepia(12%) saturate(7485%) hue-rotate(4deg) brightness(108%) contrast(118%)
+@var color primary-muted "Primary muted" #ff9d00
+@var text primary-muted-filter "Primary muted filter" brightness(0) saturate(100%) invert(76%) sepia(65%) saturate(4201%) hue-rotate(359deg) brightness(101%) contrast(109%)
+@var color on-primary "On primary" #000000
+@var text on-primary-filter "On primary filter" brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(340deg) brightness(94%) contrast(106%)
+@var color error "Error" #ff0088
+@var text error-filter "Error filter" brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7470%) hue-rotate(198deg) brightness(91%) contrast(106%)
+@var color on-error "On error" #000000
+@var text on-error-filter "On error filter" brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(340deg) brightness(94%) contrast(106%)
 ==/UserStyle== */
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
               regexp("http(s)?://.*/services/workflows-v2.*"),
