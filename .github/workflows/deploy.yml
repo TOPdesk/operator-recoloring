@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          git add public/*
+          git add public/*.user.css
           git commit -m "Publish updates v${{ steps.version-check.outputs.version }}"
           git tag v${{ steps.version-check.outputs.version }}
       - name: Publish user style changes
