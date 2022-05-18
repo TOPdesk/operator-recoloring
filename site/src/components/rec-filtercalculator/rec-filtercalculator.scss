@@ -1,0 +1,77 @@
+:host {
+  display: block;
+}
+
+:host * {
+  line-height: 1.5;
+}
+
+.icon {
+  height: 1.5em;
+  fill: currentColor;
+}
+
+h3 {
+  margin: 0;
+}
+
+[role="status"],
+.swatches,
+label,
+.copy {
+  display: block;
+  margin-top: 16px;
+}
+
+.swatches {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  display: inline-block;
+
+  height: 1em;
+  aspect-ratio: 1;
+
+  border: 1px solid currentColor;
+  position: relative;
+
+}
+.swatch::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background-color: var(--color, black);
+  filter: var(--filter, none);
+}
+
+label > .label {
+  font-weight: 700;
+}
+
+label > .description {
+  font-size: 0.75em;
+}
+
+.retry {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: currentColor;
+}
+
+.retry:hover {
+  color: var(--gold-30);
+}
+
+textarea {
+  display: block;
+  resize: none;
+  width: 100%;
+  height: 6em;
+}

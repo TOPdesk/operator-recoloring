@@ -1,0 +1,50 @@
+name: Deploy site to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  deploy:
+    name: Deploy updates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Clean install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Check version
+        id: version-check
+        uses: Endbug/version-check@v2
+        with:
+          diff-search: true
+      - name: Commit user style changes
+        if: steps.version-check.outputs.changed == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add public/*
+          git commit -m "Publish updates v${{ steps.version-check.outputs.version }}"
+          git tag v${{ steps.version-check.outputs.version }}
+      - name: Publish user style changes
+        if: steps.version-check.outputs.changed == 'true'
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          destination_dir: docs

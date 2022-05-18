@@ -1,0 +1,152 @@
+@import '../../styles/mixins.scss';
+
+:host {
+	background: #eee;
+	color: #000;
+
+	// sizes
+	--control-size: var(--carousel-control-size, 36px);
+	--control-spacing: var(--carousel-control-spacing, 4px);
+
+	// colors
+	--fg-disabled: var(--carousel-fg-disabled, #aaa);
+
+	--tablist-bg: var(--carousel-tabs-bg, rgb(0 0 0 / 65%));
+	--tablist-fg: var(--carousel-tabs-fg, white);
+	--tablist-contrast: var(--carousel-tabs-contrast, black);
+	--tablist-accent: var(--carousel-tabs-accent, #005a9c);
+}
+
+:host {
+	display: flex;
+	flex-direction: column;
+
+	padding: 10px;
+	margin: 0;
+	position: relative;
+
+	border-radius: 5px;
+	max-width: 900px;
+}
+
+.title {
+	text-align: center;
+}
+
+:host([aria-labelledby]:not(.self-titled)) .title {
+	display: none;
+}
+
+.carousel-items {
+	flex-grow: 1;
+}
+
+.controls {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	width: 100%;
+	padding-block: var(--control-spacing);
+}
+
+.nav-control {
+	flex-shrink: 0;
+	height: var(--control-size);
+	border-radius: 2px;
+	padding: 0;
+
+	background: none;
+	border: 1px solid transparent;
+	color: inherit;
+}
+.nav-control .visually-hidden {
+	@include visually-hidden;
+}
+
+.nav-control:hover > svg {
+	transform: scale(1.1);
+}
+.nav-control:active > svg {
+	transform: scale(0.8);
+}
+.nav-control:focus-visible {
+	outline: 2px solid currentColor;
+}
+.nav-control[aria-disabled="true"] {
+	color: var(--fg-disabled)
+}
+
+.nav-control > svg {
+	height: 100%;
+}
+
+[role="tablist"] {
+	--tab-bg: var(--tablist-contrast);
+
+	--pip: var(--tab-bg);
+	--pip-border: var(--tablist-fg);
+	--tab-border: var(--tab-bg);
+	--tab-border-large: transparent;
+
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	background-color: var(--tablist-bg);
+	border: 2px solid transparent;
+	border-radius: 13px;
+
+	& ::slotted(button[role="tab"]) {
+		all: unset !important;
+
+		height: calc(var(--control-size) - 4px) !important; /* Adjust for tablist border */
+		aspect-ratio: 1 !important;
+	}
+
+	& ::slotted(button[role="tab"]:hover) {
+		--pip: var(--tablist-accent);
+		--pip-border: var(--tablist-accent);
+		--tab-border: var(--tablist-fg);
+	}
+
+	& ::slotted(button[role="tab"][aria-selected="true"]) {
+		--pip: var(--tablist-fg);
+	}
+
+	&:focus-within {
+		background-color: var(--tablist-accent);
+		border-color: var(--tablist-fg);
+		--tab-bg: var(--tablist-accent);
+
+		& ::slotted(button[aria-selected="true"]) {
+			--tab-border-large: var(--tablist-fg);
+		}
+
+		& ::slotted(button:hover[aria-selected="true"]) {
+			--tab-border-large: transparent;
+		}
+	}
+}
+
+.aperture {
+	overflow-x: hidden;
+}
+
+.carousel-items {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "viewer";
+}
+
+.carousel-items ::slotted(*) {
+	grid-area: viewer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.carousel-items {
+		/* transform is applied in JS */
+		transition: transform 200ms ease-out;
+	}
+}
