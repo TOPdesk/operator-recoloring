@@ -52,7 +52,7 @@ export class RecCarousel extends LitElement {
         <button
           class="nav-control"
           type="button"
-          @click="${this.#handlePrevious}"
+          @click="${this.handlePrevious}"
           aria-disabled="${!this.wrap && this._currentIndex === 0 ? 'true' : 'false'}"
         >
           <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
@@ -66,7 +66,7 @@ export class RecCarousel extends LitElement {
         <button
           class="nav-control"
           type="button"
-          @click="${this.#handleNext}"
+          @click="${this.handleNext}"
           aria-disabled="${!this.wrap && this._currentIndex === this._slides.length - 1 ? 'true' : 'false'}"
         >
           <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
@@ -240,11 +240,11 @@ export class RecCarousel extends LitElement {
     }
   }
 
-  #handlePrevious() {
+  handlePrevious() {
     this.#setSelectedToPreviousTab(false);
   }
 
-  #handleNext() {
+  handleNext() {
     this.#setSelectedToNextTab(false);
   }
 
