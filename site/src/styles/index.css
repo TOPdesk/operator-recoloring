@@ -450,6 +450,11 @@ rec-carousel :is(picture, img) {
   max-height: 100%;
 }
 
+rec-carousel img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 /*
  * FILTER FORM
  */
