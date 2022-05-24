@@ -1,8 +1,5 @@
 import ZingTouch from 'zingtouch/src/ZingTouch';
 
-// Inform CSS that JS is available
-document.documentElement.classList.replace('no-js', 'js');
-
 /*
  * Adding swipe support to carousels
  */

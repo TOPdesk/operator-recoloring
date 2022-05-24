@@ -43,7 +43,13 @@ export default [
       html({
         input: 'site/src/index.html',
         transformHtml: [
-          html => html.replace(/<(.*)data-version="unknown"(.*?)>.*?</, `<$1data-version="${version}"$2>${version}<`)
+          html => html.replace(/<(.*)data-version="unknown"(.*?)>.*?</, `<$1data-version="${version}"$2>${version}<`),
+          html => html.replaceAll(/<link rel="stylesheet" href="(.*?).css">/g, `
+            <link rel="preload" href="$1.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript>
+              <link rel="stylesheet" href="$1.css">
+            </noscript>
+          `)
         ]
       }),
       postcss({

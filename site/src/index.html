@@ -31,19 +31,75 @@
   <title>TOPdesk Operator Recoloring</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-  <script type="module" src="scripts/index.js"></script>
-  <script type="module" src="components/rec-carousel/rec-carousel.js"></script>
-  <script type="module" src="components/rec-carousel-slide/rec-carousel-slide.js"></script>
-  <script type="module" src="components/rec-filtercalculator/rec-filtercalculator.js"></script>
-  <script type="module" src="../../node_modules/wicg-inert/dist/inert.esm.js"></script>
-  <script type="module" src="../../node_modules/@lion/tabs/lion-tabs.js"></script>
+  <script>
+    // Inform CSS that JS is available
+    document.documentElement.classList.replace('no-js', 'js');
+  </script>
 
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/index.css" />
-  <link rel="stylesheet" href="styles/pushable.css" />
+  <script async type="module" src="scripts/index.js"></script>
+  <script async type="module" src="components/rec-carousel/rec-carousel.js"></script>
+  <script async type="module" src="components/rec-carousel-slide/rec-carousel-slide.js"></script>
+  <script async type="module" src="components/rec-filtercalculator/rec-filtercalculator.js"></script>
+  <script async type="module" src="../../node_modules/wicg-inert/dist/inert.esm.js"></script>
+  <script async type="module" src="../../node_modules/@lion/tabs/lion-tabs.js"></script>
+
+
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/pushable.css">
 
   <style>
-    /* bree-serif-regular - latin */
+    /*
+     * CSS reset by Josh Comeau
+     * https://www.joshwcomeau.com/css/custom-css-reset/
+     */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+  </style>
+  <style>
+    /* Prioritize Fonts */
     @font-face {
       font-family: 'Bree Serif';
       font-style: normal;
@@ -52,7 +108,6 @@
       src: url('fonts/bree-serif-v17-latin-regular.woff2') format('woff2');
     }
 
-    /* open-sans-regular - latin */
     @font-face {
       font-family: 'Open Sans';
       font-style: normal;
@@ -61,7 +116,6 @@
       src: url('fonts/open-sans-v28-latin-regular.woff2') format('woff2');
     }
 
-    /* open-sans-700 - latin */
     @font-face {
       font-family: 'Open Sans';
       font-style: normal;
@@ -70,7 +124,6 @@
       src: url('fonts/open-sans-v28-latin-700.woff2') format('woff2');
     }
 
-    /* open-sans-italic - latin */
     @font-face {
       font-family: 'Open Sans';
       font-style: italic;
@@ -89,6 +142,258 @@
       font-weight: 400;
     }
 
+    /* Colors */
+    :root {
+      --ash-10: hsl(0, 0%, 96%);
+      --ash-90: hsl(0, 0%, 16%);
+
+      --gold-20: hsl(48, 100%, 60%);
+      --gold-50: hsl(47, 85%, 35%);
+      --gold-80: hsl(46, 90%, 16%);
+
+      --cassis-70: hsl(303, 22%, 37%);
+      --cassis-80: hsl(287, 30%, 28%);
+      --cassis-90: hsl(267, 41%, 21%);
+      --cassis-100: hsl(267, 49%, 12%);
+
+      --rec-background: var(--ash-10);
+      --rec-on-background: var(--ash-90);
+      --rec-hero-accent: var(--cassis-80);
+    }
+
+    .skip-link {
+      background-color: var(--cassis-70);
+      color: var(--ash-10);
+    }
+
+    .body-link,
+    .surface-link {
+      color: currentColor;
+    }
+
+    .body-link {
+      --link-focus-color: hsl(240deg 100% 50%);
+    }
+
+    .surface-link {
+      --link-focus-color: var(--gold-20);
+    }
+
+    [class*="shadow-"] {
+      --shadow-color: 0deg 0% 60%;
+    }
+
+    body {
+      background-color: var(--rec-background);
+      color: var(--rec-on-background);
+    }
+
+    lion-tabs>button {
+      background-color: var(--cassis-80);
+      color: var(--ash-10);
+    }
+
+    lion-tabs>button[aria-selected="true"] {
+      background-color: var(--cassis-70);
+    }
+
+    rec-carousel {
+      background-color: var(--cassis-70);
+      color: var(--ash-10);
+
+      --carousel-tabs-fg: var(--ash-10);
+      --carousel-tabs-contrast: var(--ash-90);
+      --carousel-tabs-accent: var(--cassis-80);
+      --carousel-fg-disabled: var(--cassis-80);
+
+      --carousel-passepartout: var(--rec-background);
+      --carousel-passepartout-fg: var(--rec-on-background);
+    }
+
+    .filter-form form {
+      background-color: var(--cassis-70);
+      color: var(--ash-10);
+    }
+
+    rec-filtercalculator {
+      background-color: var(--cassis-80);
+      color: var(--ash-10);
+    }
+
+    footer {
+      background-color: var(--cassis-80);
+      color: var(--ash-10);
+    }
+
+    /* Images */
+    img {
+      object-fit: scale-down;
+      height: auto;
+      max-height: 100%;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Layout (broad strokes)*/
+    .skip-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: 16px;
+      padding-right: 64px;
+      padding-bottom: 24px;
+      padding-left: 32px;
+
+      border-radius: 0 0 100vh 0;
+      z-index: 1;
+
+      outline: none;
+
+      border-left-width: 0;
+      border-top-width: 0;
+    }
+
+    .skip-link:not(:focus) {
+      transform: translateY(-200%);
+    }
+
+    .layout-grid {
+      --y-gap: 4rem;
+      --gutter: 64px;
+      display: grid;
+      grid-template-columns: 1fr min(60rem, calc(100% - (2 * var(--gutter)))) 1fr;
+      gap: var(--y-gap) var(--gutter);
+    }
+
+    .layout-grid>* {
+      grid-column: 2;
+    }
+
+    .layout-grid>.full-bleed {
+      width: 100%;
+      grid-column: 1 / -1;
+    }
+
+    .layout-grid+.layout-grid {
+      margin-top: var(--y-gap);
+    }
+
+    header {
+      padding-top: var(--y-gap);
+    }
+
+    footer {
+      padding-bottom: var(--y-gap);
+    }
+
+    h2+* {
+      margin-top: 0.5rem;
+    }
+
+    p+p {
+      margin-top: 1rem;
+    }
+
+    rec-carousel {
+      max-width: none;
+    }
+
+    /* Hero */
+    .hero-text h1 {
+      font-size: clamp(2.4rem,
+          5.1vw + 1rem,
+          4.2rem);
+      line-height: 1.2;
+
+      color: var(--rec-hero-accent);
+    }
+
+    .hero-text .catchline {
+      font-style: italic;
+      font-size: 1.5rem;
+    }
+
+    .hero-text .version {
+      font-size: 0.75rem;
+    }
+
+    .hero-image {
+      background-color: var(--rec-hero-accent);
+      border-radius: 4px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      grid-template-areas: "hero hero hero";
+
+      aspect-ratio: 16/9;
+      width: 100%;
+      height: auto;
+
+      overflow: hidden;
+
+      --top-break: 35%;
+      --slant-diff: 20%;
+      --bottom-break: calc(var(--top-break) - var(--slant-diff));
+      --left-sash: 3%;
+      --right-sash: 3%;
+      --middle-thickness: 40%;
+
+      /*
+       *   a --- b a --- b a --- b
+       *  /  1  / /  2  / /  3  /
+       * d --- c d --- c d --- c
+       */
+      --x1a: 0;
+      --x1b: var(--top-break);
+      --x2a: calc(var(--x1b) + var(--left-sash));
+      --x2b: calc(var(--x2a) + var(--middle-thickness));
+      --x3a: calc(var(--x2b) + var(--right-sash));
+      --x3b: 100%;
+
+      --x1d: 0;
+      --x1c: var(--bottom-break);
+      --x2d: calc(var(--x1c) + var(--left-sash));
+      --x2c: calc(var(--x2d) + var(--middle-thickness));
+      --x3d: calc(var(--x2c) + var(--right-sash));
+      --x3c: 100%;
+
+      --left: polygon(0% 0%, 0% 0%, -20% 100%, -20% 100%);
+      --full: polygon(0% 0%, 120% 0%, 100% 100%, -20% 100%);
+      --right: polygon(120% 0%, 120% 0%, 100% 100%, 100% 100%);
+    }
+
+    .hero-image picture {
+      grid-area: hero;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+
+      pointer-events: none;
+    }
+
+    .hero-image picture:nth-of-type(1)>img {
+      clip-path: polygon(var(--x1a) 0%,
+          var(--x1b) 0%,
+          var(--x1c) 100%,
+          var(--x1d) 100%);
+    }
+
+    .hero-image picture:nth-of-type(2)>img {
+      clip-path: polygon(var(--x2a) 0%,
+          var(--x2b) 0%,
+          var(--x2c) 100%,
+          var(--x2d) 100%);
+    }
+
+    .hero-image picture:nth-of-type(3)>img {
+      clip-path: polygon(var(--x3a) 0%,
+          var(--x3b) 0%,
+          var(--x3c) 100%,
+          var(--x3d) 100%);
+    }
+
+    /* Deal with missing JS */
     .no-js lion-tabs>[slot="tab"] {
       display: none;
     }
@@ -99,6 +404,33 @@
 
     .no-js .filter-form .description.js {
       display: none;
+    }
+  </style>
+  <style media="(prefers-color-scheme: dark)">
+    :root {
+      color-scheme: dark;
+
+      --rec-background: var(--cassis-100);
+      --rec-on-background: var(--ash-10);
+      --rec-hero-accent: var(--gold-20);
+    }
+
+    .body-link {
+      --link-focus-color: hsl(240deg 100% 81%);
+    }
+
+    [class*="shadow-"] {
+      --shadow-color: 266deg 76% 4%;
+    }
+  </style>
+  <style media="(max-width: 32rem)">
+    .layout-grid {
+      --gutter: 16px;
+      --y-gap: 2rem;
+    }
+
+    .hero-text .catchline {
+      font-size: 1.25rem;
     }
   </style>
 </head>
