@@ -288,7 +288,7 @@ img {
  */
 
 .theme {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .theme > h3 {
   margin-bottom: 0.5rem;
@@ -309,7 +309,7 @@ img {
     grid-template-areas:
           "sample heading"
           "sample content"
-          "sample button";
+          "button .";
     gap: 0 32px;
   }
   .theme > h3 {
@@ -323,7 +323,6 @@ img {
   }
   .theme > .install-button {
     grid-area: button;
-    justify-self: end;
   }
 }
 
