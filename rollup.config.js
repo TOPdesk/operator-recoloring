@@ -50,7 +50,8 @@ export default [
               <link rel="stylesheet" href="$1.css">
             </noscript>
           `)
-        ]
+        ],
+        minify:true,
       }),
       postcss({
         minimize: true,
