@@ -19,7 +19,7 @@ import ZingTouch from 'zingtouch/src/ZingTouch';
         /* Left 180 +- 30 */
         carousel.handleNext();
       }
-    });
+    }, false);
   });
 })();
 
