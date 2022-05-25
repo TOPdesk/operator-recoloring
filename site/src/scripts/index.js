@@ -1,26 +1,16 @@
-import ZingTouch from 'zingtouch/src/ZingTouch';
-
 /*
  * Adding swipe support to carousels
  */
-(function () {
-  const main = document.querySelector('#main');
-  const gestureRegion = new ZingTouch.Region(main, false, false);
+(async function () {
+  if (window.matchMedia('(any-pointer: coarse)').matches) {
+    const { addHorizontalSwipeTriggers } = await import('./swipe');
 
-  document.querySelectorAll('rec-carousel').forEach(carousel => {
-    gestureRegion.bind(carousel, 'swipe', event => {
-      const direction = event.detail.data[0].currentDirection;
+    const main = document.querySelector('#main');
 
-      if ((direction >= 0 && direction < 30) || (direction > 330 && direction <= 360)) {
-        /* Right 0 + 30 or 360 - 30 */
-        carousel.handlePrevious();
-      }
-      else if (direction > 150 && direction < 210) {
-        /* Left 180 +- 30 */
-        carousel.handleNext();
-      }
-    }, false);
-  });
+    document.querySelectorAll('rec-carousel').forEach(carousel => {
+      addHorizontalSwipeTriggers(main, carousel, () => carousel.handleNext(), () => carousel.handlePrevious());
+    });
+  }
 })();
 
 /*
