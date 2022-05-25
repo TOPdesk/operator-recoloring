@@ -295,6 +295,7 @@
 
     rec-carousel {
       max-width: none;
+      --carousel-control-size: 2.25rem;
     }
 
     /* Hero */
@@ -431,6 +432,15 @@
 
     .hero-text .catchline {
       font-size: 1.25rem;
+    }
+  </style>
+  <style media="(pointer: coarse)">
+    nav li+li {
+      margin-top: 20px;
+    }
+
+    rec-carousel {
+      --carousel-control-size: 3rem;
     }
   </style>
 </head>
