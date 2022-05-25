@@ -331,36 +331,6 @@
       height: auto;
 
       overflow: hidden;
-
-      --top-break: 35%;
-      --slant-diff: 20%;
-      --bottom-break: calc(var(--top-break) - var(--slant-diff));
-      --left-sash: 3%;
-      --right-sash: 3%;
-      --middle-thickness: 40%;
-
-      /*
-       *   a --- b a --- b a --- b
-       *  /  1  / /  2  / /  3  /
-       * d --- c d --- c d --- c
-       */
-      --x1a: 0;
-      --x1b: var(--top-break);
-      --x2a: calc(var(--x1b) + var(--left-sash));
-      --x2b: calc(var(--x2a) + var(--middle-thickness));
-      --x3a: calc(var(--x2b) + var(--right-sash));
-      --x3b: 100%;
-
-      --x1d: 0;
-      --x1c: var(--bottom-break);
-      --x2d: calc(var(--x1c) + var(--left-sash));
-      --x2c: calc(var(--x2d) + var(--middle-thickness));
-      --x3d: calc(var(--x2c) + var(--right-sash));
-      --x3c: 100%;
-
-      --left: polygon(0% 0%, 0% 0%, -20% 100%, -20% 100%);
-      --full: polygon(0% 0%, 120% 0%, 100% 100%, -20% 100%);
-      --right: polygon(120% 0%, 120% 0%, 100% 100%, 100% 100%);
     }
 
     .hero-image picture {
@@ -373,25 +343,16 @@
       pointer-events: none;
     }
 
-    .hero-image picture:nth-of-type(1)>img {
-      clip-path: polygon(var(--x1a) 0%,
-          var(--x1b) 0%,
-          var(--x1c) 100%,
-          var(--x1d) 100%);
+    .hero-image .sample-left {
+      clip-path: var(--clip-hover-left, polygon(0% 0%, 35% 0%, 15% 100%, 0% 100%));
     }
 
-    .hero-image picture:nth-of-type(2)>img {
-      clip-path: polygon(var(--x2a) 0%,
-          var(--x2b) 0%,
-          var(--x2c) 100%,
-          var(--x2d) 100%);
+    .hero-image .sample-middle {
+      clip-path: var(--clip-hover-middle, polygon(38% 0%, 78% 0%, 58% 100%, 18% 100%));
     }
 
-    .hero-image picture:nth-of-type(3)>img {
-      clip-path: polygon(var(--x3a) 0%,
-          var(--x3b) 0%,
-          var(--x3c) 100%,
-          var(--x3d) 100%);
+    .hero-image .sample-right {
+      clip-path: var(--clip-hover-right, polygon(81% 0%, 100% 0%, 100% 100%, 61% 100%));
     }
 
     /* Deal with missing JS */
@@ -459,24 +420,24 @@
         <p class="catchline">TOPdesk like you've never seen before</p>
       </div>
       <div class="hero-image shadow-high">
-        <div class="hover-capture"></div>
-        <div class="hover-capture"></div>
-        <div class="hover-capture"></div>
-        <picture>
+        <div class="hover-capture-left"></div>
+        <div class="hover-capture-middle"></div>
+        <div class="hover-capture-right"></div>
+        <picture class="sample-left">
           <source type="image/webp" srcset="
             ../images/optimized-screenshots/Sample_default-640.webp 640w,
             ../images/optimized-screenshots/Sample_default-960.webp 960w,
             ../images/optimized-screenshots/Sample_default.webp" sizes="(min-width: 60rem) 60rem, 100vw">
           <img src="../images/optimized-screenshots/Sample_default.png" alt="" width="1920" height="1080">
         </picture>
-        <picture>
+        <picture class="sample-middle">
           <source type="image/webp" srcset="
             ../images/optimized-screenshots/Sample_green-640.webp 640w,
             ../images/optimized-screenshots/Sample_green-960.webp 960w,
             ../images/optimized-screenshots/Sample_green.webp" sizes="(min-width: 60rem) 60rem, 100vw">
           <img src="../images/optimized-screenshots/Sample_green.png" alt="" width="1920" height="1080">
         </picture>
-        <picture>
+        <picture class="sample-right">
           <source type="image/webp" srcset="
             ../images/optimized-screenshots/Sample_cobalt-640.webp 640w,
             ../images/optimized-screenshots/Sample_cobalt-960.webp 960w,
