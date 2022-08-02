@@ -1,37 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <style>
-    #robin {
-      fill: url(#light-fill);
-    }
-    @media (prefers-color-scheme: dark) {
-      #robin {
-        fill: url(#dark-fill);
-      }
-    }
-  </style>
-  <g transform="translate(10.75,16)" stroke-width="0">
-    <path id="robin" d="M0 0 L-10.5 -10.5 A14.85 14.85 0 0 1 10.5 -10.5 L21 0 L10.5 10.5 A14.85 14.85 0 0 1 -10.5 10.5Z"/>
-  </g>
-  <defs>
-    <linearGradient id="light-fill" x1="0" x2="0" y1="10%" y2="90%">
-      <stop offset="0" stop-color="#000000" />
-      <stop offset="0.14285714285714285" stop-color="#20101f" />
-      <stop offset="0.2857142857142857" stop-color="#3a1737" />
-      <stop offset="0.42857142857142855" stop-color="#551b51" />
-      <stop offset="0.5714285714285714" stop-color="#721f6c" />
-      <stop offset="0.7142857142857142" stop-color="#902089" />
-      <stop offset="0.8571428571428571" stop-color="#af20a7" />
-      <stop offset="1" stop-color="#cf1dc6" />
-    </linearGradient>
-    <linearGradient id="dark-fill" x1="10%" x2="85%" y1="0" y2="0">
-        <stop offset="0" stop-color="#fff317" />
-        <stop offset="0.14285714285714285" stop-color="#ffce00" />
-        <stop offset="0.2857142857142857" stop-color="#ffa521" />
-        <stop offset="0.42857142857142855" stop-color="#ff7a44" />
-        <stop offset="0.5714285714285714" stop-color="#ff4d63" />
-        <stop offset="0.7142857142857142" stop-color="#ff1982" />
-        <stop offset="0.8571428571428571" stop-color="#f300a0" />
-        <stop offset="1" stop-color="#c11bb9" />
-    </linearGradient>
-  </defs>
+	<style>
+		#robin {
+			fill: url(#light-fill);
+		}
+		@media (prefers-color-scheme: dark) {
+			#robin {
+				fill: url(#dark-fill);
+			}
+		}
+	</style>
+	<g transform="translate(10.75,16)" stroke-width="0">
+		<path id="robin" d="M0 0 L-10.5 -10.5 A14.85 14.85 0 0 1 10.5 -10.5 L21 0 L10.5 10.5 A14.85 14.85 0 0 1 -10.5 10.5Z"/>
+	</g>
+	<defs>
+		<linearGradient id="light-fill" x1="0" x2="0" y1="10%" y2="90%">
+			<stop offset="0" stop-color="#000000" />
+			<stop offset="0.14285714285714285" stop-color="#20101f" />
+			<stop offset="0.2857142857142857" stop-color="#3a1737" />
+			<stop offset="0.42857142857142855" stop-color="#551b51" />
+			<stop offset="0.5714285714285714" stop-color="#721f6c" />
+			<stop offset="0.7142857142857142" stop-color="#902089" />
+			<stop offset="0.8571428571428571" stop-color="#af20a7" />
+			<stop offset="1" stop-color="#cf1dc6" />
+		</linearGradient>
+		<linearGradient id="dark-fill" x1="10%" x2="85%" y1="0" y2="0">
+				<stop offset="0" stop-color="#fff317" />
+				<stop offset="0.14285714285714285" stop-color="#ffce00" />
+				<stop offset="0.2857142857142857" stop-color="#ffa521" />
+				<stop offset="0.42857142857142855" stop-color="#ff7a44" />
+				<stop offset="0.5714285714285714" stop-color="#ff4d63" />
+				<stop offset="0.7142857142857142" stop-color="#ff1982" />
+				<stop offset="0.8571428571428571" stop-color="#f300a0" />
+				<stop offset="1" stop-color="#c11bb9" />
+		</linearGradient>
+	</defs>
 </svg>

@@ -1,0 +1,116 @@
+.pushable {
+	--button-clr: var(--ash-90);
+	--button-bg: var(--gold-20);
+	--button-edge-center: var(--gold-50);
+	--button-edge-corner: var(--gold-80);
+
+	--button-disabled-bg: var(--cassis-90);
+	--button-disabled-clr: var(--cassis-70);
+}
+
+@media (prefers-color-scheme: light) {
+	.pushable.purple {
+		--button-clr: var(--ash-10);
+		--button-bg: var(--cassis-80);
+		--button-edge-center: var(--cassis-90);
+		--button-edge-corner: var(--cassis-100);
+	}
+}
+
+.pushable {
+	display: inline-block;
+	text-decoration: none;
+
+	position: relative;
+	border: none;
+	background: transparent;
+	padding: 0;
+	cursor: pointer;
+	outline-offset: 6px;
+	transition: filter 250ms;
+}
+.pushable > .shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	background: hsla(0deg, 0%, 0%, 0.25);
+	will-change: transform;
+	transform: translateY(2px);
+	transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.pushable > .edge {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	background: linear-gradient(
+		to left,
+		var(--button-edge-corner, hsl(340deg, 100%, 16%)) 0%,
+		var(--button-edge-center, hsl(340deg, 100%, 32%)) 8%,
+		var(--button-edge-center, hsl(340deg, 100%, 32%)) 92%,
+		var(--button-edge-corner, hsl(340deg, 100%, 16%)) 100%
+	);
+}
+.pushable > .front {
+	display: flex;
+	gap: 16px;
+
+	position: relative;
+
+	padding: 8px 16px;
+	border-radius: 6px;
+	font-size: 1.15rem;
+	color: var(--button-clr, white);
+	background: var(--button-bg, hsl(345deg, 100%, 47%));
+	will-change: transform;
+	transform: translateY(-4px);
+	transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.pushable:hover {
+	filter: brightness(110%);
+}
+.pushable:hover > .front {
+	transform: translateY(-6px);
+	transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.pushable:focus {
+	outline: 2px solid var(--button-bg, hsl(345deg, 100%, 47%));
+}
+.pushable:focus:not(:focus-visible) {
+	outline: none;
+}
+.pushable:active > .front {
+	transform: translateY(-2px);
+	transition: transform 34ms;
+}
+.pushable:hover > .shadow {
+	transform: translateY(4px);
+	transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.pushable:active > .shadow {
+	transform: translateY(1px);
+	transition: transform 34ms;
+}
+
+.pushable[aria-disabled='true']:hover {
+	filter: none;
+}
+
+.pushable[aria-disabled='true'] > .front {
+	background-color: var(--button-disabled-bg);
+	color: var(--button-disabled-clr);
+}
+
+.pushable[aria-disabled='true'] > .shadow,
+.pushable[aria-disabled='true'] > .edge {
+	display: none;
+}
+
+.pushable[aria-disabled='true'] > .front {
+	transform: none !important;
+}
