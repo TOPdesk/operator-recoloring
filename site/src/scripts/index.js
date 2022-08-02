@@ -2,48 +2,48 @@
  * Adding swipe support to carousels
  */
 (async function () {
-  if (window.matchMedia('(any-pointer: coarse)').matches) {
-    const { addHorizontalSwipeTriggers } = await import('./swipe');
+	if (window.matchMedia('(any-pointer: coarse)').matches) {
+		const { addHorizontalSwipeTriggers } = await import('./swipe');
 
-    const main = document.querySelector('#main');
+		const main = document.querySelector('#main');
 
-    document.querySelectorAll('rec-carousel').forEach(carousel => {
-      addHorizontalSwipeTriggers(main, carousel, () => carousel.handleNext(), () => carousel.handlePrevious());
-    });
-  }
+		document.querySelectorAll('rec-carousel').forEach(carousel => {
+			addHorizontalSwipeTriggers(main, carousel, () => carousel.handleNext(), () => carousel.handlePrevious());
+		});
+	}
 })();
 
 /*
  * Filter Form
  */
 (function () {
-  const form = document.querySelector('#filter-form');
-  const calculateButton = document.querySelector('#filter-form-submit');
-  const colorField = document.querySelector('#filter-form-field');
-  const eyedropperButton = document.querySelector('#filter-eyedropper');
-  const calculator = document.querySelector('#filter-calculator');
+	const form = document.querySelector('#filter-form');
+	const calculateButton = document.querySelector('#filter-form-submit');
+	const colorField = document.querySelector('#filter-form-field');
+	const eyedropperButton = document.querySelector('#filter-eyedropper');
+	const calculator = document.querySelector('#filter-calculator');
 
-  calculateButton.removeAttribute('aria-disabled');
+	calculateButton.removeAttribute('aria-disabled');
 
-  if(window.EyeDropper) {
-    eyedropperButton.removeAttribute('hidden');
-    eyedropperButton.addEventListener('click', async () => {
-      // eslint-disable-next-line no-undef
-      const eyedropper = new EyeDropper();
+	if(window.EyeDropper) {
+		eyedropperButton.removeAttribute('hidden');
+		eyedropperButton.addEventListener('click', async () => {
+			// eslint-disable-next-line no-undef
+			const eyedropper = new EyeDropper();
 
-      try {
-        const result = await eyedropper.open();
-        colorField.value = result.sRGBHex;
-      } catch (e) {
-        // dropper closed, no problem
-      }
-    });
-  }
+			try {
+				const result = await eyedropper.open();
+				colorField.value = result.sRGBHex;
+			} catch (e) {
+				// dropper closed, no problem
+			}
+		});
+	}
 
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
 
-    calculator.calculate(colorField.value);
-  });
+		calculator.calculate(colorField.value);
+	});
 })();
