@@ -10,7 +10,7 @@ export const addHorizontalSwipeTriggers = function (container, element, leftCb, 
 	let touches = [];
 
 	// When the swipe is completed, calculate the direction.
-	const _touchend = function(e) {
+	const _touchend = function() {
 		if (!touches.length) return;
 
 		const xStart = touches[0].x;
