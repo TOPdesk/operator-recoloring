@@ -7,257 +7,257 @@
  * Unfortunately neither one can be recolored or styled effectively.
  */
 
-html, body {
-  background: transparent;
+html,
+body {
+	background: transparent;
 }
 
-body[cardtype="grid"] {
-  background: var(--background);
-  color: var(--on-background);
+body[cardtype='grid'] {
+	background: var(--background);
+	color: var(--on-background);
 }
-body[cardtype="grid"] .header {
-  border-color: var(--on-surface);
+body[cardtype='grid'] .header {
+	border-color: var(--on-surface);
 }
 
-body[cardtype="grid"] .topbar .filter > a {
-  color: var(--primary);
+body[cardtype='grid'] .topbar .filter > a {
+	color: var(--primary);
 }
-body[cardtype="grid"] .topbar .filter > a:hover {
-  color: var(--primary-muted);
+body[cardtype='grid'] .topbar .filter > a:hover {
+	color: var(--primary-muted);
 }
-body[cardtype="grid"] .topbar .filter > a:focus {
-  outline: 2px solid var(--on-background);
-  outline-offset: 2px;
+body[cardtype='grid'] .topbar .filter > a:focus {
+	outline: 2px solid var(--on-background);
+	outline-offset: 2px;
 }
 
 /* Grid buttons */
-body[cardtype="grid"] #actionbar .button {
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
+body[cardtype='grid'] #actionbar .button {
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 
-  background: var(--background);
-  border-color: var(--on-background);
-  color: var(--text-color);
+	background: var(--background);
+	border-color: var(--on-background);
+	color: var(--text-color);
 
-  margin-top: 4px;
-  height: 24px;
-  line-height: 24px;
+	margin-top: 4px;
+	height: 24px;
+	line-height: 24px;
 }
 
-body[cardtype="grid"] #actionbar .menu-button > .chevron {
-  filter: var(--filter);
+body[cardtype='grid'] #actionbar .menu-button > .chevron {
+	filter: var(--filter);
 }
 
-body[cardtype="grid"] #actionbar .button:hover,
-body[cardtype="grid"] #actionbar .button.menu-button.toggled {
-  background: var(--on-background);
-  border-color: var(--on-background);
+body[cardtype='grid'] #actionbar .button:hover,
+body[cardtype='grid'] #actionbar .button.menu-button.toggled {
+	background: var(--on-background);
+	border-color: var(--on-background);
 
-  --text-color: var(--background);
-  --filter: var(--background-filter);
+	--text-color: var(--background);
+	--filter: var(--background-filter);
 }
 
-body[cardtype="grid"] #actionbar .button:focus {
-  outline: 2px solid var(--primary) !important;
-  outline-offset: 2px;
-  isolation: isolate;
+body[cardtype='grid'] #actionbar .button:focus {
+	outline: 2px solid var(--primary) !important;
+	outline-offset: 2px;
+	isolation: isolate;
 }
 
-body[cardtype="grid"] #actionbar .button:active {
-  background: var(--surface);
-  border-color: var(--on-surface);
+body[cardtype='grid'] #actionbar .button:active {
+	background: var(--surface);
+	border-color: var(--on-surface);
 
-  --text-color: var(--on-surface);
-  --filter: var(--on-surface-filter);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
 
-body[cardtype="grid"] #actionbar .button.preferred {
-  background: var(--primary);
-  border-color: var(--primary);
+body[cardtype='grid'] #actionbar .button.preferred {
+	background: var(--primary);
+	border-color: var(--primary);
 
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
 
-body[cardtype="grid"] #actionbar .button.preferred:hover {
-  background: var(--primary-muted);
-  border-color: var(--primary-muted);
+body[cardtype='grid'] #actionbar .button.preferred:hover {
+	background: var(--primary-muted);
+	border-color: var(--primary-muted);
 
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
 
-body[cardtype="grid"] #actionbar .button.preferred:active {
-  background: var(--on-primary);
-  border-color: var(--primary);
+body[cardtype='grid'] #actionbar .button.preferred:active {
+	background: var(--on-primary);
+	border-color: var(--primary);
 
-  --text-color: var(--primary);
-  --filter: var(--primary-filter);
+	--text-color: var(--primary);
+	--filter: var(--primary-filter);
 }
 
-body[cardtype="grid"] #actionbar #reload-grid-button,
-body[cardtype="grid"] #actionbar .button.setup_button {
-  position: relative;
+body[cardtype='grid'] #actionbar #reload-grid-button,
+body[cardtype='grid'] #actionbar .button.setup_button {
+	position: relative;
 }
 
-body[cardtype="grid"] #actionbar #reload-grid-button::before,
-body[cardtype="grid"] #actionbar .button.setup_button::before {
-  content: '';
-  position: absolute;
-  filter: var(--filter);
-  top: 4px;
-  height: 16px;
-  width: 16px;
-  pointer-events: none;
+body[cardtype='grid'] #actionbar #reload-grid-button::before,
+body[cardtype='grid'] #actionbar .button.setup_button::before {
+	content: '';
+	position: absolute;
+	filter: var(--filter);
+	top: 4px;
+	height: 16px;
+	width: 16px;
+	pointer-events: none;
 }
 
 /* grid reload button */
-body[cardtype="grid"] #actionbar #reload-grid-button::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath fill='%23757576' d='M14.9 6V0L13 1.9C9.8-.6 5.3-.4 2.4 2.5c-3.1 3.1-3.1 8.1 0 11.2 3.1 3.1 8.1 3.1 11.2 0 1.4-1.4 2.1-3.1 2.3-4.9h-2.7c-.1 1.1-.6 2.2-1.5 3-2.1 2.1-5.4 2.1-7.5 0-2.1-2.1-2.1-5.4 0-7.5 1.8-1.8 4.7-2 6.8-.6L8.9 6h6z'/%3E%3C/svg%3E");
-  left: 8px;
+body[cardtype='grid'] #actionbar #reload-grid-button::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath fill='%23757576' d='M14.9 6V0L13 1.9C9.8-.6 5.3-.4 2.4 2.5c-3.1 3.1-3.1 8.1 0 11.2 3.1 3.1 8.1 3.1 11.2 0 1.4-1.4 2.1-3.1 2.3-4.9h-2.7c-.1 1.1-.6 2.2-1.5 3-2.1 2.1-5.4 2.1-7.5 0-2.1-2.1-2.1-5.4 0-7.5 1.8-1.8 4.7-2 6.8-.6L8.9 6h6z'/%3E%3C/svg%3E");
+	left: 8px;
 }
 /* grid setup button */
-body[cardtype="grid"] #actionbar .button.setup_button::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M13.9 7.2l1.8-.7-1.1-2.8-1.8.7c-.3-.5-.7-.8-1.2-1.2l.7-1.8L9.6.3l-.8 1.8c-.5-.1-1.1-.1-1.6 0L6.4.3 3.6 1.4l.7 1.8c-.4.4-.8.8-1.1 1.2l-1.8-.8L.3 6.4l1.8.7c-.1.6-.1 1.2 0 1.7l-1.8.8 1.1 2.8 1.8-.7c.3.5.7.8 1.2 1.2l-.7 1.8 2.8 1.1.7-1.8c.5.1 1.1.1 1.7 0l.7 1.8 2.8-1.1-.7-1.8c.5-.3.8-.7 1.2-1.2l1.8.7 1.1-2.8-1.8-.7c0-.6 0-1.2-.1-1.7zm-4.7 3.6c-1.5.6-3.3-.1-3.9-1.6s.1-3.3 1.6-3.9c1.5-.6 3.3.1 3.9 1.6.6 1.5-.1 3.2-1.6 3.9z'/%3E%3C/svg%3E");
-  left: 7px;
+body[cardtype='grid'] #actionbar .button.setup_button::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath d='M13.9 7.2l1.8-.7-1.1-2.8-1.8.7c-.3-.5-.7-.8-1.2-1.2l.7-1.8L9.6.3l-.8 1.8c-.5-.1-1.1-.1-1.6 0L6.4.3 3.6 1.4l.7 1.8c-.4.4-.8.8-1.1 1.2l-1.8-.8L.3 6.4l1.8.7c-.1.6-.1 1.2 0 1.7l-1.8.8 1.1 2.8 1.8-.7c.3.5.7.8 1.2 1.2l-.7 1.8 2.8 1.1.7-1.8c.5.1 1.1.1 1.7 0l.7 1.8 2.8-1.1-.7-1.8c.5-.3.8-.7 1.2-1.2l1.8.7 1.1-2.8-1.8-.7c0-.6 0-1.2-.1-1.7zm-4.7 3.6c-1.5.6-3.3-.1-3.9-1.6s.1-3.3 1.6-3.9c1.5-.6 3.3.1 3.9 1.6.6 1.5-.1 3.2-1.6 3.9z'/%3E%3C/svg%3E");
+	left: 7px;
 }
 
 /* auto-refresh button enabled */
 /* Should have been a proper toggle button with aria-pressed="true" */
-body[cardtype="grid"] #actionbar .button.autorefresh-toggled {
-  background: var(--on-background);
-  border-color: var(--on-background);
+body[cardtype='grid'] #actionbar .button.autorefresh-toggled {
+	background: var(--on-background);
+	border-color: var(--on-background);
 
-  --text-color: var(--background);
-  --filter: var(--background-filter);
+	--text-color: var(--background);
+	--filter: var(--background-filter);
 }
 
-body[cardtype="grid"] #actionbar .button.autorefresh-toggled:active {
-  background: var(--surface);
-  border-color: var(--on-surface);
+body[cardtype='grid'] #actionbar .button.autorefresh-toggled:active {
+	background: var(--surface);
+	border-color: var(--on-surface);
 
-  --text-color: var(--on-surface);
-  --filter: var(--on-surface-filter);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
 
-body[cardtype="grid"] #actionbar .button.autorefresh-toggled::before {
-  content: '';
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16px' width='16px' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath fill='currentColor' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z'/%3E%3C/svg%3E");
+body[cardtype='grid'] #actionbar .button.autorefresh-toggled::before {
+	content: '';
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16px' width='16px' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath fill='currentColor' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z'/%3E%3C/svg%3E");
 
-  margin-right: 8px;
-  margin-bottom: -3px;
+	margin-right: 8px;
+	margin-bottom: -3px;
 
-  width: 16px;
-  height: 16px;
-  filter: var(--filter);
+	width: 16px;
+	height: 16px;
+	filter: var(--filter);
 
-  display: inline-block;
+	display: inline-block;
 }
-
 
 /* Grid menu */
-body[cardtype="grid"] .more-menu {
-  background: var(--surface);
+body[cardtype='grid'] .more-menu {
+	background: var(--surface);
 }
-body[cardtype="grid"] .more-menu .menu-item {
-  color: var(--on-surface);
+body[cardtype='grid'] .more-menu .menu-item {
+	color: var(--on-surface);
 }
 
-body[cardtype="grid"] .more-menu .menu-item:hover,
-body[cardtype="grid"] .more-menu .menu-item:focus {
-  outline: none !important;
-  background: var(--on-surface);
-  color: var(--surface);
+body[cardtype='grid'] .more-menu .menu-item:hover,
+body[cardtype='grid'] .more-menu .menu-item:focus {
+	outline: none !important;
+	background: var(--on-surface);
+	color: var(--surface);
 }
 
 /* grid container */
-body[cardtype="grid"] .stretchdiv {
-  background: var(--background);
+body[cardtype='grid'] .stretchdiv {
+	background: var(--background);
 }
 
 /* column headers */
 #headers .column {
-  --text-color: var(--on-surface);
-  --filter: var(--on-surface-filter);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 
-  background: var(--surface);
-  color: var(--text-color);
+	background: var(--surface);
+	color: var(--text-color);
 }
 #headers .column .ordericon {
-  filter: var(--filter);
+	filter: var(--filter);
 }
 /* column header separator */
 #headers .column .sizer #border {
-  background: var(--on-surface);
+	background: var(--on-surface);
 }
 #headers .column.highlight {
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 
-  background: var(--primary);
+	background: var(--primary);
 }
 /* bottom bar */
-body[cardtype="grid"] .bottombar {
-  background: var(--surface);
-  color: var(--on-surface);
+body[cardtype='grid'] .bottombar {
+	background: var(--surface);
+	color: var(--on-surface);
 }
-body[cardtype="grid"] .bottombar .currentpage {
-  color: var(--primary);
+body[cardtype='grid'] .bottombar .currentpage {
+	color: var(--primary);
 }
-body[cardtype="grid"] .bottombar a {
-  color: var(--on-surface);
+body[cardtype='grid'] .bottombar a {
+	color: var(--on-surface);
 }
 
 /* data cells */
 div#columnsscroll {
-  background: var(--background);
+	background: var(--background);
 }
 div#columnsscroll .column span {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 div#columnsscroll .column#_status span > .gridicon {
-  filter: var(--filter);
+	filter: var(--filter);
 }
 div#columnsscroll .column .normal,
 div#columnsscroll .column .overduechanged,
 div#columnsscroll .column .overduenew {
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 }
 div#columnsscroll .column .overduealert {
-  /* Due today */
-  background: var(--primary-muted);
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
+	/* Due today */
+	background: var(--primary-muted);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
 div#columnsscroll .column .overduealarm {
-  /* Overdue */
-  --text-color: var(--error);
-  --filter: var(--error-filter);
+	/* Overdue */
+	--text-color: var(--error);
+	--filter: var(--error-filter);
 }
 div#columnsscroll .column .archived {
-  --text-color: var(--primary);
-  --filter: var(--primary-filter);
+	--text-color: var(--primary);
+	--filter: var(--primary-filter);
 }
 /* highlight bar */
 div#columnsscroll div#selected.focus {
-  background: none;
-  border: 1px solid var(--primary);
+	background: none;
+	border: 1px solid var(--primary);
 }
 div#columnsscroll div#selected.nofocus {
-  background: none;
-  border: 1px solid var(--on-background);
+	background: none;
+	border: 1px solid var(--on-background);
 }
 /* column separator */
 div#columnsscroll .column {
-  border-color: var(--on-background);
+	border-color: var(--on-background);
 }
 
 /* details */
 #detailframediv .ui-resizable-handle {
-  filter: var(--on-background-filter);
+	filter: var(--on-background-filter);
 }
 #detailsbody .memocontainer {
-  color: var(--on-background);
-  border-color: var(--on-background);
+	color: var(--on-background);
+	border-color: var(--on-background);
 }

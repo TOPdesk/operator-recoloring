@@ -2,57 +2,57 @@
  * Email editor in email actions
  */
 
- /* Toolbar */
+/* Toolbar */
 div#cke_emailEditor .cke_top {
-  background: var(--surface);
+	background: var(--surface);
 }
 div#cke_emailEditor .cke_top a.cke_button,
 div#cke_emailEditor .cke_top a.cke_combo_button {
-  filter: var(--on-surface-filter);
+	filter: var(--on-surface-filter);
 }
 div#cke_emailEditor .cke_top a.cke_button:focus,
 div#cke_emailEditor .cke_top a.cke_button:hover,
 div#cke_emailEditor .cke_top a.cke_combo_button:focus,
 div#cke_emailEditor .cke_top a.cke_combo_button:hover,
 div#cke_emailEditor .cke_top span.cke_combo_on a.cke_combo_button {
-  background: transparent;
-  filter: var(--primary-filter);
+	background: transparent;
+	filter: var(--primary-filter);
 }
 div#cke_emailEditor .cke_top a.cke_button.cke_button_disabled {
-  filter: var(--on-disabled-filter);
+	filter: var(--on-disabled-filter);
 }
 div#cke_emailEditor .cke_top a.cke_button.cke_button_disabled .cke_button_icon,
 div#cke_emailEditor .cke_top a.cke_button.cke_button_disabled .cke_button_arrow {
-  opacity: 1;
+	opacity: 1;
 }
 
 html.cke_panel_container .cke_panel_grouptitle {
-  background: var(--surface);
-  color: var(--on-surface);
+	background: var(--surface);
+	color: var(--on-surface);
 }
 
 html.cke_panel_container .cke_panel_list {
-  background: var(--surface);
-  color: var(--on-surface);
+	background: var(--surface);
+	color: var(--on-surface);
 }
 
 html.cke_panel_container .cke_panel_listItem a > * {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 html.cke_panel_container .cke_panel_listItem a:hover,
 html.cke_panel_container .cke_panel_listItem a:focus {
-  background: transparent;
-  --text-color: var(--primary);
+	background: transparent;
+	--text-color: var(--primary);
 }
 
 html.cke_panel_container .cke_panel_listItem.cke_selected a,
 html.cke_panel_container .cke_panel_listItem a:active {
-  background: var(--primary);
-  --text-color: var(--on-primary);
+	background: var(--primary);
+	--text-color: var(--on-primary);
 }
 
 /* Contents */
 div#cke_emailEditor .cke_contents {
-  background: var(--background);
+	background: var(--background);
 }

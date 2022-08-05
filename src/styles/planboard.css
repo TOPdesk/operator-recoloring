@@ -1,238 +1,257 @@
-
 /* Panels */
 
-[mstyles="planboard_dispatch_panel_main"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[mstyles='planboard_dispatch_panel_main'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
-[mstyles="planboard_dispatch_panel_main"] [handle="filter_icon_box"],
-[mstyles="planboard_dispatch_panel_main"] [guielement="icon"] {
-  filter: var(--on-surface-filter);
+[mstyles='planboard_dispatch_panel_main'] [handle='filter_icon_box'],
+[mstyles='planboard_dispatch_panel_main'] [guielement='icon'] {
+	filter: var(--on-surface-filter);
 }
-[mstyles="planboard_dispatch_panel_main"] [handle="filter_icon_box"]:hover {
-  filter: var(--primary-filter);
-}
-
-[mstyles="planboard_dispatch_panel_main"] [guielement^="planboard_work_item_draggable_"] {
-  background: var(--background);
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
-}
-[mstyles="planboard_dispatch_panel_main"] [guielement^="planboard_work_item_draggable_"]:hover {
-  background: var(--primary-muted);
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
-}
-[mstyles="planboard_dispatch_panel_main"] [guielement^="planboard_work_item_draggable_"][mstyles^="planboard_work_item_active_"] {
-  background: var(--primary);
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
-}
-#dragdiv > [guielement^="planboard_work_item_draggable_"] {
-  background: var(--on-primary);
-  --text-color: var(--primary);
-  --filter: var(--primary-filter);
-  border: 1px solid var(--primary);
-}
-#dragdiv [mstyles="planboard_work_item_first_text"],
-#dragdiv [mstyles="planboard_work_item_second_text"] {
-  color: var(--text-color);
+[mstyles='planboard_dispatch_panel_main'] [handle='filter_icon_box']:hover {
+	filter: var(--primary-filter);
 }
 
-[guielement^="planboard_work_item_draggable_"] [guielement="icon-button"],
-[guielement="planboard_detail_header"] > [mstyles~="planboard_detail_section_caption"] [guielement="icon-button"],
-[guielement="planner_detail_content"] [guielement="icon-button"] {
-  filter: var(--filter);
+[mstyles='planboard_dispatch_panel_main'] [guielement^='planboard_work_item_draggable_'] {
+	background: var(--background);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 }
-[guielement^="planboard_work_item_draggable_"] [guielement="icon-button"]:nth-of-type(2),
-[guielement="planboard_detail_header"] > [mstyles~="planboard_detail_section_caption"] [guielement="icon-button"]:nth-of-type(2),
-[guielement="planner_detail_content"] [guielement="icon-button"]:nth-of-type(2) {
-  filter: none;
+[mstyles='planboard_dispatch_panel_main'] [guielement^='planboard_work_item_draggable_']:hover {
+	background: var(--primary-muted);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
-
-[guielement="planboard_detail_header"] > [mstyles~="planboard_detail_section_caption"] {
-  --filter: var(--on-background-filter);
+[mstyles='planboard_dispatch_panel_main']
+	[guielement^='planboard_work_item_draggable_'][mstyles^='planboard_work_item_active_'] {
+	background: var(--primary);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
-[guielement="planboard_detail_header"] > [mstyles~="planboard_detail_section_caption"]:hover {
-  --text-color: var(--primary);
-  --filter: var(--primary-filter);
+#dragdiv > [guielement^='planboard_work_item_draggable_'] {
+	background: var(--on-primary);
+	--text-color: var(--primary);
+	--filter: var(--primary-filter);
+	border: 1px solid var(--primary);
 }
-
-[guielement="planner_detail_content"] {
-  --filter: var(--on-surface-filter);
-}
-
-[guielement="group_linked_information"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
-}
-[guielement="group_linked_information"] [guielement="icon"] {
-  filter: var(--on-surface-filter)
+#dragdiv [mstyles='planboard_work_item_first_text'],
+#dragdiv [mstyles='planboard_work_item_second_text'] {
+	color: var(--text-color);
 }
 
-[guielement="planboard_detail_section_subgroup"] [guielement="pt-memo"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement^='planboard_work_item_draggable_'] [guielement='icon-button'],
+[guielement='planboard_detail_header']
+	> [mstyles~='planboard_detail_section_caption']
+	[guielement='icon-button'],
+[guielement='planner_detail_content'] [guielement='icon-button'] {
+	filter: var(--filter);
 }
-[guielement="planboard_detail_section_subgroup"] img[handle^="invisible-for-caller-label-"] {
-  filter: var(--on-surface-filter);
+[guielement^='planboard_work_item_draggable_'] [guielement='icon-button']:nth-of-type(2),
+[guielement='planboard_detail_header']
+	> [mstyles~='planboard_detail_section_caption']
+	[guielement='icon-button']:nth-of-type(2),
+[guielement='planner_detail_content'] [guielement='icon-button']:nth-of-type(2) {
+	filter: none;
 }
 
-[guielement="subwindow"][mstyles="planboard_dispatch_panel_filter_popup"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement='planboard_detail_header'] > [mstyles~='planboard_detail_section_caption'] {
+	--filter: var(--on-background-filter);
+}
+[guielement='planboard_detail_header'] > [mstyles~='planboard_detail_section_caption']:hover {
+	--text-color: var(--primary);
+	--filter: var(--primary-filter);
 }
 
-[guielement="subwindow"][mstyles="planboard_dispatch_panel_filter_popup"] :not([handle="planboard.dispatch.quickplanning"]) + [guielement="icon"] {
-  filter: var(--on-surface-filter);
+[guielement='planner_detail_content'] {
+	--filter: var(--on-surface-filter);
+}
+
+[guielement='group_linked_information'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+}
+[guielement='group_linked_information'] [guielement='icon'] {
+	filter: var(--on-surface-filter);
+}
+
+[guielement='planboard_detail_section_subgroup'] [guielement='pt-memo'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+}
+[guielement='planboard_detail_section_subgroup'] img[handle^='invisible-for-caller-label-'] {
+	filter: var(--on-surface-filter);
+}
+
+[guielement='subwindow'][mstyles='planboard_dispatch_panel_filter_popup'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+}
+
+[guielement='subwindow'][mstyles='planboard_dispatch_panel_filter_popup']
+	:not([handle='planboard.dispatch.quickplanning'])
+	+ [guielement='icon'] {
+	filter: var(--on-surface-filter);
 }
 
 /* Toolbar */
 
-[guielement="planboard_weekview_toolbar"] {
-  background: var(--surface);
-  --filter: var(--on-surface-filter);
+[guielement='planboard_weekview_toolbar'] {
+	background: var(--surface);
+	--filter: var(--on-surface-filter);
 }
 
-[guielement="planboard_weekview_toolbar"] [guielement="icon-button"] {
-  filter: var(--filter);
+[guielement='planboard_weekview_toolbar'] [guielement='icon-button'] {
+	filter: var(--filter);
 }
-[guielement="planboard_weekview_toolbar"] [guielement="icon-button"]:hover {
-  filter: var(--primary-filter);
-}
-
-[guielement="planboard_weekview_toolbar"] button[handle="planboard.action.visibletime"],
-[guielement="planboard_weekview_toolbar"] button[handle="planboard.toolbar.show_todo"] {
-  background: transparent;
-  --text-color: var(--on-surface);
-}
-[guielement="planboard_weekview_toolbar"] button[handle="planboard.action.visibletime"]:hover,
-[guielement="planboard_weekview_toolbar"] button[handle="planboard.toolbar.show_todo"]:hover {
-  background: transparent;
-  --text-color: var(--primary);
+[guielement='planboard_weekview_toolbar'] [guielement='icon-button']:hover {
+	filter: var(--primary-filter);
 }
 
-[guielement="planboard_weekview_toolbar"] [guielement="icon-button"][handle="day"],
-[guielement="planboard_weekview_toolbar"] [guielement="icon-button"][handle="work_week"],
-[guielement="planboard_weekview_toolbar"] [guielement="icon-button"][handle="week"] {
-  /* These have two colours, and on/off can't be distinguished */
-  filter: none;
+[guielement='planboard_weekview_toolbar'] button[handle='planboard.action.visibletime'],
+[guielement='planboard_weekview_toolbar'] button[handle='planboard.toolbar.show_todo'] {
+	background: transparent;
+	--text-color: var(--on-surface);
+}
+[guielement='planboard_weekview_toolbar'] button[handle='planboard.action.visibletime']:hover,
+[guielement='planboard_weekview_toolbar'] button[handle='planboard.toolbar.show_todo']:hover {
+	background: transparent;
+	--text-color: var(--primary);
+}
+
+[guielement='planboard_weekview_toolbar'] [guielement='icon-button'][handle='day'],
+[guielement='planboard_weekview_toolbar'] [guielement='icon-button'][handle='work_week'],
+[guielement='planboard_weekview_toolbar'] [guielement='icon-button'][handle='week'] {
+	/* These have two colours, and on/off can't be distinguished */
+	filter: none;
 }
 
 /* Scheduler */
-[guielement="planboard_weekview_toolbar"] [mstyles~="planboard_quick_scheduler_enabler"],
-[guielement="planboard_weekview_toolbar"] [handle="schedule-picker-button"] {
-  background: var(--surface);
-  --filter: var(--on-surface-filter);
-  --border: var(--on-surface);
-  border-color: var(--border);
+[guielement='planboard_weekview_toolbar'] [mstyles~='planboard_quick_scheduler_enabler'],
+[guielement='planboard_weekview_toolbar'] [handle='schedule-picker-button'] {
+	background: var(--surface);
+	--filter: var(--on-surface-filter);
+	--border: var(--on-surface);
+	border-color: var(--border);
 }
-[guielement="planboard_weekview_toolbar"] [handle="schedule-picker-button"] > [mstyles~="planboard_quick_scheduler_daily_schedule"] {
-  border-color: var(--border);
-}
-
-[guielement="planboard_weekview_toolbar"] [mstyles~="planboard_quick_scheduler_enabler"]:hover,
-[guielement="planboard_weekview_toolbar"] [handle="schedule-picker-button"]:hover {
-  --filter: var(--primary-filter);
+[guielement='planboard_weekview_toolbar']
+	[handle='schedule-picker-button']
+	> [mstyles~='planboard_quick_scheduler_daily_schedule'] {
+	border-color: var(--border);
 }
 
-[guielement="planboard_weekview_toolbar"] [mstyles~="planboard_quick_scheduler_enabler_pressed"],
-[guielement="planboard_weekview_toolbar"] [handle="schedule-picker-button"][mstyles~="planboard_quick_scheduler_picker_pressed"] {
-  background: var(--primary);
-  --border: var(--on-primary);
-  --filter: var(--on-primary-filter);
-  border-color: var(--on-primary);
+[guielement='planboard_weekview_toolbar'] [mstyles~='planboard_quick_scheduler_enabler']:hover,
+[guielement='planboard_weekview_toolbar'] [handle='schedule-picker-button']:hover {
+	--filter: var(--primary-filter);
 }
 
-[guielement="planboard_weekview_toolbar"] [mstyles~="planboard_quick_scheduler_enabler_pressed"]:hover,
-[guielement="planboard_weekview_toolbar"] [handle="schedule-picker-button"][mstyles~="planboard_quick_scheduler_picker_pressed"]:hover {
-  background: var(--primary-muted);
+[guielement='planboard_weekview_toolbar'] [mstyles~='planboard_quick_scheduler_enabler_pressed'],
+[guielement='planboard_weekview_toolbar']
+	[handle='schedule-picker-button'][mstyles~='planboard_quick_scheduler_picker_pressed'] {
+	background: var(--primary);
+	--border: var(--on-primary);
+	--filter: var(--on-primary-filter);
+	border-color: var(--on-primary);
 }
 
-[guielement="planboard_weekview_toolbar"] [mstyles~="planboard_quick_scheduler_enabler"] > [guielement="icon-button"],
-[guielement="planboard_weekview_toolbar"] [mstyles~="planboard_quick_scheduler_enabler_pressed"] > [guielement="icon-button"],
-[guielement="planboard_weekview_toolbar"] [handle="schedule-picker-button"] [handle="picker_part"] {
-  filter: var(--filter);
+[guielement='planboard_weekview_toolbar']
+	[mstyles~='planboard_quick_scheduler_enabler_pressed']:hover,
+[guielement='planboard_weekview_toolbar']
+	[handle='schedule-picker-button'][mstyles~='planboard_quick_scheduler_picker_pressed']:hover {
+	background: var(--primary-muted);
 }
 
-[guielement="planner_toolbar_popup"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement='planboard_weekview_toolbar']
+	[mstyles~='planboard_quick_scheduler_enabler']
+	> [guielement='icon-button'],
+[guielement='planboard_weekview_toolbar']
+	[mstyles~='planboard_quick_scheduler_enabler_pressed']
+	> [guielement='icon-button'],
+[guielement='planboard_weekview_toolbar'] [handle='schedule-picker-button'] [handle='picker_part'] {
+	filter: var(--filter);
 }
 
-[guielement="planner_toolbar_popup"] [guielement="planboard_header"] {
-  border-color: var(--text-color);
+[guielement='planner_toolbar_popup'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
-[guielement="planner_toolbar_popup"] [mstyles~="planboard_daily_schedule_list_item"] {
-  background: var(--background);
-  --text-color: var(--on-background);
-  border-color: var(--on-background);
+[guielement='planner_toolbar_popup'] [guielement='planboard_header'] {
+	border-color: var(--text-color);
 }
 
-[guielement="planner_toolbar_popup"] [mstyles~="planboard_daily_schedule_list_item"]:hover {
-  background: var(--primary);
-  --text-color: var(--on-primary);
+[guielement='planner_toolbar_popup'] [mstyles~='planboard_daily_schedule_list_item'] {
+	background: var(--background);
+	--text-color: var(--on-background);
+	border-color: var(--on-background);
+}
+
+[guielement='planner_toolbar_popup'] [mstyles~='planboard_daily_schedule_list_item']:hover {
+	background: var(--primary);
+	--text-color: var(--on-primary);
 }
 
 /* Grid */
 
 /* Header */
-[guielement="planboard_header"] [handle="actiedoor2.plural"] + [guielement="icon-button"] {
-  filter: var(--on-background-filter);
+[guielement='planboard_header'] [handle='actiedoor2.plural'] + [guielement='icon-button'] {
+	filter: var(--on-background-filter);
 }
-[guielement="planboard_header"] [handle="actiedoor2.plural"] + [guielement="icon-button"]:hover {
-  filter: var(--primary-filter);
+[guielement='planboard_header'] [handle='actiedoor2.plural'] + [guielement='icon-button']:hover {
+	filter: var(--primary-filter);
 }
-[guielement="planboard_header"] [guielement="planner_period_header_cell"][mstyles="current_period"] {
-  background: var(--primary-muted);
-  --text-color: var(--on-primary);
+[guielement='planboard_header']
+	[guielement='planner_period_header_cell'][mstyles='current_period'] {
+	background: var(--primary-muted);
+	--text-color: var(--on-primary);
 }
 
 /* Operator group row */
-[guielement="planner_row"] [guielement="planboard_operatorgroup_header"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement='planner_row'] [guielement='planboard_operatorgroup_header'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
 /* Operator row */
-[guielement="planner_row"] [guielement="planboard_operator_cell"],
-[guielement="planner_row"] [guielement="planner_item_title_cell"],
-[guielement="planner_row"] [guielement="planner_cell"] {
-  background: var(--background);
-  --text-color: var(--on-background);
+[guielement='planner_row'] [guielement='planboard_operator_cell'],
+[guielement='planner_row'] [guielement='planner_item_title_cell'],
+[guielement='planner_row'] [guielement='planner_cell'] {
+	background: var(--background);
+	--text-color: var(--on-background);
 }
 
-[guielement="planboard_operator_cell"] [mstyles="planboard_clickable planboard_zone_label"] {
-  /* Resetting the color of the timezone button label, as it is printed on top of a dual colored icon */
-  color: inherit;
+[guielement='planboard_operator_cell'] [mstyles='planboard_clickable planboard_zone_label'] {
+	/* Resetting the color of the timezone button label, as it is printed on top of a dual colored icon */
+	color: inherit;
 }
 
 /* Popups */
-[handle="planboard_popup"] [guielement="planner_popup_window"],
-[handle="planboard_popup"] [guielement="planboard_popup_header"],
-[handle="planboard_popup"] [guielement="planboard_popup_footer"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[handle='planboard_popup'] [guielement='planner_popup_window'],
+[handle='planboard_popup'] [guielement='planboard_popup_header'],
+[handle='planboard_popup'] [guielement='planboard_popup_footer'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
-[handle="planboard_popup"] [handle="planboard.todopopup.to_dispatch"]:hover {
-  --text-color: var(--primary);
+[handle='planboard_popup'] [handle='planboard.todopopup.to_dispatch']:hover {
+	--text-color: var(--primary);
 }
 
-[handle="planboard_popup"] [guielement="planboard_work_item"] {
-  background: var(--background);
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
+[handle='planboard_popup'] [guielement='planboard_work_item'] {
+	background: var(--background);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 }
 
-[handle="planboard_popup"] [guielement="planboard_work_item"][mstyles*="planboard_work_item_active_"] {
-  background: var(--primary);
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
+[handle='planboard_popup']
+	[guielement='planboard_work_item'][mstyles*='planboard_work_item_active_'] {
+	background: var(--primary);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
 
-[handle="planboard_popup"] [guielement="planboard_work_item"] [guielement="icon-button"]:first-of-type {
-  filter: var(--filter);
+[handle='planboard_popup']
+	[guielement='planboard_work_item']
+	[guielement='icon-button']:first-of-type {
+	filter: var(--filter);
 }

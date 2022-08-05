@@ -1,57 +1,60 @@
-body[cardType="naturalselection"] {
-  background: var(--background);
-  color: var(--on-background);
-  --text-color: var(--on-background);
+body[cardType='naturalselection'] {
+	background: var(--background);
+	color: var(--on-background);
+	--text-color: var(--on-background);
 }
 
-body[cardType="naturalselection"] div#header div.title,
-body[cardType="naturalselection"] legend span,
-body[cardType="naturalselection"] .fieldlistheader,
-body[cardType="naturalselection"] .linklistgroupheader,
-body[cardType="naturalselection"] .linklistheader,
-body[cardType="naturalselection"] table.tabcontrol {
-  color: var(--text-color);
+body[cardType='naturalselection'] div#header div.title,
+body[cardType='naturalselection'] legend span,
+body[cardType='naturalselection'] .fieldlistheader,
+body[cardType='naturalselection'] .linklistgroupheader,
+body[cardType='naturalselection'] .linklistheader,
+body[cardType='naturalselection'] table.tabcontrol {
+	color: var(--text-color);
 }
 
-body[cardType="naturalselection"] a {
-  color: var(--primary);
+body[cardType='naturalselection'] a {
+	color: var(--primary);
 }
 
-body[cardType="naturalselection"] table.fieldlist {
-  --filter: var(--on-background-filter);
+body[cardType='naturalselection'] table.fieldlist {
+	--filter: var(--on-background-filter);
 }
 
-body[cardType="naturalselection"] table.fieldlist td:hover:not(.fieldlistheader),
-body[cardType="naturalselection"] table.fieldlist td:focus-within:not(.fieldlistheader) {
-  --filter: var(--primary-filter);
-  --text-color: var(--primary);
+body[cardType='naturalselection'] table.fieldlist td:hover:not(.fieldlistheader),
+body[cardType='naturalselection'] table.fieldlist td:focus-within:not(.fieldlistheader) {
+	--filter: var(--primary-filter);
+	--text-color: var(--primary);
 }
 
-body[cardType="naturalselection"] img.icon {
-  background: transparent;
-  filter: var(--filter);
+body[cardType='naturalselection'] img.icon {
+	background: transparent;
+	filter: var(--filter);
 }
 
-body[cardType="naturalselection"] img.icon + a {
-  color: var(--text-color);
+body[cardType='naturalselection'] img.icon + a {
+	color: var(--text-color);
 }
 
 /* Checkbox */
-body[cardType="naturalselection"] .checkboxlayouter:not(#ie8) input.checkbox + label.checkbox {
-  background: none;
-  border: 1px solid var(--on-background);
-  height: 16px;
-  margin-top: 2px;
+body[cardType='naturalselection'] .checkboxlayouter:not(#ie8) input.checkbox + label.checkbox {
+	background: none;
+	border: 1px solid var(--on-background);
+	height: 16px;
+	margin-top: 2px;
 }
 
-body[cardType="naturalselection"] .checkboxlayouter:not(#ie8) input.checkbox:checked + label.checkbox::before {
-  content: '';
-  position: absolute;
-  border-bottom: 2px solid currentColor;
-  border-left: 2px solid currentColor;
-  top: 2px;
-  left: 2px;
-  width: 9px;
-  height: 5px;
-  transform: rotate(-45deg);
+body[cardType='naturalselection']
+	.checkboxlayouter:not(#ie8)
+	input.checkbox:checked
+	+ label.checkbox::before {
+	content: '';
+	position: absolute;
+	border-bottom: 2px solid currentColor;
+	border-left: 2px solid currentColor;
+	top: 2px;
+	left: 2px;
+	width: 9px;
+	height: 5px;
+	transform: rotate(-45deg);
 }

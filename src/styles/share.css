@@ -1,150 +1,147 @@
-
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="dialog"] {
-  background: var(--surface);
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='dialog'] {
+	background: var(--surface);
 }
 /* header */
-[data-handle="shareandsubscribe_sharee_picker"] header {
-  border-bottom-color: var(--on-surface);
+[data-handle='shareandsubscribe_sharee_picker'] header {
+	border-bottom-color: var(--on-surface);
 }
-[data-handle="shareandsubscribe_sharee_picker"] header > strong,
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="sharees"] > strong {
-  color: var(--on-surface);
+[data-handle='shareandsubscribe_sharee_picker'] header > strong,
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='sharees'] > strong {
+	color: var(--on-surface);
 }
-[data-handle="shareandsubscribe_sharee_picker"] header > button {
-  filter: var(--on-surface-filter);
+[data-handle='shareandsubscribe_sharee_picker'] header > button {
+	filter: var(--on-surface-filter);
 }
 
 /* Search field */
-[data-handle="shareandsubscribe_sharee_picker"] input[type="search"] {
-  background: var(--background);
-  border-color: var(--on-background);
-  color: var(--on-background);
+[data-handle='shareandsubscribe_sharee_picker'] input[type='search'] {
+	background: var(--background);
+	border-color: var(--on-background);
+	color: var(--on-background);
 }
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button {
-  --bg: var(--primary);
-  --filter: var(--on-primary-filter);
-  --border: var(--primary);
-  
-  position: relative;
-  background: var(--bg) !important;
-  border-color: var(--border) !important;
-}
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button:hover {
-  --bg: var(--primary-muted);
-  --filter: var(--on-primary-filter);
-  --border: var(--primary-muted);
-}
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button:active {
-  --bg: var(--background);
-  --filter: var(--primary-filter);
-  --border: var(--primary);
-}
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search_bar"] button:before {
-  content: '';
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M10 10l5 5'/%3E%3Ccircle cx='5.9' cy='6' r='5' fill='none' stroke='currentColor' stroke-miterlimit='10' stroke-width='2'/%3E%3C/svg%3E");    
-  
-  filter: var(--filter);
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 16px;
-  height: 16px;
-}
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='search_bar'] button {
+	--bg: var(--primary);
+	--filter: var(--on-primary-filter);
+	--border: var(--primary);
 
+	position: relative;
+	background: var(--bg) !important;
+	border-color: var(--border) !important;
+}
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='search_bar'] button:hover {
+	--bg: var(--primary-muted);
+	--filter: var(--on-primary-filter);
+	--border: var(--primary-muted);
+}
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='search_bar'] button:active {
+	--bg: var(--background);
+	--filter: var(--primary-filter);
+	--border: var(--primary);
+}
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='search_bar'] button:before {
+	content: '';
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M10 10l5 5'/%3E%3Ccircle cx='5.9' cy='6' r='5' fill='none' stroke='currentColor' stroke-miterlimit='10' stroke-width='2'/%3E%3C/svg%3E");
+
+	filter: var(--filter);
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	width: 16px;
+	height: 16px;
+}
 
 /* non-result status messages */
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="searching"],
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="help-text"] {
-  color: var(--on-background);
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='searching'],
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='help-text'] {
+	color: var(--on-background);
 }
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="no-search-results"] {
-  filter: var(--on-background-filter);
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='no-search-results'] {
+	filter: var(--on-background-filter);
 }
 
 /* Search results section*/
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search-results"] {
-  background: var(--background);
-  color: var(--on-background);
-  
-  --filter: var(--on-background-filter);
-  --hover-fg: var(--background);
-  --hover-filter: var(--background-filter);
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='search-results'] {
+	background: var(--background);
+	color: var(--on-background);
+
+	--filter: var(--on-background-filter);
+	--hover-fg: var(--background);
+	--hover-filter: var(--background-filter);
 }
 
 /* Sharees section */
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="sharees"] {
-  color: var(--on-surface);
-  
-  --filter: var(--on-surface-filter);
-  --hover-fg: var(--surface);
-  --hover-filter: var(--surface-filter);
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='sharees'] {
+	color: var(--on-surface);
+
+	--filter: var(--on-surface-filter);
+	--hover-fg: var(--surface);
+	--hover-filter: var(--surface-filter);
 }
 
 /* Items */
-[data-handle="shareandsubscribe_sharee_picker"] li:hover {
-  background: currentColor;
-  --filter: var(--hover-filter);
-  --text-color: var(--hover-fg);
+[data-handle='shareandsubscribe_sharee_picker'] li:hover {
+	background: currentColor;
+	--filter: var(--hover-filter);
+	--text-color: var(--hover-fg);
 }
 
-[data-handle="shareandsubscribe_sharee_picker"] li > div,
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="search-results"] li button,
-[data-handle="shareandsubscribe_sharee_picker"] [data-handle="sharees"] li button,
-[data-handle="shareandsubscribe_sharee_picker"] li strong {
-  color: var(--text-color);
+[data-handle='shareandsubscribe_sharee_picker'] li > div,
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='search-results'] li button,
+[data-handle='shareandsubscribe_sharee_picker'] [data-handle='sharees'] li button,
+[data-handle='shareandsubscribe_sharee_picker'] li strong {
+	color: var(--text-color);
 }
-[data-handle="shareandsubscribe_sharee_picker"] li img[src^="data:image/svg+xml"] {
-  background: transparent;
-  border: 1px solid currentColor;
-  filter: var(--filter);
+[data-handle='shareandsubscribe_sharee_picker'] li img[src^='data:image/svg+xml'] {
+	background: transparent;
+	border: 1px solid currentColor;
+	filter: var(--filter);
 }
 /* separator */
-[data-handle="shareandsubscribe_sharee_picker"] li:not(:last-child) {
-  border-bottom-color: currentColor;
+[data-handle='shareandsubscribe_sharee_picker'] li:not(:last-child) {
+	border-bottom-color: currentColor;
 }
 
 /* Footer */
-[data-handle="shareandsubscribe_sharee_picker"] footer {
-  background: var(--surface);
-  border-top: 1px solid var(--on-surface);
+[data-handle='shareandsubscribe_sharee_picker'] footer {
+	background: var(--surface);
+	border-top: 1px solid var(--on-surface);
 }
-[data-handle="shareandsubscribe_sharee_picker"] footer > button {
-  background: var(--bg) !important;
-  border-color: var(--border) !important;
-  color: var(--text-color) !important;
+[data-handle='shareandsubscribe_sharee_picker'] footer > button {
+	background: var(--bg) !important;
+	border-color: var(--border) !important;
+	color: var(--text-color) !important;
 }
 
 /* Cancel button */
-[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="cancel"] {
-  --bg: var(--background);
-  --border: var(--on-background);
-  --text-color: var(--on-background);
+[data-handle='shareandsubscribe_sharee_picker'] footer > button[data-handle='cancel'] {
+	--bg: var(--background);
+	--border: var(--on-background);
+	--text-color: var(--on-background);
 }
-[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="cancel"]:hover {
-  --bg: var(--on-background);
-  --border: var(--on-background);
-  --text-color: var(--background);
+[data-handle='shareandsubscribe_sharee_picker'] footer > button[data-handle='cancel']:hover {
+	--bg: var(--on-background);
+	--border: var(--on-background);
+	--text-color: var(--background);
 }
-[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="cancel"]:active {
-  --bg: var(--surface);
-  --border: var(--on-surface);
-  --text-color: var(--on-surface);
+[data-handle='shareandsubscribe_sharee_picker'] footer > button[data-handle='cancel']:active {
+	--bg: var(--surface);
+	--border: var(--on-surface);
+	--text-color: var(--on-surface);
 }
-
 
 /* Share button */
-[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="submit"] {
-  --bg: var(--primary);
-  --border: var(--primary);
-  --text-color: var(--on-primary);
+[data-handle='shareandsubscribe_sharee_picker'] footer > button[data-handle='submit'] {
+	--bg: var(--primary);
+	--border: var(--primary);
+	--text-color: var(--on-primary);
 }
-[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="submit"]:hover {
-  --bg: var(--primary-muted);
-  --border-color: var(--primary-muted);
-  --text-color: var(--on-primary);
+[data-handle='shareandsubscribe_sharee_picker'] footer > button[data-handle='submit']:hover {
+	--bg: var(--primary-muted);
+	--border-color: var(--primary-muted);
+	--text-color: var(--on-primary);
 }
-[data-handle="shareandsubscribe_sharee_picker"] footer > button[data-handle="submit"]:active {
-  --bg: var(--on-primary);
-  --border: var(--primary);
-  --text-color: var(--primary);
+[data-handle='shareandsubscribe_sharee_picker'] footer > button[data-handle='submit']:active {
+	--bg: var(--on-primary);
+	--border: var(--primary);
+	--text-color: var(--primary);
 }

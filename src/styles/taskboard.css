@@ -2,107 +2,116 @@
  * TASK BOARD and BOOKMARKS
  */
 /* notification */
-[guielement="notification-box"][mstyles="notification-alert"] {
-    background: var(--background);
-    border: 1px solid var(--primary);
+[guielement='notification-box'][mstyles='notification-alert'] {
+	background: var(--background);
+	border: 1px solid var(--primary);
 }
-[guielement="notification-box"][mstyles="notification-alert"] > [guielement="notification-message"] {
-    color: var(--primary);
+[guielement='notification-box'][mstyles='notification-alert']
+	> [guielement='notification-message'] {
+	color: var(--primary);
 }
-[guielement="notification-box"][mstyles="notification-alert"] > [guielement="icon"] {
-    filter: var(--primary-filter);
+[guielement='notification-box'][mstyles='notification-alert'] > [guielement='icon'] {
+	filter: var(--primary-filter);
 }
-
 
 /* filter panel */
-[guielement="taskboard_filter_panel"] {
-    background: var(--background);
-    --text-color: var(--on-background);
-    --filter: var(--on-background-filter);
-    border: 1px solid var(--on-background);
+[guielement='taskboard_filter_panel'] {
+	background: var(--background);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
+	border: 1px solid var(--on-background);
 }
-[guielement="taskboard_filter_panel_header"],
-[guielement="taskboard_filter_panel_header_folded"] {
-    background: var(--surface);
-    --text-color: var(--on-surface);
-    --filter: var(--on-surface-filter);
-    border-color: var(--on-surface);
-}
-
-[guielement="taskboard_datefilter_button"] {
-    border-color: var(--surface);
-}
-[guielement="taskboard_datefilter_button"] > [mtype="label"] {
-    background: none;
-}
-[guielement="taskboard_datefilter_button"][mstyles~="taskboard_active_date_filter_caption"] {
-    background: var(--primary);
-    --text-color: var(--on-primary);
+[guielement='taskboard_filter_panel_header'],
+[guielement='taskboard_filter_panel_header_folded'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
+	border-color: var(--on-surface);
 }
 
-[guielement="taskboard_filter_panel_filter_fields"] [mstyles="taskboard_filter_panel_section"] {
-    border-color: var(--on-background);
+[guielement='taskboard_datefilter_button'] {
+	border-color: var(--surface);
+}
+[guielement='taskboard_datefilter_button'] > [mtype='label'] {
+	background: none;
+}
+[guielement='taskboard_datefilter_button'][mstyles~='taskboard_active_date_filter_caption'] {
+	background: var(--primary);
+	--text-color: var(--on-primary);
 }
 
-[guielement="taskboard_filter_panel_filter_fields"] [mstyles="taskboard_filter_panel_section"] [guielement="icon"] {
-    filter: var(--filter);
+[guielement='taskboard_filter_panel_filter_fields'] [mstyles='taskboard_filter_panel_section'] {
+	border-color: var(--on-background);
+}
+
+[guielement='taskboard_filter_panel_filter_fields']
+	[mstyles='taskboard_filter_panel_section']
+	[guielement='icon'] {
+	filter: var(--filter);
 }
 
 /* task list */
-[guielement="taskboard_item_border_group"] {
-    border-color: var(--surface);
+[guielement='taskboard_item_border_group'] {
+	border-color: var(--surface);
 }
 
-[guielement="taskboard_item_header"] {
-    background: var(--background);
-    --text-color: var(--on-background);
-    --filter: var(--on-background-filter);
-    border-color: var(--surface);
+[guielement='taskboard_item_header'] {
+	background: var(--background);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
+	border-color: var(--surface);
 }
-[guielement="taskboard_item_header"][mstyles~="unfolded"] {
-    background: var(--surface);
-    --text-color: var(--on-surface);
-    --filter: var(--on-surface-filter);
-}
-
-[guielement="taskboard_bookmark_button"]:disabled {
-    visibility: hidden !important;
-}
-[guielement="taskboard_task_icon"] {
-    filter: var(--filter);
+[guielement='taskboard_item_header'][mstyles~='unfolded'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
 
-[guielement="taskboard_item_body"] {
-    border-color: var(--surface);
+[guielement='taskboard_bookmark_button']:disabled {
+	visibility: hidden !important;
 }
-[guielement="taskboard_item_body"] [guielement="taskboard_task_body_data_panel"] {
-    background: var(--surface);
-    --text-color: var(--on-surface);
-}
-[guielement="taskboard_item_body"] [guielement="pt-memo"] {
-    background: var(--surface);
-    border-color: var(--on-surface);
-    --text-color: var(--on-surface);
-
-}
-[guielement="taskboard_item_body"] [guielement="pt-memo"][mstyles~="pt-flagged"] {
-    background: var(--primary);
-    --text-color: var(--on-primary);
-}
-[guielement="taskboard_item_body"] [guielement="pt-memo"] [guielement="pt-entry-sidebar"][mstyles~="pt-invisible"] {
-    background: repeating-linear-gradient(-45deg, var(--surface) 0px, var(--surface) 8px, var(--background) 8px, var(--background) 16px);
+[guielement='taskboard_task_icon'] {
+	filter: var(--filter);
 }
 
-[guielement="taskboard_item_body"] [guielement="pt-memo"] a {
-    color: var(--primary);
+[guielement='taskboard_item_body'] {
+	border-color: var(--surface);
 }
-[guielement="taskboard_item_body"] [guielement="pt-memo"][mstyles~="pt-flagged"] a {
-    color: var(--on-primary);
+[guielement='taskboard_item_body'] [guielement='taskboard_task_body_data_panel'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+}
+[guielement='taskboard_item_body'] [guielement='pt-memo'] {
+	background: var(--surface);
+	border-color: var(--on-surface);
+	--text-color: var(--on-surface);
+}
+[guielement='taskboard_item_body'] [guielement='pt-memo'][mstyles~='pt-flagged'] {
+	background: var(--primary);
+	--text-color: var(--on-primary);
+}
+[guielement='taskboard_item_body']
+	[guielement='pt-memo']
+	[guielement='pt-entry-sidebar'][mstyles~='pt-invisible'] {
+	background: repeating-linear-gradient(
+		-45deg,
+		var(--surface) 0px,
+		var(--surface) 8px,
+		var(--background) 8px,
+		var(--background) 16px
+	);
 }
 
-[guielement="taskboard_item"]:hover [guielement="taskboard_item_header"],
-[guielement="taskboard_item"]:focus-within [guielement="taskboard_item_header"],
-[guielement="taskboard_item"]:hover [guielement="taskboard_item_body"],
-[guielement="taskboard_item"]:focus-within [guielement="taskboard_item_body"] {
-    border-color: var(--primary-muted);
+[guielement='taskboard_item_body'] [guielement='pt-memo'] a {
+	color: var(--primary);
+}
+[guielement='taskboard_item_body'] [guielement='pt-memo'][mstyles~='pt-flagged'] a {
+	color: var(--on-primary);
+}
+
+[guielement='taskboard_item']:hover [guielement='taskboard_item_header'],
+[guielement='taskboard_item']:focus-within [guielement='taskboard_item_header'],
+[guielement='taskboard_item']:hover [guielement='taskboard_item_body'],
+[guielement='taskboard_item']:focus-within [guielement='taskboard_item_body'] {
+	border-color: var(--primary-muted);
 }

@@ -1,94 +1,95 @@
-/* 
+/*
  * Knowledge base suggestions widget (as seen on call card)
  * Buttons are (mostly) styled in buttons.css
  */
 
 .suggestionsWidget {
-  background: var(--background);
-  border-color: var(--primary);
+	background: var(--background);
+	border-color: var(--primary);
 }
 
 .suggestionsWidget .suggestionsWidget-header {
-  background: transparent;
-  border-color: var(--on-background);
+	background: transparent;
+	border-color: var(--on-background);
 }
 .suggestionsWidget .suggestionsWidget-body {
-  color: var(--on-background);
+	color: var(--on-background);
 }
 .suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters {
-  border-color: var(--on-background);
+	border-color: var(--on-background);
 }
 .suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language > img {
-  filter: var(--on-background-filter);
+	filter: var(--on-background-filter);
 }
 .suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language > select {
-  background: transparent;
-  color: var(--on-background);
-  border-color: var(--on-background);
-  -webkit-appearance: listbox;
-  -moz-appearance: listbox;
-  appearance: listbox;
+	background: transparent;
+	color: var(--on-background);
+	border-color: var(--on-background);
+	-webkit-appearance: listbox;
+	-moz-appearance: listbox;
+	appearance: listbox;
 }
 .suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language > select:focus {
-  border-color: var(--on-background);
+	border-color: var(--on-background);
 }
 .suggestionsWidget .suggestionsWidget-body .suggestionsWidget-filters-language option {
-  background: var(--background);
-  color: var(--on-background);
+	background: var(--background);
+	color: var(--on-background);
 }
 .suggestionsWidget .help-button {
-  border-radius: 50%;
-  border: 1px solid currentColor;
+	border-radius: 50%;
+	border: 1px solid currentColor;
 }
 
 .suggestionsWidget .suggestionsWidget-list {
-  background: transparent;
+	background: transparent;
 }
 .suggestionsWidget .suggestionsWidget-suggestion,
-.suggestionsWidget .suggestionsWidget-suggestion.suggestionsWidget-suggestion-with-standard-solution {
-  background: transparent;
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
+.suggestionsWidget
+	.suggestionsWidget-suggestion.suggestionsWidget-suggestion-with-standard-solution {
+	background: transparent;
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 }
 .suggestionsWidget .suggestionsWidget-suggestion > a {
-  background: transparent;
-  color: var(--text-color);
-  border: 2px solid transparent;
+	background: transparent;
+	color: var(--text-color);
+	border: 2px solid transparent;
 }
 .suggestionsWidget .suggestionsWidget-suggestion > button {
-  background-color: transparent;
-  filter: var(--filter);
-  opacity: 1;
-  border: 2px solid transparent;
+	background-color: transparent;
+	filter: var(--filter);
+	opacity: 1;
+	border: 2px solid transparent;
 }
 .suggestionsWidget .suggestionsWidget-suggestion > a:hover,
 .suggestionsWidget .suggestionsWidget-suggestion > a:focus {
-  --text-color: var(--primary);
-  outline: none !important;
-  border-color: currentColor;
+	--text-color: var(--primary);
+	outline: none !important;
+	border-color: currentColor;
 }
 
 .suggestionsWidget .suggestionsWidget-suggestion > button:hover,
 .suggestionsWidget .suggestionsWidget-suggestion > button:focus {
-  --filter: var(--primary-filter);
-  outline: none !important;
-  border-color: currentColor;
+	--filter: var(--primary-filter);
+	outline: none !important;
+	border-color: currentColor;
 }
 
 .suggestionsWidget .suggestionsWidget-noSuggestionsFound {
-  filter: var(--on-background-filter);
+	filter: var(--on-background-filter);
 }
 
 .suggestionsWidget .suggestionsWidget-intro .footer {
-  background: var(--surface);
-  color: var(--on-surface);
+	background: var(--surface);
+	color: var(--on-surface);
 }
 .suggestionsWidget .suggestionsWidget-intro .footer > a:hover {
-  color: var(--primary-muted);
+	color: var(--primary-muted);
 }
 
 /* disabling blue focus styling */
 .suggestionsWidget .suggestionsWidget-intro .intro-button:focus {
-  border-color: var(--on-background);
-  box-shadow: none;
+	border-color: var(--on-background);
+	box-shadow: none;
 }

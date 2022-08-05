@@ -1,282 +1,277 @@
 /* Icons in minimized groups */
-[guielement="mg-minimized-content"] [guielement="icon"] {
-  filter: var(--on-background-filter);
+[guielement='mg-minimized-content'] [guielement='icon'] {
+	filter: var(--on-background-filter);
 }
 
 /* Header buttons */
-[guielement="mg-header"] input[aria-haspopup="false"] {
-  filter: var(--primary-filter);
+[guielement='mg-header'] input[aria-haspopup='false'] {
+	filter: var(--primary-filter);
 }
-[guielement="mg-header"] input[aria-haspopup="false"][disabled="true"] {
-  filter: var(--disabled-filter);
+[guielement='mg-header'] input[aria-haspopup='false'][disabled='true'] {
+	filter: var(--disabled-filter);
 }
 
-/* 
-* Form 
+/*
+* Form
 */
 
 /* Default */
-input[type="text"],
-div[guielement="datetimecontrol"],
-div[guielement="unittextbox"],
-button[role="checkbox"],
-button[role="radio"],
-textarea[mtype="textarea"],
+input[type='text'],
+div[guielement='datetimecontrol'],
+div[guielement='unittextbox'],
+button[role='checkbox'],
+button[role='radio'],
+textarea[mtype='textarea'],
 textarea.textarea,
-body[cardType="naturalselection"] input,
-body[cardType="naturalselection"] select {
-  --border: var(--on-background);
-  --static-filter: var(--on-background-filter);
-  --button-filter: var(--on-background-filter);
-  
-  background: var(--background);
-  color: var(--on-background);
-  border-color: var(--border);
+body[cardType='naturalselection'] input,
+body[cardType='naturalselection'] select {
+	--border: var(--on-background);
+	--static-filter: var(--on-background-filter);
+	--button-filter: var(--on-background-filter);
+
+	background: var(--background);
+	color: var(--on-background);
+	border-color: var(--border);
 }
-textarea[mtype="textarea"] {
-  border-color: var(--border) !important
+textarea[mtype='textarea'] {
+	border-color: var(--border) !important;
 }
 
 /* Readonly */
-input[type="text"][readonly="true"],
-div[guielement="datetimecontrol"][readonly="true"],
-div[guielement="unittextbox"][readonly="true"],
-button[role="checkbox"][readonly="true"],
-button[role="radio"][readonly="true"],
-textarea[mtype="textarea"][readonly="true"]{
-  --border: var(--disabled);
-  --static-filter: var(--on-background-filter);
-  --button-filter: var(--disabled-filter);
-  
-  background: var(--background);
-  color: var(--on-background);
+input[type='text'][readonly='true'],
+div[guielement='datetimecontrol'][readonly='true'],
+div[guielement='unittextbox'][readonly='true'],
+button[role='checkbox'][readonly='true'],
+button[role='radio'][readonly='true'],
+textarea[mtype='textarea'][readonly='true'] {
+	--border: var(--disabled);
+	--static-filter: var(--on-background-filter);
+	--button-filter: var(--disabled-filter);
+
+	background: var(--background);
+	color: var(--on-background);
 }
 
 /* Disabled */
-input[type="text"][disabled="true"],
-div[guielement="datetimecontrol"][disabled="true"],
-div[guielement="unittextbox"][disabled="true"],
-button[role="checkbox"][disabled="true"],
-button[role="radio"][disabled="true"],
-textarea[mtype="textarea"][disabled="true"],
+input[type='text'][disabled='true'],
+div[guielement='datetimecontrol'][disabled='true'],
+div[guielement='unittextbox'][disabled='true'],
+button[role='checkbox'][disabled='true'],
+button[role='radio'][disabled='true'],
+textarea[mtype='textarea'][disabled='true'],
 textarea.textarea:disabled {
-  --border: var(--on-disabled);
-  --static-filter: var(--on-disabled-filter);
-  --button-filter: var(--on-disabled-filter);
-  
-  background: var(--disabled);
-  color: var(--on-disabled);
+	--border: var(--on-disabled);
+	--static-filter: var(--on-disabled-filter);
+	--button-filter: var(--on-disabled-filter);
+
+	background: var(--disabled);
+	color: var(--on-disabled);
 }
 
 /* Error */
-input[type="text"][mstyles~="error"],
-div[guielement="datetimecontrol"][mstyles~="error"],
-div[guielement="unittextbox"][mstyles~="error"],
-textarea[mtype="textarea"][mstyles~="error"],
+input[type='text'][mstyles~='error'],
+div[guielement='datetimecontrol'][mstyles~='error'],
+div[guielement='unittextbox'][mstyles~='error'],
+textarea[mtype='textarea'][mstyles~='error'],
 textarea.textarea:invalid {
-  --border: var(--error);
-  --static-filter: var(--error-filter);
-  --button-filter: var(--on-background-filter);
-  
-  background: var(--background);
-  color: var(--error);
-}
+	--border: var(--error);
+	--static-filter: var(--error-filter);
+	--button-filter: var(--on-background-filter);
 
+	background: var(--background);
+	color: var(--error);
+}
 
 /* Combobox dropdown icon */
-body[cardType="naturalselection"] span.arrowdown,
-input[type="text"][mtype="combobox"] + div > img  {
-  filter: var(--on-background-filter);
+body[cardType='naturalselection'] span.arrowdown,
+input[type='text'][mtype='combobox'] + div > img {
+	filter: var(--on-background-filter);
 }
-input[type="text"][mtype="combobox"][readonly="true"] + div > img,
-input[type="text"][mtype="combobox"][disabled="true"] + div > img  {
-  filter: var(--on-disabled-filter);
+input[type='text'][mtype='combobox'][readonly='true'] + div > img,
+input[type='text'][mtype='combobox'][disabled='true'] + div > img {
+	filter: var(--on-disabled-filter);
 }
-input[type="text"][mtype="combobox"][mstyles~="error"] + div > img {
-  filter: var(--error-filter);
+input[type='text'][mtype='combobox'][mstyles~='error'] + div > img {
+	filter: var(--error-filter);
 }
 
 /* Combobox options */
-body[cardType="naturalselection"] option,
-[mango_combobox="true"][role="option"] {
-  background: var(--background) !important;
-  color: var(--on-background) !important;
+body[cardType='naturalselection'] option,
+[mango_combobox='true'][role='option'] {
+	background: var(--background) !important;
+	color: var(--on-background) !important;
 }
-[mango_combobox="true"][role="option"][style*="highlight"] {
-  background: var(--on-background) !important;
-  color: var(--background) !important;
+[mango_combobox='true'][role='option'][style*='highlight'] {
+	background: var(--on-background) !important;
+	color: var(--background) !important;
 }
-
 
 /* Datepicker button */
-div[guielement="datetimecontrol"] > input[guielement="icon-button"] {
-  filter: var(--button-filter);
+div[guielement='datetimecontrol'] > input[guielement='icon-button'] {
+	filter: var(--button-filter);
 }
-
 
 /* Unit text box */
-div[guielement="unittextbox"] > img, 
-div[guielement="unittextbox"] > [guielement="unittextbox_prefix"], 
-div[guielement="unittextbox"] > [guielement="unittextbox_suffix"] {
-  background: transparent;
+div[guielement='unittextbox'] > img,
+div[guielement='unittextbox'] > [guielement='unittextbox_prefix'],
+div[guielement='unittextbox'] > [guielement='unittextbox_suffix'] {
+	background: transparent;
 }
-div[guielement="unittextbox"] > img {
-  filter: var(--static-filter); 
+div[guielement='unittextbox'] > img {
+	filter: var(--static-filter);
 }
-
 
 /* Checkbox */
-button[role="checkbox"] {
-  box-sizing: border-box;
-  border: 1px solid var(--border);
+button[role='checkbox'] {
+	box-sizing: border-box;
+	border: 1px solid var(--border);
 }
-button[role="checkbox"] > img {
-  display: none !important;
+button[role='checkbox'] > img {
+	display: none !important;
 }
 
 /* checkmark */
-button[role="checkbox"][aria-checked="true"]::before {
-  content: '';
-  position: absolute;
-  border-bottom: 2px solid currentColor;
-  border-left: 2px solid currentColor;
-  top: 2px;
-  left: 2px;
-  width: 9px;
-  height: 5px;
-  transform: rotate(-45deg)
+button[role='checkbox'][aria-checked='true']::before {
+	content: '';
+	position: absolute;
+	border-bottom: 2px solid currentColor;
+	border-left: 2px solid currentColor;
+	top: 2px;
+	left: 2px;
+	width: 9px;
+	height: 5px;
+	transform: rotate(-45deg);
 }
-
 
 /* Radio button */
-button[role="radio"] > img {
-  display: none !important;
+button[role='radio'] > img {
+	display: none !important;
 }
-button[role="radio"] {
-  border: 1px solid var(--border);
-  border-radius: 50%;
+button[role='radio'] {
+	border: 1px solid var(--border);
+	border-radius: 50%;
 }
 /* dot */
-button[role="radio"][aria-checked="true"]::before {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  top: 4px;
-  left: 4px;
-  width: 8px;
-  height: 8px;
-  background: currentColor;
+button[role='radio'][aria-checked='true']::before {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	top: 4px;
+	left: 4px;
+	width: 8px;
+	height: 8px;
+	background: currentColor;
 }
 
 /* Search */
-[guielement="sp-search-main-group"],
-[mstyles~="quicklaunch_search_background"] {
-  background: transparent;
-  border: 1px solid var(--primary-muted);
+[guielement='sp-search-main-group'],
+[mstyles~='quicklaunch_search_background'] {
+	background: transparent;
+	border: 1px solid var(--primary-muted);
 }
-[guielement="sp-search-main-group"] [guielement="button"],
-[guielement="quicklaunch_search_button"] {
-  background: var(--primary);
-  border-color: var(--primary);
-  --filter: var(--on-primary-filter);
+[guielement='sp-search-main-group'] [guielement='button'],
+[guielement='quicklaunch_search_button'] {
+	background: var(--primary);
+	border-color: var(--primary);
+	--filter: var(--on-primary-filter);
 }
-[guielement="sp-search-main-group"] [guielement="button"]:hover,
-[guielement="quicklaunch_search_button"]:hover {
-  background: var(--primary-muted);
-  border-color: var(--primary-muted);
+[guielement='sp-search-main-group'] [guielement='button']:hover,
+[guielement='quicklaunch_search_button']:hover {
+	background: var(--primary-muted);
+	border-color: var(--primary-muted);
 }
-[guielement="sp-search-main-group"] [guielement="button"]:active,
-[guielement="quicklaunch_search_button"]:active {
-  background: var(--background);
-  border-color: var(--primary);
-  --filter: var(--primary-filter);
+[guielement='sp-search-main-group'] [guielement='button']:active,
+[guielement='quicklaunch_search_button']:active {
+	background: var(--background);
+	border-color: var(--primary);
+	--filter: var(--primary-filter);
 }
-[guielement="sp-search-main-group"] [guielement="button"] [guielement="icon"],
-[guielement="quicklaunch_search_button"] [guielement="icon"] {
-  filter: var(--filter);
+[guielement='sp-search-main-group'] [guielement='button'] [guielement='icon'],
+[guielement='quicklaunch_search_button'] [guielement='icon'] {
+	filter: var(--filter);
 }
 
 /* List control */
-[guielement="list_control"],
-[guielement="list_control"] [guielement="list_item"] {
-  background: var(--background);
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
+[guielement='list_control'],
+[guielement='list_control'] [guielement='list_item'] {
+	background: var(--background);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 }
-[guielement="list_control"] [guielement="list_item"]:hover {
-  background: var(--on-background);
-  --text-color: var(--background);
-  --filter: var(--background-filter);
+[guielement='list_control'] [guielement='list_item']:hover {
+	background: var(--on-background);
+	--text-color: var(--background);
+	--filter: var(--background-filter);
 }
-[guielement="list_control"] [guielement="list_item"][mstyles~="selected"],
-[guielement="list_control"] [guielement="list_item"] [mstyles~="selected_suggestion"] {
-  background: var(--primary-muted);
-  --text-color: var(--on-primary);
-  --filter: var(--on-primary-filter);
+[guielement='list_control'] [guielement='list_item'][mstyles~='selected'],
+[guielement='list_control'] [guielement='list_item'] [mstyles~='selected_suggestion'] {
+	background: var(--primary-muted);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
 }
 
-[guielement="list_control"] [guielement="list_item"] [mtype="label"] {
-  color: var(--text-color) !important;
+[guielement='list_control'] [guielement='list_item'] [mtype='label'] {
+	color: var(--text-color) !important;
 }
-[guielement="list_control"] [guielement="list_item"] [guielement="icon"] {
-  filter: var(--filter);
+[guielement='list_control'] [guielement='list_item'] [guielement='icon'] {
+	filter: var(--filter);
 }
 
 /* memofield buttons */
 .memowithheader .images img {
-  filter: var(--on-surface-filter);
+	filter: var(--on-surface-filter);
 }
 .memowithheader .images img:hover {
-  filter: var(--primary-filter);
+	filter: var(--primary-filter);
 }
 .memowithheader .images img:active {
-  filter: var(--primary-muted-filter);
+	filter: var(--primary-muted-filter);
 }
-.memowithheader .images img[disabled="true"] {
-  filter: var(--on-disabled-filter);
+.memowithheader .images img[disabled='true'] {
+	filter: var(--on-disabled-filter);
 }
 
 /*
  * HTML style form elements
  */
 table.fields .label {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 /* select */
 table.fields .arrowdown {
-  filter: var(--on-background-filter);
+	filter: var(--on-background-filter);
 }
 #dropdownlayer .dropdownselect {
-  background: var(--background);
-  color: var(--on-background);
+	background: var(--background);
+	color: var(--on-background);
 }
 .optionvalue {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 /* list control */
 div.fields .selectlist {
-  background: var(--background);
+	background: var(--background);
 }
 div.fields .selectlist .selected {
-  background: var(--on-background);
-  color: var(--background);
+	background: var(--on-background);
+	color: var(--background);
 }
 
 /* search with autocomplete */
 table.textinput {
-  background: var(--background);
+	background: var(--background);
 }
 table.textinput #queryfield {
-  color: var(--on-background);
+	color: var(--on-background);
 }
 table.textinput + #suggestionbox {
-  background: var(--background);
+	background: var(--background);
 }
 table.textinput + #suggestionbox .dropdown {
-  color: var(--on-background);
+	color: var(--on-background);
 }
-table.textinput + #suggestionbox .dropdown[style*="background"] {
-  background: var(--on-background) !important;
-  color: var(--background);
+table.textinput + #suggestionbox .dropdown[style*='background'] {
+	background: var(--on-background) !important;
+	color: var(--background);
 }

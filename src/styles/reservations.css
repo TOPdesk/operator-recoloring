@@ -1,253 +1,285 @@
-/* 
- * Filter panel 
+/*
+ * Filter panel
  */
-[guielement="planner_page_content"] [guielement="filter_panel"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement='planner_page_content'] [guielement='filter_panel'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
-[guielement="planner_page_content"] [guielement="filter_panel_header"],
-[guielement="planner_page_content"] [guielement="filter_panel_header_folded"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement='planner_page_content'] [guielement='filter_panel_header'],
+[guielement='planner_page_content'] [guielement='filter_panel_header_folded'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
-[guielement="planner_page_content"] [guielement="filter_panel_body"] > [guielement="icon-button"] {
-  filter: var(--on-surface-filter); 
+[guielement='planner_page_content'] [guielement='filter_panel_body'] > [guielement='icon-button'] {
+	filter: var(--on-surface-filter);
 }
-[guielement="planner_page_content"] [guielement="filter_panel_body"] > [guielement="icon-button"]:hover {
-  filter: var(--primary-filter);
+[guielement='planner_page_content']
+	[guielement='filter_panel_body']
+	> [guielement='icon-button']:hover {
+	filter: var(--primary-filter);
 }
 
 /* date picker */
-[mstyles="planner_datepicker_grid"] {
-  /* background color creates the cell borders */
-  background: var(--on-background);
+[mstyles='planner_datepicker_grid'] {
+	/* background color creates the cell borders */
+	background: var(--on-background);
 }
 /* day cell */
-[mstyles="planner_datepicker_grid"] [mstyles~="planner_datepicker_weekday"] {
-  --text-color: var(--on-background);
-  background: var(--background);
+[mstyles='planner_datepicker_grid'] [mstyles~='planner_datepicker_weekday'] {
+	--text-color: var(--on-background);
+	background: var(--background);
 }
 /* non-working day cell */
-[mstyles="planner_datepicker_grid"] [mstyles~="planner_datepicker_weekend"] {
-  --text-color: var(--on-surface);
-  background: var(--surface);
+[mstyles='planner_datepicker_grid'] [mstyles~='planner_datepicker_weekend'] {
+	--text-color: var(--on-surface);
+	background: var(--surface);
 }
 /* Special style for 'today' to aid orientation */
-[mstyles="planner_datepicker_grid"] [mstyles~="planner_datepicker_today"] {
-  border-color: transparent;
+[mstyles='planner_datepicker_grid'] [mstyles~='planner_datepicker_today'] {
+	border-color: transparent;
 }
-[mstyles="planner_datepicker_grid"] [mstyles~="planner_datepicker_today_label"] {
-  --text-color: var(--primary);
+[mstyles='planner_datepicker_grid'] [mstyles~='planner_datepicker_today_label'] {
+	--text-color: var(--primary);
 }
 /* currently selected cell */
-[mstyles="planner_datepicker_grid"] [mstyles~="planner_datepicker_weekday"][mstyles~="planner_datepicker_selected"],
-[mstyles="planner_datepicker_grid"] [mstyles~="planner_datepicker_weekend"][mstyles~="planner_datepicker_selected"] {
-  background: var(--primary-muted);
-  --text-color: var(--on-primary);
+[mstyles='planner_datepicker_grid']
+	[mstyles~='planner_datepicker_weekday'][mstyles~='planner_datepicker_selected'],
+[mstyles='planner_datepicker_grid']
+	[mstyles~='planner_datepicker_weekend'][mstyles~='planner_datepicker_selected'] {
+	background: var(--primary-muted);
+	--text-color: var(--on-primary);
 }
 
-/* 
+/*
  * Actions
  */
-[guielement="planner_page_content"] [guielement="detail_panel_main"] {
-  border: 1px solid var(--on-background);
+[guielement='planner_page_content'] [guielement='detail_panel_main'] {
+	border: 1px solid var(--on-background);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_main"][mstyles="planned"] {
-  --status-color: #057aab;
+[guielement='planner_page_content'] [guielement='detail_panel_main'][mstyles='planned'] {
+	--status-color: #057aab;
 }
-[guielement="planner_page_content"] [guielement="detail_panel_main"][mstyles="terminated"] {
-  --status-color: #178755;
+[guielement='planner_page_content'] [guielement='detail_panel_main'][mstyles='terminated'] {
+	--status-color: #178755;
 }
-[guielement="planner_page_content"] [guielement="detail_panel_main"][mstyles="request"] {
-  --status-color: #eda911;
-}
-
-[guielement="planner_page_content"] [guielement="detail_panel_header"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
-  border-bottom: 0px;
+[guielement='planner_page_content'] [guielement='detail_panel_main'][mstyles='request'] {
+	--status-color: #eda911;
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_header"]::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 8px;
-  background: var(--status-color);
+[guielement='planner_page_content'] [guielement='detail_panel_header'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+	border-bottom: 0px;
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_body"] {
-  background: var(--background) !important;
-  --text-color: var(--on-background);
-  --filter: var(--on-background-filter);
+[guielement='planner_page_content'] [guielement='detail_panel_header']::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 8px;
+	background: var(--status-color);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_tabbutton"][mstyles~="active"] {
-  border-color: var(--primary);
-  --text-color: var(--primary);
-  --filter: var(--primary-filter);
+[guielement='planner_page_content'] [guielement='detail_panel_body'] {
+	background: var(--background) !important;
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_tabbutton"] [guielement="icon"] {
-  filter: var(--filter);
+[guielement='planner_page_content'] [guielement='detail_panel_tabbutton'][mstyles~='active'] {
+	border-color: var(--primary);
+	--text-color: var(--primary);
+	--filter: var(--primary-filter);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_body"] [guielement="icon"] {
-  filter: var(--filter);
+[guielement='planner_page_content'] [guielement='detail_panel_tabbutton'] [guielement='icon'] {
+	filter: var(--filter);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_group_header"] > [guielement="icon"]:first-of-type {
-  filter: none;
+[guielement='planner_page_content'] [guielement='detail_panel_body'] [guielement='icon'] {
+	filter: var(--filter);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_body"] input[placeholder]::placeholder {
-  color: var(--text-color) !important;
+[guielement='planner_page_content']
+	[guielement='detail_panel_group_header']
+	> [guielement='icon']:first-of-type {
+	filter: none;
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_highlighted_block"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
-  --filter: var(--on-surface-filter);
+[guielement='planner_page_content']
+	[guielement='detail_panel_body']
+	input[placeholder]::placeholder {
+	color: var(--text-color) !important;
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_highlighted_block"]::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 4px;
-  background: var(--status-color);
+[guielement='planner_page_content'] [guielement='detail_panel_highlighted_block'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
 
-[guielement="planner_page_content"] [guielement="detail_panel_highlighted_block"] [guielement="detail_panel_reserved_item"][mstyles~="hovered"] {
-  background: var(--primary);
-  --text-color: var(--on-primary);
+[guielement='planner_page_content'] [guielement='detail_panel_highlighted_block']::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 4px;
+	background: var(--status-color);
 }
 
-[guielement="planner_popup_window"],
-[guielement="planner_popup_window"] > [guielement="planner_popup_footer"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[guielement='planner_page_content']
+	[guielement='detail_panel_highlighted_block']
+	[guielement='detail_panel_reserved_item'][mstyles~='hovered'] {
+	background: var(--primary);
+	--text-color: var(--on-primary);
 }
 
-[guielement="planner_popup_window"] [guielement="spinner-button"] {
-  background: transparent;
-  filter: var(--on-surface-filter);
+[guielement='planner_popup_window'],
+[guielement='planner_popup_window'] > [guielement='planner_popup_footer'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
-[guielement="planner_popup_window"] [guielement="spinner-button"]:hover {
-  filter: var(--primary-filter);
+
+[guielement='planner_popup_window'] [guielement='spinner-button'] {
+	background: transparent;
+	filter: var(--on-surface-filter);
 }
-[guielement="planner_popup_window"] [guielement="spinner-button"] + [guielement="textbox"] {
-  background: var(--background);
-  --text-color: var(--on-background);
+[guielement='planner_popup_window'] [guielement='spinner-button']:hover {
+	filter: var(--primary-filter);
 }
-[guielement="planner_popup_window"] [handle="reservations.services.edit.trash_bin"] {
-  filter: var(--on-surface-filter);
+[guielement='planner_popup_window'] [guielement='spinner-button'] + [guielement='textbox'] {
+	background: var(--background);
+	--text-color: var(--on-background);
 }
-[guielement="planner_popup_window"] [handle="reservations.services.edit.trash_bin"]:hover {
-  filter: var(--primary-filter);
+[guielement='planner_popup_window'] [handle='reservations.services.edit.trash_bin'] {
+	filter: var(--on-surface-filter);
+}
+[guielement='planner_popup_window'] [handle='reservations.services.edit.trash_bin']:hover {
+	filter: var(--primary-filter);
 }
 
 /*
  * Planner
  */
-[handle="reservation.planner.main_view"] > [guielement="planner_header_row"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[handle='reservation.planner.main_view'] > [guielement='planner_header_row'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
-[handle="reservation.planner.main_view"] [guielement="mg-header"][mstyles~="reservable_items_group_header"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+[handle='reservation.planner.main_view']
+	[guielement='mg-header'][mstyles~='reservable_items_group_header'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
-[handle="reservation.planner.main_view"] [guielement="reservable_item_row"] {
-  background: var(--background);
+[handle='reservation.planner.main_view'] [guielement='reservable_item_row'] {
+	background: var(--background);
 }
-[handle="reservation.planner.main_view"] [guielement="reservable_item_row"] [handle^="servicewindow_shadow_"],
-[handle="reservation.planner.main_view"] [guielement="reservable_item_row"] [handle^="blocked_period_shadow_"] {
-  background: var(--disabled) !important;
+[handle='reservation.planner.main_view']
+	[guielement='reservable_item_row']
+	[handle^='servicewindow_shadow_'],
+[handle='reservation.planner.main_view']
+	[guielement='reservable_item_row']
+	[handle^='blocked_period_shadow_'] {
+	background: var(--disabled) !important;
 }
-[handle="reservation.planner.main_view"] [guielement="planner_item_title_cell"] {
-  background: var(--background) !important;
+[handle='reservation.planner.main_view'] [guielement='planner_item_title_cell'] {
+	background: var(--background) !important;
 }
-[handle="reservation.planner.main_view"] [guielement="reservable_item_cell_icon"] > img {
-  filter: var(--on-background-filter);
+[handle='reservation.planner.main_view'] [guielement='reservable_item_cell_icon'] > img {
+	filter: var(--on-background-filter);
 }
-[handle="reservation.planner.main_view"] [guielement="reservable_item_cell_icon"] > img[handle$="_MINI_STAR_ON"],
-[handle="reservation.planner.main_view"] [guielement="reservable_item_cell_icon"] > img[handle$="_MINI_STAR_OFF"],
-[handle="reservation.planner.main_view"] [guielement="reservable_item_cell_icon"] > img[handle$="_MINI_STAR_ON_HOVER"] {
-  filter: none;
+[handle='reservation.planner.main_view']
+	[guielement='reservable_item_cell_icon']
+	> img[handle$='_MINI_STAR_ON'],
+[handle='reservation.planner.main_view']
+	[guielement='reservable_item_cell_icon']
+	> img[handle$='_MINI_STAR_OFF'],
+[handle='reservation.planner.main_view']
+	[guielement='reservable_item_cell_icon']
+	> img[handle$='_MINI_STAR_ON_HOVER'] {
+	filter: none;
 }
-[handle="reservation.planner.main_view"] [guielement="planner_room_capacity"] {
-  background: var(--primary);
-  --text-color: var(--on-primary);
+[handle='reservation.planner.main_view'] [guielement='planner_room_capacity'] {
+	background: var(--primary);
+	--text-color: var(--on-primary);
 }
 
 #dragdiv {
-  border-color: var(--on-background) !important;
+	border-color: var(--on-background) !important;
 }
 
 /* New reservation column */
-[handle="reservation.planner.main_view"] [guielement="background_shadow_section"] {
-  background: repeating-linear-gradient(-45deg,
-    transparent,
-    transparent 9px,
-    var(--primary) 9px,
-    var(--primary) 10px);
+[handle='reservation.planner.main_view'] [guielement='background_shadow_section'] {
+	background: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 9px,
+		var(--primary) 9px,
+		var(--primary) 10px
+	);
 }
-[handle="reservation.planner.main_view"] [guielement="foreground_shadow_section"] {
-  border-color: var(--primary);
-  background: transparent;
+[handle='reservation.planner.main_view'] [guielement='foreground_shadow_section'] {
+	border-color: var(--primary);
+	background: transparent;
 }
-[handle="reservation.planner.main_view"] [guielement="reservation_feedback_section"]:hover {
-  border-color: var(--primary);
+[handle='reservation.planner.main_view'] [guielement='reservation_feedback_section']:hover {
+	border-color: var(--primary);
 }
-[handle="reservation.planner.main_view"] [guielement="reservation_feedback_section"][mstyles~="divisible_room_restriction"] {
-  background: repeating-linear-gradient(-45deg,
-    var(--primary-muted),
-    var(--primary-muted) 6px,
-    transparent 6px,
-    transparent 10px);
-  border-color: var(--primary-muted);
+[handle='reservation.planner.main_view']
+	[guielement='reservation_feedback_section'][mstyles~='divisible_room_restriction'] {
+	background: repeating-linear-gradient(
+		-45deg,
+		var(--primary-muted),
+		var(--primary-muted) 6px,
+		transparent 6px,
+		transparent 10px
+	);
+	border-color: var(--primary-muted);
 }
-[handle="reservation.planner.main_view"] [guielement="reservation_feedback_section"][mstyles~="selected_section"] {
-  background: var(--primary);
+[handle='reservation.planner.main_view']
+	[guielement='reservation_feedback_section'][mstyles~='selected_section'] {
+	background: var(--primary);
 }
-[handle="reservation.planner.main_view"] [guielement="reservation_feedback_section"][mstyles~="selected_section"] > img {
-  filter: var(--on-primary-filter);
+[handle='reservation.planner.main_view']
+	[guielement='reservation_feedback_section'][mstyles~='selected_section']
+	> img {
+	filter: var(--on-primary-filter);
 }
 
 /* Reservation */
-[handle="reservation.planner.main_view"] [guielement="reservation_section"] {
-  background: var(--surface);
-  --text-color: var(--on-surface);
-  --filter: var(--on-surface-filter);
+[handle='reservation.planner.main_view'] [guielement='reservation_section'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
-[handle="reservation.planner.main_view"] [guielement="reservation_section"][mstyles~="selected_section"] {
-  background: var(--on-surface);
-  --text-color: var(--surface);
-  --filter: var(--surface-filter);
+[handle='reservation.planner.main_view']
+	[guielement='reservation_section'][mstyles~='selected_section'] {
+	background: var(--on-surface);
+	--text-color: var(--surface);
+	--filter: var(--surface-filter);
 }
-[handle="reservation.planner.main_view"] [guielement="reservation_section"] > img {
-  filter: var(--filter);
+[handle='reservation.planner.main_view'] [guielement='reservation_section'] > img {
+	filter: var(--filter);
 }
-[handle="reservation.planner.main_view"] [guielement="block_time_section"] {
-  background: repeating-linear-gradient(45deg,
-    transparent,
-    transparent 6px,
-    var(--disabled) 6px,
-    var(--disabled) 10px);
+[handle='reservation.planner.main_view'] [guielement='block_time_section'] {
+	background: repeating-linear-gradient(
+		45deg,
+		transparent,
+		transparent 6px,
+		var(--disabled) 6px,
+		var(--disabled) 10px
+	);
 }
-[handle="reservation.planner.main_view"] [guielement="block_time_section"] > img {
-  display: none !important;
+[handle='reservation.planner.main_view'] [guielement='block_time_section'] > img {
+	display: none !important;
 }
 
 /* Availability popup */
-[guielement="planner_popup_content"] [handle="availableassets"]~img[style*="width: 24px"] {
-  filter: var(--on-surface-filter);
+[guielement='planner_popup_content'] [handle='availableassets'] ~ img[style*='width: 24px'] {
+	filter: var(--on-surface-filter);
 }

@@ -1,14 +1,14 @@
 body {
-    background: var(--background);
+	background: var(--background);
 }
 
 .notification.is-warning {
-    background: var(--background);
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    border-radius: 5px;
+	background: var(--background);
+	color: var(--primary);
+	border: 1px solid var(--primary);
+	border-radius: 5px;
 }
 
 .notification.is-warning .icon {
-    color: var(--primary);
+	color: var(--primary);
 }

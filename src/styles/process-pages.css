@@ -1,199 +1,191 @@
-
 /*
  * Home, Module, and Dashboard pages
  */
 
 /* Can't recolor the background of the banner, so need to force the color of the text to make sure it remains visible */
-[handle="ie11campaign.banner.application_manager.description"],
-[handle="ie11campaign.banner.application_manager.description"] + [mtype="group"] a {
-    color: black;
-    
+[handle='ie11campaign.banner.application_manager.description'],
+[handle='ie11campaign.banner.application_manager.description'] + [mtype='group'] a {
+	color: black;
 }
 
-[guielement="widget"] {
-    border-color: transparent;
+[guielement='widget'] {
+	border-color: transparent;
 }
-[guielement="widget_header"],
-[guielement="widget_content_area"] {
-    background: var(--surface);
-    --text-color: var(--on-surface);
+[guielement='widget_header'],
+[guielement='widget_content_area'] {
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
-[guielement="widget_content_area"] {
-    border-color: var(--on-surface);
+[guielement='widget_content_area'] {
+	border-color: var(--on-surface);
 }
-[guielement="widget_content_area"] [guielement="icon"] {
-    filter: var(--on-surface-filter);
+[guielement='widget_content_area'] [guielement='icon'] {
+	filter: var(--on-surface-filter);
 }
-
-
 
 /* Main pages widget / Tile widgets */
-[guielement^="widget_page_image_button"] {
-    background: var(--primary);
-    --filter: var(--on-primary-filter);
+[guielement^='widget_page_image_button'] {
+	background: var(--primary);
+	--filter: var(--on-primary-filter);
 }
-[guielement^="widget_page_image_button"]:hover {
-    background: var(--primary-muted);
+[guielement^='widget_page_image_button']:hover {
+	background: var(--primary-muted);
 }
-[guielement^="widget_page_image_button"]:active {
-    background: var(--background);
-    border: 1px solid var(--primary);
-    --filter: var(--on-background-filter);
+[guielement^='widget_page_image_button']:active {
+	background: var(--background);
+	border: 1px solid var(--primary);
+	--filter: var(--on-background-filter);
 }
-[guielement^="widget_page_image_button"] > [guielement="icon"] {
-    filter: var(--filter);
+[guielement^='widget_page_image_button'] > [guielement='icon'] {
+	filter: var(--filter);
 }
 
 /* My tasks widget / Tasks per group widget */
-[guielement="widget_content_area"] [mstyles~="todo_header_group"] {
-    border-color: var(--on-surface);
+[guielement='widget_content_area'] [mstyles~='todo_header_group'] {
+	border-color: var(--on-surface);
 }
 
 /* Selections, Reports, and Shortcuts widget */
-[guielement="selections_reports_content_area"] {
-    background: var(--surface);
+[guielement='selections_reports_content_area'] {
+	background: var(--surface);
 }
-[guielement="selections_reports_item"] {
-    background: var(--surface);
-    border-color: transparent;
-    --text-color: var(--on-surface);
-    --filter: var(--on-surface-filter);
+[guielement='selections_reports_item'] {
+	background: var(--surface);
+	border-color: transparent;
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
-[guielement="selections_reports_item"]:hover {
-    background: var(--on-surface);
-    --text-color: var(--surface);
-    --filter: var(--surface-filter);
+[guielement='selections_reports_item']:hover {
+	background: var(--on-surface);
+	--text-color: var(--surface);
+	--filter: var(--surface-filter);
 }
-[guielement="selections_reports_item"] [guielement="icon"] {
-    filter: var(--filter);
+[guielement='selections_reports_item'] [guielement='icon'] {
+	filter: var(--filter);
 }
 
 /* Current major calls widget */
-[handle="major_incident_widget_main"] [guielement="block_header"] {
-    background: var(--surface);
+[handle='major_incident_widget_main'] [guielement='block_header'] {
+	background: var(--surface);
 }
-[handle="major_incident_widget_main"] [guielement="major_incidents_button"] {
-    background: transparent;
-    filter: var(--on-surface-filter);
+[handle='major_incident_widget_main'] [guielement='major_incidents_button'] {
+	background: transparent;
+	filter: var(--on-surface-filter);
 }
-[handle="major_incident_widget_main"] [guielement="major_incidents_button"]:hover {
-    filter: var(--primary-filter);
+[handle='major_incident_widget_main'] [guielement='major_incidents_button']:hover {
+	filter: var(--primary-filter);
 }
-[handle="major_incident_widget_main"] [guielement="major_incidents_button"]:active {
-    filter: var(--primary-muted-filter);
+[handle='major_incident_widget_main'] [guielement='major_incidents_button']:active {
+	filter: var(--primary-muted-filter);
 }
 
 /* KPI widget */
-[guielement="widget_content_area"] [mstyles~="italic_text"] {
-    color: var(--text-color) !important;
+[guielement='widget_content_area'] [mstyles~='italic_text'] {
+	color: var(--text-color) !important;
 }
 
 /* Report widget */
-[guielement="widget_content_area"] [guielement="image"]:not([role="presentation"]) {
-    /* 
-     * The report legend is included in the image itself, 
-     * forcing the background to make sure the legend is visible.
-     *
-     * Setting a simple filter, e.g. filter: invert(1), may have 
-     * a more desirable effect depending on the chosen background 
-     * of the widget
-     *
-     * NOTE: this also affects KPI's as they can't be distinguished
-     */
-    background: #fcfcfc;
+[guielement='widget_content_area'] [guielement='image']:not([role='presentation']) {
+	/*
+	 * The report legend is included in the image itself,
+	 * forcing the background to make sure the legend is visible.
+	 *
+	 * Setting a simple filter, e.g. filter: invert(1), may have
+	 * a more desirable effect depending on the chosen background
+	 * of the widget
+	 *
+	 * NOTE: this also affects KPI's as they can't be distinguished
+	 */
+	background: #fcfcfc;
 }
 
 /* Conversations widget */
-[guielement="conversation-reply"] {
-    background: transparent;
+[guielement='conversation-reply'] {
+	background: transparent;
 }
 
-[guielement="conversation-text"] a {
-    color: var(--primary);
+[guielement='conversation-text'] a {
+	color: var(--primary);
 }
-[guielement="conversation-text"] a:hover  {
-    color: var(--primary-muted);
+[guielement='conversation-text'] a:hover {
+	color: var(--primary-muted);
 }
-[guielement="conversation-link"] {
-    background: transparent;
-    color: var(--primary);
+[guielement='conversation-link'] {
+	background: transparent;
+	color: var(--primary);
 }
-[guielement="conversation-link"]:hover {
-    background: transparent;
-    color: var(--primary-muted);
+[guielement='conversation-link']:hover {
+	background: transparent;
+	color: var(--primary-muted);
 }
-[guielement="conversation-number"] + [guielement="icon-button"] {
-    filter: var(--primary-filter);
+[guielement='conversation-number'] + [guielement='icon-button'] {
+	filter: var(--primary-filter);
 }
-[guielement="conversation-number"] + [guielement="icon-button"]:hover {
-    filter: var(--primary-muted-filter)
+[guielement='conversation-number'] + [guielement='icon-button']:hover {
+	filter: var(--primary-muted-filter);
 }
 
 /* Navigation pane */
-[guielement="navigator_container"] {
-    background: var(--surface);
-    border-color: transparent;
-    --text-color: var(--on-surface);
-    --filter: var(--on-surface-filter);
+[guielement='navigator_container'] {
+	background: var(--surface);
+	border-color: transparent;
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
 }
-[guielement="navigator_item"] [guielement="icon"] {
-    filter: var(--filter);
+[guielement='navigator_item'] [guielement='icon'] {
+	filter: var(--filter);
 }
-[guielement="navigator_item"][mstyles~="selected"] {
-    background: var(--on-surface);
-    --text-color: var(--surface);
-    --filter: var(--surface-filter);
+[guielement='navigator_item'][mstyles~='selected'] {
+	background: var(--on-surface);
+	--text-color: var(--surface);
+	--filter: var(--surface-filter);
 }
 
 /* Selections widget / Reports widget / Shortcuts widget */
-[guielement="widget"] [guielement="link_button"] {
-    background: transparent;
-    color: var(--primary) !important;
+[guielement='widget'] [guielement='link_button'] {
+	background: transparent;
+	color: var(--primary) !important;
 }
-[guielement="widget"] [guielement="link_button"]:hover {
-    color: var(--primary-muted) !important;
+[guielement='widget'] [guielement='link_button']:hover {
+	color: var(--primary-muted) !important;
 }
-
-
-
 
 /* Get started widget */
 div#app {
-    background-image: none;
+	background-image: none;
 }
 /* close button */
 .widget-container .widget-button {
-    background: transparent;
-    color: var(--on-background);
-    border-color: var(--on-background);
+	background: transparent;
+	color: var(--on-background);
+	border-color: var(--on-background);
 }
 .widget-container .widget-button:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: var(--on-primary);
+	background: var(--primary);
+	border-color: var(--primary);
+	color: var(--on-primary);
 }
 .widget-container .widget-button:active {
-    background: transparent;
-    border-color: var(--primary);
-    color: var(--primary);
+	background: transparent;
+	border-color: var(--primary);
+	color: var(--primary);
 }
 /* about us button */
 .welcome-widget #button {
-    background: transparent;
-    color: var(--on-background);
-    border-color: var(--on-background);
+	background: transparent;
+	color: var(--on-background);
+	border-color: var(--on-background);
 }
 .welcome-widget #button:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: var(--on-primary);
+	background: var(--primary);
+	border-color: var(--primary);
+	color: var(--on-primary);
 }
 .welcome-widget #button:active {
-    background: transparent;
-    border-color: var(--primary);
-    color: var(--primary);
+	background: transparent;
+	border-color: var(--primary);
+	color: var(--primary);
 }
-
 
 /* Subwidgets */
 .widget-container .service-excellence-widget-frame,
@@ -202,156 +194,178 @@ div#app {
 .widget-container .getting-started-widget-frame:hover,
 .widget-container .task-board-widget-frame,
 .widget-container .task-board-widget-frame:hover {
-    background: var(--surface);
+	background: var(--surface);
 }
 /* header */
 .widget-container .service-excellence-widget-frame h1,
 .widget-container .getting-started-widget-frame h1,
 .widget-container .task-board-widget-frame h1 {
-    color: var(--on-surface);
+	color: var(--on-surface);
 }
 
 /* Service excellence subwidget */
 /* view more blogs link */
 .widget-container .service-excellence-widget-frame a {
-    color: var(--primary);
+	color: var(--primary);
 }
 .widget-container .service-excellence-widget-frame a:hover {
-    color: var(--primary-muted);
+	color: var(--primary-muted);
 }
 /* blog item */
 .widget-container .service-excellence-widget-frame .rss-item a {
-  background: var(--surface);
-  --text-color: var(--on-surface);
+	background: var(--surface);
+	--text-color: var(--on-surface);
 }
 
 .widget-container .service-excellence-widget-frame .rss-item a:focus,
 .widget-container .service-excellence-widget-frame .rss-item a:hover {
-  background: var(--on-surface);
-  --text-color: var(--surface);
+	background: var(--on-surface);
+	--text-color: var(--surface);
 }
 
-.widget-container .service-excellence-widget-frame .rss-item .rss-item-body .rss-item-content > div .fade-out-text,
+.widget-container
+	.service-excellence-widget-frame
+	.rss-item
+	.rss-item-body
+	.rss-item-content
+	> div
+	.fade-out-text,
 .widget-container .service-excellence-widget-frame .rss-item .rss-item-header .rss-title-text,
 .widget-container .service-excellence-widget-frame .rss-item .rss-item-header .display-date {
-    color: var(--text-color);
+	color: var(--text-color);
 }
 
 /* Getting started subwidget */
 .widget-container .getting-started-widget-frame .getting-started-widget .playlist li,
 .widget-container .getting-started-widget-frame .getting-started-widget .playlist li .video-title {
-    color: var(--on-surface);
+	color: var(--on-surface);
 }
 .widget-container .getting-started-widget-frame .getting-started-widget .playlist li.playing,
-.widget-container .getting-started-widget-frame .getting-started-widget .playlist li.playing .video-title{
-    background: var(--primary);
-    color: var(--on-primary);
+.widget-container
+	.getting-started-widget-frame
+	.getting-started-widget
+	.playlist
+	li.playing
+	.video-title {
+	background: var(--primary);
+	color: var(--on-primary);
 }
 .widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:hover,
-.widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:hover .video-title,
+.widget-container
+	.getting-started-widget-frame
+	.getting-started-widget
+	.playlist
+	li
+	a:hover
+	.video-title,
 .widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:focus,
-.widget-container .getting-started-widget-frame .getting-started-widget .playlist li a:focus .video-title {
-    background: var(--on-surface);
-    color: var(--surface);
+.widget-container
+	.getting-started-widget-frame
+	.getting-started-widget
+	.playlist
+	li
+	a:focus
+	.video-title {
+	background: var(--on-surface);
+	color: var(--surface);
 }
-
 
 /* My calls subwidget */
 .widget-container .task-board-widget-frame .task-board-widget a {
-    --text-color: var(--on-surface);
+	--text-color: var(--on-surface);
 }
 .widget-container .task-board-widget-frame .task-board-widget a .td-icon,
 .widget-container .task-board-widget-frame .task-board-widget a .content .title,
 .widget-container .task-board-widget-frame .task-board-widget a .content .request,
 .widget-container .task-board-widget-frame .task-board-widget a .content .request span,
 .widget-container .task-board-widget-frame .task-board-widget a .display-date,
-.widget-container .task-board-widget-frame .task-board-widget a .display-date .td-icon {  
-    color: var(--text-color);
+.widget-container .task-board-widget-frame .task-board-widget a .display-date .td-icon {
+	color: var(--text-color);
 }
 .widget-container .task-board-widget-frame .task-board-widget a:hover,
 .widget-container .task-board-widget-frame .task-board-widget a:focus {
-    background: var(--on-surface);
-    --text-color: var(--surface);
+	background: var(--on-surface);
+	--text-color: var(--surface);
 }
 .widget-container .task-board-widget-frame .task-board-widget .overview-link a {
-    color: var(--primary);
+	color: var(--primary);
 }
 .widget-container .task-board-widget-frame .task-board-widget .overview-link a:hover {
-    background: none;
-    color: var(--primary-muted);
+	background: none;
+	color: var(--primary-muted);
 }
 .widget-container .task-board-widget-frame .task-board-widget .update-area {
-    color: var(--on-surface);
+	color: var(--on-surface);
 }
 .widget-container .task-board-widget-frame .task-board-widget .update-area button svg {
-    color: var(--on-surface);
+	color: var(--on-surface);
 }
 .widget-container .task-board-widget-frame .task-board-widget .update-area button:hover {
-    background: var(--on-surface);
+	background: var(--on-surface);
 }
 .widget-container .task-board-widget-frame .task-board-widget .update-area button:hover svg {
-    color: var(--surface);
+	color: var(--surface);
 }
 
 /* Flow chart */
-[mstyles~="flowchart_block_simple"],
-[mstyles~="flowchart_block_multi"],
-[mstyles~="flowchart_block_dashed"],
-[mstyles~="flowchart_icon_container"] {
-    background: var(--background);
-    border-color: var(--on-background);
+[mstyles~='flowchart_block_simple'],
+[mstyles~='flowchart_block_multi'],
+[mstyles~='flowchart_block_dashed'],
+[mstyles~='flowchart_icon_container'] {
+	background: var(--background);
+	border-color: var(--on-background);
 }
-[mstyles~="flowchart_block_empty"] {
-    border-color: var(--on-surface);
+[mstyles~='flowchart_block_empty'] {
+	border-color: var(--on-surface);
 }
-[mstyles~="flowchart_block_multi"] {
-    box-shadow: 
-        1px -1px var(--background), 
-        2px -2px var(--on-background), 
-        3px -3px var(--background), 
-        4px -4px var(--on-background);
+[mstyles~='flowchart_block_multi'] {
+	box-shadow: 1px -1px var(--background), 2px -2px var(--on-background), 3px -3px var(--background),
+		4px -4px var(--on-background);
 }
-[mstyles~="flowchart_icon_container"] [guielement="icon"]:last-child,
-[mstyles~="flowchart_icon_container"] [guielement="icon-button"]:last-child {
-    /* status icons are multicolored and thus can't be recolored */ 
-    filter: none;
+[mstyles~='flowchart_icon_container'] [guielement='icon']:last-child,
+[mstyles~='flowchart_icon_container'] [guielement='icon-button']:last-child {
+	/* status icons are multicolored and thus can't be recolored */
+	filter: none;
 }
-[mstyles~="flowchart_icon_container"] [guielement="icon"]:first-child,
-[mstyles~="flowchart_icon_container"] [guielement="icon-button"]:first-child {
-    filter: var(--on-background-filter);
+[mstyles~='flowchart_icon_container'] [guielement='icon']:first-child,
+[mstyles~='flowchart_icon_container'] [guielement='icon-button']:first-child {
+	filter: var(--on-background-filter);
 }
-[guielement="flowchart_label"] {
-    color: var(--on-background);
+[guielement='flowchart_label'] {
+	color: var(--on-background);
 }
-[mtype="rectangle"] {
-    border-color: var(--on-surface) !important;
+[mtype='rectangle'] {
+	border-color: var(--on-surface) !important;
 }
-[mstyles~="arrowhead_right"] {
-    border-left-color: var(--on-surface) !important;
+[mstyles~='arrowhead_right'] {
+	border-left-color: var(--on-surface) !important;
 }
-[mstyles~="arrowhead_left"] {
-    border-right-color: var(--on-surface) !important;
+[mstyles~='arrowhead_left'] {
+	border-right-color: var(--on-surface) !important;
 }
-[mstyles~="arrowhead_up"] {
-    border-bottom-color: var(--on-surface) !important;
+[mstyles~='arrowhead_up'] {
+	border-bottom-color: var(--on-surface) !important;
 }
-[mstyles~="arrowhead_down"] {
-    border-top-color: var(--on-surface) !important;
+[mstyles~='arrowhead_down'] {
+	border-top-color: var(--on-surface) !important;
 }
 
 /* Marketplace widget */
-[guielement="no_padding_webpage_content_area"] {
-    background: var(--surface);
+[guielement='no_padding_webpage_content_area'] {
+	background: var(--surface);
 }
-a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"] {
-    background-color: var(--primary);
-    color: var(--on-primary);
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]
+{
+	background-color: var(--primary);
+	color: var(--on-primary);
 }
-a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:hover {
-    background-color: var(--primary-muted);
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:hover
+{
+	background-color: var(--primary-muted);
 }
-a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:active {
-    background-color: var(--background);
-    color: var(--primary);
-    border: 1px solid var(--primary);
+a[href="https://marketplace.topdesk.com/?_sfm_solution_creator=topdesk"]:active
+{
+	background-color: var(--background);
+	color: var(--primary);
+	border: 1px solid var(--primary);
 }

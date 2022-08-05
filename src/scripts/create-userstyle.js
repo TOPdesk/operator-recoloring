@@ -3,30 +3,30 @@ import { readFileSync } from 'fs';
 import { themes, legacyTheme as theme } from "../themes/index.js";
 
 export default function createUserstyles(version) {
-  return {
-    name: 'create-userstyle-plugin',
-    async generateBundle(_options, bundle) {
-      const styles = userStyles();
+	return {
+		name: 'create-userstyle-plugin',
+		async generateBundle(_options, bundle) {
+			const styles = userStyles();
 
-      this.emitFile({
-        type: 'asset',
-        source: `${metadata(version, theme)}${styles}`,
-        fileName: 'topdesk-operator-recoloring.user.css'
-      });
+			this.emitFile({
+				type: 'asset',
+				source: `${metadata(version, theme)}${styles}`,
+				fileName: 'topdesk-operator-recoloring.user.css'
+			});
 
-      themes.forEach(theme => {
-        this.emitFile({
-          type: 'asset',
-          source: `${metadata(version, theme)}${styles}`,
-          fileName: `topdesk-operator-recoloring.${theme.name}.user.css`
-        });
-      });
-    }
-  };
+			themes.forEach(theme => {
+				this.emitFile({
+					type: 'asset',
+					source: `${metadata(version, theme)}${styles}`,
+					fileName: `topdesk-operator-recoloring.${theme.name}.user.css`
+				});
+			});
+		}
+	};
 }
 
 function metadata(version, theme) {
-  return `
+	return `
 /* ==UserStyle==
 @name           ${theme.displayName} (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
@@ -42,7 +42,7 @@ ${variables(theme)}
 
 function variables(theme) {
 
-  return `
+	return `
 @var color background "Background" ${theme.background}
 @var text background-filter "Background filter" ${theme.backgroundFilter}
 @var color on-background "On background" ${theme.onBackground}
@@ -70,14 +70,8 @@ function variables(theme) {
 }
 
 function userStyles() {
-  return `
-@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"),
-              regexp("http(s)?://.*/services/workflows-v2.*"),
-              regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"),
-              regexp("http(s)?://.*/tas/secure/suggestions/.*"),
-              regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"),
-              regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"),
-              regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
+	return `
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 ${readFileSync(__dirname + '/src/styles/button.css', { encoding: 'utf8' })}
 ${readFileSync(__dirname + '/src/styles/general.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/tab.css', {encoding: 'utf8'})}
@@ -98,8 +92,7 @@ ${readFileSync(__dirname + '/src/styles/taskboard.css', {encoding: 'utf8'})}
 @-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
 ${readFileSync(__dirname + '/src/styles/concurrent-users.css', {encoding: 'utf8'})}
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"),
-              regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
 ${readFileSync(__dirname + '/src/styles/grid.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
@@ -114,8 +107,7 @@ ${readFileSync(__dirname + '/src/styles/assetmgmt/module-page-migration.css', {e
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
 ${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf8'})}
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"),
-              regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
 ${readFileSync(__dirname + '/src/styles/assetmgmt/card.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp(".*") {
