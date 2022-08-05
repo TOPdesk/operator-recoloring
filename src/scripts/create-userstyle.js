@@ -109,8 +109,5 @@ ${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
 ${readFileSync(__dirname + '/src/styles/assetmgmt/card.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp(".*") {
-${readFileSync(__dirname + '/src/styles/richtext.css', {encoding: 'utf8'})}
 }`;
 }

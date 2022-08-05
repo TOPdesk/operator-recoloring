@@ -138,6 +138,9 @@
 	background: var(--background);
 	border-color: var(--on-background);
 }
+body[contenteditable='true'] {
+	color: var(--on-background) !important;
+}
 [guielement='pt-memo-editable'],
 [guielement='pt-attachment-editable'] {
 	background: transparent;
