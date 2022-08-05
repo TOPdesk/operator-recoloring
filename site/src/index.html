@@ -40,8 +40,19 @@
 	<script async type="module" src="components/rec-carousel/rec-carousel.js"></script>
 	<script async type="module" src="components/rec-carousel-slide/rec-carousel-slide.js"></script>
 	<script async type="module" src="components/rec-filtercalculator/rec-filtercalculator.js"></script>
-	<script async type="module" src="../../node_modules/wicg-inert/dist/inert.esm.js"></script>
 	<script async type="module" src="../../node_modules/@lion/tabs/lion-tabs.js"></script>
+
+	<script>
+		// Don't download inert polyfill if it is not needed
+		if (!HTMLElement.prototype.hasOwnProperty('inert')) {
+			var sc = document.createElement('script');
+			sc.src = './inert.esm.js';
+			sc.type = 'module';
+			sc.async = true;
+
+			document.getElementsByTagName('head')[0].appendChild(sc)
+		}
+	</script>
 
 
 	<link rel="stylesheet" href="styles/index.css">
