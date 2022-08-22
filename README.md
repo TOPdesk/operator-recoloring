@@ -24,6 +24,16 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 1. Make sure to enable the **Support custom colors** settings for your test user.
 
 ```css
+@-moz-document regexp("http(s)?://.*/tas/(secure|public)/login/form.*"), regexp("http(s)?://.*/tas/(secure|public)/login/saml"), regexp("http(s)?://.*/tas/(secure|public)/logout"), regexp("http(s)?://.*/tas/admin/.*") {
+	@import url("http://localhost:5500/src/test-styles/variables.css");
+
+	@import url("http://localhost:5500/src/styles/login/login.css");
+}
+@-moz-document regexp("http(s)?://.*/passwordforgottenrequest.*") {
+	@import url("http://localhost:5500/src/test-styles/variables.css");
+
+	@import url("http://localhost:5500/src/styles/login/passwordforgotten.css");
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 
@@ -45,7 +55,7 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 	@import url("http://localhost:5500/src/styles/taskboard.css");
 }
 
-@-moz-dcoument regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 
 	@import url("http://localhost:5500/src/styles/concurrent-users.css");

@@ -71,6 +71,12 @@ function variables(theme) {
 
 function userStyles() {
 	return `
+@-moz-document regexp("http(s)?://.*/tas/(secure|public)/login/form.*"), regexp("http(s)?://.*/tas/(secure|public)/login/saml"), regexp("http(s)?://.*/tas/(secure|public)/logout"), regexp("http(s)?://.*/tas/admin/.*") {
+${readFileSync(__dirname + '/src/styles/login/login.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/passwordforgottenrequest.*") {
+${readFileSync(__dirname + '/src/styles/login/passwordforgotten.css', {encoding: 'utf8'})}
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 ${readFileSync(__dirname + '/src/styles/button.css', { encoding: 'utf8' })}
 ${readFileSync(__dirname + '/src/styles/general.css', {encoding: 'utf8'})}
