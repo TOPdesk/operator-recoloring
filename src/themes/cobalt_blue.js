@@ -22,7 +22,7 @@ export const cobaltBlue = {
 	onPrimary: '#000000',
 	onPrimaryFilter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(340deg) brightness(94%) contrast(106%)',
 	error: '#ff0088',
-	errorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7470%) hue-rotate(198deg) brightness(91%) contrast(106%)',
+	errorFilter: 'brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6972%) hue-rotate(321deg) brightness(102%) contrast(107%)',
 	onError: '#000000',
 	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(340deg) brightness(94%) contrast(106%)'
 };
