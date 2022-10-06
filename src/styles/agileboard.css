@@ -550,6 +550,13 @@ div.notification.is-warning a.close:hover {
 	color: var(--error);
 }
 
+:is(.gu-unselectable, .board) .task-container.selected {
+	background: var(--background);
+	border-color: var(--primary-muted);
+
+	--text-color: var(--on-background);
+}
+
 :is(.gu-unselectable, .board) .task-container:focus,
 :is(.gu-unselectable, .board) .task-container:focus-within {
 	background: var(--background);
