@@ -654,7 +654,8 @@ div.notification.is-warning a.close:hover {
 #side-panel .progresstrail .pt-entry .pt-header .pt-date,
 #side-panel .progresstrail .pt-entry a,
 #side-panel .progresstrail .pt-entry .icon,
-#side-panel .progresstrail .pt-entry figcaption {
+#side-panel .progresstrail .pt-entry figcaption,
+#side-panel .progresstrail .pt-entry strong {
 	color: var(--text-color) !important;
 }
 #side-panel .progresstrail .pt-entry a:active {
