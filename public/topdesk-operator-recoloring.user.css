@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Default Dark (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.9.1
+@version        2.10.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -3296,6 +3296,11 @@ div#columnsscroll .column {
 
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
+::selection {
+	background: var(--selection);
+	color: var(--on-selection);
+}
+
 body {
 	background: var(--background) !important;
 
@@ -3751,6 +3756,14 @@ div.notification.is-primary {
 div.notification.is-primary .icon {
 	color: var(--on-background);
 }
+div.notification.is-danger {
+	background: var(--background);
+	color: var(--on-background);
+	border: 1px solid var(--error);
+}
+div.notification.is-danger .icon {
+	color: var(--error);
+}
 div.notification.is-warning {
 	background: var(--background);
 	color: var(--on-background);
@@ -3833,6 +3846,13 @@ div.notification.is-warning a.close:hover {
 }
 :is(.gu-unselectable, .board) .task-container .overdue {
 	color: var(--error);
+}
+
+:is(.gu-unselectable, .board) .task-container.selected {
+	background: var(--background);
+	border-color: var(--primary-muted);
+
+	--text-color: var(--on-background);
 }
 
 :is(.gu-unselectable, .board) .task-container:focus,
@@ -3952,7 +3972,8 @@ div.notification.is-warning a.close:hover {
 #side-panel .progresstrail .pt-entry .pt-header .pt-date,
 #side-panel .progresstrail .pt-entry a,
 #side-panel .progresstrail .pt-entry .icon,
-#side-panel .progresstrail .pt-entry figcaption {
+#side-panel .progresstrail .pt-entry figcaption,
+#side-panel .progresstrail .pt-entry strong {
 	color: var(--text-color) !important;
 }
 #side-panel .progresstrail .pt-entry a:active {
@@ -3968,6 +3989,140 @@ div.notification.is-warning a.close:hover {
 }
 #side-panel .progresstrail .pt-entry.invisible {
 	border-left-color: var(--primary);
+}
+
+/*
+ * Change assignee popup
+ */
+.change-assignee-popover:is(.positioned-above, .positioned-below) {
+	border-color: var(--primary);
+	background-color: var(--background);
+}
+.change-assignee-popover.positioned-above::before {
+	border-top-color: var(--primary) !important;
+}
+.change-assignee-popover.positioned-above::after {
+	border-top-color: var(--background) !important;
+}
+.change-assignee-popover.positioned-below::before {
+	border-bottom-color: var(--primary) !important;
+}
+.change-assignee-popover.positioned-below::after {
+	border-bottom-color: var(--background) !important;
+}
+
+.change-assignee-popover-action-button {
+	--button-clr: var(--on-background);
+	color: var(--button-clr) !important;
+	background-color: transparent !important;
+	text-decoration: underline;
+}
+
+.change-assignee-popover-action-button:not(:disabled):hover,
+.change-assignee-popover-action-button:not(:disabled):focus-visible {
+	--button-clr: var(--primary);
+}
+
+.change-assignee-popover-action-button:disabled {
+	--button-clr: var(--disabled);
+}
+
+.change-assignee-popover-divider {
+	border-color: var(--on-background) !important;
+}
+
+.change-assignee-popover .user-list .user-list-option:hover,
+.change-assignee-popover .user-list .user-list-option:focus {
+	background-color: var(--primary);
+	--text-color: var(--on-primary);
+}
+.change-assignee-popover .user-list .user-list-option [handle='user-list-option-name'] {
+	color: var(--text-color);
+}
+@media (forced-colors: none) {
+	.change-assignee-popover .user-list .user-list-option:focus {
+		outline: none;
+	}
+}
+
+/*
+ * Edit Board popup
+ */
+[role='dialog'] [role='tablist'] [role='tab'] a {
+	color: var(--on-background);
+	border-bottom-color: var(--on-background);
+}
+[role='dialog'] [role='tablist'] [role='tab'].is-active a {
+	color: var(--primary);
+	border-bottom-color: var(--primary);
+}
+
+/* Integration switch */
+.status-mapping .mapping.checkbox {
+	background: transparent;
+	color: var(--on-surface);
+}
+.status-mapping .mapping.checkbox .toggle {
+	border: 2px solid var(--on-surface);
+	background: var(--background);
+}
+.status-mapping .mapping.checkbox .toggle .toggle-inner {
+	margin: 0;
+	border: 2px solid var(--on-background);
+	background-color: var(--background);
+}
+.status-mapping .mapping.checkbox .toggle.enabled .toggle-inner {
+	background-color: var(--on-background);
+}
+
+/* labels */
+.dnd-hint,
+.lane-name.label {
+	color: var(--on-surface);
+}
+
+/* status mapper */
+.lanes .status,
+.lanes .status.closed {
+	--text-color: var(--on-background);
+
+	background-color: var(--background);
+	border: 2px solid var(--on-background);
+}
+.lanes .status .name {
+	color: var(--text-color);
+}
+.lanes .status:hover,
+.lanes .status.closed:hover {
+	background-color: var(--on-background);
+	--text-color: var(--background);
+}
+.lanes .status + .status {
+	margin-top: 4px;
+}
+
+/* status mapper drag and drop */
+.lanes .status.gu-transit {
+	background: var(--background) !important;
+	border: 2px solid var(--primary);
+}
+.lanes .lane .lane-settings-content.lane-drop-zone,
+.lanes .lane.closed .lane-settings-content.lane-drop-zone {
+	background: var(--background) !important;
+}
+.lanes .lane .lane-settings-content.lane-drop-zone.drop-zone.allowed.over {
+	border: 2px solid var(--primary);
+}
+.lanes .lane .lane-settings-content.lane-drop-zone.drop-zone.notAllowed {
+	background: var(--disabled) !important;
+	border: 2px solid var(--background);
+}
+
+/*
+ * Create note popup
+ */
+.modal-card-foot .feedback-link {
+	color: var(--primary);
 }
 
 }
