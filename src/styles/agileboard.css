@@ -677,3 +677,57 @@ div.notification.is-warning a.close:hover {
 #side-panel .progresstrail .pt-entry.invisible {
 	border-left-color: var(--primary);
 }
+
+/*
+ * Change assignee popup
+ */
+.change-assignee-popover:is(.positioned-above, .positioned-below) {
+	border-color: var(--primary);
+	background-color: var(--background);
+}
+.change-assignee-popover.positioned-above::before {
+	border-top-color: var(--primary) !important;
+}
+.change-assignee-popover.positioned-above::after {
+	border-top-color: var(--background) !important;
+}
+.change-assignee-popover.positioned-below::before {
+	border-bottom-color: var(--primary) !important;
+}
+.change-assignee-popover.positioned-below::after {
+	border-bottom-color: var(--background) !important;
+}
+
+.change-assignee-popover-action-button {
+	--button-clr: var(--on-background);
+	color: var(--button-clr) !important;
+	background-color: transparent !important;
+	text-decoration: underline;
+}
+
+.change-assignee-popover-action-button:not(:disabled):hover,
+.change-assignee-popover-action-button:not(:disabled):focus-visible {
+	--button-clr: var(--primary);
+}
+
+.change-assignee-popover-action-button:disabled {
+	--button-clr: var(--disabled);
+}
+
+.change-assignee-popover-divider {
+	border-color: var(--on-background) !important;
+}
+
+.change-assignee-popover .user-list .user-list-option:hover,
+.change-assignee-popover .user-list .user-list-option:focus {
+	background-color: var(--primary);
+	--text-color: var(--on-primary);
+}
+.change-assignee-popover .user-list .user-list-option [handle='user-list-option-name'] {
+	color: var(--text-color);
+}
+@media (forced-colors: none) {
+	.change-assignee-popover .user-list .user-list-option:focus {
+		outline: none;
+	}
+}
