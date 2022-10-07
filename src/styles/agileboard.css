@@ -812,3 +812,10 @@ div.notification.is-warning a.close:hover {
 	background: var(--disabled) !important;
 	border: 2px solid var(--background);
 }
+
+/*
+ * Create note popup
+ */
+.modal-card-foot .feedback-link {
+	color: var(--primary);
+}
