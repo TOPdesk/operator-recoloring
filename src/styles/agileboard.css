@@ -458,6 +458,14 @@ div.notification.is-primary {
 div.notification.is-primary .icon {
 	color: var(--on-background);
 }
+div.notification.is-danger {
+	background: var(--background);
+	color: var(--on-background);
+	border: 1px solid var(--error);
+}
+div.notification.is-danger .icon {
+	color: var(--error);
+}
 div.notification.is-warning {
 	background: var(--background);
 	color: var(--on-background);
@@ -730,4 +738,77 @@ div.notification.is-warning a.close:hover {
 	.change-assignee-popover .user-list .user-list-option:focus {
 		outline: none;
 	}
+}
+
+/*
+ * Edit Board popup
+ */
+[role='dialog'] [role='tablist'] [role='tab'] a {
+	color: var(--on-background);
+	border-bottom-color: var(--on-background);
+}
+[role='dialog'] [role='tablist'] [role='tab'].is-active a {
+	color: var(--primary);
+	border-bottom-color: var(--primary);
+}
+
+/* Integration switch */
+.status-mapping .mapping.checkbox {
+	background: transparent;
+	color: var(--on-surface);
+}
+.status-mapping .mapping.checkbox .toggle {
+	border: 2px solid var(--on-surface);
+	background: var(--background);
+}
+.status-mapping .mapping.checkbox .toggle .toggle-inner {
+	margin: 0;
+	border: 2px solid var(--on-background);
+	background-color: var(--background);
+}
+.status-mapping .mapping.checkbox .toggle.enabled .toggle-inner {
+	background-color: var(--on-background);
+}
+
+/* labels */
+.dnd-hint,
+.lane-name.label {
+	color: var(--on-surface);
+}
+
+/* status mapper */
+.lanes .status,
+.lanes .status.closed {
+	--text-color: var(--on-background);
+
+	background-color: var(--background);
+	border: 2px solid var(--on-background);
+}
+.lanes .status .name {
+	color: var(--text-color);
+}
+.lanes .status:hover,
+.lanes .status.closed:hover {
+	background-color: var(--on-background);
+	--text-color: var(--background);
+}
+.lanes .status + .status {
+	margin-top: 4px;
+}
+
+/* status mapper drag and drop */
+.lanes .status.gu-transit {
+	background: var(--background) !important;
+	border: 2px solid var(--primary);
+}
+.lanes .lane .lane-settings-content.lane-drop-zone,
+.lanes .lane.closed .lane-settings-content.lane-drop-zone {
+	background: var(--background) !important;
+}
+.lanes .lane .lane-settings-content.lane-drop-zone.drop-zone.allowed.over {
+	border: 2px solid var(--primary);
+}
+.lanes .lane .lane-settings-content.lane-drop-zone.drop-zone.notAllowed {
+	background: var(--disabled) !important;
+	border: 2px solid var(--background);
 }
