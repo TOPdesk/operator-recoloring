@@ -27,8 +27,17 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 ```css
 @-moz-document regexp("http(s)?://.*/tas/(secure|public)/login/form.*"), regexp("http(s)?://.*/tas/(secure|public)/login/saml"), regexp("http(s)?://.*/tas/(secure|public)/logout"), regexp("http(s)?://.*/tas/admin/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
+	@import url("http://localhost:5500/src/test-styles/local-rec-message.css");
 
 	@import url("http://localhost:5500/src/styles/login/login.css");
+
+	/* Just a reminder to serve the files, things become quite slow otherwise */
+	div#content-container:before {
+		content: var(--local-rec-message, 'Local Recoloring Server \00000a⚠ OFF ⚠');
+		color: var(--local-rec-message-color, red);
+		font-size: 1.5rem;
+		white-space: pre;
+	}
 }
 @-moz-document regexp("http(s)?://.*/passwordforgottenrequest.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
