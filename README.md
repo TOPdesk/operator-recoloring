@@ -22,6 +22,7 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 1. Click **Save**.
 1. Enable the new style when in your TOPdesk environment (and make sure other styles are off).
 1. Make sure to enable the **Support custom colors** settings for your test user.
+1. You can test the schemes by adding a `cobalt`, `green`, or `default` attribute to the `<html>` element.
 
 ```css
 @-moz-document regexp("http(s)?://.*/tas/(secure|public)/login/form.*"), regexp("http(s)?://.*/tas/(secure|public)/login/saml"), regexp("http(s)?://.*/tas/(secure|public)/logout"), regexp("http(s)?://.*/tas/admin/.*") {

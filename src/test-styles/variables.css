@@ -1,4 +1,84 @@
-:root {
+/* Cobalt blue */
+:root[cobalt] {
+	--background: #122738;
+	--background-filter: brightness(0) saturate(100%) invert(11%) sepia(7%) saturate(7110%)
+		hue-rotate(170deg) brightness(89%) contrast(90%);
+	--on-background: #ffffff;
+	--on-background-filter: brightness(0) saturate(100%) invert(100%) sepia(27%) saturate(170%)
+		hue-rotate(248deg) brightness(107%) contrast(101%);
+	--selection: rgba(58, 217, 0, 0.99);
+	--on-selection: #000000;
+	--surface: #193549;
+	--surface-filter: brightness(0) saturate(100%) invert(12%) sepia(84%) saturate(551%)
+		hue-rotate(164deg) brightness(93%) contrast(86%);
+	--on-surface: #ffffff;
+	--on-surface-filter: brightness(0) saturate(100%) invert(100%) sepia(27%) saturate(170%)
+		hue-rotate(248deg) brightness(107%) contrast(101%);
+	--disabled: #193549;
+	--disabled-filter: brightness(0) saturate(100%) invert(14%) sepia(9%) saturate(5296%)
+		hue-rotate(168deg) brightness(92%) contrast(85%);
+	--on-disabled: #234e6d;
+	--on-disabled-filter: brightness(0) saturate(100%) invert(27%) sepia(17%) saturate(1661%)
+		hue-rotate(162deg) brightness(95%) contrast(93%);
+	--primary: #ffc600;
+	--primary-filter: brightness(0) saturate(100%) invert(73%) sepia(12%) saturate(7485%)
+		hue-rotate(4deg) brightness(108%) contrast(118%);
+	--primary-muted: #ff9d00;
+	--primary-muted-filter: brightness(0) saturate(100%) invert(76%) sepia(65%) saturate(4201%)
+		hue-rotate(359deg) brightness(101%) contrast(109%);
+	--on-primary: #000000;
+	--on-primary-filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%)
+		hue-rotate(340deg) brightness(94%) contrast(106%);
+	--error: #ff0088;
+	--error-filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6972%)
+		hue-rotate(321deg) brightness(102%) contrast(107%);
+	--on-error: #000000;
+	--on-error-filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%)
+		hue-rotate(340deg) brightness(94%) contrast(106%);
+}
+
+/* Soft green */
+:root[green] {
+	--background: #f2efef;
+	--background-filter: brightness(0) saturate(100%) invert(76%) sepia(92%) saturate(4%)
+		hue-rotate(314deg) brightness(102%) contrast(103%);
+	--on-background: #1a1919;
+	--on-background-filter: brightness(0) saturate(100%) invert(4%) sepia(4%) saturate(831%)
+		hue-rotate(314deg) brightness(103%) contrast(87%);
+	--selection: rgba(3, 94, 6, 0.99);
+	--on-selection: #ffffff;
+	--surface: #776363;
+	--surface-filter: brightness(0) saturate(100%) invert(37%) sepia(3%) saturate(1865%)
+		hue-rotate(311deg) brightness(103%) contrast(85%);
+	--on-surface: #fcfcfc;
+	--on-surface-filter: brightness(0) saturate(100%) invert(100%) sepia(5%) saturate(0%)
+		hue-rotate(352deg) brightness(105%) contrast(98%);
+	--disabled: #404040;
+	--disabled-filter: brightness(0) saturate(100%) invert(22%) sepia(0%) saturate(0%)
+		hue-rotate(188deg) brightness(91%) contrast(83%);
+	--on-disabled: #8c8c8c;
+	--on-disabled-filter: brightness(0) saturate(100%) invert(64%) sepia(0%) saturate(1%)
+		hue-rotate(149deg) brightness(88%) contrast(80%);
+	--primary: #1bc122;
+	--primary-filter: brightness(0) saturate(100%) invert(50%) sepia(86%) saturate(2526%)
+		hue-rotate(87deg) brightness(109%) contrast(83%);
+	--primary-muted: #359d3d;
+	--primary-muted-filter: brightness(0) saturate(100%) invert(46%) sepia(11%) saturate(3148%)
+		hue-rotate(74deg) brightness(106%) contrast(78%);
+	--on-primary: #ffffff;
+	--on-primary-filter: brightness(0) saturate(100%) invert(96%) sepia(96%) saturate(0%)
+		hue-rotate(92deg) brightness(106%) contrast(105%);
+	--error: #ff0000;
+	--error-filter: brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(6925%)
+		hue-rotate(359deg) brightness(108%) contrast(115%);
+	--on-error: #0c0c0c;
+	--on-error-filter: brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(7009%)
+		hue-rotate(350deg) brightness(103%) contrast(91%);
+}
+
+/* Default dark */
+:root,
+:root[default] {
 	--background: #0c0c0c;
 	--background-filter: brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%)
 		hue-rotate(61deg) brightness(105%) contrast(91%);
