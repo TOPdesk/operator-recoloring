@@ -439,3 +439,46 @@
 	:is([guielement='imagebutton'], [guielement='icon-button'])[disabled='true'] {
 	filter: var(--on-disabled-filter);
 }
+
+/**
+ * Activity Overview tab
+ */
+
+[guielement='collected_memo_history'] [guielement='history_entry_list'] {
+	background-color: var(--surface);
+	border-color: var(--surface);
+	--text-color: var(--on-surface);
+}
+[guielement='collected_memo_history']
+	[guielement='history_entry_list']
+	[guielement='history_entry'] {
+	background-color: transparent;
+}
+[guielement='collected_memo_history']
+	[guielement='history_entry_list']
+	[guielement='history_entry']
+	:is([guielement='history_stamp'], [guielement='history_contents']) {
+	background-color: transparent;
+}
+[guielement='collected_memo_history']
+	[guielement='history_entry_list']
+	[guielement='history_entry']
+	[guielement='link_button'] {
+	background-color: transparent;
+	--text-color: var(--on-surface);
+}
+[guielement='collected_memo_history']
+	[guielement='history_entry_list']
+	[guielement='history_entry']
+	[guielement='link_button']:hover {
+	--text-color: var(--primary-muted);
+}
+[guielement='collected_memo_history']
+	[guielement='history_entry_list']
+	[guielement='history_entry'][mstyles='history_entry_non_clickable']::before {
+	content: '▸';
+	position: absolute;
+	left: -12px;
+	font-size: 14px;
+	color: var(--text-color);
+}
