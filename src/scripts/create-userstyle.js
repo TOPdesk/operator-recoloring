@@ -94,6 +94,7 @@ ${readFileSync(__dirname + '/src/styles/card.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/planboard.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/reservations.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/taskboard.css', {encoding: 'utf8'})}
+${readFileSync(__dirname + '/src/styles/change.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
 ${readFileSync(__dirname + '/src/styles/concurrent-users.css', {encoding: 'utf8'})}

@@ -308,45 +308,56 @@ div#app {
 }
 
 /* Flow chart */
-[mstyles~='flowchart_block_simple'],
-[mstyles~='flowchart_block_multi'],
-[mstyles~='flowchart_block_dashed'],
-[mstyles~='flowchart_icon_container'] {
+[mstyles='flowchart_container']
+	:is(
+		[mstyles~='flowchart_block_simple'],
+		[mstyles~='flowchart_block_multi'],
+		[mstyles~='flowchart_block_dashed'],
+		[mstyles~='flowchart_icon_container']
+	) {
 	background: var(--background);
 	border-color: var(--on-background);
 }
-[mstyles~='flowchart_block_empty'] {
+[mstyles='flowchart_container'] [mstyles~='flowchart_block_empty'] {
 	border-color: var(--on-surface);
 }
-[mstyles~='flowchart_block_multi'] {
+[mstyles='flowchart_container'] [mstyles~='flowchart_block_multi'] {
 	box-shadow: 1px -1px var(--background), 2px -2px var(--on-background), 3px -3px var(--background),
 		4px -4px var(--on-background);
 }
-[mstyles~='flowchart_icon_container'] [guielement='icon']:last-child,
-[mstyles~='flowchart_icon_container'] [guielement='icon-button']:last-child {
+[mstyles='flowchart_container']
+	[mstyles~='flowchart_icon_container']
+	[guielement='icon']:last-child,
+[mstyles='flowchart_container']
+	[mstyles~='flowchart_icon_container']
+	[guielement='icon-button']:last-child {
 	/* status icons are multicolored and thus can't be recolored */
 	filter: none;
 }
-[mstyles~='flowchart_icon_container'] [guielement='icon']:first-child,
-[mstyles~='flowchart_icon_container'] [guielement='icon-button']:first-child {
+[mstyles='flowchart_container']
+	[mstyles~='flowchart_icon_container']
+	[guielement='icon']:first-child,
+[mstyles='flowchart_container']
+	[mstyles~='flowchart_icon_container']
+	[guielement='icon-button']:first-child {
 	filter: var(--on-background-filter);
 }
-[guielement='flowchart_label'] {
+[mstyles='flowchart_container'] [guielement='flowchart_label'] {
 	color: var(--on-background);
 }
-[mtype='rectangle'] {
+[mstyles='flowchart_container'] [mtype='rectangle'] {
 	border-color: var(--on-surface) !important;
 }
-[mstyles~='arrowhead_right'] {
+[mstyles='flowchart_container'] [mstyles~='arrowhead_right'] {
 	border-left-color: var(--on-surface) !important;
 }
-[mstyles~='arrowhead_left'] {
+[mstyles='flowchart_container'] [mstyles~='arrowhead_left'] {
 	border-right-color: var(--on-surface) !important;
 }
-[mstyles~='arrowhead_up'] {
+[mstyles='flowchart_container'] [mstyles~='arrowhead_up'] {
 	border-bottom-color: var(--on-surface) !important;
 }
-[mstyles~='arrowhead_down'] {
+[mstyles='flowchart_container'] [mstyles~='arrowhead_down'] {
 	border-top-color: var(--on-surface) !important;
 }
 

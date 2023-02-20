@@ -63,6 +63,7 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 	@import url("http://localhost:5500/src/styles/planboard.css");
 	@import url("http://localhost:5500/src/styles/reservations.css");
 	@import url("http://localhost:5500/src/styles/taskboard.css");
+	@import url("http://localhost:5500/src/styles/change.css");
 }
 
 @-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {

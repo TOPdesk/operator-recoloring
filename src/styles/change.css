@@ -1,0 +1,441 @@
+/**
+ * Change activity planner tab
+ */
+
+/*
+ * Change activity planner toolbar
+ */
+/* Date picker button */
+[guielement='planner_menu_group'] [handle='service_window_check_date_date'] {
+	filter: var(--on-background-filter);
+}
+[guielement='planner_menu_group'] [handle='service_window_check_date_date']:hover {
+	filter: var(--primary-filter);
+}
+/* Lock/Unlock buttons (when selecting an activitty) */
+[guielement='planner_menu_group']
+	[guielement='planner_menu_choice_group']
+	:is([handle='unlock'], [handle='locked']) {
+	filter: var(--on-background-filter);
+}
+[guielement='planner_menu_group']
+	[guielement='planner_menu_choice_group']
+	:is([handle='unlock'], [handle='locked']):disabled {
+	padding-bottom: 2px;
+	border-bottom: 1px solid currentColor; /* The color will be overridden by the filter*/
+}
+[guielement='planner_menu_group']
+	[guielement='planner_menu_choice_group']
+	:is([handle='unlock'], [handle='locked']):not(:disabled):hover {
+	filter: var(--primary-filter);
+}
+/* Link/Unlink image (when creating/breaking a dependency) */
+[guielement='planner_menu_group']
+	[guielement='planner_menu_choice_group']
+	[mstyles='planner_menu_title']
+	~ [guielement='image'] {
+	filter: var(--on-background-filter);
+}
+
+/*
+ * Change activity planner
+ */
+[guielement='planner_container'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+}
+
+/* Timeline bar */
+[guielement='planner_container'] [guielement='planner_scroll_button_group'],
+[guielement='planner_container'] [guielement='planner_view_combobox_container'],
+[guielement='planner_container']
+	[guielement='planner_default_group']
+	:is(
+		[guielement='planner_time_line_item_first_line'],
+		[guielement='planner_time_line_item_second_line']
+	) {
+	border-color: var(--on-surface);
+}
+
+[guielement='planner_container'] [handle='gantt_zoomfit'] {
+	filter: var(--on-surface-filter);
+}
+[guielement='planner_container'] [handle='gantt_zoomfit']:hover {
+	filter: var(--primary-filter);
+}
+
+/* Marker bar */
+[guielement='planner_container'] [guielement='planner_marker_group'] {
+	background-color: var(--background);
+	background-color: var(--surface);
+	border-color: var(--on-surface);
+
+	--milestone-line-color: var(--on-surface);
+}
+[guielement='planner_container']
+	[guielement='planner_marker_group']
+	[handle='planner.todaymarker.title'] {
+	background-color: var(--primary) !important;
+	color: var(--on-primary);
+	border-color: transparent;
+}
+[guielement='planner_container']
+	[guielement='planner_marker_group']
+	[mtype='rectangle']:is(
+		[style*='background-color: rgb(219, 216, 235)'],
+		[style*='background-color:#dbd8eb']
+	) {
+	/* Arrow on the today marker */
+	background-color: var(--primary) !important;
+}
+
+[guielement='planner_container']
+	[guielement='planner_marker_group']
+	[handle^='Sprint'][handle$='_marker'] {
+	filter: var(--on-surface-filter);
+}
+
+/* Activities sidebar */
+[guielement='planner_container'] [guielement='planner_info_group'] {
+	border-color: var(--on-surface);
+}
+[guielement='planner_container']
+	[guielement='planner_info_group']
+	[guielement='planner_inner_group'] {
+	background-color: var(--background);
+}
+[guielement='planner_container']
+	[guielement='planner_info_group']
+	[guielement='planner_info_header_line'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	border-color: var(--surface);
+}
+
+[guielement='planner_container']
+	[guielement='planner_info_group']
+	[guielement='planner_info_control'] {
+	--text-color: var(--on-background);
+
+	background-color: transparent !important;
+	border-color: transparent;
+}
+
+[guielement='planner_container']
+	[guielement='planner_info_group']
+	[guielement='planner_info_control']
+	:is(
+		[guielement='planner_info_control_title'],
+		[guielement='planner_info_control_subtitle']
+	)[style*='color'] {
+	color: var(--text-color) !important;
+}
+
+/* Planner area */
+[guielement='planner_container'] [guielement='planner_draw_area'] {
+	background-color: var(--background);
+	border-color: var(--on-surface);
+
+	--milestone-line-color: var(--on-background);
+	--text-color: var(--on-background);
+}
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	> [mtype='group']:not([guielement]) {
+	/* Out of service window / weekend */
+	background-color: var(--on-background) !important;
+	opacity: 0.1;
+}
+
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_background_row'] {
+	background-color: transparent !important;
+	border-color: transparent;
+}
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_header_line'] {
+	background-color: var(--surface);
+}
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_duration_in_group_header'] {
+	background-color: var(--on-surface);
+	--text-color: var(--surface);
+}
+
+/* Connectors */
+[guielement='planner_container'] [guielement='planner_draw_area'] [mtype='rectangle'] {
+	border-color: var(--on-background) !important;
+}
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[mtype='rectangle'][style*='z-index: 3;'] {
+	/* Connector connected to selected activity */
+	border-color: var(--primary) !important;
+}
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_link_begin'] {
+	/* Start connector */
+	background-color: var(--on-background);
+	padding: 0;
+	width: 6px !important;
+	height: 6px !important;
+	border-radius: 50%;
+	border: 2px solid var(--background);
+	border-right: 0px;
+	top: 8.5px !important;
+	left: unset !important;
+	right: -4px;
+}
+[guielement='planner_container'] [guielement='planner_draw_area'] [guielement='planner_link_end'] {
+	/* End connector area */
+	position: relative;
+	overflow: hidden;
+	width: 8px !important;
+	height: 12px !important;
+	border-width: 0px;
+}
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_link_end']:after {
+	/* End connector arrow */
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: var(--on-background);
+	transform: rotate(45deg);
+	left: -7px;
+	top: 1px;
+	box-shadow: 0 0 0px 2px black;
+}
+
+/* Blocks */
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_info_control_title'] {
+	/* to fix templates where the label is forced grey */
+	color: var(--text-color) !important;
+}
+
+[guielement='planner_container']
+	[guielement='planner_draw_area']
+	[guielement='planner_item_control']
+	[mstyles='clickable']:is(
+		/* light-ish red unselected */
+		[style*='background-color: rgb(208, 49, 49);'], [style*='background-color:#d03131;'],
+		/* light-ish red selected */
+		[style*='background-color: rgb(191, 27, 44);'], [style*='background-color:#bf1b2c;'],
+		/* darker red (doesn't seem to change on selection)*/
+		[style*='background-color: rgb(164, 23, 37);'], [style*='background-color:#a41725;'],
+		) {
+	/* Overdue / No Go */
+	background-color: var(--error) !important;
+}
+[guielement='planner_container']
+			[guielement='planner_draw_area']
+			[guielement='planner_item_control']
+			[mstyles='clickable']:is(
+				/* grey */
+				[style*='background-color: rgb(149, 149, 149);'], [style*='background-color:#959595;'],
+			) {
+	/* Not ready to start / Not ready to authorize */
+	background-color: transparent !important;
+	border: 1px solid var(--error) !important;
+	padding: 1px !important;
+}
+[guielement='planner_container']
+			[guielement='planner_draw_area']
+			[guielement='planner_item_control']
+			[mstyles='clickable']:is(
+				/* lightblue unselected */
+				[style*='background-color: rgb(118, 182, 209);'], [style*='background-color:#76b6d1;'],
+				/* lightblue selected */
+				[style*='background-color: rgb(73, 158, 193);'], [style*='background-color:#499ec1;'],
+			) {
+	/* Ready to start */
+	background: repeating-linear-gradient(
+		-45deg,
+		var(--on-background),
+		var(--on-background) 5px,
+		transparent 5px,
+		transparent 10px
+	) !important;
+	border: 1px solid var(--on-background) !important;
+	padding: 1px !important;
+}
+[guielement='planner_container']
+			[guielement='planner_draw_area']
+			[guielement='planner_item_control']
+			[mstyles='clickable']:is(
+				/* blue unselected */
+				[style*='background-color: rgb(5, 122, 171);'], [style*='background-color:#057aab;'],
+				/* blue selected */
+				[style*='background-color: rgb(0, 107, 156);'], [style*='background-color:#006b9c;'],
+			) {
+	/* Waiting for Authorization / Started */
+	background: repeating-linear-gradient(
+		-45deg,
+		var(--primary),
+		var(--primary) 5px,
+		transparent 5px,
+		transparent 10px
+	) !important;
+	border: 1px solid var(--primary) !important;
+	padding: 1px !important;
+}
+[guielement='planner_container']
+			[guielement='planner_draw_area']
+			[guielement='planner_item_control']
+			[mstyles='clickable']:is(
+				/* green unselected */
+				[style*='background-color: rgb(23, 135, 85);'], [style*='background-color:#178755;'],
+				/* green selected */
+				[style*='background-color: rgb(19, 117, 73);'], [style*='background-color:#137549;'],
+			) {
+	/* Resolved / Go */
+	background-color: var(--primary) !important;
+}
+[guielement='planner_container']
+			[guielement='planner_draw_area']
+			[guielement='planner_item_control']
+			[mstyles='clickable']:is(
+				/* teal unselected */
+				[style*='background-color: rgb(115, 197, 158);'], [style*='background-color:#73c59e;'],
+				/* teal selected */
+				[style*='background-color: rgb(66, 177, 128);'], [style*='background-color:#42b180;'],
+			) {
+	/* Skipped */
+	background: repeating-linear-gradient(
+			45deg,
+			var(--on-background),
+			var(--on-background) 1px,
+			transparent 1px,
+			transparent 10px
+		),
+		repeating-linear-gradient(
+			-45deg,
+			var(--on-background),
+			var(--on-background) 1px,
+			transparent 1px,
+			transparent 10px
+		) !important;
+	border: 1px solid var(--on-background) !important;
+}
+[guielement='planner_container']
+			[guielement='planner_draw_area']
+			[guielement='planner_item_control']
+			[mstyles='clickable']:is(
+				/* white (also has grey border) */
+				[style*='background-color: rgb(242, 242, 242);'], [style*='background-color:#f2f2f2;'],
+			) {
+	/* Template */
+	background-color: transparent !important;
+	border: 2px dotted var(--on-background) !important;
+}
+
+/* Planner scope bar */
+[guielement='planner_container'] [guielement='planner_custom_scroll_area'] [guielement='image'] {
+	filter: var(--on-surface-filter);
+}
+
+/* Vertical lines */
+[guielement='planner_container']
+	:is([guielement='planner_marker_group'], [guielement='planner_draw_area'])
+	[mtype='rectangle'][style*='width: 0px;'] {
+	/* Milestone line */
+	border-color: var(--milestone-line-color) !important;
+}
+[guielement='planner_container']
+	:is([guielement='planner_marker_group'], [guielement='planner_draw_area'])
+	[mtype='rectangle'][style*='width: 0px;']:is(
+		[style*='border-left-color: rgb(219, 216, 235)'],
+		[style*='border-left:1px solid #dbd8eb']
+	) {
+	/* Today line */
+	--milestone-line-color: var(--primary);
+}
+
+/* Activitity bar (hover/select state) */
+[guielement='planner_container']
+	:is(
+		[guielement='planner_draw_area'] [guielement='planner_background_row'],
+		[guielement='planner_info_group'] [guielement='planner_info_control']
+	)[style*='background-color: rgb(183, 178, 216)'] {
+	/* Selected */
+	box-shadow: inset 8px 0px 0px 0px var(--primary);
+	border-color: var(--primary);
+}
+[guielement='planner_container']
+	:is(
+		[guielement='planner_draw_area'] [guielement='planner_background_row'],
+		[guielement='planner_info_group'] [guielement='planner_info_control']
+	)[style*='background-color: rgb(219, 216, 235)'] {
+	/* Hovered */
+	border-color: var(--on-background);
+}
+[guielement='planner_container']
+	:is(
+		[guielement='planner_draw_area'] [guielement='planner_background_row'],
+		[guielement='planner_info_group'] [guielement='planner_info_control']
+	)[style*='background-color: rgb(159, 153, 203)'] {
+	/* Selected and Hovered */
+	box-shadow: inset 8px 0px 0px 0px var(--on-background);
+	border-color: var(--on-background);
+}
+
+/* Collapsible sidebar */
+[guielement='collapsible_panel_container'] {
+	background-color: var(--surface);
+	border-color: var(--surface);
+	--text-color: var(--on-surface);
+}
+[guielement='collapsible_panel_container'] [guielement='collapsible_panel_header'] {
+	border-color: var(--on-surface);
+}
+[guielement='collapsible_panel_container'] [mstyles='chm-planner-sidepanel-filter'] {
+	border-color: var(--on-surface);
+}
+[guielement='collapsible_panel_container'] [handle='new_activity_from_template_in_gantt'] {
+	filter: var(--on-background-filter);
+}
+[guielement='collapsible_panel_container'] [handle='new_activity_from_template_in_gantt']:hover {
+	filter: var(--primary-filter);
+}
+[guielement='collapsible_panel_container'] [handle='new_activity_from_template_in_gantt']:active {
+	filter: var(--primary-muted-filter);
+}
+
+/*
+ * New activity popup
+ */
+[guielement='popup-body'] [guielement='rich_text_memo_group'][mstyles~='memo_like_progresstrail'] {
+	background-color: transparent;
+}
+[guielement='popup-body']
+	[guielement='rich_text_memo_group']
+	> [guielement='block_header']
+	:is([guielement='imagebutton'], [guielement='icon-button']) {
+	filter: var(--on-surface-filter);
+}
+[guielement='popup-body']
+	[guielement='rich_text_memo_group']
+	> [guielement='block_header']
+	:is([guielement='imagebutton'], [guielement='icon-button']):hover {
+	filter: var(--primary-filter);
+}
+[guielement='popup-body']
+	[guielement='rich_text_memo_group']
+	> [guielement='block_header']
+	:is([guielement='imagebutton'], [guielement='icon-button']):active {
+	filter: var(--primary-muted-filter);
+}
+[guielement='popup-body']
+	[guielement='rich_text_memo_group']
+	> [guielement='block_header']
+	:is([guielement='imagebutton'], [guielement='icon-button'])[disabled='true'] {
+	filter: var(--on-disabled-filter);
+}

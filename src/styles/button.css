@@ -22,7 +22,8 @@ div#checklist .button {
 [guielement='toolbar_button'] > [guielement='toolbar_button_label'] {
 	color: var(--text-color);
 }
-[guielement='toolbar_button'] > [guielement='icon'] {
+[guielement='toolbar_button'] > [guielement='icon'],
+[guielement='toolbar_button'] > [guielement='icon-button'] {
 	filter: var(--filter);
 }
 
