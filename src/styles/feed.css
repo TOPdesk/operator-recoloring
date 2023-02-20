@@ -172,3 +172,33 @@ body[contenteditable='true'] {
 	background: var(--background);
 	--text-color: var(--on-background);
 }
+
+/* While loading in */
+[handle='progress_trail_loading'] > [mtype='group'][disabled='true'] {
+	background-color: var(--surface) !important;
+}
+[handle='progress_trail_loading'] > [mtype='group'][disabled='true'] > [guielement='image'] {
+	/* image doesn't color, and is more distracting than useful */
+	display: none !important;
+}
+[handle='progress_trail_loading'] > [mtype='group'][disabled='true']::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: white;
+
+	animation-name: pulse-feed;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes pulse-feed {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.2;
+	}
+}
