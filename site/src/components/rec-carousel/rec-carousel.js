@@ -58,9 +58,9 @@ export class RecCarousel extends LitElement {
 					<svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
 						<path fill="currentColor" d="m9 4h-4v-2l-4 3 4 3v-2h4z"></path>
 					</svg>
-					<span class="visually-hidden">Previous</span><!-- TODO translate -->
+					<span class="visually-hidden">Previous</span>
 				</button>
-				<div part="tab" role="tablist" aria-label="Slides" @click="${this.#handleTabClick}"> <!--TODO translate -->
+				<div part="tab" role="tablist" aria-label="Slides" @click="${this.#handleTabClick}">
 					<slot name="tab"></slot>
 				</div>
 				<button
@@ -72,7 +72,7 @@ export class RecCarousel extends LitElement {
 					<svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
 						<path fill="currentColor" d="m1 4h4v-2l4 3-4 3v-2h-4z"></path>
 					</svg>
-					<span class="visually-hidden">Next</span><!-- TODO translate -->
+					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
 			<div class="aperture">
@@ -90,7 +90,6 @@ export class RecCarousel extends LitElement {
 	tabButtonTemplate() {
 		return html`
 			${repeat(this._slides, (slide) => slide.id, (slide, index) => html`
-				<!-- TODO translate -->
 				<button type="button" role="tab" slot="tab"
 					tabindex="${index === this._currentIndex ? '0' : '-1'}"
 					aria-controls="${slide.id}"
