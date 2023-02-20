@@ -443,7 +443,6 @@
 /**
  * Activity Overview tab
  */
-
 [guielement='collected_memo_history'] [guielement='history_entry_list'] {
 	background-color: var(--surface);
 	border-color: var(--surface);
@@ -481,4 +480,38 @@
 	left: -12px;
 	font-size: 14px;
 	color: var(--text-color);
+}
+
+/**
+ * Activity Checklist
+ */
+[guielement='checklist_sidebar_header'] {
+	background-color: var(--surface);
+	border-color: var(--surface);
+}
+
+[guielement='checklist_sidebar_content'] {
+	background-color: var(--surface);
+	border-color: var(--surface);
+	border-top-color: var(--on-surface);
+}
+
+[guielement='checklist_item']
+	:is([guielement='checklist_item_header'], [guielement='checklist_item_content']) {
+	border-color: var(--surface);
+}
+[guielement='checklist_item']:is(:hover, :focus-within)
+	:is([guielement='checklist_item_header'], [guielement='checklist_item_content']) {
+	border-color: var(--primary);
+}
+
+[guielement='checklist_item'] [guielement='checklist_item_header'][mstyles='unfolded'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+}
+[guielement='checklist_item']
+	[guielement='checklist_item_content']
+	[guielement='checklist_grey_section'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
 }

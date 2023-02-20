@@ -31,6 +31,7 @@ body[cardType='naturalselection'] select {
 
 	background: var(--background);
 	color: var(--on-background);
+	--text-color: var(--on-background);
 	border-color: var(--border);
 }
 textarea[mtype='textarea'] {
@@ -50,6 +51,7 @@ textarea[mtype='textarea'][readonly='true'] {
 
 	background: var(--background);
 	color: var(--on-background);
+	--text-color: var(--on-background);
 }
 
 /* Disabled */
@@ -66,6 +68,7 @@ textarea.textarea:disabled {
 
 	background: var(--disabled);
 	color: var(--on-disabled);
+	--text-color: var(--on-disabled);
 }
 
 /* Error */
@@ -80,6 +83,7 @@ textarea.textarea:invalid {
 
 	background: var(--background);
 	color: var(--error);
+	--text-color: var(--error);
 }
 
 /* Combobox dropdown icon */
