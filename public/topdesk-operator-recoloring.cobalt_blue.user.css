@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Cobalt Blue (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.11.0
+@version        2.12.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -670,6 +670,145 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 	color: var(--surface);
 }
 
+/* Loading screen */
+[guielement='toplevelwindow'] > [mstyles~='content_area'] {
+	background-color: var(--background);
+}
+
+body[style*='background-color: #ffffff'] {
+	background-color: var(--background) !important;
+}
+
+#busy_message_area {
+	background-color: var(--surface);
+	padding: 36px;
+}
+#busy_message_area > #busy_message_image {
+	display: none !important;
+}
+#busy_message_area > #busymessage {
+	color: var(--on-surface);
+}
+
+#busy_message_area::before {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin: 0 auto 12px;
+	border-radius: 50%;
+
+	background: radial-gradient(
+		circle at center,
+		transparent 0%,
+		transparent 58%,
+		var(--on-surface) 60%
+	);
+
+	animation-name: pulse;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-delay: 0.2s;
+}
+
+#busy_message_area::after {
+	content: '';
+	display: block;
+	width: 46px;
+	height: 46px;
+	margin: -80px auto 24px;
+	border-radius: 50%;
+
+	background: radial-gradient(
+		circle at center,
+		transparent 0%,
+		transparent 55%,
+		var(--on-surface) 57%
+	);
+
+	animation-name: pulse;
+	animation-duration: 2.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-delay: -1.5s;
+}
+
+@keyframes pulse {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.2;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	#busy_message_area::before {
+		background: radial-gradient(
+				circle at center,
+				var(--surface) 0%,
+				var(--surface) 58%,
+				transparent 60%
+			),
+			conic-gradient(
+				transparent 22.5deg,
+				var(--on-surface) 22.8deg,
+				var(--on-surface) 337.2deg,
+				transparent 337.5deg
+			);
+
+		animation-name: spin-large;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+		animation-direction: normal;
+		animation-delay: 0s;
+	}
+
+	#busy_message_area::after {
+		background: radial-gradient(
+				circle at center,
+				var(--surface) 0%,
+				var(--surface) 55%,
+				transparent 57%
+			),
+			conic-gradient(
+				transparent 22.5deg,
+				var(--on-surface) 22.8deg,
+				var(--on-surface) 337.2deg,
+				transparent 337.5deg
+			);
+
+		animation-name: spin-small;
+		animation-duration: 3.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+		animation-direction: normal;
+		animation-delay: -0.5s;
+	}
+
+	@keyframes spin-large {
+		from {
+			rotate: 0deg;
+		}
+		to {
+			rotate: 720deg;
+		}
+	}
+
+	@keyframes spin-small {
+		from {
+			rotate: 0deg;
+		}
+		to {
+			rotate: 1440deg;
+		}
+	}
+}
+
 /*
  * Tab
  */
@@ -973,6 +1112,36 @@ body[contenteditable='true'] {
 [guielement='memo'] {
 	background: var(--background);
 	--text-color: var(--on-background);
+}
+
+/* While loading in */
+[handle='progress_trail_loading'] > [mtype='group'][disabled='true'] {
+	background-color: var(--surface) !important;
+}
+[handle='progress_trail_loading'] > [mtype='group'][disabled='true'] > [guielement='image'] {
+	/* image doesn't color, and is more distracting than useful */
+	display: none !important;
+}
+[handle='progress_trail_loading'] > [mtype='group'][disabled='true']::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: white;
+
+	animation-name: pulse-feed;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes pulse-feed {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.2;
+	}
 }
 
 /*
@@ -3831,7 +4000,7 @@ div#columnsscroll {
 div#columnsscroll .column span {
 	color: var(--text-color);
 }
-div#columnsscroll .column#_status span > .gridicon {
+div#columnsscroll .column:is(#_status, #_changetypecolumn, #_typecolumn) span > .gridicon {
 	filter: var(--filter);
 }
 div#columnsscroll .column .normal,
