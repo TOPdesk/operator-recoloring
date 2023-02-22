@@ -515,3 +515,53 @@
 	background-color: var(--surface);
 	--text-color: var(--on-surface);
 }
+
+/**
+ * Change Calendar
+ */
+[guielement='changecalendarpage'] [guielement='month_calendar_weekviewheader'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	border-color: var(--on-surface);
+}
+[guielement='changecalendarpage'] [guielement='month_calendar_weekviewheader'] > [mtype='group'] {
+	border-color: var(--on-surface) !important;
+}
+[guielement='changecalendarpage'] [mstyles='month_grid_grid'] {
+	background: var(--on-surface); /* The table and cell borders of the month view */
+}
+[guielement='changecalendarpage']
+	[mstyles='month_grid_grid']
+	> [mstyles~='month_calendar_weekend'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	--filter: var(--on-surface-filter);
+}
+[guielement='changecalendarpage']
+	[mstyles='month_grid_grid']
+	> [mstyles~='month_calendar_weekday'] {
+	background-color: var(--background);
+	--text-color: var(--on-background);
+	--filter: var(--on-background-filter);
+}
+[guielement='changecalendarpage'] [mstyles='month_grid_grid'] > [mstyles~='month_calendar_today'] {
+	border-color: transparent;
+	box-shadow: inset 0 0 0 2px var(--primary);
+}
+[guielement='changecalendarpage'] [guielement='month_calendar_week_label'] {
+	background-color: var(--primary);
+	--text-color: var(--on-primary);
+}
+[guielement='changecalendarpage'] [guielement='month_calendar_item'] {
+	background-color: transparent;
+}
+[guielement='changecalendarpage'] [guielement='month_calendar_item']:hover {
+	background-color: var(--primary);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
+}
+[guielement='changecalendarpage']
+	[guielement='month_calendar_item']
+	[guielement='icon'][mtype='imagearea']:first-child {
+	filter: var(--filter);
+}
