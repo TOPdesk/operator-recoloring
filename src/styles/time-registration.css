@@ -1,0 +1,32 @@
+/**
+ * Time Registration
+ */
+
+[guielement='tr-fold-header-border'] {
+	border-top-color: transparent;
+}
+
+[guielement='tr-fold-header'],
+[guielement='tr-fold-content'] {
+	border-left-color: var(--surface);
+}
+
+[guielement='tr-fold-header'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+}
+
+[guielement='tr-fold-header'] > img[guielement='icon'] {
+	filter: var(--on-surface-filter);
+}
+
+[guielement='tr-fold-content'] img[guielement='icon'] {
+	filter: var(--on-background-filter);
+}
+
+[guielement='tr-fold-header'] [guielement='tr-time'] {
+	color: var(--primary);
+}
+[guielement='tr-fold-content'] [guielement='tr-time'] {
+	border-color: var(--text-color);
+}
