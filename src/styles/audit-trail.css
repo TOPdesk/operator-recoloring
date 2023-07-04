@@ -1,0 +1,47 @@
+/**
+ * Mango Grid
+ */
+
+[mtype='grid'] {
+	border-color: var(--background);
+	--selected-row-border: var(--primary);
+}
+
+[mtype='grid'][mstyles='blurred'] {
+	--selected-row-border: var(--on-surface);
+}
+
+[mtype='grid'] [id$='_content'] {
+	color: var(--text-color);
+}
+
+/* selected */
+[mtype='grid'] [id$='_selection'] [id*='_selection_'][style*='background-color'] {
+	background-color: transparent !important;
+	box-shadow: inset 0 0 0px 1px var(--selected-row-border);
+}
+
+/* header */
+[mtype='grid'] [id$='_header'] {
+	--text-color: var(--on-surface);
+}
+
+[mtype='grid'] [id$='_header'] img {
+	filter: var(--on-surface-filter);
+}
+
+[mtype='grid'] [id$='_header'] [style*='background-color'] {
+	background-color: var(--surface) !important;
+}
+[mtype='grid'] [id$='_header'] [style*='border-right'] {
+	border-color: var(--on-surface) !important;
+}
+
+/* Content */
+[mtype='grid'] [id$='_columnstyling'] [style*='background-color'] {
+	background-color: var(--background) !important;
+}
+
+[mtype='grid'] [id$='_content'] [style*='border-right'] {
+	border-color: var(--on-background) !important;
+}
