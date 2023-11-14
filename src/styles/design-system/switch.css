@@ -1,0 +1,39 @@
+/*
+ * DS-Switch
+ */
+.ds-switch {
+	--ds-color-bg-primary-mid: var(--on-background); /* :checked track border */
+	--ds-color-bg-primary-emphasis: var(--background); /* :checked track background */
+	--ds-color-bg-primary-default: var(--on-background); /* :checked thumb background */
+	--ds-color-fg-primary-default: var(--background); /* :checked thumb icon */
+
+	--ds-color-bg-muted: var(--background); /* :not(:checked) track background */
+	--ds-color-bg-default: var(--on-background); /* :not(:checked) thumb background */
+	--ds-color-fg-muted: var(--background); /* :not(:checked) thumb icon */
+
+	--ds-color-border-primary-emphasis: var(--on-background); /* :hover track border */
+
+	box-shadow: none;
+}
+.ds-switch lion-switch-button[aria-checked='false'] {
+	/*
+	 * Border color in unchecked state uses same variable as the track background `--ds-color-bg-muted`.
+	 * So to be able to differentiate the border from the background we need to override the border-color property on the track itself.
+	 */
+	border-color: var(--on-background);
+}
+.ds-switch lion-switch-button:hover {
+	box-shadow: 0 0 0 4px var(--on-background);
+}
+.ds-switch lion-switch-button:focus-visible {
+	box-shadow: none;
+	outline-color: var(--on-background);
+}
+.ds-switch label {
+	/*
+	 * The label color uses the same variable as the unchecked thumb icon `--ds-color-fg-muted`.
+	 * But the label needs to contrast with the background, and the thumb icon with the thumb background.
+	 * Therefore we need to override the color of the label explicitly here.
+	 */
+	color: var(--text-color, var(--on-background));
+}

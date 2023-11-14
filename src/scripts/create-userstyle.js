@@ -136,5 +136,6 @@ ${readFileSync(__dirname + '/src/styles/design-system/feedback.css', {encoding: 
 ${readFileSync(__dirname + '/src/styles/design-system/button.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/design-system/panel.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/design-system/select.css', {encoding: 'utf8'})}
+${readFileSync(__dirname + '/src/styles/design-system/switch.css', {encoding: 'utf8'})}
 }`;
 }
