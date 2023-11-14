@@ -118,5 +118,19 @@ ${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
 ${readFileSync(__dirname + '/src/styles/assetmgmt/card.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*") {
+${readFileSync(__dirname + '/src/styles/assetmgmt/bulk-edit.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/services/active-user-overview.*") {
+${readFileSync(__dirname + '/src/styles/active-user-overview.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/services/user-group-linking-ui/.*") {
+${readFileSync(__dirname + '/src/styles/user-group-linking.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+${readFileSync(__dirname + '/src/styles/knowledge-base-startpage.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
 }`;
 }

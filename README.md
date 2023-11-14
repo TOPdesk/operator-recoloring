@@ -114,6 +114,29 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 
 	@import url("http://localhost:5500/src/styles/assetmgmt/card.css");
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*") {
+	@import url("http://localhost:5500/src/test-styles/variables.css");
+
+	@import url("http://localhost:5500/src/styles/assetmgmt/bulk-edit.css");
+}
+@-moz-document regexp("http(s)?://.*/services/active-user-overview.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/active-user-overview.css");
+}
+@-moz-document regexp("http(s)?://.*/services/user-group-linking-ui/.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/user-group-linking.css");
+}
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/knowledge-base-startpage.css");
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+}
 ```
 
 
