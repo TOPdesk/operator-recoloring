@@ -132,5 +132,6 @@ ${readFileSync(__dirname + '/src/styles/user-group-linking.css', {encoding: 'utf
 ${readFileSync(__dirname + '/src/styles/knowledge-base-startpage.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+${readFileSync(__dirname + '/src/styles/design-system/feedback.css', {encoding: 'utf8'})}
 }`;
 }

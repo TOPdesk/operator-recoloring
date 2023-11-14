@@ -136,6 +136,8 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
     @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/design-system/feedback.css");
 }
 ```
 
