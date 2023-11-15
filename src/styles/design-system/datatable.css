@@ -1,0 +1,49 @@
+.ds-data-table {
+	--ds-color-bg-default: var(--background); /* table background */
+	--ds-color-fg-default: var(--on-background); /* table foreground */
+	--ds-color-border-muted: var(--on-background); /* table border + row border + column/header/footer dividers */
+
+	--ds-color-bg-primary-soft: transparent; /* table:focus box-shadow */
+
+	/* table:focus & checkbox:focus border + outline, column resizer color */
+	--ds-color-border-primary-emphasis: var(--on-background);
+
+	--ds-color-bg-primary-default: transparent; /* table row:checked background */
+
+	--ds-color-border-default: var(--on-background); /* checkbox border */
+	--ds-color-border-primary-soft: transparent; /* checkbox:focus box-shadow */
+
+	/*
+	* The DS adds color to the checkbox when it is checked, but this feels too "busy" in this context.
+	* Unfortunately there is no other way to indicate selected status, but neither has the old grid so it is not too bad.
+	*
+	* A bar on the left side would be nice, and that could be achieved with a linear-gradient except that the color is
+	* applied to `background-color` (and not `background`) which only allows solid colors.
+	*/
+	--ds-color-bg-primary-emphasis: var(--background); /* checkbox:checked background */
+	--ds-color-fg-primary-subtle: var(--on-background); /* checkbox:checked foreground */
+
+	/* Status bar (border-bottom of the header cells) */
+	--ds-color-border-primary-default: var(--primary); /* status loading */
+	--ds-color-border-warning-default: var(--error); /* status error */
+}
+
+/*
+ * links are commonly slotted into the datatable, their design/implementation is not fully consistent
+ */
+.ds-data-table > a {
+	color: var(--primary);
+	text-decoration: underline;
+}
+.ds-data-table > a:hover {
+	text-decoration-color: var(--primary);
+}
+.ds-data-table > a:focus-visible {
+	outline: 2px solid var(--on-background);
+	outline-offset: 2px;
+	border-radius: 4px;
+
+	text-decoration-color: var(--primary);
+	box-shadow: none;
+	background-color: unset;
+}
