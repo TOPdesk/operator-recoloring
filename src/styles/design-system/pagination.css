@@ -1,0 +1,15 @@
+.ds-pagination {
+	--ds-color-fg-primary-emphasis: var(--on-background); /* button foreground*/
+	/* background-color is set to transparent in the component so can't be changed. (only in default state) */
+	/* border-color is set to transparent in the component, so can't be changed. (all states except :hover and :focus) */
+
+	--ds-color-bg-primary-mid: var(--primary); /* current page background */
+	--ds-color-fg-primary-subtle: var(--on-primary); /* current page foreground */
+
+	/* no background in the disabled state is less busy */
+	--ds-color-bg-mild: transparent; /* prev/next :disabled background */
+	--ds-color-bg-muted: var(--disabled); /* prev/next :disabled foreground */
+
+	--ds-color-bg-primary-soft: transparent; /* :focus & :hover box-shadow */
+	--ds-color-border-primary-emphasis: var(--on-background); /* :focus border and outline, :hover border */
+}
