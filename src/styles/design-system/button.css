@@ -1,0 +1,61 @@
+/*
+ * DS-Button (primary variant)
+ */
+.ds-button[variant='primary'] {
+	background-color: var(--primary);
+	color: var(--on-primary);
+	border-color: var(--primary);
+}
+.ds-button[variant='primary']:hover {
+	box-shadow: none;
+
+	background-color: var(--primary-muted);
+}
+.ds-button[variant='primary']:focus-visible {
+	box-shadow: none;
+
+	outline-color: var(--outline-color);
+}
+.ds-button[variant='primary']:active {
+	background-color: var(--background);
+	color: var(--primary);
+	border-color: var(--primary);
+	--outline-color: var(--primary);
+}
+
+/*
+ * DS-Button (basic variant)
+ */
+.ds-button:not([variant]) {
+	background-color: var(--background);
+	color: var(--on-background);
+	border-color: var(--on-background);
+}
+.ds-button:not([variant]):hover {
+	box-shadow: none;
+	background-color: var(--on-background);
+	color: var(--background);
+}
+.ds-button:not([variant]):focus-visible {
+	box-shadow: none;
+
+	outline-color: var(--outline-color);
+}
+.ds-button:not([variant]):active {
+	background-color: var(--surface);
+	color: var(--on-surface);
+	border-color: var(--on-surface);
+}
+
+/*
+ * DS-Button (disabled)
+ */
+.ds-button[aria-disabled='true'] {
+	/* Undoing the evil 'opacity trick' */
+	filter: none;
+	opacity: unset;
+
+	background-color: var(--disabled);
+	color: var(--on-disabled);
+	border-color: var(--on-disabled);
+}
