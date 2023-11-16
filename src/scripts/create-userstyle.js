@@ -139,5 +139,6 @@ ${readFileSync(__dirname + '/src/styles/design-system/select.css', {encoding: 'u
 ${readFileSync(__dirname + '/src/styles/design-system/switch.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/design-system/datatable.css', {encoding: 'utf8'})}
 ${readFileSync(__dirname + '/src/styles/design-system/pagination.css', {encoding: 'utf8'})}
+${readFileSync(__dirname + '/src/styles/design-system/search.css', {encoding: 'utf8'})}
 }`;
 }

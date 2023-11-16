@@ -1,0 +1,14 @@
+.ds-search-form {
+	--ds-color-fg-muted: var(--on-background); /* Placeholder */
+
+	--ds-color-field-bg: var(--background); /* field background */
+	--ds-color-field-fg: var(--on-background); /* field foreground */
+	--ds-color-field-border: var(--on-background); /* field border */
+
+	--ds-color-border-primary-default: var(--on-background); /* field:hover & :focus box-shadow */
+
+	--ds-color-field-icon-fg: var(--on-background); /* button:not(:hover,:focus) foreground */
+
+	--ds-color-field-button-bg-hover: var(--primary); /* button:hover & :focus background */
+	--ds-color-field-icon-fg-hover: var(--on-primary); /* button:hover & :focus foreground */
+}
