@@ -1,0 +1,11 @@
+.ds-modal-content {
+	--outline-color: var(--on-surface);
+	--text-color: var(--on-surface);
+
+	--ds-color-bg-default: var(--surface); /* Modal background */
+	--ds-color-fg-default: var(--text-color); /* Modal foreground */
+
+	--ds-color-fg-muted: var(--on-surface); /* Close button */
+	--ds-color-bg-primary-soft: transparent; /* Close button:hover & :focus box-shadow */
+	--ds-color-border-primary-emphasis: var(--on-surface); /* Close button:hover & :focus border & outline */
+}
