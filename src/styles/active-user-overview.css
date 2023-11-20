@@ -5,3 +5,20 @@ body {
 
 	--outline-color: var(--on-background);
 }
+
+.active-user-overview .left.column strong {
+	color: var(--on-background);
+}
+
+.active-user-overview .ds-icon.licensed-color {
+	color: var(--on-background);
+}
+.active-user-overview .ds-icon.online-color {
+	color: var(--primary);
+}
+.active-user-overview .ds-icon.offline-color {
+	border: 1px solid var(--on-background);
+	border-radius: 50%;
+	color: var(--background); /* icon background */
+	background-color: var(--on-background); /* icon cross */
+}
