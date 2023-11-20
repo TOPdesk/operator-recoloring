@@ -5,3 +5,20 @@ body {
 
 	--outline-color: var(--on-background);
 }
+.page-header {
+	--ds-color-bg-primary-default: var(--background);
+}
+
+/*
+ * Asset list
+ */
+.asset-list {
+	--ds-color-fg-muted: var(--on-background);
+}
+.asset-list .ds-icon {
+	color: var(--on-background);
+}
+.asset-list a {
+	color: var(--primary);
+	text-decoration: underline;
+}
