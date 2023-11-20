@@ -4,4 +4,34 @@ body {
 	color: var(--on-background);
 
 	--outline-color: var(--on-background);
+
+	--ds-color-fg-primary-default: var(--on-background); /* links */
+	--ds-color-fg-primary-emphasis: var(--on-background); /* empty group bullets */
+
+	--ds-color-bg-primary-mid: transparent; /* link:focus background */
+	--ds-color-fg-primary-subtle: var(--on-background); /* link:focus color */
+}
+
+.overview__ki-list .title:focus-visible {
+	/* link outline is unfortunately removed entirely, have to reinstate */
+	outline: 2px solid var(--on-background);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+/*
+ * Expand/collapse group buttons (The primary styling does not work well here)
+ */
+.overview__ki-list .ds-button[variant='primary'] {
+	background-color: transparent;
+	color: var(--on-background);
+	border-color: transparent;
+}
+
+.overview__ki-list .ds-button[variant='primary']:hover {
+	color: var(--on-primary);
+}
+
+.overview__ki-list .ds-button[variant='primary']:active {
+	color: var(--primary);
 }
