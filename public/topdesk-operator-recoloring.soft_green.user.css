@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Soft Green (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.13.0
+@version        2.14.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -8928,6 +8928,352 @@ settings-sidebar.panel .tab-content .entityCreator input:focus {
 .placeholderGfx p {
 	color: var(--on-background);
 	font-style: normal;
+}
+
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*") {
+html,
+body {
+	background-color: var(--background);
+	color: var(--on-background);
+
+	--outline-color: var(--on-background);
+}
+
+}
+@-moz-document regexp("http(s)?://.*/services/active-user-overview.*") {
+html,
+body {
+	background-color: var(--background);
+	color: var(--on-background);
+
+	--outline-color: var(--on-background);
+}
+
+}
+@-moz-document regexp("http(s)?://.*/services/user-group-linking-ui/.*") {
+html,
+body {
+	background-color: var(--background);
+	color: var(--on-background);
+
+	--outline-color: var(--on-background);
+}
+
+}
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+html,
+body {
+	background-color: var(--background);
+	color: var(--on-background);
+
+	--outline-color: var(--on-background);
+}
+
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+/*
+ * DS-Feedback-Link
+ *
+ * There are two versions:
+ * - .ds-feedback-link is fixed on the right side and expands on hover.
+ * - .ds-button[variant='insight'] is a button alternative for where the link does not work.
+ */
+.ds-feedback-link,
+.ds-button[variant='insight'] {
+	--ds-color-bg-insight-mid: var(--background); /* background */
+	--ds-color-fg-insight-subtle: var(--on-background); /* foreground */
+	--ds-color-border-insight-default: var(--on-background); /* border */
+
+	--ds-color-border-insight-emphasis: var(--background); /* :hover border */
+
+	--ds-color-border-insight-soft: transparent; /* :hover & : focus box-shadow (for link variant) */
+	--ds-color-bg-insight-soft: transparent; /* :hover & :focus box-shadow (for button variant) */
+
+	--ds-color-bg-insight-emphasis: var(--surface); /* :active background */
+}
+.ds-feedback-link:hover,
+.ds-button[variant='insight']:hover {
+	--ds-color-bg-insight-mid: var(--on-background); /* :hover background */
+	--ds-color-fg-insight-subtle: var(--background); /* :hover foreground */
+}
+.ds-feedback-link:active,
+.ds-button[variant='insight']:active {
+	--ds-color-fg-insight-subtle: var(--on-surface); /* :active foreground */
+	--ds-color-border-insight-emphasis: var(--on-background); /* :active border (overridden by :focus for link variant) */
+}
+.ds-feedback-link:focus-within,
+.ds-button[variant='insight']:focus-visible {
+	/* Would have prefered to deal with border and outline separately, but alas that is not possible */
+	--ds-color-border-insight-emphasis: var(--outline-color, var(--on-background)); /* outline & border */
+}
+
+/*
+ * DS-Button (primary variant)
+ */
+.ds-button[variant='primary'] {
+	background-color: var(--primary);
+	color: var(--on-primary);
+	border-color: var(--primary);
+}
+.ds-button[variant='primary']:hover {
+	box-shadow: none;
+
+	background-color: var(--primary-muted);
+}
+.ds-button[variant='primary']:focus-visible {
+	box-shadow: none;
+
+	outline-color: var(--outline-color);
+}
+.ds-button[variant='primary']:active {
+	background-color: var(--background);
+	color: var(--primary);
+	border-color: var(--primary);
+	--outline-color: var(--primary);
+}
+
+/*
+ * DS-Button (basic variant)
+ */
+.ds-button:not([variant]) {
+	background-color: var(--background);
+	color: var(--on-background);
+	border-color: var(--on-background);
+}
+.ds-button:not([variant]):hover {
+	box-shadow: none;
+	background-color: var(--on-background);
+	color: var(--background);
+}
+.ds-button:not([variant]):focus-visible {
+	box-shadow: none;
+
+	outline-color: var(--outline-color);
+}
+.ds-button:not([variant]):active {
+	background-color: var(--surface);
+	color: var(--on-surface);
+	border-color: var(--on-surface);
+}
+
+/*
+ * DS-Button (disabled)
+ */
+.ds-button[aria-disabled='true'] {
+	/* Undoing the evil 'opacity trick' */
+	filter: none;
+	opacity: unset;
+
+	background-color: var(--disabled);
+	color: var(--on-disabled);
+	border-color: var(--on-disabled);
+}
+
+/*
+ * DS-Panel
+ */
+.ds-panel {
+	--ds-color-bg-subtle: var(--surface); /* header background */
+	--ds-color-bg-default: var(--surface); /* content background */
+
+	color: var(--on-surface);
+
+	--text-color: var(--on-surface);
+	--outline-color: var(--on-surface);
+
+	/* header-content divider border color, has the same variable as the panel border color itself */
+	border: none;
+	--ds-color-border-muted: var(--on-surface);
+}
+
+/*
+ * DS-Select-Rich and DS-Combobox
+ */
+.ds-select-rich,
+.ds-combobox {
+	--ds-color-field-label-fg: var(--text-color, var(--on-background)); /* label + helptext color */
+
+	--ds-color-field-bg: var(--background); /* field background */
+	--ds-color-field-border: var(--on-background); /* field border */
+	--ds-color-field-icon-fg: var(--on-background); /* chevron color */
+	--ds-color-field-fg: var(--on-background); /* field foreground */
+
+	/* focus colors */
+	--ds-color-field-outline-inner: transparent; /* box-shadow color */
+	--ds-color-field-outline-outer: var(--outline-color); /* border and outline */
+
+	/* dropdown colors */
+	--ds-color-bg-default: var(--background); /* popup background */
+	--ds-color-fg-default: var(--on-background); /* popup foreground */
+	--ds-color-border-default: var(--on-background); /* popup border */
+
+	--ds-color-bg-primary-default: transparent; /* option:hover background */
+	--ds-color-bg-primary-soft: transparent; /* option:checked background */
+	--ds-color-border-primary-emphasis: var(--on-background); /* option:hover border */
+	--ds-color-fg-primary-emphasis: var(--on-background); /* option:checked checkmark color */
+}
+
+.ds-select-rich:hover,
+.ds-combobox:hover {
+	--ds-color-field-outline-outer: var(--primary);
+	--ds-color-field-icon-fg: var(--primary);
+	--ds-color-field-border: var(--primary);
+}
+
+/* Error case */
+.ds-select-rich lion-select-invoker[aria-invalid='true'],
+.ds-combobox[shows-feedback-for='error'] {
+	--ds-color-field-border: var(--error);
+	--ds-color-field-icon-fg: var(--error);
+	--ds-color-field-outline-inner: transparent;
+	--ds-color-field-outline-outer: var(--error); /* on focus */
+}
+.ds-select-rich[shows-feedback-for='error'] lion-validation-feedback,
+.ds-combobox[shows-feedback-for='error'] lion-validation-feedback {
+	--ds-color-field-fg: var(--error);
+	--ds-color-field-icon-fg: var(--error);
+}
+.ds-select-rich lion-select-invoker[aria-invalid='true'] {
+	--ds-color-field-fg: var(--error);
+	--ds-color-field-bg: var(--background);
+}
+.ds-combobox[shows-feedback-for='error']:hover,
+.ds-select-rich:hover lion-select-invoker[aria-invalid='true'] {
+	--ds-color-field-outline-inner: var(--error);
+}
+
+/*
+ * DS-Switch
+ */
+.ds-switch {
+	--ds-color-bg-primary-mid: var(--on-background); /* :checked track border */
+	--ds-color-bg-primary-emphasis: var(--background); /* :checked track background */
+	--ds-color-bg-primary-default: var(--on-background); /* :checked thumb background */
+	--ds-color-fg-primary-default: var(--background); /* :checked thumb icon */
+
+	--ds-color-bg-muted: var(--background); /* :not(:checked) track background */
+	--ds-color-bg-default: var(--on-background); /* :not(:checked) thumb background */
+	--ds-color-fg-muted: var(--background); /* :not(:checked) thumb icon */
+
+	--ds-color-border-primary-emphasis: var(--on-background); /* :hover track border */
+
+	box-shadow: none;
+}
+.ds-switch lion-switch-button[aria-checked='false'] {
+	/*
+	 * Border color in unchecked state uses same variable as the track background `--ds-color-bg-muted`.
+	 * So to be able to differentiate the border from the background we need to override the border-color property on the track itself.
+	 */
+	border-color: var(--on-background);
+}
+.ds-switch lion-switch-button:hover {
+	box-shadow: 0 0 0 4px var(--on-background);
+}
+.ds-switch lion-switch-button:focus-visible {
+	box-shadow: none;
+	outline-color: var(--on-background);
+}
+.ds-switch label {
+	/*
+	 * The label color uses the same variable as the unchecked thumb icon `--ds-color-fg-muted`.
+	 * But the label needs to contrast with the background, and the thumb icon with the thumb background.
+	 * Therefore we need to override the color of the label explicitly here.
+	 */
+	color: var(--text-color, var(--on-background));
+}
+
+.ds-data-table {
+	--ds-color-bg-default: var(--background); /* table background */
+	--ds-color-fg-default: var(--on-background); /* table foreground */
+	--ds-color-border-muted: var(--on-background); /* table border + row border + column/header/footer dividers */
+
+	--ds-color-bg-primary-soft: transparent; /* table:focus box-shadow */
+
+	/* table:focus & checkbox:focus border + outline, column resizer color */
+	--ds-color-border-primary-emphasis: var(--on-background);
+
+	--ds-color-bg-primary-default: transparent; /* table row:checked background */
+
+	--ds-color-border-default: var(--on-background); /* checkbox border */
+	--ds-color-border-primary-soft: transparent; /* checkbox:focus box-shadow */
+
+	/*
+	* The DS adds color to the checkbox when it is checked, but this feels too "busy" in this context.
+	* Unfortunately there is no other way to indicate selected status, but neither has the old grid so it is not too bad.
+	*
+	* A bar on the left side would be nice, and that could be achieved with a linear-gradient except that the color is
+	* applied to `background-color` (and not `background`) which only allows solid colors.
+	*/
+	--ds-color-bg-primary-emphasis: var(--background); /* checkbox:checked background */
+	--ds-color-fg-primary-subtle: var(--on-background); /* checkbox:checked foreground */
+
+	/* Status bar (border-bottom of the header cells) */
+	--ds-color-border-primary-default: var(--primary); /* status loading */
+	--ds-color-border-warning-default: var(--error); /* status error */
+}
+
+/*
+ * links are commonly slotted into the datatable, their design/implementation is not fully consistent
+ */
+.ds-data-table > a {
+	color: var(--primary);
+	text-decoration: underline;
+}
+.ds-data-table > a:hover {
+	text-decoration-color: var(--primary);
+}
+.ds-data-table > a:focus-visible {
+	outline: 2px solid var(--on-background);
+	outline-offset: 2px;
+	border-radius: 4px;
+
+	text-decoration-color: var(--primary);
+	box-shadow: none;
+	background-color: unset;
+}
+
+.ds-pagination {
+	--ds-color-fg-primary-emphasis: var(--on-background); /* button foreground*/
+	/* background-color is set to transparent in the component so can't be changed. (only in default state) */
+	/* border-color is set to transparent in the component, so can't be changed. (all states except :hover and :focus) */
+
+	--ds-color-bg-primary-mid: var(--primary); /* current page background */
+	--ds-color-fg-primary-subtle: var(--on-primary); /* current page foreground */
+
+	/* no background in the disabled state is less busy */
+	--ds-color-bg-mild: transparent; /* prev/next :disabled background */
+	--ds-color-bg-muted: var(--disabled); /* prev/next :disabled foreground */
+
+	--ds-color-bg-primary-soft: transparent; /* :focus & :hover box-shadow */
+	--ds-color-border-primary-emphasis: var(--on-background); /* :focus border and outline, :hover border */
+}
+
+.ds-search-form {
+	--ds-color-fg-muted: var(--on-background); /* Placeholder */
+
+	--ds-color-field-bg: var(--background); /* field background */
+	--ds-color-field-fg: var(--on-background); /* field foreground */
+	--ds-color-field-border: var(--on-background); /* field border */
+
+	--ds-color-border-primary-default: var(--on-background); /* field:hover & :focus box-shadow */
+
+	--ds-color-field-icon-fg: var(--on-background); /* button:not(:hover,:focus) foreground */
+
+	--ds-color-field-button-bg-hover: var(--primary); /* button:hover & :focus background */
+	--ds-color-field-icon-fg-hover: var(--on-primary); /* button:hover & :focus foreground */
+}
+
+.ds-modal-content {
+	--outline-color: var(--on-surface);
+	--text-color: var(--on-surface);
+
+	--ds-color-bg-default: var(--surface); /* Modal background */
+	--ds-color-fg-default: var(--text-color); /* Modal foreground */
+
+	--ds-color-fg-muted: var(--on-surface); /* Close button */
+	--ds-color-bg-primary-soft: transparent; /* Close button:hover & :focus box-shadow */
+	--ds-color-border-primary-emphasis: var(--on-surface); /* Close button:hover & :focus border & outline */
 }
 
 }
