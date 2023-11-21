@@ -1,0 +1,109 @@
+/*
+ * AM is transitioning to DS components, the styles needed to make that work live here.
+ */
+
+/* Bulk edit button */
+bulk-edit-button {
+	background: transparent; /* Background of the container for the button, i.e. not the button itself */
+}
+
+/*
+ * Feedback link, Copy of DS component feedback link
+ */
+feedback-link {
+	--ds-color-bg-insight-mid: var(--background); /* background */
+	--ds-color-fg-insight-subtle: var(--on-background); /* foreground */
+	--ds-color-border-insight-default: var(--on-background); /* border */
+
+	--ds-color-border-insight-emphasis: var(--background); /* :hover border */
+
+	--ds-color-border-insight-soft: transparent; /* :hover & :focus box-shadow (for link variant) */
+	--ds-color-bg-insight-soft: transparent; /* :hover & :focus box-shadow (for button variant) */
+
+	--ds-color-bg-insight-emphasis: var(--surface); /* :active background */
+}
+feedback-link:hover {
+	--ds-color-bg-insight-mid: var(--on-background); /* :hover background */
+	--ds-color-fg-insight-subtle: var(--background); /* :hover foreground */
+
+	/* --ds-color-bg-insight-emphasis: var(--on-background); :active background */
+}
+feedback-link:active {
+	--ds-color-fg-insight-subtle: var(--on-surface); /* :active foreground */
+}
+feedback-link:focus-within {
+	/* Would have preferred to deal with border and outline separately, but alas that is not possible */
+	--ds-color-border-insight-emphasis: var(--outline-color, var(--on-background)); /* outline & border */
+}
+
+overview-grid {
+	color: var(--on-background); /* Selection count */
+
+	/*
+	 * Copy of design-system/search.css
+	 */
+	--ds-color-fg-muted: var(--on-background); /* Placeholder */
+
+	--ds-color-field-bg: var(--background); /* field background */
+	--ds-color-field-fg: var(--on-background); /* field foreground */
+	--ds-color-field-border: var(--on-background); /* field border */
+
+	--ds-color-border-primary-default: var(--on-background); /* field:hover & :focus box-shadow */
+
+	--ds-color-field-icon-fg: var(--on-background); /* button:not(:hover,:focus) foreground */
+
+	--ds-color-field-button-bg-hover: var(--primary); /* button:hover & :focus background */
+	--ds-color-field-icon-fg-hover: var(--on-primary); /* button:hover & :focus foreground */
+
+	/*
+	 * Copied and adjusted to fit from design-system/datatable.css
+	 */
+	--ds-color-bg-default: var(--background); /* table background */
+	--ds-color-fg-default: var(--on-background); /* table foreground */
+	--ds-color-border-muted: var(--on-background); /* table border + row border + column/header/footer dividers */
+
+	--ds-color-bg-primary-soft: transparent; /* table:focus box-shadow */
+
+	/* table:focus & checkbox:focus border + outline, column resizer color */
+	--ds-color-border-primary-emphasis: var(--on-background);
+
+	--ds-color-bg-primary-default: transparent; /* table row:checked background */
+
+	--ds-color-border-default: var(--on-background); /* checkbox border */
+	--ds-color-border-primary-soft: transparent; /* checkbox:focus box-shadow */
+
+	/* --ds-color-fg-primary-subtle clashes with the pagination, so I can't use --on-background here as in the normal ds-datatable */
+	--ds-color-bg-primary-emphasis: var(--primary); /* checkbox:checked background */
+	--ds-color-fg-primary-subtle: var(--on-primary); /* checkbox:checked foreground */
+
+	/* Status bar (border-bottom of the header cells) */
+	/* --ds-color-border-primary-default: var(--on-background); status loading (Clashes with search :focus & :hover styling) */
+	--ds-color-border-warning-default: var(--error); /* status error */
+
+	/*
+	 * Slotted content
+	 */
+	--ds-color-fg-primary-default: var(--on-background); /* table row:not(:checked) icon color */
+	--ds-color-fg-primary-emphasis: var(--on-background); /* table row:checked icon color */
+
+	--ds-color-bg-danger-mild: var(--error); /* impacted tag background */
+	--ds-color-fg-danger-emphasis: var(--on-error); /* impacted tag foreground */
+
+	/* To make the header and footer readable in older version of ds table. */
+	--ds-color-bg-subtle: var(--background);
+
+	/*
+	 * Copy of design-system/pagination.css
+	 */
+	--ds-color-fg-primary-emphasis: var(--on-background); /* button foreground*/
+
+	--ds-color-bg-primary-mid: var(--primary); /* current page background */
+	--ds-color-fg-primary-subtle: var(--on-primary); /* current page foreground (clashes with checkmark in table) */
+
+	/* no background in the disabled state is less busy */
+	--ds-color-bg-mild: transparent; /* prev/next :disabled background */
+	--ds-color-bg-muted: var(--disabled); /* prev/next :disabled foreground */
+
+	--ds-color-bg-primary-soft: transparent; /* :focus & :hover box-shadow */
+	--ds-color-border-primary-emphasis: var(--on-background); /* :focus border and outline, :hover border */
+}

@@ -107,6 +107,7 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 
 	@import url("http://localhost:5500/src/styles/assetmgmt/overview.css");
+	@import url("http://localhost:5500/src/styles/assetmgmt/overview-with-ds.css");
 }
 
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
