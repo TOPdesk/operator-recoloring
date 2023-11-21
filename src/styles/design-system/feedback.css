@@ -13,7 +13,7 @@
 
 	--ds-color-border-insight-emphasis: var(--background); /* :hover border */
 
-	--ds-color-border-insight-soft: transparent; /* :hover & : focus box-shadow (for link variant) */
+	--ds-color-border-insight-soft: transparent; /* :hover & :focus box-shadow (for link variant) */
 	--ds-color-bg-insight-soft: transparent; /* :hover & :focus box-shadow (for button variant) */
 
 	--ds-color-bg-insight-emphasis: var(--surface); /* :active background */
@@ -30,6 +30,6 @@
 }
 .ds-feedback-link:focus-within,
 .ds-button[variant='insight']:focus-visible {
-	/* Would have prefered to deal with border and outline separately, but alas that is not possible */
+	/* Would have preferred to deal with border and outline separately, but alas that is not possible */
 	--ds-color-border-insight-emphasis: var(--outline-color, var(--on-background)); /* outline & border */
 }
