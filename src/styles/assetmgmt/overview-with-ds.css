@@ -5,6 +5,10 @@
 /* Bulk edit button */
 bulk-edit-button {
 	background: transparent; /* Background of the container for the button, i.e. not the button itself */
+
+	--bulk-edit-button-background-color: transparent; /* background */
+	--bulk-edit-button-text-color: var(--on-background); /* foreground */
+	--bulk-edit-button-border-color: var(--on-background); /* border */
 }
 
 /*
