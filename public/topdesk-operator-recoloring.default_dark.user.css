@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Default Dark (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        2.14.4
+@version        2.14.5
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -6543,6 +6543,10 @@ button.feedback::after {
 /* Bulk edit button */
 bulk-edit-button {
 	background: transparent; /* Background of the container for the button, i.e. not the button itself */
+
+	--bulk-edit-button-background-color: transparent; /* background */
+	--bulk-edit-button-text-color: var(--on-background); /* foreground */
+	--bulk-edit-button-border-color: var(--on-background); /* border */
 }
 
 /*
@@ -6644,6 +6648,9 @@ overview-grid {
 
 	--ds-color-bg-primary-soft: transparent; /* :focus & :hover box-shadow */
 	--ds-color-border-primary-emphasis: var(--on-background); /* :focus border and outline, :hover border */
+
+	/* Special variable for slotted links in the table */
+	--overview-link-color: var(--primary);
 }
 
 }
