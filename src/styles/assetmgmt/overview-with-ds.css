@@ -106,4 +106,7 @@ overview-grid {
 
 	--ds-color-bg-primary-soft: transparent; /* :focus & :hover box-shadow */
 	--ds-color-border-primary-emphasis: var(--on-background); /* :focus border and outline, :hover border */
+
+	/* Special variable for slotted links in the table */
+	--overview-link-color: var(--primary);
 }
