@@ -10,11 +10,21 @@ import minifyHTML from 'rollup-plugin-minify-html-literals';
 import summary from 'rollup-plugin-summary';
 import postcss from 'rollup-plugin-postcss';
 
+rimraf.sync('themes');
 rimraf.sync('public');
 rimraf.sync('docs');
 
 export default [
 	{ /* Generate recoloring css */
+		input: 'src/scripts/app.js',
+		output: {
+			dir: 'themes/'
+		},
+		plugins: [
+			createUserstyles(version),
+		]
+	},
+	{ /* Legacy location for styles */
 		input: 'src/scripts/app.js',
 		output: {
 			dir: 'public/'
@@ -70,6 +80,10 @@ export default [
 			// Print bundle summary
 			summary(),
 			// Copy static assets to build directory
+			copy({
+				patterns: [ 'themes/*.user.css' ],
+				rootDir: './'
+			}),
 			copy({
 				patterns: [ 'fonts/*.woff2', 'meta/mashup.png' ],
 				rootDir: './site'

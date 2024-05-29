@@ -34,6 +34,7 @@ function metadata(version, theme) {
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
+@updateURL      https://topdesk.github.io/operator-recoloring/themes/topdesk-operator-recoloring.${theme.name}.user.css
 @license        MIT
 @preprocessor   default
 ${variables(theme)}
