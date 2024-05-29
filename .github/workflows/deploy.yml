@@ -27,15 +27,11 @@ jobs:
         uses: Endbug/version-check@v2
         with:
           diff-search: true
-      - name: Commit user style changes
+      - name: Set version tag on last commit
         if: steps.version-check.outputs.changed == 'true'
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          git add public/*.user.css
-          git commit -m "Publish updates v${{ steps.version-check.outputs.version }}"
           git tag v${{ steps.version-check.outputs.version }}
-      - name: Publish user style changes
+      - name: Push version tag
         if: steps.version-check.outputs.changed == 'true'
         uses: ad-m/github-push-action@v0.8.0
         with:

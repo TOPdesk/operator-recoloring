@@ -15,21 +15,12 @@ const version = JSON.parse(readFileSync(new URL('./package.json', import.meta.ur
 const styleDir = './src/styles';
 
 rimrafSync('themes');
-rimrafSync('public');
 rimrafSync('docs');
 
 export default [
 	{ /* Generate recoloring css */
 		output: {
 			dir: 'themes/'
-		},
-		plugins: [
-			createUserstyles(version, styleDir),
-		]
-	},
-	{ /* Legacy location for styles */
-		output: {
-			dir: 'public/'
 		},
 		plugins: [
 			createUserstyles(version, styleDir),
