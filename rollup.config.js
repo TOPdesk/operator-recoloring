@@ -1,18 +1,22 @@
-import rimraf from 'rimraf';
-import createUserstyles from './src/scripts/create-userstyle';
-import { version } from './package.json';
-import { terser } from 'rollup-plugin-terser';
+import { rimrafSync } from 'rimraf';
 
-import html from '@web/rollup-plugin-html';
-import { copy } from '@web/rollup-plugin-copy';
+import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
-import { minifyTemplateLiterals } from 'rollup-plugin-minify-template-literals';
-import summary from 'rollup-plugin-summary';
+import { rollupPluginHTML } from '@web/rollup-plugin-html';
+import { copy } from '@web/rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
+import summary from "rollup-plugin-summary";
 
-rimraf.sync('themes');
-rimraf.sync('public');
-rimraf.sync('docs');
+import createUserstyles from './src/scripts/create-userstyle.js';
+
+import { readFileSync } from 'fs';
+
+const version = JSON.parse(readFileSync(new URL('./package.json', import.meta.url))).version;
+const styleDir = './src/styles';
+
+rimrafSync('themes');
+rimrafSync('public');
+rimrafSync('docs');
 
 export default [
 	{ /* Generate recoloring css */
@@ -21,7 +25,7 @@ export default [
 			dir: 'themes/'
 		},
 		plugins: [
-			createUserstyles(version),
+			createUserstyles(version, styleDir),
 		]
 	},
 	{ /* Legacy location for styles */
@@ -30,7 +34,7 @@ export default [
 			dir: 'public/'
 		},
 		plugins: [
-			createUserstyles(version),
+			createUserstyles(version, styleDir),
 		]
 	},
 	{ /* Generate worker */
@@ -50,7 +54,7 @@ export default [
 		},
 		preserveEntrySignatures: 'strict',
 		plugins: [
-			html({
+			rollupPluginHTML({
 				input: 'site/src/index.html',
 				transformHtml: [
 					html => html.replace(/<(.*)data-version="unknown"(.*?)>.*?</, `<$1data-version="${version}"$2>${version}<`),
@@ -69,16 +73,12 @@ export default [
 			}),
 			// Resolve bare module specifiers to relative paths
 			resolve(),
-			// Minify HTML template literals
-			minifyTemplateLiterals(),
 			// Minify JS
 			terser({
 				ecma: 2020,
 				module: true,
 				warnings: true,
 			}),
-			// Print bundle summary
-			summary(),
 			// Copy static assets to build directory
 			copy({
 				patterns: [ 'themes/*.user.css' ],
@@ -92,6 +92,8 @@ export default [
 				patterns: [ 'inert.esm.js' ],
 				rootDir: './node_modules/wicg-inert/dist'
 			}),
+			// Print bundle summary
+			summary()
 		],
 	}
 ];

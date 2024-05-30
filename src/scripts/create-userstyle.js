@@ -2,11 +2,11 @@
 import { readFileSync } from 'fs';
 import { themes, legacyTheme as theme } from "../themes/index.js";
 
-export default function createUserstyles(version) {
+export default function createUserstyles(version, stylesDir) {
 	return {
 		name: 'create-userstyle-plugin',
-		async generateBundle(_options, bundle) {
-			const styles = userStyles();
+		generateBundle(_options, _bundle) {
+			const styles = userStyles(stylesDir);
 
 			this.emitFile({
 				type: 'asset',
@@ -70,78 +70,78 @@ function variables(theme) {
 @var text on-error-filter "On error filter" ${theme.onErrorFilter}`;
 }
 
-function userStyles() {
+function userStyles(stylesDir) {
 	return `
 @-moz-document regexp("http(s)?://.*/tas/(secure|public)/login/form.*"), regexp("http(s)?://.*/tas/(secure|public)/login/saml"), regexp("http(s)?://.*/tas/(secure|public)/logout"), regexp("http(s)?://.*/tas/admin/.*") {
-${readFileSync(__dirname + '/src/styles/login/login.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/login/login.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/passwordforgottenrequest.*") {
-${readFileSync(__dirname + '/src/styles/login/passwordforgotten.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/login/passwordforgotten.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
-${readFileSync(__dirname + '/src/styles/button.css', { encoding: 'utf8' })}
-${readFileSync(__dirname + '/src/styles/general.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/tab.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/menu.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/feed.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/process-pages.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/suggestions.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/share.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/form.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/knowledge-item.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/email.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/selection.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/card.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/planboard.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/reservations.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/taskboard.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/change.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/time-registration.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/audit-trail.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/button.css', { encoding: 'utf8' })}
+${readFileSync(stylesDir + '/general.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/tab.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/menu.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/feed.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/process-pages.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/suggestions.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/share.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/form.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/knowledge-item.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/email.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/selection.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/card.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/planboard.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/reservations.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/taskboard.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/change.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/time-registration.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/audit-trail.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
-${readFileSync(__dirname + '/src/styles/concurrent-users.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/concurrent-users.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
-${readFileSync(__dirname + '/src/styles/grid.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/grid.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
-${readFileSync(__dirname + '/src/styles/agileboard.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/agileboard.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-buttons.*") {
-${readFileSync(__dirname + '/src/styles/assetmgmt/module-page-buttons.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/assetmgmt/module-page-buttons.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-migration-information.*") {
-${readFileSync(__dirname + '/src/styles/assetmgmt/module-page-migration.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/assetmgmt/module-page-migration.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
-${readFileSync(__dirname + '/src/styles/assetmgmt/overview.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/assetmgmt/overview-with-ds.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/assetmgmt/overview.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/assetmgmt/overview-with-ds.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
-${readFileSync(__dirname + '/src/styles/assetmgmt/card.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/assetmgmt/card.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*") {
-${readFileSync(__dirname + '/src/styles/assetmgmt/bulk-edit.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/assetmgmt/bulk-edit.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/services/active-user-overview.*") {
-${readFileSync(__dirname + '/src/styles/active-user-overview.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/active-user-overview.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/services/user-group-linking-ui/.*") {
-${readFileSync(__dirname + '/src/styles/user-group-linking.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/user-group-linking.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
-${readFileSync(__dirname + '/src/styles/knowledge-base-startpage.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/knowledge-base-startpage.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
-${readFileSync(__dirname + '/src/styles/design-system/feedback.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/button.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/panel.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/select.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/switch.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/datatable.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/pagination.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/search.css', {encoding: 'utf8'})}
-${readFileSync(__dirname + '/src/styles/design-system/modal.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/feedback.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/button.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/panel.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/select.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/switch.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/datatable.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/pagination.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/search.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/modal.css', {encoding: 'utf8'})}
 }`;
 }
