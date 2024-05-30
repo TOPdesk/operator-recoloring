@@ -3,9 +3,39 @@ import { readFileSync } from 'fs';
 import { themes, legacyTheme as theme } from "../themes/index.js";
 
 export default function createUserstyles(version, stylesDir) {
+	// No need for build input file thanks to https://stackoverflow.com/a/72053820/127947
+	const emptyRunId = 'no-need-for-input';
+
 	return {
 		name: 'create-userstyle-plugin',
-		generateBundle(_options, _bundle) {
+		buildStart() {
+			// To stop rollup whining about an input file
+			this.emitFile({
+					id: emptyRunId,
+					fileName: emptyRunId,
+					type: 'chunk',
+			});
+		},
+		resolveId(source) {
+			if (source === emptyRunId) {
+					// The leading \0 instructs other plugins and rollup not to try to resolve, load or transform this module
+					return `\0${emptyRunId}`;
+			}
+			return null;
+		},
+		load(id) {
+			if (id.includes(emptyRunId)) {
+					// some random code to avoid rollup empty chunk warning
+					return 'export const empty = true;';
+			}
+
+			return null;
+		},
+		generateBundle(_options, bundle) {
+			if (bundle[emptyRunId]) {
+				delete bundle[emptyRunId];
+			}
+
 			const styles = userStyles(stylesDir);
 
 			this.emitFile({

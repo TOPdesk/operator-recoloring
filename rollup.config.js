@@ -20,7 +20,6 @@ rimrafSync('docs');
 
 export default [
 	{ /* Generate recoloring css */
-		input: 'src/scripts/app.js',
 		output: {
 			dir: 'themes/'
 		},
@@ -29,7 +28,6 @@ export default [
 		]
 	},
 	{ /* Legacy location for styles */
-		input: 'src/scripts/app.js',
 		output: {
 			dir: 'public/'
 		},

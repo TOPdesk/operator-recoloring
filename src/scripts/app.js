@@ -1,1 +1,0 @@
-/* rollup needs an entry point */
