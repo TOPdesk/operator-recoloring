@@ -2,7 +2,6 @@ import { LitElement, html, unsafeCSS, render } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import styles from './rec-carousel.scss';
-import 'wicg-inert';
 
 /**
  * Allows a user to navigate through a set of images with captions.
@@ -300,7 +299,7 @@ export class RecCarousel extends LitElement {
 			}
 		}
 
-		/* Running the inert polyfill is expensive, so shouldn't happen _during_ the animation */
+		/* Probably best not to set inert _during_ the animation */
 		requestIdleCallback(() => this._slides.forEach(slide => {
 			const hidden = slide.getAttribute('aria-hidden');
 			if (hidden === 'false') {

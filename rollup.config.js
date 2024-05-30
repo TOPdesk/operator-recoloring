@@ -86,10 +86,6 @@ export default [
 				patterns: [ 'fonts/*.woff2', 'meta/mashup.png' ],
 				rootDir: './site'
 			}),
-			copy({
-				patterns: [ 'inert.esm.js' ],
-				rootDir: './node_modules/wicg-inert/dist'
-			}),
 			// Print bundle summary
 			summary()
 		],
