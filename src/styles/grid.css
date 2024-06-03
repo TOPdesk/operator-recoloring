@@ -215,7 +215,7 @@ div#columnsscroll {
 div#columnsscroll .column span {
 	color: var(--text-color);
 }
-div#columnsscroll .column:is(#_status, #_changetypecolumn, #_typecolumn) span > .gridicon {
+div#columnsscroll .column:is(#_status, #_changetypecolumn, #_typecolumn, #_type) span > .gridicon {
 	filter: var(--filter);
 }
 div#columnsscroll .column .normal,
