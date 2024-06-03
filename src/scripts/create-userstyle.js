@@ -108,7 +108,7 @@ ${readFileSync(stylesDir + '/login/login.css', {encoding: 'utf8'})}
 @-moz-document regexp("http(s)?://.*/passwordforgottenrequest.*") {
 ${readFileSync(stylesDir + '/login/passwordforgotten.css', {encoding: 'utf8'})}
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 ${readFileSync(stylesDir + '/button.css', { encoding: 'utf8' })}
 ${readFileSync(stylesDir + '/general.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/tab.css', {encoding: 'utf8'})}
@@ -132,7 +132,7 @@ ${readFileSync(stylesDir + '/audit-trail.css', {encoding: 'utf8'})}
 @-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
 ${readFileSync(stylesDir + '/concurrent-users.css', {encoding: 'utf8'})}
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*") {
 ${readFileSync(stylesDir + '/grid.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {

@@ -44,7 +44,7 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 
 	@import url("http://localhost:5500/src/styles/login/passwordforgotten.css");
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 
 	@import url("http://localhost:5500/src/styles/button.css");
@@ -73,7 +73,7 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 
 	@import url("http://localhost:5500/src/styles/concurrent-users.css");
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/[^assetmgmt].*?action=.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 
 	@import url("http://localhost:5500/src/styles/grid.css");
