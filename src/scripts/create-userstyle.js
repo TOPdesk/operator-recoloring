@@ -173,5 +173,9 @@ ${readFileSync(stylesDir + '/design-system/datatable.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/pagination.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/search.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/modal.css', {encoding: 'utf8'})}
-}`;
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\dobject(?!\?action=showlist).*") {
+${readFileSync(stylesDir + '/configurationmgmt.css', {encoding: 'utf8'})}
+}
+`;
 }

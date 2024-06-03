@@ -147,6 +147,11 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
     @import url("http://localhost:5500/src/styles/design-system/search.css");
     @import url("http://localhost:5500/src/styles/design-system/modal.css");
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\dobject(?!\?action=showlist).*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/configurationmgmt.css");
+}
 ```
 
 

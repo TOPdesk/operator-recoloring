@@ -152,6 +152,20 @@ body.popup .divpopupcontainer .divpopupclientarea .grid-settings-popup-buttons {
 	border-color: var(--on-surface);
 }
 
+/* Config mgmt context menu (placed in toplevelwindow) */
+div.menupopup {
+	background-color: var(--surface);
+	color: var(--on-surface);
+}
+div.menupopupitem.menupopupitemhighlight {
+	background-color: var(--on-surface);
+	color: var(--surface);
+}
+div.menupopupitemdisabled {
+	background-color: var(--disabled);
+	color: var(--on-disabled);
+}
+
 /* stamp popup */
 body.popup .divpopupcontainer .fields .button[onclick^='MacroPopup'] {
 	background: var(--background);
