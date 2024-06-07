@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Soft Green (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.1.0
+@version        3.1.1
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -9473,7 +9473,7 @@ body {
 }
 
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!?action=showlist).*"), regexp("http(s)?://.*/tas/secure/freedobject(?!?action=showlist).*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\dobject(?!\?action=showlist).*") {
 /*
 * Configuration management
 */
