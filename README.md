@@ -66,7 +66,11 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 	@import url("http://localhost:5500/src/styles/time-registration.css");
 	@import url("http://localhost:5500/src/styles/audit-trail.css");
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*") {
+	@import url("http://localhost:5500/src/test-styles/variables.css");
 
+	@import url("http://localhost:5500/src/styles/graphic-overview.css");
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 

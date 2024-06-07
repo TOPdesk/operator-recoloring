@@ -1,0 +1,36 @@
+[guielement='node'],
+[guielement='currentnode'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	border-color: var(--surface);
+}
+[guielement='currentnode'] {
+	--text-color: var(--on-primary);
+}
+[guielement='node']:hover,
+[guielement='currentnode']:hover {
+	border-color: var(--primary);
+}
+[guielement='node_separator'] {
+	background-color: var(--surface);
+	border-color: var(--on-surface);
+}
+[guielement='current_node_separator'] {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+img[guielement='node_image'] {
+	filter: var(--on-surface-filter);
+}
+[guielement='collectionnode'] {
+	background-color: var(--background);
+	border: 1px solid var(--on-background);
+}
+[guielement='node_tab'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	border-color: var(--background);
+}
+[mtype='rectangle']:has(~ :is([guielement='node'], [guielement='currentnode'], [guielement='collectionnode'])) {
+	border-color: var(--on-background) !important;
+}
