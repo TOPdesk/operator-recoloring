@@ -16,12 +16,11 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 1. Click the stylus extension button, and choose **Manage**.
 1. Under "Actions" click **Write new style**. Make sure the **as Usercss** checkbox is unchecked.
 1. Give the new style a name, e.g. Local test recoloring.
-1. Click the **Import** button, a popup will appear with the title "Paste the Mozilla-format code".
-1. Copy the code below into the popup, adjust import url's if necessary.
-1. Click **Overwrite style**, the popup will close and a section will be created for each "@-moz-document" rule.
+1. Replace the `@-moz-document domain("example.com") { /* Insert code here... */ }` section with the code below.
+1. Adjust the import url's if necessary.
 1. Click **Save**.
 1. Enable the new style when in your TOPdesk environment (and make sure other styles are off).
-1. Make sure to enable the **Support custom colors** settings for your test user.
+1. Make sure to enable the **Support custom colors** user setting in TOPdesk for your test user.
 1. You can test the schemes by adding a `cobalt`, `green`, or `default` attribute to the `<html>` element.
 
 ```css
