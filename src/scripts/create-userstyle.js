@@ -38,12 +38,6 @@ export default function createUserstyles(version, stylesDir) {
 
 			const styles = userStyles(stylesDir);
 
-			this.emitFile({
-				type: 'asset',
-				source: `${metadata(version, theme)}${styles}`,
-				fileName: 'topdesk-operator-recoloring.user.css'
-			});
-
 			themes.forEach(theme => {
 				this.emitFile({
 					type: 'asset',
