@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Cobalt Blue (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.2.0
+@version        3.2.1
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -1837,7 +1837,7 @@ textarea[mtype='textarea'][readonly='true'] {
 	--static-filter: var(--on-background-filter);
 	--button-filter: var(--disabled-filter);
 
-	background: var(--background);
+	background: var(--background) !important;
 	color: var(--on-background);
 	--text-color: var(--on-background);
 }
