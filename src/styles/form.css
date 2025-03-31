@@ -49,7 +49,7 @@ textarea[mtype='textarea'][readonly='true'] {
 	--static-filter: var(--on-background-filter);
 	--button-filter: var(--disabled-filter);
 
-	background: var(--background);
+	background: var(--background) !important;
 	color: var(--on-background);
 	--text-color: var(--on-background);
 }
