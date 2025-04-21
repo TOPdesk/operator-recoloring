@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Default Dark (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.2.1
+@version        3.3.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -684,6 +684,26 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 	background: var(--on-surface);
 	color: var(--surface);
 }
+
+/**
+ * Multi select control
+ */
+[guielement='multi_select_control'] [guielement='multi_select_control_item'] {
+	--bg-color: var(--background);
+	--text-color: var(--on-background);
+
+	background-color: var(--bg-color);
+
+	[guielement='list_item'] {
+		background-color: var(--bg-color);
+	}
+
+	&:hover {
+		--bg-color: var(--primary);
+		--text-color: var(--on-primary);
+	}
+}
+
 
 /* Loading screen */
 [guielement='toplevelwindow'] > [mstyles~='content_area'] {
@@ -3858,6 +3878,299 @@ div#checklist .date-and-time .control input[aria-invalid='true'] + .icon {
 
 [mtype='grid'] [id$='_content'] [style*='border-right'] {
 	border-color: var(--on-background) !important;
+}
+
+/**
+ * Service card
+ */
+
+/* General tab */
+[guielement='ssd_preview_container'] {
+	background-color: var(--background);
+
+	[guielement='ssd_preview'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+
+	[guielement='details_panel_header'],
+	[guielement='details_panel'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+}
+
+/* Change availability popup search icon */
+[guielement='services_outer_form_list'] [guielement='services_outer_search_bar'] [guielement='icon'] {
+	filter: var(--on-surface-filter);
+}
+
+/* Flows tab */
+[guielement='searchlist_header_cell']:has(> [handle='service_flow.list.header']) {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	font-weight: 700;
+}
+
+[handle='service_flow_list'] [guielement='list_item']:hover {
+	background-color: var(--primary);
+}
+
+[guielement='button'][handle='service_flow.add_new_flow'],
+[guielement='service_flow_type_popup_shortcut_button'],
+[guielement='form_preview_button'] {
+	background: var(--primary);
+	border-color: var(--primary);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
+
+	[guielement='icon'] {
+		filter: var(--filter);
+	}
+
+	&:hover {
+		background: var(--primary-muted);
+		border-color: var(--primary-muted);
+
+		--text-color: var(--on-primary);
+		--filter: var(--on-primary-filter);
+	}
+
+	&:active {
+		background: var(--on-primary);
+		border-color: var(--primary);
+
+		--text-color: var(--primary);
+		--filter: var(--primary-filter);
+	}
+}
+
+/* Close translation button */
+[guielement='toolbar_button'][handle='translation_view_button'][mstyles~='aqua'] {
+	background-color: var(--on-background);
+		--text-color: var(--background);
+
+	&:hover {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+}
+/**
+ * Form editor
+ */
+
+[guielement='form_sheet_container'] {
+	background-color: var(--background);
+
+	[guielement='form_sheet'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+
+		[mstyles='form_title_group'] + [mtype='group'] {
+			/* divider between title and form */
+			border-color: var(--on-surface) !important;
+		}
+
+		[handle='formdesigner.content'] > div:last-child {
+			/* bottom spacer */
+			background-color: transparent !important;
+		}
+	}
+
+	[guielement='left_side_panel'] {
+		background-color: var(--background);
+	}
+}
+
+/* Question type side bar */
+:is(
+	[guielement='form_sheet_container'],
+	[guielement='toplevelwindow']:has([guielement='form_sheet_container']) ~ #dragdiv
+) [guielement='minimized_item'] {
+	--drag-bg: var(--surface);
+	--drag-filter: var(--on-surface-filter);
+	--item-bg: var(--surface);
+	--item-filter: var(--on-surface-filter);
+
+	&:hover {
+		--drag-bg: var(--primary);
+		--drag-filter: var(--on-primary-filter);
+		--item-bg: var(--background);
+		--item-filter: var(--on-background-filter);
+	}
+
+	#dragdiv & {
+		border-color: var(--primary);
+	}
+
+	[guielement='minimized_item_icon'] {
+		background-color: var(--item-bg);
+
+		img {
+			filter: var(--item-filter);
+		}
+	}
+
+	[mstyles$='drag_handle'] {
+		background-color: var(--drag-bg);
+
+		img {
+			filter: var(--drag-filter);
+		}
+	}
+}
+
+:is(
+	[guielement='form_sheet_container'],
+	[guielement='toplevelwindow']:has([guielement='form_sheet_container']) ~ #dragdiv,
+	[guielement='translations_left_container'],
+	[guielement='translations_right_container'],
+) [guielement='formitem_maingroup'] {
+	&:focus {
+		outline: none !important;
+	}
+
+	/* Rich text */
+	&[handle='formitem.info'] {
+		[mtype='rtabutton']:not([aria-pressed='true']),
+		[handle='uploadImageButton'] > [guielement='icon-button'],
+		[handle='editImageAltButton'],
+		[handle='linkButton'] {
+			filter: var(--on-surface-filter);
+
+			&:hover {
+				filter: var(--primary-filter);
+			}
+		}
+	}
+
+	[guielement='formitem_read_background'],
+	[mstyles~='formitem_edit_background'],
+	[mstyles~='edit_text_area'] {
+		background-color: var(--surface);
+		border-color: transparent;
+
+		#dragdiv & {
+			background-color: var(--surface) !important;
+			border-color: var(--primary);
+		}
+
+		[mstyles~='drag_area'] {
+			background-color: var(--primary-muted);
+
+			&:hover {
+				background-color: var(--primary);
+			}
+
+			img {
+				filter: var(--on-primary-filter);
+			}
+		}
+
+		/* Field type icons, Attach file button icon, and Object ID filter and search icon */
+		:not([mstyles='drag_area']) img[guielement='icon']:not([mstyles='additional_info_image']) {
+			filter: var(--on-surface-filter);
+		}
+	}
+
+	/* Object/Room 'dropdowns' */
+	[guielement='textbox'][handle='DEFAULT_VALUE_CONTROL'] {
+		background-color: var(--background);
+		color: var(--on-background);
+		border: 1px solid var(--on-background);
+
+		[guielement='icon-button'] {
+			filter: var(--on-background-filter);
+		}
+	}
+
+	/* Dropdown chevron */
+	[guielement='icon-button'][mstyles='dropdown_button'] {
+		filter: var(--on-surface-filter);
+	}
+
+	/* Date and time icons */
+	[guielement='unittextbox'] [guielement='icon-button'] {
+		filter: var(--static-filter);
+	}
+
+	/* Revealed by othr question indicator */
+	[mstyles~='dependent_group'] {
+		background-color: var(--background);
+		--text-color: var(--on-background);
+		border-left: 5px solid var(--primary);
+
+		[guielement='icon'] {
+			filter: var(--on-background-filter);
+		}
+	}
+}
+
+/* Card preview panel */
+[guielement='form_sheet_container'] [guielement='card_preview'] {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+
+	[role='tab']:not([aria-selected='true']) {
+		border-color: var(--on-surface);
+	}
+
+	[guielement='icon']:has(+ [mstyles~='form_type_label']) {
+		filter: var(--on-surface-filter);
+	}
+
+	/* Summary */
+	[guielement='mg-content'] [guielement='unittextbox'] {
+		background-color: var(--background);
+		--text-color: var(--on-background);
+	}
+
+	/* Audit trail row */
+	[handle='history_row'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+}
+
+[guielement='toplevelwindow']:has([guielement='form_sheet_container']) ~ [guielement='popup_background'] {
+	--text-color: var(--on-surface);
+
+	background-color: var(--surface);
+	border-color: var(--on-surface);
+}
+
+/* Translation view */
+[guielement='translations_left_container'],
+[guielement='translations_right_container'] {
+	background-color: var(--background);
+
+	[guielement='translation_content'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+
+	/* Attach file button */
+	[handle='formitem.uploadfield'] [guielement='field_button'] [guielement='icon'] {
+		filter: var(--on-surface-filter);
+	}
+}
+
+/* Dropdown edit options in translation view */
+[guielement='toplevelwindow']:has([guielement='translations_left_container']) ~
+		[guielement='popup_background'][handle='popup.properties.searchlist'] {
+		background-color: var(--surface);
+}
+
+/* Close translations button */
+[guielement='toplevelwindow']:has([guielement='translations_left_container'])
+		[guielement='toolbar_button'][handle='toggletranslate'][mstyles~='aqua'] {
+	background-color: var(--on-background);
+	--text-color: var(--background);
+
+	&:hover {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
 }
 
 }
