@@ -1,0 +1,4 @@
+.ds-page-header {
+	background-color: var(--background);
+	--ds-color-fg-muted: var(--on-background);
+}

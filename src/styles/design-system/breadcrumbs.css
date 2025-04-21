@@ -1,0 +1,14 @@
+.ds-breadcrumbs a {
+	--ds-link-fg-color: var(--primary-muted);
+	--ds-link-text-decoration-color: var(--primary-muted);
+
+	&[aria-current='page'] {
+		--ds-link-fg-color: var(--on-background);
+		--ds-link-text-decoration-color: var(--on-background);
+	}
+
+	:hover {
+		--ds-link-fg-color: var(--primary);
+		--ds-link-text-decoration-color: var(--primary);
+	}
+}

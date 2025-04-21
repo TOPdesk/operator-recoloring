@@ -160,9 +160,12 @@ ${readFileSync(stylesDir + '/active-user-overview.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/user-group-linking.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
-${readFileSync(stylesDir + '/knowledge-base-startpage.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/knowledgebase-v1/overview.css', {encoding: 'utf8'})}
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/details-page.*") {
+${readFileSync(stylesDir + '/knowledgebase-v1/knowledgeitem.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/.*") {
 ${readFileSync(stylesDir + '/design-system/feedback.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/button.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/panel.css', {encoding: 'utf8'})}
@@ -172,6 +175,10 @@ ${readFileSync(stylesDir + '/design-system/datatable.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/pagination.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/search.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/modal.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/tag.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/pageheader.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/breadcrumbs.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/tabs.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\\dobject(?!\\?action=showlist).*") {
 ${readFileSync(stylesDir + '/configurationmgmt.css', {encoding: 'utf8'})}

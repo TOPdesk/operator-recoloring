@@ -12,11 +12,20 @@ body {
 	--ds-color-fg-primary-subtle: var(--on-background); /* link:focus color */
 }
 
-.overview__ki-list .title:focus-visible {
-	/* link outline is unfortunately removed entirely, have to reinstate */
-	outline: 2px solid var(--on-background);
-	outline-offset: 4px;
-	border-radius: 4px;
+header.overview__header {
+	--ds-color-bg-subtle: var(--background);
+	--ds-color-fg-muted: var(--on-background);
+}
+
+.overview__ki-list .title {
+	--ds-link-fg-color: var(--on-background);
+
+	&:focus-visible {
+		/* link outline is unfortunately removed entirely, have to reinstate */
+		outline: 2px solid var(--on-background);
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
 }
 
 /*
