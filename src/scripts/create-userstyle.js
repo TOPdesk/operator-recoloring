@@ -122,6 +122,8 @@ ${readFileSync(stylesDir + '/taskboard.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/change.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/time-registration.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/audit-trail.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/service.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/form-editor.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*") {
 ${readFileSync(stylesDir + '/graphic-overview.css', {encoding: 'utf8'})}

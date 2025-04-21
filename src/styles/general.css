@@ -232,6 +232,26 @@ body.popup .divpopupcontainer .fields .button.disabledButton {
 	color: var(--surface);
 }
 
+/**
+ * Multi select control
+ */
+[guielement='multi_select_control'] [guielement='multi_select_control_item'] {
+	--bg-color: var(--background);
+	--text-color: var(--on-background);
+
+	background-color: var(--bg-color);
+
+	[guielement='list_item'] {
+		background-color: var(--bg-color);
+	}
+
+	&:hover {
+		--bg-color: var(--primary);
+		--text-color: var(--on-primary);
+	}
+}
+
+
 /* Loading screen */
 [guielement='toplevelwindow'] > [mstyles~='content_area'] {
 	background-color: var(--background);

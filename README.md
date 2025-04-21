@@ -70,6 +70,8 @@ Finally, two points of note:
 	@import url("http://localhost:5500/src/styles/change.css");
 	@import url("http://localhost:5500/src/styles/time-registration.css");
 	@import url("http://localhost:5500/src/styles/audit-trail.css");
+	@import url("http://localhost:5500/src/styles/service.css");
+	@import url("http://localhost:5500/src/styles/form-editor.css");
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");

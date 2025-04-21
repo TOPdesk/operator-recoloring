@@ -1,0 +1,75 @@
+/**
+ * Service card
+ */
+
+/* General tab */
+[guielement='ssd_preview_container'] {
+	background-color: var(--background);
+
+	[guielement='ssd_preview'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+
+	[guielement='details_panel_header'],
+	[guielement='details_panel'] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+}
+
+/* Change availability popup search icon */
+[guielement='services_outer_form_list'] [guielement='services_outer_search_bar'] [guielement='icon'] {
+	filter: var(--on-surface-filter);
+}
+
+/* Flows tab */
+[guielement='searchlist_header_cell']:has(> [handle='service_flow.list.header']) {
+	background-color: var(--surface);
+	--text-color: var(--on-surface);
+	font-weight: 700;
+}
+
+[handle='service_flow_list'] [guielement='list_item']:hover {
+	background-color: var(--primary);
+}
+
+[guielement='button'][handle='service_flow.add_new_flow'],
+[guielement='service_flow_type_popup_shortcut_button'],
+[guielement='form_preview_button'] {
+	background: var(--primary);
+	border-color: var(--primary);
+	--text-color: var(--on-primary);
+	--filter: var(--on-primary-filter);
+
+	[guielement='icon'] {
+		filter: var(--filter);
+	}
+
+	&:hover {
+		background: var(--primary-muted);
+		border-color: var(--primary-muted);
+
+		--text-color: var(--on-primary);
+		--filter: var(--on-primary-filter);
+	}
+
+	&:active {
+		background: var(--on-primary);
+		border-color: var(--primary);
+
+		--text-color: var(--primary);
+		--filter: var(--primary-filter);
+	}
+}
+
+/* Close translation button */
+[guielement='toolbar_button'][handle='translation_view_button'][mstyles~='aqua'] {
+	background-color: var(--on-background);
+		--text-color: var(--background);
+
+	&:hover {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+	}
+}
