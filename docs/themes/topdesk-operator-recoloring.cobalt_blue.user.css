@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Cobalt Blue (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.4.1
+@version        3.5.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -4097,6 +4097,294 @@ div#checklist .date-and-time .control input[aria-invalid='true'] + .icon {
 	}
 }
 
+[guielement="action_card"] {
+	[guielement="collapsible_panel_header"] [guielement="icon"] {
+		filter: var(--on-surface-filter);
+	}
+
+	[guielement="recipient_field_group"] {
+		background-color: transparent;
+		border-color: var(--on-background);
+
+		/* Dynamic field value buttons for recipient fields */
+		[handle="editButton"] {
+			--bg-color: var(--on-background);
+			--text-color: var(--background);
+			--filter-color: var(--background-filter);
+			--border-color: var(--on-background);
+
+			&:focus-visible,
+			&:hover {
+				--bg-color: var(--primary);
+				--border-color: var(--primary);
+				--text-color: var(--on-primary);
+				--filter-color: var(--on-primary-filter);
+
+				outline-color: transparent !important;
+			}
+		}
+
+		[guielement="address_item_box"] {
+			/* sometimes the box _is_ the editButton, other times it is a child of the editButton */
+			background-color: var(--bg-color);
+			border-color: var(--border-color);
+
+			[guielement="icon"] {
+				filter: var(--filter-color);
+			}
+		}
+	}
+
+	/* Insert dynamic field value buttons */
+	[handle="bericht1-insertfield"],
+	[handle="uri1-insertfield"],
+	[handle="headers1-insertfield"] {
+		--bg-color: var(--background);
+		--text-color: var(--on-background);
+		--filter-color: var(--on-background-filter);
+		--border-color: var(--on-background);
+
+		background-color: var(--bg-color);
+		border-color: var(--border-color);
+
+		& [guielement="icon-button"] {
+			filter: var(--filter-color);
+		}
+
+		&:hover, &:focus-visible {
+			--bg-color: var(--on-background);
+			--text-color: var(--background);
+			--filter-color: var(--background-filter);
+			--border-color: var(--on-background);
+		}
+
+		&:active {
+			--bg-color: var(--surface);
+			--text-color: var(--on-surface);
+			--filter-color: var(--on-surface-filter);
+			--border-color: var(--on-surface);
+		}
+	}
+}
+
+/* Insert field popup */
+[handle="insertfield-tree"] {
+	--bg-color: var(--background);
+	--text-color: var(--on-background);
+	--filter-color: var(--on-background-filter);
+
+	background-color: var(--bg-color);
+	border-bottom-color: transparent;
+
+	& > div[mstyles~="popup-body-content"] {
+		outline-color: transparent !important;
+	}
+
+	[guielement="icon"]:not([handle="tree_expand_image"]) {
+		filter: var(--filter-color);
+	}
+
+	[guielement="tree_node_line"],
+	[guielement="tree_node_line"] > div[mstyles~="tree_top_level"],
+	[guielement="tree_node_line"] > div[mstyles~="tree_sub_level"] {
+		background-color: var(--bg-color);
+	}
+
+	[guielement="tree_node_line"] {
+		&[mstyles~="selected"] {
+			--text-color: var(--on-primary);
+			--filter-color: var(--on-primary-filter);
+			--bg-color: var(--primary);
+		}
+
+		&:has(:is(
+			[handle="tree_expand_image"],
+			[handle="tree_expand_image"] + div[mstyles~="tree_top_level"],
+			[handle="tree_expand_image"] + div[mstyles~="tree_sub_level"],
+		):hover) [mtype="label"] {
+			text-decoration: underline;
+		}
+	}
+}
+
+/* Insert field popup Formatting options button */
+button[guielement="link_button"][handle="action.formatoption.caption"] {
+	background-color: var(--surface);
+	color: var(--on-surface);
+
+	&:disabled {
+		background-color: var(--disabled);
+		color: var(--on-disabled);
+	}
+
+	&:hover, &:focus-visible {
+		background-color: var(--surface);
+		color: var(--primary);
+		text-decoration: underline;
+	}
+}
+
+/* Insert field popup Formatting options popup */
+[guielement="popup"][mstyles~="formatting_options_popup_style"] {
+	background-color: transparent;
+	--text-color: var(--on-surface);
+	--tip-color: var(--surface);
+	outline-color: transparent !important;
+
+	[guielement="popup-header"],
+	[guielement="popup-body"] {
+		background-color: var(--surface);
+		border-color: var(--on-surface);
+	}
+	[guielement="popup-footer"] {
+		background-color: transparent;
+	}
+	[guielement="infotip-southeast"] {
+		border-top-color: var(--tip-color);
+		border-right-color: var(--tip-color);
+	}
+	[guielement="infotip-southwest"] {
+		border-top-color: var(--tip-color);
+		border-left-color: var(--tip-color);
+	}
+}
+
+/* Insert field popup recipient options popup */
+[guielement="popup"][mstyles~="recipient_popup_style"] {
+	background-color: transparent;
+	--text-color: var(--on-surface);
+	--tip-color: var(--surface);
+	outline-color: transparent !important;
+
+	[guielement="popup-body"],
+	[guielement="action-popup-footer"],
+	[guielement="action-popup-header"] {
+		background-color: var(--surface);
+		border-color: var(--on-surface);
+	}
+	[guielement="popup-body"] [guielement="mail_distribution_item_box"] {
+		background-color: var(--background);
+		--text-color: var(--on-background);
+		--filter-color: var(--on-background-filter);
+
+		&:hover {
+			background-color: var(--on-background);
+			--text-color: var(--background);
+			--filter-color: var(--background-filter);
+		}
+
+		[guielement="image"] {
+			filter: var(--filter-color);
+		}
+	}
+	[guielement="popup-header"] {
+		background-color: transparent;
+	}
+	[guielement="infotip-northeast"] {
+		border-bottom-color: var(--tip-color);
+		border-left-color: var(--tip-color);
+	}
+	[guielement="infotip-northwest"] {
+		border-bottom-color: var(--tip-color);
+		border-right-color: var(--tip-color);
+	}
+}
+
+/* Attachment table */
+[guielement="attachment_grid_frame"] {
+	background-color: var(--background);
+	border-color: var(--on-background);
+
+	[guielement="attachment_grid_cell"],
+	[guielement="attachment_icon_cell"] {
+		background-color: var(--background);
+		border-color: var(--on-background);
+
+		[guielement="icon"],
+		[guielement="icon-button"] {
+			filter: var(--on-background-filter);
+		}
+	}
+	[guielement="attachment_delete_cell"] {
+		background-color: var(--background);
+		border-color: var(--on-background);
+	}
+
+	[guielement="attachment_grid_header"] {
+		background-color: var(--surface);
+		color: var(--on-surface);
+		border-color: var(--on-surface);
+	}
+
+	[guielement="attachment_file_path"] {
+		background-color: transparent;
+		color: var(--on-background);
+	}
+
+	[guielement="labeled_icon_button"] {
+		--bg-color: var(--background);
+		--text-color: var(--on-background);
+		--filter-color: var(--on-background-filter);
+		--border-color: var(--on-background);
+
+		background-color: var(--bg-color);
+		border-color: var(--border-color);
+
+		[guielement="icon"] {
+			filter: var(--filter-color);
+		}
+
+		&:hover {
+			--bg-color: var(--on-background);
+			--text-color: var(--background);
+			--filter-color: var(--background-filter);
+			--border-color: var(--on-background);
+		}
+
+		&:active {
+			--bg-color: var(--surface);
+			--text-color: var(--on-surface);
+			--filter-color: var(--on-surface-filter);
+			--border-color: var(--on-surface);
+		}
+	}
+}
+
+/* Link attachments popup */
+[guielement="popup"]:has([guielement="fileservice_file_list"]) {
+	[guielement="fileservice_outer_search_bar"] [guielement="icon"] {
+		filter: var(--on-surface-filter);
+	}
+
+	[guielement="multi_select_control"] {
+		background-color: var(--background) !important;
+		--text-color: var(--on-background);
+	}
+
+	[guielement="labeled_icon_button"] {
+		--bg-color: var(--background);
+		--text-color: var(--on-background);
+		--filter-color: var(--on-background-filter);
+		--border-color: var(--on-background);
+
+		background-color: var(--bg-color);
+		border-color: var(--border-color);
+
+		&:hover {
+			--bg-color: var(--on-background);
+			--text-color: var(--background);
+			--filter-color: var(--background-filter);
+			--border-color: var(--on-background);
+		}
+
+		&:active {
+			--bg-color: var(--surface);
+			--text-color: var(--on-surface);
+			--filter-color: var(--on-surface-filter);
+			--border-color: var(--on-surface);
+		}
+	}
+}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 /*
