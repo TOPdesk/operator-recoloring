@@ -48,7 +48,7 @@ Finally, two points of note:
 
 	@import url("http://localhost:5500/src/styles/login/passwordforgotten.css");
 }
-@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*"), regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
+@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
 
 	@import url("http://localhost:5500/src/styles/button.css");
@@ -61,7 +61,6 @@ Finally, two points of note:
 	@import url("http://localhost:5500/src/styles/share.css");
 	@import url("http://localhost:5500/src/styles/form.css");
 	@import url("http://localhost:5500/src/styles/knowledge-item.css");
-	@import url("http://localhost:5500/src/styles/email.css");
 	@import url("http://localhost:5500/src/styles/selection.css");
 	@import url("http://localhost:5500/src/styles/card.css");
 	@import url("http://localhost:5500/src/styles/planboard.css");
@@ -72,6 +71,11 @@ Finally, two points of note:
 	@import url("http://localhost:5500/src/styles/audit-trail.css");
 	@import url("http://localhost:5500/src/styles/service.css");
 	@import url("http://localhost:5500/src/styles/form-editor.css");
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
+	@import url("http://localhost:5500/src/test-styles/variables.css");
+
+	@import url("http://localhost:5500/src/styles/email.css");
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/mango/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
