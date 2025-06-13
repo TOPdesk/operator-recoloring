@@ -124,6 +124,7 @@ ${readFileSync(stylesDir + '/audit-trail.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/service.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/form-editor.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/action-card.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/action-explorer.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 ${readFileSync(stylesDir + '/email.css', {encoding: 'utf8'})}
