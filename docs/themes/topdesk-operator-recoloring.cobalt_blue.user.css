@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Cobalt Blue (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.5.0
+@version        3.6.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -4384,6 +4384,45 @@ button[guielement="link_button"][handle="action.formatoption.caption"] {
 			--border-color: var(--on-surface);
 		}
 	}
+}
+[guielement="collapsible_panel_container"] {
+	[guielement="tree_node_line"] {
+		--text-color: var(--on-surface);
+		--filter: var(--on-surface-filter);
+
+		:is([mstyles~="tree_top_level"], [mstyles~="tree_sub_level"]) {
+			&[mtype="label"] {
+				color: var(--text-color) !important;
+			}
+			&[guielement="icon"]:not([handle="tree_expand_image"]) {
+				filter: var(--filter);
+			}
+		}
+
+		&[mstyles~="selected"], [mstyles~="selected"] {
+			--text-color: var(--surface);
+			--filter: var(--surface-filter);
+			background-color: var(--on-surface);
+		}
+	}
+}
+
+[mtype="group"]:has(> [guielement="richtextlabel"] > a[href="/services/action-v1/overview.html"]) {
+	[guielement="icon"] {
+		filter: var(--on-background-filter);
+	}
+
+	a[href="/services/action-v1/overview.html"] {
+		color: var(--on-background) !important;
+
+		&:hover, &:focus-visible {
+			color: var(--primary) !important;
+		}
+	}
+}
+
+[mtype="group"]:has(> [handle="tas.reference.actions"]) {
+	border-color: var(--surface) !important;
 }
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
