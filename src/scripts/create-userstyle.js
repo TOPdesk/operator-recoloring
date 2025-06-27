@@ -187,5 +187,8 @@ ${readFileSync(stylesDir + '/design-system/tabs.css', {encoding: 'utf8'})}
 @-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\\dobject(?!\\?action=showlist).*") {
 ${readFileSync(stylesDir + '/configurationmgmt.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/events/index.html.*") {
+	${readFileSync(stylesDir + '/event/event-card.css', {encoding: 'utf8'})}
+}
 `;
 }
