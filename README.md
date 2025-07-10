@@ -73,6 +73,7 @@ Finally, two points of note:
 	@import url("http://localhost:5500/src/styles/form-editor.css");
 	@import url("http://localhost:5500/src/styles/action-card.css");
 	@import url("http://localhost:5500/src/styles/action-explorer.css");
+	@import url("http://localhost:5500/src/styles/settings.css");
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
 	@import url("http://localhost:5500/src/test-styles/variables.css");
