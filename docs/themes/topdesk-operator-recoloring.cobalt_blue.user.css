@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Cobalt Blue (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.7.0
+@version        3.8.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -4423,6 +4423,89 @@ button[guielement="link_button"][handle="action.formatoption.caption"] {
 
 [mtype="group"]:has(> [handle="tas.reference.actions"]) {
 	border-color: var(--surface) !important;
+}
+[guielement="settings_window"] {
+	--filter: var(--on-background-filter);
+
+	/*
+	 * Sidebar and overview items
+	 */
+	[guielement="icon"]:not([handle="tree_expand_image"]) {
+		filter: var(--filter);
+	}
+
+	[guielement="tree_node_line"][mstyles~="edited_tree_item"] {
+		background-color: var(--background);
+	}
+
+	[guielement="tree_node_line"][mstyles~="selected"] {
+		background-color: var(--primary);
+		--text-color: var(--on-primary);
+		--filter: var(--on-primary-filter);
+
+		div[mstyles~="tree_sub_level"],
+		div[mstyles~="tree_top_level"] {
+			background-color: var(--primary);
+		}
+	}
+
+	/*
+	 * Separators
+	 */
+	[guielement="block_content"],
+	[mstyles="overview_group"] {
+		border-bottom-color: var(--on-background);
+	}
+
+
+	/*
+	 * Search lists
+	 */
+	[guielement="searchlist_top"] {
+		background: linear-gradient(to top, var(--on-background) 1px, var(--background) 1px);
+		--text-color: var(--on-surface);
+
+	}
+	[guielement="searchlist_bottom"] {
+		background-color: var(--background);
+
+		[handle^="searchlist_row"] {
+			background-color: var(--background);
+		}
+	}
+	[handle="sash"] {
+		filter: var(--on-background);
+	}
+
+	/*
+	 * Customized imports grid
+	 */
+	[guielement="settings_grid_title"] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+
+		[mstyles~="custom_import_grid_title"] {
+			border-left-color: var(--on-surface);
+		}
+	}
+
+	[guielement="settings_grid_row"] {
+		background-color: var(--background);
+		--text-color: var(--on-background);
+
+		[mstyles~="import_row"] {
+			border-left-color: var(--text-color);
+		}
+
+		&:has([mstyles~="import_row"]:hover) [mstyles~="import_row"]{
+			text-decoration: underline;
+		}
+
+		&[mstyles~="selected"] {
+			background-color: var(--primary);
+			--text-color: var(--on-primary)
+		}
+	}
 }
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
