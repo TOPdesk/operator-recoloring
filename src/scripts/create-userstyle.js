@@ -195,5 +195,11 @@ ${readFileSync(stylesDir + '/event/event-card.css', {encoding: 'utf8'})}
 @-moz-document regexp("http(s)?://.*/tas/secure/report\?.*") {
 ${readFileSync(stylesDir + '/report/report.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/marketplacewidget/widget.*") {
+${readFileSync(stylesDir + '/actionmgmt/marketplace-widget.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/services/action-v1/infoWidget.*") {
+${readFileSync(stylesDir + '/actionmgmt/info-widget.css', {encoding: 'utf8'})}
+}
 `;
 }

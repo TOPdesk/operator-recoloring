@@ -23,6 +23,56 @@
 	filter: var(--on-surface-filter);
 }
 
+/* Action Management module page */
+[guielement="widget_button_with_description"] {
+	--bg-color: var(--background);
+	--text-color: var(--on-background);
+	--heading-color: var(--on-background);
+	--button-color: var(--background);
+	--border-color: var(--on-background);
+	--filter: var(--on-background-filter);
+
+	background-color: var(--bg-color);
+	border-color: var(--border-color);
+
+	[guielement="widget_button_with_description_left_side"] {
+		background-color: var(--button-color);
+		border-top-left-radius: inherit;
+		border-bottom-left-radius: inherit;
+
+		[guielement="icon"] {
+			filter: var(--filter);
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition-property: transform;
+				transition-duration: 0.15s;
+				transition-timing-function: ease-out;
+			}
+		}
+	}
+
+	[guielement="widget_button_with_description_header"] {
+		color: var(--heading-color);
+	}
+
+	&:hover {
+		--heading-color: var(--primary);
+		--border-color: var(--primary);
+		--filter: var(--primary-filter);
+
+		[guielement="icon"] {
+			transform: scale(1.4);
+		}
+	}
+
+	&:active {
+		--heading-color: var(--primary);
+		--border-color: var(--primary);
+		--button-color: var(--primary);
+		--filter: var(--on-primary-filter);
+	}
+}
+
 /* Main pages widget / Tile widgets */
 [guielement^='widget_page_image_button'] {
 	background: var(--primary);

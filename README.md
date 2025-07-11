@@ -190,6 +190,16 @@ Finally, two points of note:
 
     @import url("http://localhost:5500/src/styles/report/report.css");
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/marketplacewidget/widget.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/actionmgmt/marketplace-widget.css");
+}
+@-moz-document regexp("http(s)?://.*/services/action-v1/infoWidget.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/actionmgmt/info-widget.css");
+}
 ```
 
 
