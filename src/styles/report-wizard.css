@@ -1,0 +1,25 @@
+[role="tabpanel"]:has([handle^="report.wizard"]) {
+
+	/*
+	 * Field selection table
+	 */
+	[guielement="overview_header_cell"] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+		border-left-color: var(--on-surface);
+	}
+
+	[guielement="overview_cell"] {
+		background-color: var(--background);
+		--text-color: var(--on-background);
+		border-left-color: var(--on-background);
+	}
+
+	/*
+	 * Report display selection
+	 */
+	[guielement="option_block"][mstyles~="block_selected"] {
+		background-color: var(--background);
+		border: 1px solid var(--primary);
+	}
+}
