@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Soft Green (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.8.0
+@version        3.9.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -4505,6 +4505,31 @@ button[guielement="link_button"][handle="action.formatoption.caption"] {
 			background-color: var(--primary);
 			--text-color: var(--on-primary)
 		}
+	}
+}
+[role="tabpanel"]:has([handle^="report.wizard"]) {
+
+	/*
+	 * Field selection table
+	 */
+	[guielement="overview_header_cell"] {
+		background-color: var(--surface);
+		--text-color: var(--on-surface);
+		border-left-color: var(--on-surface);
+	}
+
+	[guielement="overview_cell"] {
+		background-color: var(--background);
+		--text-color: var(--on-background);
+		border-left-color: var(--on-background);
+	}
+
+	/*
+	 * Report display selection
+	 */
+	[guielement="option_block"][mstyles~="block_selected"] {
+		background-color: var(--background);
+		border: 1px solid var(--primary);
 	}
 }
 }
@@ -10721,7 +10746,7 @@ table.auditTrail tr td.sectionHeader {
 
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/events/index.html.*") {
-	body {
+body {
 	background-color: var(--background);
 }
 
@@ -10877,6 +10902,67 @@ h1 .subtitle {
 			&:hover, &:focus-visible {
 				color: var(--primary);
 			}
+		}
+	}
+}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/report?.*") {
+/*
+ * Bar chart, Line graph, Pie chart
+ */
+td.reportimage {
+	/* The graphs (and legends) are semi-transparent images that require a white background to be readable*/
+	background-color: #fff;
+}
+
+
+/*
+ * Table, Dynamic table, Table with details
+ */
+div.tablecontainer {
+	background-color: var(--background);
+	border-color: var(--background);
+
+	table.reporttable {
+		background-color: var(--background); /* Background of expanded table rows in dynamic table*/
+		border-color: var(--on-background); /* Bottom border of tables */
+
+		td,th {
+			border-color: var(--on-background);
+		}
+
+		a {
+			color: inherit;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+
+		tr:not(:is(.odd, .even)) th {
+			background-color: var(--background);
+			color: var(--on-background);
+		}
+
+		tr:is(.odd, .even, :has(th.summationheader)) {
+			& :is(th,td) {
+				background-color: var(--background);
+				color: var(--on-background);
+			}
+
+			&:hover >	:is(th,td) {
+				background-color: var(--surface);
+				color: var(--on-surface);
+			}
+
+			&[column_hidden="hidden"] :is(th) {
+				background-color: var(--on-background);
+				color: var(--background);
+			}
+		}
+
+		td.horizontalseparator {
+			filter: var(--on-background-filter);
 		}
 	}
 }
