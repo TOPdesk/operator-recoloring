@@ -190,7 +190,10 @@ ${readFileSync(stylesDir + '/design-system/tabs.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/configurationmgmt.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/events/index.html.*") {
-	${readFileSync(stylesDir + '/event/event-card.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/event/event-card.css', {encoding: 'utf8'})}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/report\?.*") {
+${readFileSync(stylesDir + '/report/report.css', {encoding: 'utf8'})}
 }
 `;
 }

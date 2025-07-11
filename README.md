@@ -185,6 +185,11 @@ Finally, two points of note:
 
     @import url("http://localhost:5500/src/styles/event/event-card.css");
 }
+@-moz-document regexp("http(s)?://.*/tas/secure/report\?.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/report/report.css");
+}
 ```
 
 
