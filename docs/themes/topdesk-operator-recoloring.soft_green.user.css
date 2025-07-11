@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Soft Green (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.9.0
+@version        3.10.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -1202,6 +1202,56 @@ body[contenteditable='true'] {
 }
 [guielement='widget_content_area'] [guielement='icon'] {
 	filter: var(--on-surface-filter);
+}
+
+/* Action Management module page */
+[guielement="widget_button_with_description"] {
+	--bg-color: var(--background);
+	--text-color: var(--on-background);
+	--heading-color: var(--on-background);
+	--button-color: var(--background);
+	--border-color: var(--on-background);
+	--filter: var(--on-background-filter);
+
+	background-color: var(--bg-color);
+	border-color: var(--border-color);
+
+	[guielement="widget_button_with_description_left_side"] {
+		background-color: var(--button-color);
+		border-top-left-radius: inherit;
+		border-bottom-left-radius: inherit;
+
+		[guielement="icon"] {
+			filter: var(--filter);
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition-property: transform;
+				transition-duration: 0.15s;
+				transition-timing-function: ease-out;
+			}
+		}
+	}
+
+	[guielement="widget_button_with_description_header"] {
+		color: var(--heading-color);
+	}
+
+	&:hover {
+		--heading-color: var(--primary);
+		--border-color: var(--primary);
+		--filter: var(--primary-filter);
+
+		[guielement="icon"] {
+			transform: scale(1.4);
+		}
+	}
+
+	&:active {
+		--heading-color: var(--primary);
+		--border-color: var(--primary);
+		--button-color: var(--primary);
+		--filter: var(--on-primary-filter);
+	}
 }
 
 /* Main pages widget / Tile widgets */
@@ -10964,6 +11014,53 @@ div.tablecontainer {
 		td.horizontalseparator {
 			filter: var(--on-background-filter);
 		}
+	}
+}
+}
+@-moz-document regexp("http(s)?://.*/tas/secure/marketplacewidget/widget.*") {
+body {
+	background-color: var(--surface);
+}
+
+a {
+	background-color: var(--primary);
+	color: var(--on-primary);
+	border: 1px solid var(--primary);
+
+	&:hover {
+		background-color: var(--primary-muted);
+		color: var(--on-primary);
+		border-color: var(--primary-muted);
+	}
+
+	&:active {
+		background-color: var(--on-primary);
+		color: var(--primary);
+		border-color: var(--primary);
+	}
+}
+}
+@-moz-document regexp("http(s)?://.*/services/action-v1/infoWidget.*") {
+body {
+	background-color: var(--surface);
+	color: var(--on-surface);
+}
+
+a.button.preferred {
+	background-color: var(--primary);
+	color: var(--on-primary);
+	border: 1px solid var(--primary);
+
+	&:hover {
+		background-color: var(--primary-muted);
+		color: var(--on-primary);
+		border-color: var(--primary-muted);
+	}
+
+	&:active {
+		background-color: var(--on-primary);
+		color: var(--primary);
+		border-color: var(--primary);
 	}
 }
 }
