@@ -2,15 +2,9 @@
  * DS-Panel
  */
 .ds-panel {
-	--ds-color-bg-subtle: var(--surface); /* header background */
-	--ds-color-bg-default: var(--surface); /* content background */
+	--ds-color-bg-subtle: var(--background); /* header background */
+	--ds-color-bg-default: var(--background); /* content background */
+	border: 1px solid var(--on-background);
 
-	color: var(--on-surface);
-
-	--text-color: var(--on-surface);
-	--outline-color: var(--on-surface);
-
-	/* header-content divider border color, has the same variable as the panel border color itself */
-	border: none;
-	--ds-color-border-muted: var(--on-surface);
+	color: var(--on-background);
 }
