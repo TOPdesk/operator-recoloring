@@ -171,6 +171,9 @@ ${readFileSync(stylesDir + '/knowledgebase-v1/overview.css', {encoding: 'utf8'})
 @-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/details-page.*") {
 ${readFileSync(stylesDir + '/knowledgebase-v1/knowledgeitem.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/search-results.*") {
+${readFileSync(stylesDir + '/knowledgebase-v1/search-results.css', {encoding: 'utf8'})}
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/.*") {
 ${readFileSync(stylesDir + '/design-system/feedback.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/button.css', {encoding: 'utf8'})}
@@ -185,6 +188,9 @@ ${readFileSync(stylesDir + '/design-system/tag.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/pageheader.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/breadcrumbs.css', {encoding: 'utf8'})}
 ${readFileSync(stylesDir + '/design-system/tabs.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/accordion.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/checkbox.css', {encoding: 'utf8'})}
+${readFileSync(stylesDir + '/design-system/radio.css', {encoding: 'utf8'})}
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\\dobject(?!\\?action=showlist).*") {
 ${readFileSync(stylesDir + '/configurationmgmt.css', {encoding: 'utf8'})}

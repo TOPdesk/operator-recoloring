@@ -1,0 +1,35 @@
+/*
+ * Knowledge base search results
+ */
+html,
+body {
+	background-color: var(--background);
+	color: var(--on-background);
+}
+
+.search-preview-container {
+	& .breadcrumb {
+		color: var(--primary-muted);
+
+		&:hover {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+
+		&:focus {
+			color: var(--on-primary);
+			text-decoration: underline;
+			--ds-link-focus-bg-color: var(--primary);
+		}
+
+		& + .separator {
+			color: var(--primary-muted);
+		}
+	}
+
+	& .tags-container,
+	& .preview-panel__modification-date,
+	& .preview-panel__section-heading {
+		color: var(--on-background);
+	}
+}

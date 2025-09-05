@@ -1,0 +1,20 @@
+/*
+ * DS-Checkbox
+ */
+.ds-checkbox, .ds-checkbox-indeterminate {
+	--ds-color-field-label-fg: var(--on-background); /* label */
+
+	--ds-color-bg-default: var(--background); /* Unchecked background */
+	--ds-color-border-default: var(--on-background); /* Unchecked border */
+
+	--ds-color-bg-primary-emphasis: var(--on-background); /* Checked background */
+	--ds-color-fg-primary-subtle: var(--background); /* Checkmark */
+	--ds-color-border-primary-emphasis: var(--background); /* Checked border */
+
+	--ds-color-border-primary-soft: var(--on-background); /* Hover ring */
+
+	&[focused-visible] {
+		--ds-color-border-primary-emphasis: var(--on-background); /* border and outline */
+		--ds-color-border-primary-soft: var(--background); /* Inner carve out of the outline */
+	}
+}

@@ -1,0 +1,13 @@
+/*
+ * DS-Accordion
+ */
+.ds-accordion .ds-accordion-invoker-button {
+	color: var(--on-background);
+	--ds-color-fg-muted: currentColor; /* Chevron */
+
+	&:hover, &:focus-visible {
+		background-color: var(--surface);
+		border-left-color: var(--primary);
+		color: var(--primary);
+	}
+}

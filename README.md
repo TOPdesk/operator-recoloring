@@ -158,6 +158,11 @@ Finally, two points of note:
 
     @import url("http://localhost:5500/src/styles/knowledgebase-v1/knowledgeitem.css");
 }
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/search-results.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/knowledgebase-v1/search-results.css");
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/.*") {
     @import url("http://localhost:5500/src/test-styles/variables.css");
 
@@ -174,6 +179,9 @@ Finally, two points of note:
     @import url("http://localhost:5500/src/styles/design-system/pageheader.css");
     @import url("http://localhost:5500/src/styles/design-system/breadcrumbs.css");
     @import url("http://localhost:5500/src/styles/design-system/tabs.css");
+    @import url("http://localhost:5500/src/styles/design-system/accordion.css");
+    @import url("http://localhost:5500/src/styles/design-system/checkbox.css");
+    @import url("http://localhost:5500/src/styles/design-system/radio.css");
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\dobject(?!\?action=showlist).*") {
     @import url("http://localhost:5500/src/test-styles/variables.css");
