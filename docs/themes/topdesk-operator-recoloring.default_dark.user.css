@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Default Dark (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.10.0
+@version        3.10.1
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -9903,8 +9903,7 @@ settings-sidebar.panel .tab-content .entityCreator input:focus {
 
 }
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*") {
-html,
-body {
+.bulk-edit-page {
 	background-color: var(--background);
 	color: var(--on-background);
 
@@ -9912,20 +9911,22 @@ body {
 }
 .page-header {
 	--ds-color-bg-primary-default: var(--background);
+
+	& .title {
+		color: var(--on-background);
+	}
 }
 
 /*
  * Asset list
  */
-.asset-list {
-	--ds-color-fg-muted: var(--on-background);
-}
-.asset-list .ds-icon {
-	color: var(--on-background);
-}
-.asset-list a {
-	color: var(--primary);
-	text-decoration: underline;
+.bulk-edit__asset-list__container {
+	& .ds-list {
+		color: var(--on-background);
+	}
+	& .asset_item-name {
+		color: var(--primary);
+	}
 }
 
 }
@@ -10109,6 +10110,44 @@ header.overview__header {
 }
 
 }
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/search-results.*") {
+/*
+ * Knowledge base search results
+ */
+html,
+body {
+	background-color: var(--background);
+	color: var(--on-background);
+}
+
+.search-preview-container {
+	& .breadcrumb {
+		color: var(--primary-muted);
+
+		&:hover {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+
+		&:focus {
+			color: var(--on-primary);
+			text-decoration: underline;
+			--ds-link-focus-bg-color: var(--primary);
+		}
+
+		& + .separator {
+			color: var(--primary-muted);
+		}
+	}
+
+	& .tags-container,
+	& .preview-panel__modification-date,
+	& .preview-panel__section-heading {
+		color: var(--on-background);
+	}
+}
+
+}
 @-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/.*") {
 /*
  * DS-Feedback-Link
@@ -10212,17 +10251,11 @@ header.overview__header {
  * DS-Panel
  */
 .ds-panel {
-	--ds-color-bg-subtle: var(--surface); /* header background */
-	--ds-color-bg-default: var(--surface); /* content background */
+	--ds-color-bg-subtle: var(--background); /* header background */
+	--ds-color-bg-default: var(--background); /* content background */
+	border: 1px solid var(--on-background);
 
-	color: var(--on-surface);
-
-	--text-color: var(--on-surface);
-	--outline-color: var(--on-surface);
-
-	/* header-content divider border color, has the same variable as the panel border color itself */
-	border: none;
-	--ds-color-border-muted: var(--on-surface);
+	color: var(--on-background);
 }
 
 /*
@@ -10472,6 +10505,63 @@ header.overview__header {
 		&[aria-selected="true"] {
 			border-top: 5px solid var(--primary);
 		}
+	}
+}
+
+/*
+ * DS-Accordion
+ */
+.ds-accordion .ds-accordion-invoker-button {
+	color: var(--on-background);
+	--ds-color-fg-muted: currentColor; /* Chevron */
+
+	&:hover, &:focus-visible {
+		background-color: var(--surface);
+		border-left-color: var(--primary);
+		color: var(--primary);
+	}
+}
+
+/*
+ * DS-Checkbox
+ */
+.ds-checkbox, .ds-checkbox-indeterminate {
+	--ds-color-field-label-fg: var(--on-background); /* label */
+
+	--ds-color-bg-default: var(--background); /* Unchecked background */
+	--ds-color-border-default: var(--on-background); /* Unchecked border */
+
+	--ds-color-bg-primary-emphasis: var(--on-background); /* Checked background */
+	--ds-color-fg-primary-subtle: var(--background); /* Checkmark */
+	--ds-color-border-primary-emphasis: var(--background); /* Checked border */
+
+	--ds-color-border-primary-soft: var(--on-background); /* Hover ring */
+
+	&[focused-visible] {
+		--ds-color-border-primary-emphasis: var(--on-background); /* border and outline */
+		--ds-color-border-primary-soft: var(--background); /* Inner carve out of the outline */
+	}
+}
+
+/*
+ * DS-Radio
+ */
+.ds-radio {
+	--ds-color-field-label-fg: var(--on-background); /* label */
+	--ds-color-border-default: var(--on-background); /* default border */
+	--ds-color-bg-primary-emphasis: var(--on-background); /* selected border and fill */
+	--ds-color-fg-primary-subtle: var(--background); /* pip */
+
+	&:has(label:hover, input:hover) {
+		--ds-color-border-primary-emphasis: var(--background);/* selected border and fill */
+		--ds-color-fg-primary-subtle: var(--on-background); /* pip */
+		--ds-color-bg-primary-soft: var(--on-background); /* Hover ring */
+	}
+
+	&:has(input:focus-visible) {
+		--ds-color-border-primary-emphasis: var(--on-background);/* selected border and fill and outline */
+		--ds-color-fg-primary-subtle: var(--background); /* pip */
+		--ds-color-bg-primary-soft: var(--background); /* Inner carve out of the outline */
 	}
 }
 
