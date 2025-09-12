@@ -165,6 +165,9 @@ ${readFileSync(stylesDir + '/active-user-overview.css', {encoding: 'utf8'})}
 @-moz-document regexp("http(s)?://.*/services/user-group-linking-ui/.*") {
 ${readFileSync(stylesDir + '/user-group-linking.css', {encoding: 'utf8'})}
 }
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/suggestions-popup.*") {
+${readFileSync(stylesDir + '/knowledgebase-v1/suggestions-popup.css', {encoding: 'utf8'})}
+}
 @-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
 ${readFileSync(stylesDir + '/knowledgebase-v1/overview.css', {encoding: 'utf8'})}
 }

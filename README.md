@@ -148,6 +148,11 @@ Finally, two points of note:
 
     @import url("http://localhost:5500/src/styles/user-group-linking.css");
 }
+@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/suggestions-popup.*") {
+    @import url("http://localhost:5500/src/test-styles/variables.css");
+
+    @import url("http://localhost:5500/src/styles/knowledgebase-v1/suggestions-popup.css");
+}
 @-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
     @import url("http://localhost:5500/src/test-styles/variables.css");
 
