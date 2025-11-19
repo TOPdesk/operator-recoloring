@@ -1,4 +1,4 @@
-@import '../../styles/mixins.scss';
+@use '../../styles/mixins.scss' as mixin;
 
 :host {
 	background: #eee;
@@ -60,7 +60,7 @@
 	color: inherit;
 }
 .nav-control .visually-hidden {
-	@include visually-hidden;
+	@include mixin.visually-hidden;
 }
 
 .nav-control:hover > svg {

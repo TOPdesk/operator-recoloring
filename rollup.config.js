@@ -57,6 +57,11 @@ export default [
 				minify:true,
 			}),
 			postcss({
+				use: {
+					sass: {
+						silenceDeprecations: ['legacy-js-api'],
+					}
+				},
 				minimize: true,
 				inject: false,
 			}),
