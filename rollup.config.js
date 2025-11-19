@@ -1,4 +1,4 @@
-import { rimrafSync } from 'rimraf';
+import { rm } from 'node:fs/promises'
 
 import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
@@ -14,8 +14,8 @@ import { readFileSync } from 'fs';
 const version = JSON.parse(readFileSync(new URL('./package.json', import.meta.url))).version;
 const styleDir = './src/styles';
 
-rimrafSync('themes');
-rimrafSync('docs');
+await rm('./themes', { recursive: true, force: true })
+await rm('./docs', { recursive: true, force: true })
 
 export default [
 	{ /* Generate recoloring css */
