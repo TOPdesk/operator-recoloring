@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { readFileSync } from 'fs';
 import { themes, legacyTheme as theme } from "../themes/index.js";
+import { sections } from "./sections.js";
 
 export default function createUserstyles(version, stylesDir) {
 	// No need for build input file thanks to https://stackoverflow.com/a/72053820/127947
@@ -95,120 +96,19 @@ function variables(theme) {
 }
 
 function userStyles(stylesDir) {
-	return `
-@-moz-document regexp("http(s)?://.*/tas/(secure|public)/login/form.*"), regexp("http(s)?://.*/tas/(secure|public)/login/saml"), regexp("http(s)?://.*/tas/(secure|public)/logout"), regexp("http(s)?://.*/tas/admin/.*") {
-${readFileSync(stylesDir + '/login/login.css', {encoding: 'utf8'})}
+	return sections.map(section => userStylesSection(stylesDir, section.paths, section.files)).join('');
 }
-@-moz-document regexp("http(s)?://.*/passwordforgottenrequest.*") {
-${readFileSync(stylesDir + '/login/passwordforgotten.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*"), regexp("http(s)?://.*/services/workflows-v2.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*"), regexp("http(s)?://.*/tas/secure/suggestions/.*"), regexp("http(s)?://.*/tas/secure/homescreen-html-widgets/.*"), regexp("http(s)?://.*/tas/secure/shareandsubscribe/.*") {
-${readFileSync(stylesDir + '/button.css', { encoding: 'utf8' })}
-${readFileSync(stylesDir + '/general.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/tab.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/menu.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/feed.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/process-pages.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/suggestions.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/share.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/form.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/knowledge-item.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/selection.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/card.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/planboard.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/reservations.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/taskboard.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/change.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/time-registration.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/audit-trail.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/service.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/form-editor.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/action-card.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/action-explorer.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/settings.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/report-wizard.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/emaileditor/.*") {
-${readFileSync(stylesDir + '/email.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/mango/.*") {
-${readFileSync(stylesDir + '/graphic-overview.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/concurrent_users/.*") {
-${readFileSync(stylesDir + '/concurrent-users.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/grid.*"), regexp("http(s)?://.*/tas/secure/(?!assetmgmt).*?action=.*") {
-${readFileSync(stylesDir + '/grid.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/agileboard/.*") {
-${readFileSync(stylesDir + '/agileboard.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-buttons.*") {
-${readFileSync(stylesDir + '/assetmgmt/module-page-buttons.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/module-page-migration-information.*") {
-${readFileSync(stylesDir + '/assetmgmt/module-page-migration.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*") {
-${readFileSync(stylesDir + '/assetmgmt/overview.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/assetmgmt/overview-with-ds.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/card.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/settings.*") {
-${readFileSync(stylesDir + '/assetmgmt/card.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*") {
-${readFileSync(stylesDir + '/assetmgmt/bulk-edit.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/active-user-overview.*") {
-${readFileSync(stylesDir + '/active-user-overview.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/user-group-linking-ui/.*") {
-${readFileSync(stylesDir + '/user-group-linking.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/suggestions-popup.*") {
-${readFileSync(stylesDir + '/knowledgebase-v1/suggestions-popup.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/overview.*") {
-${readFileSync(stylesDir + '/knowledgebase-v1/overview.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/details-page.*") {
-${readFileSync(stylesDir + '/knowledgebase-v1/knowledgeitem.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/knowledge-base-ui-v1/search-results.*") {
-${readFileSync(stylesDir + '/knowledgebase-v1/search-results.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/assetmgmt/bulk-edit.*"), regexp("http(s)?://.*/tas/secure/assetmgmt/overview.*"), regexp("http(s)?://.*/services/active-user-overview.*"), regexp("http(s)?://.*/services/user-group-linking-ui/.*"), regexp("http(s)?://.*/services/knowledge-base-ui-v1/.*") {
-${readFileSync(stylesDir + '/design-system/feedback.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/button.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/panel.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/select.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/switch.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/datatable.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/pagination.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/search.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/modal.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/tag.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/pageheader.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/breadcrumbs.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/tabs.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/accordion.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/checkbox.css', {encoding: 'utf8'})}
-${readFileSync(stylesDir + '/design-system/radio.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/hardware(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/software(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/license(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/telephonesystems(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/networkcomponent(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/inventory(?!\\?action=showlist).*"), regexp("http(s)?://.*/tas/secure/free\\dobject(?!\\?action=showlist).*") {
-${readFileSync(stylesDir + '/configurationmgmt.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/events/index.html.*") {
-${readFileSync(stylesDir + '/event/event-card.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/report\?.*") {
-${readFileSync(stylesDir + '/report/report.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/tas/secure/marketplacewidget/widget.*") {
-${readFileSync(stylesDir + '/actionmgmt/marketplace-widget.css', {encoding: 'utf8'})}
-}
-@-moz-document regexp("http(s)?://.*/services/action-v1/infoWidget.*") {
-${readFileSync(stylesDir + '/actionmgmt/info-widget.css', {encoding: 'utf8'})}
-}
-`;
+
+function userStylesSection(stylesDir, paths, files) {
+	const pathsArray = Array.isArray(paths) ? paths : Array.of(paths);
+	const filesArray = Array.isArray(files) ? files : Array.of(files);
+
+	const regexes = pathsArray.map(regex => `regexp("http(s)?://.*${regex}")`).join(', ');
+	const content = filesArray
+		.map(file => readFileSync(stylesDir + file, {encoding: 'utf8'}).trimEnd())
+		.join("")
+		.replace(/^(?!\s*$)/gm, '\t')
+		;
+
+	return '\n@-moz-document ' + regexes + ' {\n' + content + '\n}';
 }
