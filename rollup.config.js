@@ -6,13 +6,13 @@ import { rollupPluginHTML } from '@web/rollup-plugin-html';
 import { copy } from '@web/rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 import summary from "rollup-plugin-summary";
-
+import { readFileSync } from 'fs';
+import fg from "fast-glob";
 import createUserstyles from './src/scripts/create-userstyle.js';
 
-import { readFileSync } from 'fs';
 
 const version = JSON.parse(readFileSync(new URL('./package.json', import.meta.url))).version;
-const styleDir = './src/styles';
+// import { version } from './package.json' with { type: 'json' };
 
 await rm('./themes', { recursive: true, force: true })
 await rm('./docs', { recursive: true, force: true })
@@ -23,7 +23,16 @@ export default [
 			dir: 'themes/'
 		},
 		plugins: [
-			createUserstyles(version, styleDir),
+			createUserstyles(version, './src/styles'),
+			{
+				name: 'watch-external',
+				async buildStart() {
+					const files = await fg('src/styles/**/*.css');
+					for(let file of files){
+							this.addWatchFile(file);
+					}
+				}
+			}
 		]
 	},
 	{ /* Generate worker */

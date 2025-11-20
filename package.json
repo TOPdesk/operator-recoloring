@@ -9,6 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "dev": "rollup -c --watch",
     "build": "rollup -c",
     "site": "web-dev-server --open docs/ --node-resolve"
   },
@@ -26,6 +27,7 @@
     "@web/rollup-plugin-copy": "^0.5.1",
     "@web/rollup-plugin-html": "^2.3.0",
     "eslint": "^9.39.1",
+    "fast-glob": "^3.3.3",
     "rollup": "^4.53.3",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-summary": "^3.0.1",
