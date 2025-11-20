@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "rollup -c --watch",
+    "dev": "cross-env NODE_ENV=development rollup -c --watch",
     "build": "rollup -c",
     "site": "web-dev-server --open docs/ --node-resolve"
   },
@@ -26,6 +26,7 @@
     "@web/dev-server": "^0.4.6",
     "@web/rollup-plugin-copy": "^0.5.1",
     "@web/rollup-plugin-html": "^2.3.0",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "fast-glob": "^3.3.3",
     "rollup": "^4.53.3",

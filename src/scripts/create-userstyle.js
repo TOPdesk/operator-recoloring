@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { readFileSync } from 'fs';
-import { themes, legacyTheme as theme } from "../themes/index.js";
+import { themes, devTheme } from "../themes/index.js";
 import { sections } from "./sections.js";
+import { type } from 'os';
+
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 export default function createUserstyles(version, stylesDir) {
 	// No need for build input file thanks to https://stackoverflow.com/a/72053820/127947
@@ -39,6 +42,14 @@ export default function createUserstyles(version, stylesDir) {
 
 			const styles = userStyles(stylesDir);
 
+			if (isDevelopment) {
+				this.emitFile({
+					type: 'asset',
+					source: `${developmentMetadata()}${styles}`,
+					fileName: `topdesk-operator-recoloring.development.user.css`
+				});
+			}
+
 			themes.forEach(theme => {
 				this.emitFile({
 					type: 'asset',
@@ -66,8 +77,22 @@ ${variables(theme)}
 ==/UserStyle== */`;
 }
 
-function variables(theme) {
+function developmentMetadata() {
+	return `
+/* ==UserStyle==
+@name           Local test recoloring (TOPdesk Operator Recoloring)
+@namespace      github.com/topdesk/topdesk-operator-recoloring
+@version        0.0.1
+@description    Override the colors of the TOPdesk operator section, for accessibility purposes.
+@homepageURL    https://github.com/TOPdesk/operator-recoloring
+@supportURL     https://github.com/TOPdesk/operator-recoloring/issues
+@license        MIT
+@preprocessor   default
+${variables(devTheme)}
+==/UserStyle== */`;
+}
 
+function variables(theme) {
 	return `
 @var color background "Background" ${theme.background}
 @var text background-filter "Background filter" ${theme.backgroundFilter}
