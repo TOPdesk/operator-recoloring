@@ -25,14 +25,14 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@web/dev-server": "^0.4.6",
     "@web/rollup-plugin-copy": "^0.5.1",
-    "@web/rollup-plugin-html": "^2.3.0",
+    "@web/rollup-plugin-html": "^2.4.1",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "fast-glob": "^3.3.3",
     "rollup": "^4.53.3",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-summary": "^3.0.1",
-    "sass": "^1.94.1"
+    "sass": "^1.96.0"
   },
   "dependencies": {
     "@lion/tabs": "^0.13.1",
