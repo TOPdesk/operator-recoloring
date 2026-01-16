@@ -1,24 +1,41 @@
+/*
+ * Modal window for including KI parts in an incident
+ *
+ * Appears when clicking a result from the incident card suggestions popover
+ */
 .modal-pagination[role="navigation"] {
 	background-color: transparent;
 }
 
-.section {
-	&.section-selected {
-		background-color: transparent;
-		outline-color: transparent;
+.modal-content {
+	.section {
+		&.section-selected {
+			background-color: transparent;
+			outline-color: transparent;
+		}
+
+		& a {
+			color: var(--primary);
+			text-decoration-color: var(--primary);
+
+			&:focus-visible {
+				--ds-link-focus-bg-color: var(--primary);
+				color: var(--on-primary);
+				text-decoration-color: var(--on-primary);
+			}
+		}
 	}
 
-	& a {
-		color: var(--primary);
-		text-decoration-color: var(--primary);
+	.operator-notes-section {
+		background-color: transparent;
+		outline-color: var(--on-surface);
 
-		&:focus-visible {
-			--ds-link-focus-bg-color: var(--primary);
-			color: var(--on-primary);
-			text-decoration-color: var(--on-primary);
+		& .operator-notes-icon {
+			color: var(--on-surface);
 		}
 	}
 }
+
 
 .ds-menu-invoker {
 	background-color: var(--background);
