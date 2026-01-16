@@ -5,8 +5,12 @@
 	--text-color: var(--on-surface);
 }
 [guielement='explorer_body'] [guielement='tree_node_line'][mstyles~='selected'] {
-	background: var(--on-surface);
-	--text-color: var(--surface);
+	background: var(--primary);
+	--text-color: var(--on-primary);
+
+	& [mstyles~='selected'] {
+		background: transparent;
+	}
 }
 [guielement='explorer_body']
 	[guielement='tree_node_line']
