@@ -5,27 +5,15 @@ body {
 
 	--outline-color: var(--on-background);
 
-	--ds-color-fg-primary-default: var(--on-background); /* links */
-	--ds-color-fg-primary-emphasis: var(--on-background); /* empty group bullets */
-
-	--ds-color-bg-primary-mid: transparent; /* link:focus background */
-	--ds-color-fg-primary-subtle: var(--on-background); /* link:focus color */
+	--ds-link-fg-color: var(--on-background);
+	--ds-link-hover-fg-color: var(--primary);
+	--ds-link-focus-fg-color: var(--on-primary);
+	--ds-link-focus-bg-color: var(--primary);
 }
 
 header.overview__header {
 	--ds-color-bg-subtle: var(--background);
 	--ds-color-fg-muted: var(--on-background);
-}
-
-.overview__ki-list .title {
-	--ds-link-fg-color: var(--on-background);
-
-	&:focus-visible {
-		/* link outline is unfortunately removed entirely, have to reinstate */
-		outline: 2px solid var(--on-background);
-		outline-offset: 4px;
-		border-radius: 4px;
-	}
 }
 
 /*
