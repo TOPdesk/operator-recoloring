@@ -85,7 +85,12 @@
 	--ds-color-field-border: var(--on-background); /* field border */
 	--ds-color-field-fg: var(--on-background); /* field foreground */
 
-	/* focus colors */
-	--ds-color-field-outline-inner: transparent; /* box-shadow color */
-	--ds-color-field-outline-outer: var(--outline-color); /* border and outline */
+	--ds-color-field-outline-inner: var(--on-background); /* Hovered shadow ring */
+	--ds-color-field-border-focus: var(--on-background); /* Hovered border */
+
+	&[focused-visible] {
+		--ds-color-field-border-focus: var(--on-background);
+		--ds-color-field-outline-outer: var(--on-background); /* Focused outer ring */
+		--ds-color-field-outline-inner: transparent; /* Focused inner ring */
+	}
 }
