@@ -1,20 +1,44 @@
 /*
  * DS-Checkbox
  */
+
 .ds-checkbox, .ds-checkbox-indeterminate {
-	--ds-color-field-label-fg: var(--on-background); /* label */
+	--ds-color-field-checked-label: var(--text-color, var(--on-background)); /* label */
+}
 
-	--ds-color-bg-default: var(--background); /* Unchecked background */
-	--ds-color-border-default: var(--on-background); /* Unchecked border */
+.ds-checkbox {
+	--_ds-color-checkbox-bg: var(--background);
+	--_ds-color-checkbox-border: var(--on-background);
 
-	--ds-color-bg-primary-emphasis: var(--on-background); /* Checked background */
-	--ds-color-fg-primary-subtle: var(--background); /* Checkmark */
-	--ds-color-border-primary-emphasis: var(--background); /* Checked border */
+	--ds-color-field-outline-inner: var(--on-background); /* Hovered shadow ring */
+	--ds-color-field-border-focus: var(--on-background); /* Hovered border */
 
-	--ds-color-border-primary-soft: var(--on-background); /* Hover ring */
-
+	&[checked] {
+		--ds-color-field-checked-fg: var(--primary); /* background and border */
+		--ds-color-field-checked-bg: var(--on-primary); /* checkmark */
+	}
 	&[focused-visible] {
-		--ds-color-border-primary-emphasis: var(--on-background); /* border and outline */
-		--ds-color-border-primary-soft: var(--background); /* Inner carve out of the outline */
+		--ds-color-field-outline-outer: var(--on-background); /* Focused outer ring */
+		--ds-color-field-outline-inner: transparent; /* Focused inner ring */
 	}
 }
+
+.ds-checkbox-indeterminate {
+	--_ds-color-checkbox-indeterminate-bg: var(--background);
+	--_ds-color-checkbox-indeterminate-border: var(--on-background);
+
+	&[hovered] {
+		--_ds-color-checkbox-indeterminate-shadow: var(--on-background);
+	}
+
+	&[checked], &[indeterminate] {
+		--ds-color-bg-primary-emphasis: var(--primary);
+		--ds-color-fg-primary-subtle: var(--on-primary);
+	}
+
+	&[focused-visible] {
+		--ds-color-field-outline-outer: var(--on-background);
+		--_ds-color-checkbox-indeterminate-shadow: transparent;
+	}
+}
+
