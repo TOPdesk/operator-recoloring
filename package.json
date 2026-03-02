@@ -29,7 +29,7 @@
     "cross-env": "^10.1.0",
     "eslint": "^9.39.2",
     "fast-glob": "^3.3.3",
-    "rollup": "^4.53.3",
+    "rollup": "^4.59.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-summary": "^3.0.1",
     "sass": "^1.96.0"
