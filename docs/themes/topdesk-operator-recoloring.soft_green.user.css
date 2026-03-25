@@ -2,7 +2,7 @@
 /* ==UserStyle==
 @name           Soft Green (TOPdesk Operator Recoloring)
 @namespace      github.com/topdesk/topdesk-operator-recoloring
-@version        3.13.0
+@version        3.14.0
 @description    Override the colors of the TOPdesk operator section, for accessibility purposes.
 @homepageURL    https://github.com/TOPdesk/operator-recoloring
 @supportURL     https://github.com/TOPdesk/operator-recoloring/issues
@@ -4540,6 +4540,22 @@
 		[guielement="option_block"][mstyles~="block_selected"] {
 			background-color: var(--background);
 			border: 1px solid var(--primary);
+		}
+	}/**
+	 * Rich Text Editor styles.
+	 */
+	.ck.ck-editor__editable {
+		--ds-color-field-bg: var(--background);
+		--ds-color-field-fg: var(--on-background);
+
+		& a {
+			color: var(--primary);
+			--ds-link-text-decoration-color: var(--primary);
+		}
+
+		& ::selection {
+			background-color: var(--selection-background);
+			color: var(--selection-color);
 		}
 	}
 }
