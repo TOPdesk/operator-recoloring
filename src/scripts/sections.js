@@ -48,6 +48,7 @@ export const sections = [
 			'/action-explorer.css',
 			'/settings.css',
 			'/report-wizard.css',
+			'/design-system/rt-editor.css',
 		],
 	},
 	{

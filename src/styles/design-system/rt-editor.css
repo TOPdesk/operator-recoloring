@@ -1,0 +1,18 @@
+/**
+ * Rich Text Editor styles.
+ */
+.ck.ck-editor__editable {
+	--ds-color-field-bg: var(--background);
+	--ds-color-field-fg: var(--on-background);
+
+	& a {
+		color: var(--primary);
+		--ds-link-text-decoration-color: var(--primary);
+	}
+
+	& ::selection {
+		background-color: var(--selection-background);
+		color: var(--selection-color);
+	}
+}
+
