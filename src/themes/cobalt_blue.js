@@ -24,5 +24,6 @@ export const cobaltBlue = {
 	error: '#ff0088',
 	errorFilter: 'brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(6972%) hue-rotate(321deg) brightness(102%) contrast(107%)',
 	onError: '#000000',
-	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(340deg) brightness(94%) contrast(106%)'
+	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(340deg) brightness(94%) contrast(106%)',
+	notificationsIconFilter: 'brightness(0) saturate(100%) invert(100%) sepia(27%) saturate(170%) hue-rotate(248deg) brightness(107%) contrast(101%)'
 };

@@ -195,16 +195,18 @@ button#notifications-icon::before {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	filter: var(--on-surface-filter);
+	filter: var(--notifications-icon-filter);
 }
 button#notifications-icon:hover::before {
 	filter: var(--primary-filter);
 }
 
-span#unread-notification-count {
-	background: var(--primary);
-	color: var(--on-primary);
-	border: 1px solid var(--surface);
+body span#unread-notification-count,
+#unread-notification-count {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+	border: none !important;
+	box-shadow: none !important;
 }
 
 /* Buttons with a background image */

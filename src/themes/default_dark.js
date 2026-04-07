@@ -24,5 +24,6 @@ export const defaultDark = {
 	error: '#FF0070',
 	errorFilter: 'brightness(0) saturate(100%) invert(16%) sepia(54%) saturate(7483%) hue-rotate(326deg) brightness(100%) contrast(109%)',
 	onError: '#0c0c0c',
-	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)'
+	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1945%) hue-rotate(61deg) brightness(105%) contrast(91%)',
+	notificationsIconFilter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg) brightness(129%) contrast(98%)'
 };

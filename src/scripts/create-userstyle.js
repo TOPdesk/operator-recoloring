@@ -117,7 +117,8 @@ function variables(theme) {
 @var color error "Error" ${theme.error}
 @var text error-filter "Error filter" ${theme.errorFilter}
 @var color on-error "On error" ${theme.onError}
-@var text on-error-filter "On error filter" ${theme.onErrorFilter}`;
+@var text on-error-filter "On error filter" ${theme.onErrorFilter}
+@var text notifications-icon-filter "Notifications icon filter" ${theme.notificationsIconFilter}`;
 }
 
 function userStyles(stylesDir) {

@@ -1,0 +1,22 @@
+/*
+ * Notifications Gateway - Styles for the gateway.html page with badge
+ */
+
+body {
+	background: transparent !important;
+}
+
+#notifications-icon {
+	position: relative;
+}
+
+#notifications-icon > img {
+	filter: var(--notifications-icon-filter);
+}
+
+#unread-notification-count {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+	border: none !important;
+	box-shadow: none !important;
+}

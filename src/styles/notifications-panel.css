@@ -1,0 +1,286 @@
+/*
+ * Notifications Panel - Styles for the panel.html iframe content
+ */
+
+/* Main background - target the section and body */
+section.notifications,
+.notifications,
+body {
+	background: var(--background) !important;
+	color: var(--on-background) !important;
+}
+
+/* Filter bar */
+.filter,
+.notification-filter {
+	background: var(--surface) !important;
+}
+
+/* Radio buttons and labels in filter */
+input[type="radio"] {
+	background: var(--surface) !important;
+}
+
+.notification-filter label {
+	background: transparent !important;
+	color: var(--on-surface) !important;
+}
+
+.notification-filter label:hover,
+.notification-filter input:checked + label {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+}
+
+/* Links */
+a,
+.notification-tile {
+	color: var(--on-surface) !important;
+}
+
+a:hover,
+.notification-tile:hover {
+	color: var(--primary) !important;
+}
+
+button,
+.tdButton,
+.button,
+.btn {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+	border: none !important;
+}
+
+input,
+input[type="text"],
+input[type="search"] {
+	background: var(--surface) !important;
+	color: var(--on-surface) !important;
+	border: 1px solid var(--on-surface) !important;
+}
+
+.icon,
+svg {
+	filter: var(--primary-filter);
+}
+
+.icon.small {
+	filter: var(--on-surface-filter);
+}
+
+/* Header and title */
+h1, h2, h3 {
+	color: var(--on-background) !important;
+}
+
+/* List items */
+li,
+.list-item,
+.notification-item,
+.event-item {
+	background: var(--surface) !important;
+	color: var(--on-surface) !important;
+}
+
+li:hover,
+.list-item:hover,
+.notification-item:hover,
+.event-item:hover {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+}
+
+/* Secondary text */
+small,
+.text-muted,
+.text-secondary,
+.subtitle,
+.timestamp,
+.meta {
+	color: var(--on-disabled) !important;
+}
+
+/* Borders */
+hr,
+.divider,
+.separator {
+	border-color: var(--surface) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary);
+}
+
+/* Close button */
+.close,
+.close-button,
+[aria-label="Sluiten"] {
+	filter: var(--on-surface-filter);
+}
+
+/* Empty state */
+.empty-state,
+.no-results {
+	color: var(--on-disabled) !important;
+}
+
+/* Specific notification panel classes */
+.unread-notification-counter {
+	color: var(--on-background) !important;
+}
+
+.linkbutton,
+#clear-all-button {
+	background: transparent !important;
+	color: var(--primary) !important;
+}
+
+.notifications-list {
+	background: var(--background) !important;
+}
+
+.container-notification-tile {
+	background: var(--background) !important;
+	border-bottom: 1px solid var(--surface) !important;
+}
+
+.container-notification-tile:hover {
+	background: var(--surface) !important;
+}
+
+.notification-tile {
+	background: transparent !important;
+}
+
+.notification-tile .title {
+	color: var(--on-background) !important;
+}
+
+.notification-tile .body {
+	color: var(--on-surface) !important;
+}
+
+.notification-tile .footer,
+.notification-tile .time,
+.update-counter {
+	color: var(--on-disabled) !important;
+}
+
+.notification-remove {
+	background-color: #504945 !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23d65d0e' d='M4.28 3.22a.75.75 0 0 0-1.06 1.06L6.94 6l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 7.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 6l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 4.94 5.28 3.22z'/%3E%3C/svg%3E") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	filter: none !important;
+}
+
+.notification-remove:hover {
+	background-color: #d65d0e !important;
+}
+
+/* Update counter badge */
+.update-counter {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+}
+
+/* Unread notification count badge */
+body #unread-notification-count,
+#unread-notification-count,
+span#unread-notification-count {
+	background: var(--primary) !important;
+	color: var(--on-primary) !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Task icons */
+.task-icon {
+	filter: var(--primary-filter);
+}
+
+/* Avatar images - keep default */
+img.avatar {
+	filter: none !important;
+}
+
+/* Read vs unread */
+.container-notification-tile.read {
+	opacity: 0.8;
+}
+
+/* Message when no new notifications */
+.no-new-messages {
+	color: var(--on-disabled) !important;
+}
+
+/* Header */
+header {
+	background: var(--background) !important;
+}
+
+#notifications-caption {
+	color: var(--on-background) !important;
+}
+
+/* Footer */
+footer {
+	background: var(--background) !important;
+	color: var(--on-background) !important;
+}
+
+footer button {
+	background: transparent !important;
+	color: var(--primary) !important;
+}
+
+.browser-notifications-slider {
+	background: transparent !important;
+}
+
+.settings {
+	color: var(--on-surface) !important;
+}
+
+/* Slider/knopje - Gruvbox green when on */
+.browser-notifications-slider {
+	background: transparent !important;
+}
+
+.browser-notifications-slider .widget {
+	background: var(--background) !important;
+}
+
+.browser-notifications-slider .slider {
+	background: var(--on-surface) !important;
+}
+
+.browser-notifications-slider[aria-pressed="true"] .widget {
+	background: #b8bb26 !important;
+}
+
+.browser-notifications-slider[aria-pressed="true"] .slider {
+	background: var(--background) !important;
+}
+
+.browser-notifications-slider .widget {
+	background: #98971a !important;
+}
+
+.browser-notifications-slider .slider {
+	background: var(--on-surface) !important;
+}
+
+.browser-notifications-slider[aria-pressed="true"] .widget {
+	background: #b8bb26 !important;
+}

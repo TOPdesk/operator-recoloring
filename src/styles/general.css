@@ -13,6 +13,16 @@ body {
 	outline-offset: 2px !important;
 }
 
+/* Icon buttons - Gruvbox blue tint */
+[guielement='icon-button'] {
+	filter: var(--selection);
+}
+
+/* Icon images */
+[guielement='icon'] {
+	filter: var(--selection);
+}
+
 /* focus fix for combobox dropdown */
 input[type='text'][mtype='combobox']:focus {
 	z-index: 0 !important;

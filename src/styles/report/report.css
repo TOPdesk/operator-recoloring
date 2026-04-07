@@ -2,8 +2,8 @@
  * Bar chart, Line graph, Pie chart
  */
 td.reportimage {
-	/* The graphs (and legends) are semi-transparent images that require a white background to be readable*/
-	background-color: #fff;
+	/* The graphs (and legends) are semi-transparent images that require a matching background to be readable*/
+	background-color: #e8e4d8;
 }
 
 

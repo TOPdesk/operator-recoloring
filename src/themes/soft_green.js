@@ -24,5 +24,6 @@ export const softGreen = {
 	error: '#ff0000',
 	errorFilter: 'brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(6925%) hue-rotate(359deg) brightness(108%) contrast(115%)',
 	onError: '#0c0c0c',
-	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(7009%) hue-rotate(350deg) brightness(103%) contrast(91%)'
+	onErrorFilter: 'brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(7009%) hue-rotate(350deg) brightness(103%) contrast(91%)',
+	notificationsIconFilter: 'brightness(0) saturate(100%) invert(100%) sepia(5%) saturate(0%) hue-rotate(352deg) brightness(105%) contrast(98%)'
 };
