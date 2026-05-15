@@ -11,21 +11,22 @@ There is no intent to achieve completeness, let alone prettyness, the goal is to
 
 ## Developing
 
-### Running locally
+### Preparing your environment
 1. If using Chrome/Chromium [grant stylus access for local files](https://github.com/openstyles/stylus/wiki/Writing-UserCSS#granting-access-to-local-files-in-chromechromium).
 	1. Right-click the Stylus icon, click **Manage extension**.
 	1. Enable the **Allow access to file URLs** switch.
+1. Make sure any other recoloring themes are off to prevent interference. You can quickly enable/disable a style in the Stylus dropdown when a TOPdesk environment is loaded.
+1. Make sure to enable the **Support custom colors** user setting in TOPdesk. Some styling requires the extra attributes in the HTML to be able to apply correctly.
+
+### Start a dev session
 1. Click the stylus icon and click **Manage** to open the Style manager.
 1. Run `npm run dev` to trigger a build and enable watch mode.
 1. Drag and drop the `docs/themes/topdesk-operator-recoloring.development.user.css` file on the *Style manager* window.
 1. In the *Local test recoloring* window that has popped up, check the **Live reload after installation** box just below the **Install style** button.
 1. Click the **Install style** button.
+1. Keep the *Local test recoloring* window open to have it automatically update changes you make in the dev environment.
 
 The local recoloring will now apply to your TOPdesk environment.
-
-Finally, two points of note:
-1. Make sure any other recoloring themes are off to prevent interference. You can quickly enable/disable a style in the Stylus dropdown when a TOPdesk environment is loaded.
-1. Make sure to enable the **Support custom colors** user setting in TOPdesk. Some styling requires the extra attributes in the HTML to be able to apply correctly.
 
 
 ### Releasing a user style update
