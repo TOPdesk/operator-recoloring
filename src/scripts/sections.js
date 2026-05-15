@@ -19,7 +19,6 @@ export const sections = [
 			'/tas/secure/mango/.*',
 			'/services/workflows-v2.*',
 			'/tas/secure/(?!assetmgmt).*?action=.*',
-			'/tas/secure/suggestions/.*',
 			'/tas/secure/homescreen-html-widgets/.*',
 			'/tas/secure/shareandsubscribe/.*',
 		],
@@ -30,7 +29,6 @@ export const sections = [
 			'/menu.css',
 			'/feed.css',
 			'/process-pages.css',
-			'/suggestions.css',
 			'/share.css',
 			'/form.css',
 			'/knowledge-item.css',
@@ -107,6 +105,10 @@ export const sections = [
 	{
 		paths: '/services/user-group-linking-ui/.*',
 		files: '/user-group-linking.css',
+	},
+	{
+		paths: '/services/knowledge-base-ui-v1/suggestions-list.*',
+		files: '/knowledgebase-v1/suggestions-list.css',
 	},
 	{
 		paths: '/services/knowledge-base-ui-v1/suggestions-popup.*',
