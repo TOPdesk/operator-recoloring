@@ -44,6 +44,9 @@
 			& .ki-icon {
 				color: var(--on-background);
 			}
+			& [data-testid="standard-solution-icon"] {
+				filter: var(--on-background-filter);
+			}
 
 			&:hover, &:focus {
 				background-color: var(--surface);
