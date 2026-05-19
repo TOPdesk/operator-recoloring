@@ -189,4 +189,12 @@ export const sections = [
 		paths: '/tas/secure/tasknotifications/panel.*',
 		files: '/notification-centre/notification-panel.css',
 	},
+	{
+		paths: '/services/responsible-data-management-frontend/information',
+		files: [
+			'/responsible-data-management/widget.css',
+			'/design-system/tag.css',
+			'/design-system/button.css',
+		],
+	},
 ];

@@ -1,0 +1,17 @@
+body {
+	background-color: var(--surface);
+	color: var(--on-surface);
+
+	.storage-used-component .icon {
+		color: var(--on-surface);
+	}
+
+	.anonymization-active-component {
+		.success-icon {
+			color: var(--primary);
+		}
+		.failure-icon {
+			color: var(--error);
+		}
+	}
+}
