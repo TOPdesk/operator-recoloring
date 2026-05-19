@@ -1,0 +1,32 @@
+button#notifications-icon {
+	--icon-color: var(--on-surface);
+	--count-bg: var(--primary);
+	--count-fg: var(--on-primary);
+
+	background-image: none;
+
+	&::before {
+		mask-image: url(11dc6dab2050a2562237.svg);
+		mask-size: cover;
+		background-color: var(--icon-color);
+		content: '';
+		position: absolute;
+  	inset: 0;
+	}
+
+	&:hover {
+		--icon-color: var(--primary);
+		--count-bg: var(--on-primary);
+		--count-fg: var(--primary);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--on-surface);
+		outline-offset: -2px; /* Otherwise the outline is cut off by the iframe boundary */
+	}
+
+	#unread-notification-count {
+		background-color: var(--count-bg);
+		color: var(--count-fg);
+	}
+}

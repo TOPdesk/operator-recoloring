@@ -181,4 +181,12 @@ export const sections = [
 		paths: '/services/action-v1/infoWidget.*',
 		files: '/actionmgmt/info-widget.css',
 	},
+	{
+		paths: '/tas/secure/tasknotifications/gateway.*',
+		files: '/notification-centre/notification-button.css',
+	},
+	{
+		paths: '/tas/secure/tasknotifications/panel.*',
+		files: '/notification-centre/notification-panel.css',
+	},
 ];

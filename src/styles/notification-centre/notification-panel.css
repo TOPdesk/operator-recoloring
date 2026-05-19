@@ -1,0 +1,157 @@
+.notifications-panel {
+	border: none !important;
+
+	header {
+		background-color: var(--surface);
+
+		.unread-notification-counter {
+			color: var(--on-surface);
+		}
+
+		.notification-filter input[type="radio"] {
+		  & + label {
+				color: var(--on-surface);
+			}
+			&:checked + label {
+				color: var(--primary);
+				border-bottom-color: var(--primary);
+			}
+			&:focus-visible + label {
+				outline: 2px solid var(--on-surface);
+				outline-offset: -2px;
+			}
+		}
+	}
+
+	.linkbutton {
+		color: var(--primary);
+
+		&:focus-visible {
+			outline: 2px solid var(--on-surface);
+			outline-offset: 2px;
+		}
+	}
+
+	.notifications {
+		background-color: var(--surface);
+
+		.container-notification-tile {
+			--title-color: var(--on-background);
+
+			&:hover, &:has(.notification-tile:focus-visible) {
+				--title-color: var(--primary);
+
+				.title {
+					text-decoration: underline;
+				}
+			}
+
+			&:has(.notification-tile:focus-visible) {
+				outline: 2px solid var(--on-background);
+				outline-offset: -2px;
+			}
+
+			.task-icon {
+				filter: var(--on-background-filter);
+
+				.major & {
+					filter: var(--primary-filter);
+				}
+			}
+			.notification-tile {
+				background-color: var(--background);
+				border-color: var(--on-background);
+			}
+
+			.title {
+				color: var(--title-color);
+			}
+			.body, .time {
+				color: var(--on-background);
+			}
+
+			.update-counter {
+				background-color: var(--primary);
+				color: var(--on-primary);
+			}
+
+			.notification-remove:focus-visible {
+				outline: 2px solid var(--on-surface);
+				outline-offset: 2px;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	footer {
+		background-color: var(--surface);
+		border-color: var(--on-surface);
+
+		.browser-notifications-slider {
+			color: var(--on-surface);
+
+			.widget {
+				background-color: var(--background);
+				box-shadow: 0 0 0 1px var(--on-background);
+
+				.slider {
+					background-color: transparent;
+					outline: 1px solid var(--on-background);
+				}
+			}
+
+			&.notifications-enabled .widget .slider {
+				background-color: var(--on-background);
+				outline: none;
+			}
+
+			&:focus-visible {
+				outline: 2px solid var(--on-surface);
+				outline-offset: 2px;
+			}
+		}
+
+		#settings-button {
+			position: relative;
+			background-image: none;
+
+			--text-color: var(--on-background);
+
+			color: var(--text-color);
+			background-color: var(--background);
+			border-color: var(--on-background);
+
+			&::before {
+				mask-image: url(/icons/grid_settings/16);
+				mask-size: cover;
+				background-color: var(--text-color);
+				content: '';
+				position: absolute;
+				left: 6px;
+				top: 8px;
+				width: 16px;
+				height: 16px;
+			}
+
+			&:hover {
+				--text-color: var(--background);
+				border-color: var(--on-background);
+				background-color: var(--on-background);
+			}
+
+			&:active {
+				--text-color: var(--on-surface);
+				border-color: var(--on-surface);
+				background-color: var(--surface);
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+			&:focus-visible {
+				outline: 2px solid var(--on-surface);
+				outline-offset: 2px;
+			}
+		}
+	}
+}
