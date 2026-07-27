@@ -29,14 +29,14 @@
     "cross-env": "^10.1.0",
     "eslint": "^9.39.2",
     "fast-glob": "^3.3.3",
-    "rollup": "^4.59.0",
+    "rollup": "^4.62.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-summary": "^3.0.1",
-    "sass": "^1.96.0"
+    "sass": "^1.101.7"
   },
   "dependencies": {
     "@lion/tabs": "^0.13.1",
     "hex-to-css-filter": "^6.0.0",
-    "lit": "^3.3.1"
+    "lit": "^3.3.3"
   }
 }
