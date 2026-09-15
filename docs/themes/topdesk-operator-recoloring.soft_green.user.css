@@ -2198,7 +2198,7 @@
 	 */
 
 	/*
-	 * Partial card info block (Partail Incident, Change Activity)
+	 * Partial card info block (Partial Incident, Change Activity)
 	 */
 	[guielement='mg-infoblock-content'] {
 		background: var(--surface);
@@ -2427,6 +2427,15 @@
 
 	div#checklist .date-and-time .control input[aria-invalid='true'] + .icon {
 		color: var(--error);
+	}
+
+	/* Triage banner */
+	div[guielement=triage_banner] {
+		background: var(--surface);
+		color: var(--on-surface);
+		& [guielement="icon-button"] {
+			filter: var(--on-surface-filter);
+		}
 	}/* Panels */
 
 	[mstyles='planboard_dispatch_panel_main'] {
