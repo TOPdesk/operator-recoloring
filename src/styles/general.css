@@ -26,6 +26,12 @@ input[type='text'][mtype='combobox']:focus {
 	--text-color: var(--on-surface);
 }
 
+/* Home page */
+[mstyles=home_page_background] {
+	background: var(--background);
+	--text-color: var(--on-background);
+}
+
 /* Page */
 [guielement='toplevelwindow'],
 [mstyles='left_side'] {
