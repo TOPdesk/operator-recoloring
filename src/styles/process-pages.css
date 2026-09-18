@@ -15,6 +15,11 @@
 [guielement='widget_content_area'] {
 	background: var(--surface);
 	--text-color: var(--on-surface);
+	
+	
+	& [guielement="icon-button"][mstyles] {
+			filter: var(--on-surface-filter);
+		}
 }
 [guielement='widget_content_area'] {
 	border-color: var(--on-surface);
@@ -77,6 +82,7 @@
 [guielement^='widget_page_image_button'] {
 	background: var(--primary);
 	--filter: var(--on-primary-filter);
+	--text-color: var(--on-primary)
 }
 [guielement^='widget_page_image_button']:hover {
 	background: var(--primary-muted);
